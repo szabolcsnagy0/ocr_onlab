@@ -2,7 +2,7 @@ import cv2
 import pytesseract
 import numpy as np
 
-image = cv2.imread("C:\\Users\\Szabolcs\\Desktop\\mrp_id_crop.png")
+image = cv2.imread("..\\images\\mrp_id_crop.png")
 
 # cv2.imshow('Original', image)
 
@@ -27,17 +27,18 @@ cv2.imshow("Threshold", thresh)
 
 h, w, c = image.shape
 
-lang = 'eng'
+lang = "eng"
+config = r"--psm 6 --oem 3"
 
-boxes = pytesseract.image_to_boxes(thresh, lang)
+boxes = pytesseract.image_to_boxes(image=thresh, lang=lang, config=config)
 
-text = pytesseract.image_to_string(thresh, lang)
+text = pytesseract.image_to_string(image=thresh, lang=lang, config=config)
 print(text)
 
 for b in boxes.splitlines():
     b = b.split(' ')
     image = cv2.rectangle(image, (int(b[1]), h - int(b[2])), (int(b[3]), h - int(b[4])), (0, 255, 0), 2)
 
-# cv2.imshow('image', image)
+# cv2.imshow("Boxes", image)
 
 cv2.waitKey(0)
