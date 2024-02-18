@@ -18,6 +18,45 @@ class Person:
         self.date_of_birth = None
         self.id = None
 
+    def merge_data(self, person1, person2):
+        if person1.date_of_expiry_confidence >= person2.date_of_expiry_confidence:
+            self.date_of_expiry = person1.date_of_expiry
+            self.date_of_expiry_confidence = person1.date_of_expiry_confidence
+        else:
+            self.date_of_expiry = person2.date_of_expiry
+            self.date_of_expiry_confidence = person2.date_of_expiry_confidence
+        if person1.nationality_confidence >= person2.nationality_confidence:
+            self.nationality = person1.nationality
+            self.nationality_confidence = person1.nationality_confidence
+        else:
+            self.nationality = person2.nationality
+            self.nationality_confidence = person2.nationality_confidence
+        if person1.sex_confidence >= person2.sex_confidence:
+            self.sex = person1.sex
+            self.sex_confidence = person1.sex_confidence
+        else:
+            self.sex = person2.sex
+            self.sex_confidence = person2.sex_confidence
+        if person1.id_confidence < person2.id_confidence:
+            self.id = person2.id
+            self.id_confidence = person2.id_confidence
+        else:
+            self.id = person1.id
+            self.id_confidence = person1.id_confidence
+        if person1.date_of_birth_confidence < person2.date_of_birth_confidence:
+            self.date_of_birth = person2.date_of_birth
+            self.date_of_birth_confidence = person2.date_of_birth_confidence
+        else:
+            self.date_of_birth = person1.date_of_birth
+            self.date_of_birth_confidence = person1.date_of_birth_confidence
+        if person1.name_confidence < person2.name_confidence:
+            self.name = person2.name
+            self.name_confidence = person2.name_confidence
+        else:
+            self.name = person1.name
+            self.name_confidence = person1.name_confidence
+        return self
+
     def print(self):
         print("Name:\n\t", self.name, " ", self.name_confidence,
               "\nDate of birth:\n\t", self.date_of_birth, " ", self.date_of_birth_confidence,
@@ -172,15 +211,20 @@ paddle_ocr = PaddleOCR(use_angle_cls=True, lang='hu')
 # Front
 img_front = '../images/id_front.jpeg'
 result_front = paddle_ocr.ocr(img_front, cls=True)
-print("\n\n----------FRONT----------")
-process_front(result_front[0]).print()
+data_front = process_front(result_front[0])
 
 # Back
 img_back = '../images/id_back.png'
 result_back = paddle_ocr.ocr(img_back, cls=True)
+data_back = process_back(result_back[0])
+
+print("\n\n----------FRONT----------")
+data_front.print()
 print("\n\n----------BACK----------")
-process_back(result_back[0]).print()
+data_back.print()
+print("\n\n----------RESULT----------")
+Person().merge_data(data_front, data_back).print()
 
-
+# Show images
 show_result(result_front, img_front)
 show_result(result_back, img_back)
