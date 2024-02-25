@@ -1,0 +1,6 @@
+root ::= (
+    ("Yes" | "No") ", "
+    "The correct form is: " correct-form?
+)
+
+correct-form ::= [a-zA-Z]*

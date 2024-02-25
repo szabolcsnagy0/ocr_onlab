@@ -1,0 +1,18 @@
+root ::= (
+    "MAGYARORSZAG / HUNGARY \n"
+    "SZEMELYAZONOSITO IGAZOLVANY / IDENTITY CARD \n"
+    "Csaladi es utonev/Family name and Given name: " name? "\n"
+    "Nem/Sex: " sex? "\n"
+    "Allampolgarsag/Nationality: " nationality? "\n"
+    "Szuletesi ido/Date of birth: " date? "\n"
+    "Ervenyessegi ido/Date of expiry: " date? "\n"
+    "Okmanyazonosito/Doc. No.: " document-number? "\n"
+    "CAN:" can-number? "\n"
+)
+
+name ::= ([A-Z]+ (" " | "-") [A-Z]+)+ [A-Z]*
+sex ::= ("FERFI/M" | "NO/F")
+nationality ::= [A-Z]+
+date ::= [0-9] [0-9] " " [0-9][0-9] " " [0-9][0-9][0-9][0-9]
+document-number ::= [0-9A-Z]+
+can-number ::= [0-9]+

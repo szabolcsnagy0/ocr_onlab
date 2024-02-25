@@ -1,0 +1,20 @@
+root ::= ("{"
+  name?
+  sex?
+  nationality?
+  date-of-birth?
+  date-of-expiry?
+  document-number?
+  can-number?
+"}")
+
+name ::= "\"Csaladi es utonev/Family name and Given name\" : " comma ([A-Z]+ (" " | "-") [A-Z]+)+ [A-Z]* comma ","
+sex ::= "\"Nem/Sex\" : " comma ("FERFI/M" | "NO/F") comma ","
+nationality ::= "\"Allampolgarsag/Nationality\" : " comma [A-Z]+ comma ","
+date-of-birth ::= "\"Szuletesi ido/Date of birth\" : " date ","
+date-of-expiry ::= "\"Szuletesi ido/Date of birth\" : " date ","
+document-number ::= "\"Okmanyazonosito/Doc. No.\" : " comma [0-9A-Z]+ comma ","
+can-number ::= "\"CAN\" : " comma [0-9]+ comma ","
+
+date ::= comma [0-9] [0-9] " " [0-9][0-9] " " [0-9][0-9][0-9][0-9] comma
+comma ::= "\""

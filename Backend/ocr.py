@@ -1,6 +1,8 @@
 from paddleocr import (PaddleOCR,
                        draw_ocr)
 import re
+import sys
+import json
 
 
 class Person:
@@ -57,28 +59,13 @@ class Person:
             self.name_confidence = person1.name_confidence
         return self
 
-    def print(self):
-        print("Name:\n\t", self.name, " ", self.name_confidence,
-              "\nDate of birth:\n\t", self.date_of_birth, " ", self.date_of_birth_confidence,
-              "\nDocument number:\n\t", self.id, " ", self.id_confidence,
-              "\nDate of expiry:\n\t", self.date_of_expiry, " ", self.date_of_expiry_confidence,
-              "\nSex:\n\t", self.sex, " ", self.sex_confidence,
-              "\nNationality:\n\t", self.nationality, " ", self.nationality_confidence, "\n\n")
-
-
-def show_result(result, img_path):
-    # draw result
-    from PIL import Image
-    current_result = result[0]
-    image = Image.open(img_path).convert('RGB')
-    boxes = [line[0] for line in current_result]
-    texts = [line[1][0] for line in current_result]
-    scores = [line[1][1] for line in current_result]
-    font = '../arial.ttf'
-    im_show = draw_ocr(image, boxes, texts, scores, font_path=font)
-    im_show = Image.fromarray(im_show)
-    im_show.show()
-    # im_show.save('result.jpg')
+    def to_dictionary(self):
+        return {"Name": self.name,
+                "Date of birth": self.date_of_birth,
+                "Document number": self.id,
+                "Date of expiry": self.date_of_expiry,
+                "Sex": self.sex,
+                "Nationality": self.nationality}
 
 
 def check_sum(string, check):
@@ -206,27 +193,37 @@ def process_back(ocr_result):
     return person
 
 
+# USAGE: python ocr.py --front image.jpg --back image.jpg
+img_front = None
+img_back = None
+for i in range(len(sys.argv)):
+    print(sys.argv[i])
+    if sys.argv[i] == "--front" and len(sys.argv) > i + 1:
+        img_front = sys.argv[i + 1]
+    elif sys.argv[i] == "--back" and len(sys.argv) > i + 1:
+        img_back = sys.argv[i + 1]
+
+if img_front is None and img_back is None:
+    print("ERROR: Please provide an image file!\n")
+    exit()
+
 paddle_ocr = PaddleOCR(use_angle_cls=True, lang='hu')
 
+data_front = None
+data_back = None
 # Front
-img_front = '../images/id_front.jpeg'
-result_front = paddle_ocr.ocr(img_front, cls=True)
-print(result_front)
-data_front = process_front(result_front[0])
+if img_front is not None:
+    result_front = paddle_ocr.ocr(img_front, cls=True)
+    data_front = process_front(result_front[0])
 
-# # Back
-# img_back = '../images/id_back.png'
-# result_back = paddle_ocr.ocr(img_back, cls=True)
-# print(result_back)
-# data_back = process_back(result_back[0])
+# Back
+if img_back is not None:
+    result_back = paddle_ocr.ocr(img_back, cls=True)
+    data_back = process_back(result_back[0])
 
-print("\n\n----------FRONT----------")
-data_front.print()
-# print("\n\n----------BACK----------")
-# data_back.print()
-# print("\n\n----------RESULT----------")
-# Person().merge_data(data_front, data_back).print()
-
-# Show images
-show_result(result_front, img_front)
-# show_result(result_back, img_back)
+if data_front is not None and data_back is not None:
+    Person().merge_data(data_front, data_back).print()
+elif data_front is not None:
+    json.dump(data_front.to_dictionary(), sys.stdout)
+elif data_back is not None:
+    json.dump(data_back.to_dictionary(), sys.stdout)
