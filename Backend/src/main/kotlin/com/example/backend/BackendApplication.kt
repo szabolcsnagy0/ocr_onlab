@@ -8,6 +8,4 @@ class BackendApplication
 
 fun main(args: Array<String>) {
 	runApplication<BackendApplication>(*args)
-//	var service: TextDetectionService = TextDetectionService()
-//	service.runDetection()
 }

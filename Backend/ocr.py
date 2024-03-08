@@ -222,7 +222,7 @@ if img_back is not None:
     data_back = process_back(result_back[0])
 
 if data_front is not None and data_back is not None:
-    Person().merge_data(data_front, data_back).print()
+    json.dump(Person().merge_data(data_front, data_back).to_dictionary(), sys.stdout)
 elif data_front is not None:
     json.dump(data_front.to_dictionary(), sys.stdout)
 elif data_back is not None:
