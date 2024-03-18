@@ -22,6 +22,14 @@ def order_points(pts):
     # Return the ordered coordinates.
     return rect.astype('int').tolist()
 
+def corrigate_coordinates(points):
+    corrected_points = []
+    for point in points:
+        x = int(point[0] * RESIZE_FACTOR)
+        y = int(point[1] * RESIZE_FACTOR)
+        corrected_points.append([x, y])
+    return corrected_points
+
 # USAGE: python corners.py image.jpg
 if len(sys.argv) != 2:
     print("ERROR: Not enough arguments!\n")
@@ -34,7 +42,8 @@ if img is None:
     exit()
 
 img = cv2.imread(img)
-img = cv2.resize(img, None, fx=0.3, fy=0.3, interpolation=cv2.INTER_AREA)
+RESIZE_FACTOR = 0.5
+img = cv2.resize(img, None, fx=RESIZE_FACTOR, fy=RESIZE_FACTOR, interpolation=cv2.INTER_AREA)
 original_image = img
 
 # Remove text
@@ -79,5 +88,6 @@ for c in page:
 corners = sorted(np.concatenate(corners).tolist())
 
 corners = order_points(corners)
-cv2.imwrite("./test.png", con)
+corners = corrigate_coordinates(corners)
+
 json.dump(corners, sys.stdout)

@@ -1,23 +1,25 @@
 package com.example.backend
 
-import jakarta.servlet.http.HttpServletRequest
-import org.springframework.beans.factory.annotation.Autowired
+import jakarta.servlet.ServletContext
+import org.apache.tomcat.util.http.fileupload.IOUtils
 import org.springframework.http.MediaType
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.multipart.MultipartFile
 import java.io.File
-import java.time.LocalDate
+import java.io.InputStream
 import kotlin.random.Random
 
 
 @RestController
-@RequestMapping("")
+@RequestMapping("/")
 class ImageUploadController(
     val textDetectionService: TextDetectionService,
-    val cornerDetectionService: CornerDetectionService
+    val cornerDetectionService: CornerDetectionService,
+    val cropService: CropService
 ) {
 
-    @PostMapping("/upload/text", consumes = [MediaType.MULTIPART_FORM_DATA_VALUE])
+    @PostMapping("upload/text", consumes = [MediaType.MULTIPART_FORM_DATA_VALUE])
     fun upload(
         @RequestParam("front") front: MultipartFile?,
         @RequestParam("back") back: MultipartFile?
@@ -44,7 +46,7 @@ class ImageUploadController(
         )
     }
 
-    @PostMapping("/upload/corners")
+    @PostMapping("upload/corners")
     fun detectCorners(
         @RequestParam("image") image: MultipartFile?,
     ): String? {
@@ -53,15 +55,41 @@ class ImageUploadController(
             File(UPLOAD_DIRECTORY).mkdir()
         }
         // Front image
-        var imageFileNameAndPath: String? = null
+        val imageFileNameAndPath: String?
         imageFileNameAndPath = UPLOAD_DIRECTORY + Random.nextInt(Int.MAX_VALUE) + image.originalFilename
         image.transferTo(File(imageFileNameAndPath).also { it.deleteOnExit() })
         return cornerDetectionService.runDetection(imagePath = imageFileNameAndPath)
     }
 
-    @GetMapping("/download", produces = [MediaType.MULTIPART_FORM_DATA_VALUE])
-    fun download(): MultipartFile? {
-        return null
+    @PostMapping("upload/crop")
+    fun cropImage(
+        @RequestParam("image") image: MultipartFile?,
+        @RequestParam("corners") corners: String?
+    ): ResponseEntity<String?> {
+        if (image == null) throw RuntimeException("Image not found!")
+        if (corners == null) throw RuntimeException("Corner coordinates not found!")
+
+        val imageID: String = "" + Random.nextInt(Int.MAX_VALUE) + image.originalFilename
+        val imageFileNameAndPath = UPLOAD_DIRECTORY + imageID
+        image.transferTo(File(imageFileNameAndPath).also { it.deleteOnExit() })
+        return if (cropService.runCropAlgorithm(imagePath = imageFileNameAndPath, corners = corners)) {
+            ResponseEntity.ok(imageID)
+        } else {
+            ResponseEntity.internalServerError().body(null)
+        }
+    }
+
+    @GetMapping("download/{id}")
+    fun downloadCroppedImage(
+        @PathVariable id: String
+    ): ResponseEntity<ByteArray> {
+        val image = File(UPLOAD_DIRECTORY + id)
+        return if (image.exists()) {
+            ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(image.readBytes())
+        } else {
+            ResponseEntity.notFound().build()
+        }
+
     }
 
     companion object {

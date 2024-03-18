@@ -1,3596 +1,4561 @@
 scrambled,original,text
 Bence,Bence,"###Human:
-Correct this hungarian first name: Bence
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bence
 
 ###Assistant:
 Bence"
 Bencé,Bence,"###Human:
-Correct this hungarian first name: Bencé
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bencé
 
 ###Assistant:
 Bence"
 Bencc,Bence,"###Human:
-Correct this hungarian first name: Bencc
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bencc
 
 ###Assistant:
 Bence"
 Benee,Bence,"###Human:
-Correct this hungarian first name: Benee
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Benee
+
+###Assistant:
+Bence"
+Beneé,Bence,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Beneé
+
+###Assistant:
+Bence"
+Benec,Bence,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Benec
 
 ###Assistant:
 Bence"
 Benoe,Bence,"###Human:
-Correct this hungarian first name: Benoe
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Benoe
+
+###Assistant:
+Bence"
+Benoé,Bence,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Benoé
+
+###Assistant:
+Bence"
+Benoc,Bence,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Benoc
 
 ###Assistant:
 Bence"
 Bénce,Bence,"###Human:
-Correct this hungarian first name: Bénce
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bénce
 
 ###Assistant:
 Bence"
-Bcnce,Bence,"###Human:
-Correct this hungarian first name: Bcnce
+Mate,Máté,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mate
 
 ###Assistant:
-Bence"
-Dence,Bence,"###Human:
-Correct this hungarian first name: Dence
-
-###Assistant:
-Bence"
-Pence,Bence,"###Human:
-Correct this hungarian first name: Pence
-
-###Assistant:
-Bence"
+Máté"
 Maté,Máté,"###Human:
-Correct this hungarian first name: Maté
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Maté
+
+###Assistant:
+Máté"
+Matc,Máté,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Matc
 
 ###Assistant:
 Máté"
 Máte,Máté,"###Human:
-Correct this hungarian first name: Máte
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Máte
 
 ###Assistant:
 Máté"
 Máté,Máté,"###Human:
-Correct this hungarian first name: Máté
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Máté
 
 ###Assistant:
 Máté"
 Mátc,Máté,"###Human:
-Correct this hungarian first name: Mátc
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mátc
 
 ###Assistant:
 Máté"
+Bóminik,Dominik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bóminik
+
+###Assistant:
+Dominik"
+Böminik,Dominik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Böminik
+
+###Assistant:
+Dominik"
+Bőminik,Dominik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bőminik
+
+###Assistant:
+Dominik"
+Bomínik,Dominik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bomínik
+
+###Assistant:
+Dominik"
+Bominík,Dominik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bominík
+
+###Assistant:
+Dominik"
 Bominik,Dominik,"###Human:
-Correct this hungarian first name: Bominik
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bominik
 
 ###Assistant:
 Dominik"
-Dóminik,Dominik,"###Human:
-Correct this hungarian first name: Dóminik
+Bominlk,Dominik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bominlk
 
 ###Assistant:
 Dominik"
-Döminik,Dominik,"###Human:
-Correct this hungarian first name: Döminik
+Bominjk,Dominik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bominjk
 
 ###Assistant:
 Dominik"
-Dőminik,Dominik,"###Human:
-Correct this hungarian first name: Dőminik
+Bomlnik,Dominik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bomlnik
 
 ###Assistant:
 Dominik"
-Domínik,Dominik,"###Human:
-Correct this hungarian first name: Domínik
-
-###Assistant:
-Dominik"
-Dominík,Dominik,"###Human:
-Correct this hungarian first name: Dominík
-
-###Assistant:
-Dominik"
-Dominik,Dominik,"###Human:
-Correct this hungarian first name: Dominik
-
-###Assistant:
-Dominik"
-Dominlk,Dominik,"###Human:
-Correct this hungarian first name: Dominlk
-
-###Assistant:
-Dominik"
-Dominjk,Dominik,"###Human:
-Correct this hungarian first name: Dominjk
-
-###Assistant:
-Dominik"
-Domlnik,Dominik,"###Human:
-Correct this hungarian first name: Domlnik
-
-###Assistant:
-Dominik"
-Domjnik,Dominik,"###Human:
-Correct this hungarian first name: Domjnik
-
-###Assistant:
-Dominik"
-Pominik,Dominik,"###Human:
-Correct this hungarian first name: Pominik
+Bomjnik,Dominik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bomjnik
 
 ###Assistant:
 Dominik"
 Levente,Levente,"###Human:
-Correct this hungarian first name: Levente
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Levente
 
 ###Assistant:
 Levente"
 Leventé,Levente,"###Human:
-Correct this hungarian first name: Leventé
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Leventé
 
 ###Assistant:
 Levente"
 Leventc,Levente,"###Human:
-Correct this hungarian first name: Leventc
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Leventc
 
 ###Assistant:
 Levente"
 Levénte,Levente,"###Human:
-Correct this hungarian first name: Levénte
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Levénte
+
+###Assistant:
+Levente"
+Levénté,Levente,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Levénté
+
+###Assistant:
+Levente"
+Levéntc,Levente,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Levéntc
 
 ###Assistant:
 Levente"
 Levcnte,Levente,"###Human:
-Correct this hungarian first name: Levcnte
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Levcnte
+
+###Assistant:
+Levente"
+Levcnté,Levente,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Levcnté
+
+###Assistant:
+Levente"
+Levcntc,Levente,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Levcntc
 
 ###Assistant:
 Levente"
 Lévente,Levente,"###Human:
-Correct this hungarian first name: Lévente
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lévente
 
 ###Assistant:
 Levente"
-Lcvente,Levente,"###Human:
-Correct this hungarian first name: Lcvente
+Nóei,Noel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nóei
 
 ###Assistant:
-Levente"
+Noel"
+Nóeí,Noel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nóeí
+
+###Assistant:
+Noel"
 Nóel,Noel,"###Human:
-Correct this hungarian first name: Nóel
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nóel
+
+###Assistant:
+Noel"
+Nóél,Noel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nóél
+
+###Assistant:
+Noel"
+Nócl,Noel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nócl
+
+###Assistant:
+Noel"
+Nöei,Noel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nöei
+
+###Assistant:
+Noel"
+Nöeí,Noel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nöeí
 
 ###Assistant:
 Noel"
 Nöel,Noel,"###Human:
-Correct this hungarian first name: Nöel
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nöel
 
 ###Assistant:
 Noel"
-Nőel,Noel,"###Human:
-Correct this hungarian first name: Nőel
+Nöél,Noel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nöél
 
 ###Assistant:
 Noel"
-Noei,Noel,"###Human:
-Correct this hungarian first name: Noei
+Nöcl,Noel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nöcl
 
 ###Assistant:
 Noel"
-Noeí,Noel,"###Human:
-Correct this hungarian first name: Noeí
+Baniel,Dániel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Baniel
 
 ###Assistant:
-Noel"
-Noel,Noel,"###Human:
-Correct this hungarian first name: Noel
+Dániel"
+Báníel,Dániel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Báníel
 
 ###Assistant:
-Noel"
-Noél,Noel,"###Human:
-Correct this hungarian first name: Noél
+Dániel"
+Bániei,Dániel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bániei
 
 ###Assistant:
-Noel"
-Nocl,Noel,"###Human:
-Correct this hungarian first name: Nocl
+Dániel"
+Bánieí,Dániel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bánieí
 
 ###Assistant:
-Noel"
+Dániel"
 Bániel,Dániel,"###Human:
-Correct this hungarian first name: Bániel
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bániel
 
 ###Assistant:
 Dániel"
-Daniel,Dániel,"###Human:
-Correct this hungarian first name: Daniel
+Bániél,Dániel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bániél
 
 ###Assistant:
 Dániel"
-Dáníel,Dániel,"###Human:
-Correct this hungarian first name: Dáníel
+Bánicl,Dániel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bánicl
 
 ###Assistant:
 Dániel"
-Dániei,Dániel,"###Human:
-Correct this hungarian first name: Dániei
+Bánlel,Dániel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bánlel
 
 ###Assistant:
 Dániel"
-Dánieí,Dániel,"###Human:
-Correct this hungarian first name: Dánieí
+Bánjel,Dániel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bánjel
 
 ###Assistant:
 Dániel"
-Dániel,Dániel,"###Human:
-Correct this hungarian first name: Dániel
+Daníel,Dániel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Daníel
 
 ###Assistant:
 Dániel"
-Dániél,Dániel,"###Human:
-Correct this hungarian first name: Dániél
+Zaian,Zalán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zaian
 
 ###Assistant:
-Dániel"
-Dánicl,Dániel,"###Human:
-Correct this hungarian first name: Dánicl
-
-###Assistant:
-Dániel"
-Dánlel,Dániel,"###Human:
-Correct this hungarian first name: Dánlel
-
-###Assistant:
-Dániel"
-Dánjel,Dániel,"###Human:
-Correct this hungarian first name: Dánjel
-
-###Assistant:
-Dániel"
-Pániel,Dániel,"###Human:
-Correct this hungarian first name: Pániel
-
-###Assistant:
-Dániel"
+Zalán"
 Zaián,Zalán,"###Human:
-Correct this hungarian first name: Zaián
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zaián
+
+###Assistant:
+Zalán"
+Zaían,Zalán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zaían
 
 ###Assistant:
 Zalán"
 Zaíán,Zalán,"###Human:
-Correct this hungarian first name: Zaíán
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zaíán
 
 ###Assistant:
 Zalán"
 Zalan,Zalán,"###Human:
-Correct this hungarian first name: Zalan
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zalan
 
 ###Assistant:
 Zalán"
 Zalán,Zalán,"###Human:
-Correct this hungarian first name: Zalán
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zalán
+
+###Assistant:
+Zalán"
+Záián,Zalán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Záián
+
+###Assistant:
+Zalán"
+Záíán,Zalán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Záíán
+
+###Assistant:
+Zalán"
+Zálan,Zalán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zálan
 
 ###Assistant:
 Zalán"
 Zálán,Zalán,"###Human:
-Correct this hungarian first name: Zálán
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zálán
 
 ###Assistant:
 Zalán"
+Marceii,Marcell,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Marceii
+
+###Assistant:
+Marcell"
+Marceií,Marcell,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Marceií
+
+###Assistant:
+Marcell"
 Marceil,Marcell,"###Human:
-Correct this hungarian first name: Marceil
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Marceil
+
+###Assistant:
+Marcell"
+Marceíi,Marcell,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Marceíi
+
+###Assistant:
+Marcell"
+Marceíí,Marcell,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Marceíí
 
 ###Assistant:
 Marcell"
 Marceíl,Marcell,"###Human:
-Correct this hungarian first name: Marceíl
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Marceíl
 
 ###Assistant:
 Marcell"
 Marceli,Marcell,"###Human:
-Correct this hungarian first name: Marceli
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Marceli
 
 ###Assistant:
 Marcell"
 Marcelí,Marcell,"###Human:
-Correct this hungarian first name: Marcelí
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Marcelí
 
 ###Assistant:
 Marcell"
 Marcell,Marcell,"###Human:
-Correct this hungarian first name: Marcell
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Marcell
 
 ###Assistant:
 Marcell"
-Marcéll,Marcell,"###Human:
-Correct this hungarian first name: Marcéll
+Marcéil,Marcell,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Marcéil
 
 ###Assistant:
 Marcell"
-Marccll,Marcell,"###Human:
-Correct this hungarian first name: Marccll
+Óiivér,Olivér,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Óiivér
 
 ###Assistant:
-Marcell"
-Mareell,Marcell,"###Human:
-Correct this hungarian first name: Mareell
+Olivér"
+Óíivér,Olivér,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Óíivér
 
 ###Assistant:
-Marcell"
-Maroell,Marcell,"###Human:
-Correct this hungarian first name: Maroell
+Olivér"
+Ólívér,Olivér,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ólívér
 
 ###Assistant:
-Marcell"
-Márcell,Marcell,"###Human:
-Correct this hungarian first name: Márcell
+Olivér"
+Óliver,Olivér,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Óliver
 
 ###Assistant:
-Marcell"
+Olivér"
 Ólivér,Olivér,"###Human:
-Correct this hungarian first name: Ólivér
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ólivér
 
 ###Assistant:
 Olivér"
-Ölivér,Olivér,"###Human:
-Correct this hungarian first name: Ölivér
+Ólivcr,Olivér,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ólivcr
 
 ###Assistant:
 Olivér"
-Őlivér,Olivér,"###Human:
-Correct this hungarian first name: Őlivér
+Óllvér,Olivér,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Óllvér
 
 ###Assistant:
 Olivér"
-Oiivér,Olivér,"###Human:
-Correct this hungarian first name: Oiivér
+Óljvér,Olivér,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Óljvér
 
 ###Assistant:
 Olivér"
-Oíivér,Olivér,"###Human:
-Correct this hungarian first name: Oíivér
+Öiivér,Olivér,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Öiivér
 
 ###Assistant:
 Olivér"
-Olívér,Olivér,"###Human:
-Correct this hungarian first name: Olívér
+Öíivér,Olivér,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Öíivér
 
 ###Assistant:
 Olivér"
-Oliver,Olivér,"###Human:
-Correct this hungarian first name: Oliver
+Adam,Ádám,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Adam
 
 ###Assistant:
-Olivér"
-Olivér,Olivér,"###Human:
-Correct this hungarian first name: Olivér
-
-###Assistant:
-Olivér"
-Olivcr,Olivér,"###Human:
-Correct this hungarian first name: Olivcr
-
-###Assistant:
-Olivér"
-Ollvér,Olivér,"###Human:
-Correct this hungarian first name: Ollvér
-
-###Assistant:
-Olivér"
-Oljvér,Olivér,"###Human:
-Correct this hungarian first name: Oljvér
-
-###Assistant:
-Olivér"
+Ádám"
 Adám,Ádám,"###Human:
-Correct this hungarian first name: Adám
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Adám
+
+###Assistant:
+Ádám"
+Aqám,Ádám,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aqám
 
 ###Assistant:
 Ádám"
 Ádam,Ádám,"###Human:
-Correct this hungarian first name: Ádam
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ádam
 
 ###Assistant:
 Ádám"
 Ádám,Ádám,"###Human:
-Correct this hungarian first name: Ádám
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ádám
+
+###Assistant:
+Ádám"
+Áqam,Ádám,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Áqam
 
 ###Assistant:
 Ádám"
 Áqám,Ádám,"###Human:
-Correct this hungarian first name: Áqám
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Áqám
 
 ###Assistant:
 Ádám"
+Míián,Milán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Míián
+
+###Assistant:
+Milán"
+Mííán,Milán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mííán
+
+###Assistant:
+Milán"
+Mílan,Milán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mílan
+
+###Assistant:
+Milán"
 Mílán,Milán,"###Human:
-Correct this hungarian first name: Mílán
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mílán
+
+###Assistant:
+Milán"
+Miian,Milán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Miian
 
 ###Assistant:
 Milán"
 Miián,Milán,"###Human:
-Correct this hungarian first name: Miián
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Miián
+
+###Assistant:
+Milán"
+Miían,Milán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Miían
 
 ###Assistant:
 Milán"
 Miíán,Milán,"###Human:
-Correct this hungarian first name: Miíán
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Miíán
 
 ###Assistant:
 Milán"
 Milan,Milán,"###Human:
-Correct this hungarian first name: Milan
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Milan
 
 ###Assistant:
 Milán"
 Milán,Milán,"###Human:
-Correct this hungarian first name: Milán
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Milán
 
 ###Assistant:
 Milán"
-Mllán,Milán,"###Human:
-Correct this hungarian first name: Mllán
+Bavid,Dávid,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bavid
 
 ###Assistant:
-Milán"
-Mjlán,Milán,"###Human:
-Correct this hungarian first name: Mjlán
+Dávid"
+Bávíd,Dávid,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bávíd
 
 ###Assistant:
-Milán"
+Dávid"
 Bávid,Dávid,"###Human:
-Correct this hungarian first name: Bávid
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bávid
+
+###Assistant:
+Dávid"
+Báviq,Dávid,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Báviq
+
+###Assistant:
+Dávid"
+Bávld,Dávid,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bávld
+
+###Assistant:
+Dávid"
+Bávjd,Dávid,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bávjd
+
+###Assistant:
+Dávid"
+Davíd,Dávid,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Davíd
 
 ###Assistant:
 Dávid"
 David,Dávid,"###Human:
-Correct this hungarian first name: David
+Correct this hungarian first name, knowing that some letters in the word might have been changed: David
 
 ###Assistant:
 Dávid"
-Dávíd,Dávid,"###Human:
-Correct this hungarian first name: Dávíd
+Daviq,Dávid,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Daviq
 
 ###Assistant:
 Dávid"
-Dávid,Dávid,"###Human:
-Correct this hungarian first name: Dávid
+Davld,Dávid,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Davld
 
 ###Assistant:
 Dávid"
-Dáviq,Dávid,"###Human:
-Correct this hungarian first name: Dáviq
+Bótónd,Botond,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bótónd
 
 ###Assistant:
-Dávid"
-Dávld,Dávid,"###Human:
-Correct this hungarian first name: Dávld
+Botond"
+Bótönd,Botond,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bótönd
 
 ###Assistant:
-Dávid"
-Dávjd,Dávid,"###Human:
-Correct this hungarian first name: Dávjd
+Botond"
+Bótőnd,Botond,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bótőnd
 
 ###Assistant:
-Dávid"
-Pávid,Dávid,"###Human:
-Correct this hungarian first name: Pávid
-
-###Assistant:
-Dávid"
+Botond"
 Bótond,Botond,"###Human:
-Correct this hungarian first name: Bótond
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bótond
+
+###Assistant:
+Botond"
+Bótonq,Botond,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bótonq
+
+###Assistant:
+Botond"
+Bötónd,Botond,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bötónd
+
+###Assistant:
+Botond"
+Bötönd,Botond,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bötönd
+
+###Assistant:
+Botond"
+Bötőnd,Botond,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bötőnd
 
 ###Assistant:
 Botond"
 Bötond,Botond,"###Human:
-Correct this hungarian first name: Bötond
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bötond
 
 ###Assistant:
 Botond"
-Bőtond,Botond,"###Human:
-Correct this hungarian first name: Bőtond
-
-###Assistant:
-Botond"
-Botónd,Botond,"###Human:
-Correct this hungarian first name: Botónd
-
-###Assistant:
-Botond"
-Botönd,Botond,"###Human:
-Correct this hungarian first name: Botönd
-
-###Assistant:
-Botond"
-Botőnd,Botond,"###Human:
-Correct this hungarian first name: Botőnd
-
-###Assistant:
-Botond"
-Botond,Botond,"###Human:
-Correct this hungarian first name: Botond
-
-###Assistant:
-Botond"
-Botonq,Botond,"###Human:
-Correct this hungarian first name: Botonq
-
-###Assistant:
-Botond"
-Dotond,Botond,"###Human:
-Correct this hungarian first name: Dotond
-
-###Assistant:
-Botond"
-Potond,Botond,"###Human:
-Correct this hungarian first name: Potond
+Bötonq,Botond,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bötonq
 
 ###Assistant:
 Botond"
 Benett,Benett,"###Human:
-Correct this hungarian first name: Benett
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Benett
 
 ###Assistant:
 Benett"
 Benétt,Benett,"###Human:
-Correct this hungarian first name: Benétt
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Benétt
 
 ###Assistant:
 Benett"
 Benctt,Benett,"###Human:
-Correct this hungarian first name: Benctt
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Benctt
 
 ###Assistant:
 Benett"
 Bénett,Benett,"###Human:
-Correct this hungarian first name: Bénett
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bénett
+
+###Assistant:
+Benett"
+Bénétt,Benett,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bénétt
+
+###Assistant:
+Benett"
+Bénctt,Benett,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bénctt
 
 ###Assistant:
 Benett"
 Bcnett,Benett,"###Human:
-Correct this hungarian first name: Bcnett
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bcnett
+
+###Assistant:
+Benett"
+Bcnétt,Benett,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bcnétt
+
+###Assistant:
+Benett"
+Bcnctt,Benett,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bcnctt
 
 ###Assistant:
 Benett"
 Denett,Benett,"###Human:
-Correct this hungarian first name: Denett
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Denett
 
 ###Assistant:
 Benett"
-Penett,Benett,"###Human:
-Correct this hungarian first name: Penett
+Arón,Áron,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Arón
 
 ###Assistant:
-Benett"
+Áron"
+Arön,Áron,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Arön
+
+###Assistant:
+Áron"
+Arőn,Áron,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Arőn
+
+###Assistant:
+Áron"
 Aron,Áron,"###Human:
-Correct this hungarian first name: Aron
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aron
 
 ###Assistant:
 Áron"
 Árón,Áron,"###Human:
-Correct this hungarian first name: Árón
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Árón
 
 ###Assistant:
 Áron"
 Árön,Áron,"###Human:
-Correct this hungarian first name: Árön
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Árön
 
 ###Assistant:
 Áron"
 Árőn,Áron,"###Human:
-Correct this hungarian first name: Árőn
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Árőn
 
 ###Assistant:
 Áron"
 Áron,Áron,"###Human:
-Correct this hungarian first name: Áron
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Áron
 
 ###Assistant:
 Áron"
+Zsómbór,Zsombor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsómbór
+
+###Assistant:
+Zsombor"
+Zsómbör,Zsombor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsómbör
+
+###Assistant:
+Zsombor"
+Zsómbőr,Zsombor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsómbőr
+
+###Assistant:
+Zsombor"
 Zsómbor,Zsombor,"###Human:
-Correct this hungarian first name: Zsómbor
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsómbor
+
+###Assistant:
+Zsombor"
+Zsómqor,Zsombor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsómqor
+
+###Assistant:
+Zsombor"
+Zsömbór,Zsombor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsömbór
+
+###Assistant:
+Zsombor"
+Zsömbör,Zsombor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsömbör
+
+###Assistant:
+Zsombor"
+Zsömbőr,Zsombor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsömbőr
 
 ###Assistant:
 Zsombor"
 Zsömbor,Zsombor,"###Human:
-Correct this hungarian first name: Zsömbor
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsömbor
 
 ###Assistant:
 Zsombor"
-Zsőmbor,Zsombor,"###Human:
-Correct this hungarian first name: Zsőmbor
+Zsömqor,Zsombor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsömqor
 
 ###Assistant:
 Zsombor"
-Zsombór,Zsombor,"###Human:
-Correct this hungarian first name: Zsombór
+Baiazs,Balázs,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Baiazs
 
 ###Assistant:
-Zsombor"
-Zsombör,Zsombor,"###Human:
-Correct this hungarian first name: Zsombör
-
-###Assistant:
-Zsombor"
-Zsombőr,Zsombor,"###Human:
-Correct this hungarian first name: Zsombőr
-
-###Assistant:
-Zsombor"
-Zsombor,Zsombor,"###Human:
-Correct this hungarian first name: Zsombor
-
-###Assistant:
-Zsombor"
-Zsomqor,Zsombor,"###Human:
-Correct this hungarian first name: Zsomqor
-
-###Assistant:
-Zsombor"
+Balázs"
 Baiázs,Balázs,"###Human:
-Correct this hungarian first name: Baiázs
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Baiázs
+
+###Assistant:
+Balázs"
+Baíazs,Balázs,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Baíazs
 
 ###Assistant:
 Balázs"
 Baíázs,Balázs,"###Human:
-Correct this hungarian first name: Baíázs
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Baíázs
 
 ###Assistant:
 Balázs"
 Balazs,Balázs,"###Human:
-Correct this hungarian first name: Balazs
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Balazs
 
 ###Assistant:
 Balázs"
 Balázs,Balázs,"###Human:
-Correct this hungarian first name: Balázs
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Balázs
+
+###Assistant:
+Balázs"
+Báiázs,Balázs,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Báiázs
+
+###Assistant:
+Balázs"
+Báíázs,Balázs,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Báíázs
+
+###Assistant:
+Balázs"
+Bálazs,Balázs,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bálazs
 
 ###Assistant:
 Balázs"
 Bálázs,Balázs,"###Human:
-Correct this hungarian first name: Bálázs
-
-###Assistant:
-Balázs"
-Dalázs,Balázs,"###Human:
-Correct this hungarian first name: Dalázs
-
-###Assistant:
-Balázs"
-Palázs,Balázs,"###Human:
-Correct this hungarian first name: Palázs
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bálázs
 
 ###Assistant:
 Balázs"
 Mark,Márk,"###Human:
-Correct this hungarian first name: Mark
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mark
 
 ###Assistant:
 Márk"
 Márk,Márk,"###Human:
-Correct this hungarian first name: Márk
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Márk
 
 ###Assistant:
 Márk"
+Beter,Péter,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Beter
+
+###Assistant:
+Péter"
 Béter,Péter,"###Human:
-Correct this hungarian first name: Béter
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Béter
+
+###Assistant:
+Péter"
+Bétér,Péter,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bétér
+
+###Assistant:
+Péter"
+Bétcr,Péter,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bétcr
+
+###Assistant:
+Péter"
+Bcter,Péter,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bcter
+
+###Assistant:
+Péter"
+Deter,Péter,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Deter
 
 ###Assistant:
 Péter"
 Déter,Péter,"###Human:
-Correct this hungarian first name: Déter
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Déter
 
 ###Assistant:
 Péter"
-Peter,Péter,"###Human:
-Correct this hungarian first name: Peter
+Détér,Péter,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Détér
 
 ###Assistant:
 Péter"
-Péter,Péter,"###Human:
-Correct this hungarian first name: Péter
+Détcr,Péter,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Détcr
 
 ###Assistant:
 Péter"
-Pétér,Péter,"###Human:
-Correct this hungarian first name: Pétér
+Dcter,Péter,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Dcter
 
 ###Assistant:
 Péter"
-Pétcr,Péter,"###Human:
-Correct this hungarian first name: Pétcr
+Krístof,Kristóf,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Krístof
 
 ###Assistant:
-Péter"
-Pcter,Péter,"###Human:
-Correct this hungarian first name: Pcter
+Kristóf"
+Krístöf,Kristóf,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Krístöf
 
 ###Assistant:
-Péter"
+Kristóf"
+Krístőf,Kristóf,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Krístőf
+
+###Assistant:
+Kristóf"
 Krístóf,Kristóf,"###Human:
-Correct this hungarian first name: Krístóf
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Krístóf
 
 ###Assistant:
 Kristóf"
 Kristof,Kristóf,"###Human:
-Correct this hungarian first name: Kristof
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kristof
 
 ###Assistant:
 Kristóf"
 Kristöf,Kristóf,"###Human:
-Correct this hungarian first name: Kristöf
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kristöf
 
 ###Assistant:
 Kristóf"
 Kristőf,Kristóf,"###Human:
-Correct this hungarian first name: Kristőf
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kristőf
 
 ###Assistant:
 Kristóf"
 Kristóf,Kristóf,"###Human:
-Correct this hungarian first name: Kristóf
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kristóf
 
 ###Assistant:
 Kristóf"
-Krlstóf,Kristóf,"###Human:
-Correct this hungarian first name: Krlstóf
+Krlstof,Kristóf,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Krlstof
 
 ###Assistant:
 Kristóf"
-Krjstóf,Kristóf,"###Human:
-Correct this hungarian first name: Krjstóf
+Krlstöf,Kristóf,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Krlstöf
 
 ###Assistant:
 Kristóf"
+Zeteny,Zétény,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zeteny
+
+###Assistant:
+Zétény"
 Zetény,Zétény,"###Human:
-Correct this hungarian first name: Zetény
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zetény
+
+###Assistant:
+Zétény"
+Zetcny,Zétény,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zetcny
 
 ###Assistant:
 Zétény"
 Zéteny,Zétény,"###Human:
-Correct this hungarian first name: Zéteny
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zéteny
 
 ###Assistant:
 Zétény"
 Zétény,Zétény,"###Human:
-Correct this hungarian first name: Zétény
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zétény
 
 ###Assistant:
 Zétény"
 Zétcny,Zétény,"###Human:
-Correct this hungarian first name: Zétcny
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zétcny
+
+###Assistant:
+Zétény"
+Zcteny,Zétény,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zcteny
 
 ###Assistant:
 Zétény"
 Zctény,Zétény,"###Human:
-Correct this hungarian first name: Zctény
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zctény
 
 ###Assistant:
 Zétény"
+Zctcny,Zétény,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zctcny
+
+###Assistant:
+Zétény"
+Nímrod,Nimród,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nímrod
+
+###Assistant:
+Nimród"
+Nímröd,Nimród,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nímröd
+
+###Assistant:
+Nimród"
+Nímrőd,Nimród,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nímrőd
+
+###Assistant:
+Nimród"
 Nímród,Nimród,"###Human:
-Correct this hungarian first name: Nímród
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nímród
+
+###Assistant:
+Nimród"
+Nímróq,Nimród,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nímróq
 
 ###Assistant:
 Nimród"
 Nimrod,Nimród,"###Human:
-Correct this hungarian first name: Nimrod
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nimrod
+
+###Assistant:
+Nimród"
+Nimroq,Nimród,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nimroq
 
 ###Assistant:
 Nimród"
 Nimröd,Nimród,"###Human:
-Correct this hungarian first name: Nimröd
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nimröd
+
+###Assistant:
+Nimród"
+Nimröq,Nimród,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nimröq
 
 ###Assistant:
 Nimród"
 Nimrőd,Nimród,"###Human:
-Correct this hungarian first name: Nimrőd
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nimrőd
 
 ###Assistant:
 Nimród"
-Nimród,Nimród,"###Human:
-Correct this hungarian first name: Nimród
+Laszió,László,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Laszió
 
 ###Assistant:
-Nimród"
-Nimróq,Nimród,"###Human:
-Correct this hungarian first name: Nimróq
+László"
+Laszíó,László,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Laszíó
 
 ###Assistant:
-Nimród"
-Nlmród,Nimród,"###Human:
-Correct this hungarian first name: Nlmród
+László"
+Laszlo,László,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Laszlo
 
 ###Assistant:
-Nimród"
-Njmród,Nimród,"###Human:
-Correct this hungarian first name: Njmród
+László"
+Laszlö,László,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Laszlö
 
 ###Assistant:
-Nimród"
+László"
+Laszlő,László,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Laszlő
+
+###Assistant:
+László"
 Laszló,László,"###Human:
-Correct this hungarian first name: Laszló
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Laszló
+
+###Assistant:
+László"
+Lászio,László,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lászio
+
+###Assistant:
+László"
+Lásziö,László,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lásziö
+
+###Assistant:
+László"
+Lásziő,László,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lásziő
 
 ###Assistant:
 László"
 Lászió,László,"###Human:
-Correct this hungarian first name: Lászió
-
-###Assistant:
-László"
-Lászíó,László,"###Human:
-Correct this hungarian first name: Lászíó
-
-###Assistant:
-László"
-Lászlo,László,"###Human:
-Correct this hungarian first name: Lászlo
-
-###Assistant:
-László"
-Lászlö,László,"###Human:
-Correct this hungarian first name: Lászlö
-
-###Assistant:
-László"
-Lászlő,László,"###Human:
-Correct this hungarian first name: Lászlő
-
-###Assistant:
-László"
-László,László,"###Human:
-Correct this hungarian first name: László
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lászió
 
 ###Assistant:
 László"
 Benedek,Benedek,"###Human:
-Correct this hungarian first name: Benedek
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Benedek
 
 ###Assistant:
 Benedek"
 Benedék,Benedek,"###Human:
-Correct this hungarian first name: Benedék
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Benedék
 
 ###Assistant:
 Benedek"
 Benedck,Benedek,"###Human:
-Correct this hungarian first name: Benedck
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Benedck
 
 ###Assistant:
 Benedek"
 Beneqek,Benedek,"###Human:
-Correct this hungarian first name: Beneqek
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Beneqek
+
+###Assistant:
+Benedek"
+Beneqék,Benedek,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Beneqék
+
+###Assistant:
+Benedek"
+Beneqck,Benedek,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Beneqck
 
 ###Assistant:
 Benedek"
 Benédek,Benedek,"###Human:
-Correct this hungarian first name: Benédek
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Benédek
 
 ###Assistant:
 Benedek"
-Bencdek,Benedek,"###Human:
-Correct this hungarian first name: Bencdek
+Benédék,Benedek,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Benédék
 
 ###Assistant:
 Benedek"
-Bénedek,Benedek,"###Human:
-Correct this hungarian first name: Bénedek
+Benédck,Benedek,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Benédck
 
 ###Assistant:
 Benedek"
-Bcnedek,Benedek,"###Human:
-Correct this hungarian first name: Bcnedek
-
-###Assistant:
-Benedek"
-Denedek,Benedek,"###Human:
-Correct this hungarian first name: Denedek
-
-###Assistant:
-Benedek"
-Penedek,Benedek,"###Human:
-Correct this hungarian first name: Penedek
+Benéqek,Benedek,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Benéqek
 
 ###Assistant:
 Benedek"
 Tamas,Tamás,"###Human:
-Correct this hungarian first name: Tamas
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Tamas
 
 ###Assistant:
 Tamás"
 Tamás,Tamás,"###Human:
-Correct this hungarian first name: Tamás
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Tamás
+
+###Assistant:
+Tamás"
+Támas,Tamás,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Támas
 
 ###Assistant:
 Tamás"
 Támás,Tamás,"###Human:
-Correct this hungarian first name: Támás
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Támás
 
 ###Assistant:
 Tamás"
 Gergo,Gergő,"###Human:
-Correct this hungarian first name: Gergo
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gergo
 
 ###Assistant:
 Gergő"
 Gergó,Gergő,"###Human:
-Correct this hungarian first name: Gergó
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gergó
 
 ###Assistant:
 Gergő"
 Gergö,Gergő,"###Human:
-Correct this hungarian first name: Gergö
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gergö
 
 ###Assistant:
 Gergő"
 Gergő,Gergő,"###Human:
-Correct this hungarian first name: Gergő
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gergő
+
+###Assistant:
+Gergő"
+Gerqo,Gergő,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gerqo
+
+###Assistant:
+Gergő"
+Gerqó,Gergő,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gerqó
+
+###Assistant:
+Gergő"
+Gerqö,Gergő,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gerqö
 
 ###Assistant:
 Gergő"
 Gerqő,Gergő,"###Human:
-Correct this hungarian first name: Gerqő
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gerqő
 
 ###Assistant:
 Gergő"
-Gérgő,Gergő,"###Human:
-Correct this hungarian first name: Gérgő
+Gérgo,Gergő,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gérgo
 
 ###Assistant:
 Gergő"
-Gcrgő,Gergő,"###Human:
-Correct this hungarian first name: Gcrgő
+Gérgó,Gergő,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gérgó
 
 ###Assistant:
 Gergő"
+Batrík,Patrik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Batrík
+
+###Assistant:
+Patrik"
 Batrik,Patrik,"###Human:
-Correct this hungarian first name: Batrik
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Batrik
+
+###Assistant:
+Patrik"
+Batrlk,Patrik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Batrlk
+
+###Assistant:
+Patrik"
+Batrjk,Patrik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Batrjk
+
+###Assistant:
+Patrik"
+Bátrik,Patrik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bátrik
+
+###Assistant:
+Patrik"
+Datrík,Patrik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Datrík
 
 ###Assistant:
 Patrik"
 Datrik,Patrik,"###Human:
-Correct this hungarian first name: Datrik
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Datrik
 
 ###Assistant:
 Patrik"
-Patrík,Patrik,"###Human:
-Correct this hungarian first name: Patrík
+Datrlk,Patrik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Datrlk
 
 ###Assistant:
 Patrik"
-Patrik,Patrik,"###Human:
-Correct this hungarian first name: Patrik
+Datrjk,Patrik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Datrjk
 
 ###Assistant:
 Patrik"
-Patrlk,Patrik,"###Human:
-Correct this hungarian first name: Patrlk
-
-###Assistant:
-Patrik"
-Patrjk,Patrik,"###Human:
-Correct this hungarian first name: Patrjk
-
-###Assistant:
-Patrik"
-Pátrik,Patrik,"###Human:
-Correct this hungarian first name: Pátrik
+Dátrik,Patrik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Dátrik
 
 ###Assistant:
 Patrik"
 Zente,Zente,"###Human:
-Correct this hungarian first name: Zente
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zente
 
 ###Assistant:
 Zente"
 Zenté,Zente,"###Human:
-Correct this hungarian first name: Zenté
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zenté
 
 ###Assistant:
 Zente"
 Zentc,Zente,"###Human:
-Correct this hungarian first name: Zentc
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zentc
 
 ###Assistant:
 Zente"
 Zénte,Zente,"###Human:
-Correct this hungarian first name: Zénte
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zénte
+
+###Assistant:
+Zente"
+Zénté,Zente,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zénté
+
+###Assistant:
+Zente"
+Zéntc,Zente,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zéntc
 
 ###Assistant:
 Zente"
 Zcnte,Zente,"###Human:
-Correct this hungarian first name: Zcnte
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zcnte
 
 ###Assistant:
 Zente"
+Zcnté,Zente,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zcnté
+
+###Assistant:
+Zente"
+Zcntc,Zente,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zcntc
+
+###Assistant:
+Zente"
+Baiint,Bálint,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Baiint
+
+###Assistant:
+Bálint"
+Baíint,Bálint,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Baíint
+
+###Assistant:
+Bálint"
+Balínt,Bálint,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Balínt
+
+###Assistant:
+Bálint"
 Balint,Bálint,"###Human:
-Correct this hungarian first name: Balint
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Balint
+
+###Assistant:
+Bálint"
+Ballnt,Bálint,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ballnt
+
+###Assistant:
+Bálint"
+Baljnt,Bálint,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Baljnt
+
+###Assistant:
+Bálint"
+Báiínt,Bálint,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Báiínt
 
 ###Assistant:
 Bálint"
 Báiint,Bálint,"###Human:
-Correct this hungarian first name: Báiint
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Báiint
 
 ###Assistant:
 Bálint"
-Báíint,Bálint,"###Human:
-Correct this hungarian first name: Báíint
+Báilnt,Bálint,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Báilnt
 
 ###Assistant:
 Bálint"
-Bálínt,Bálint,"###Human:
-Correct this hungarian first name: Bálínt
-
-###Assistant:
-Bálint"
-Bálint,Bálint,"###Human:
-Correct this hungarian first name: Bálint
-
-###Assistant:
-Bálint"
-Bállnt,Bálint,"###Human:
-Correct this hungarian first name: Bállnt
-
-###Assistant:
-Bálint"
-Báljnt,Bálint,"###Human:
-Correct this hungarian first name: Báljnt
-
-###Assistant:
-Bálint"
-Dálint,Bálint,"###Human:
-Correct this hungarian first name: Dálint
-
-###Assistant:
-Bálint"
-Pálint,Bálint,"###Human:
-Correct this hungarian first name: Pálint
+Báijnt,Bálint,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Báijnt
 
 ###Assistant:
 Bálint"
 Andras,András,"###Human:
-Correct this hungarian first name: Andras
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Andras
 
 ###Assistant:
 András"
 András,András,"###Human:
-Correct this hungarian first name: András
+Correct this hungarian first name, knowing that some letters in the word might have been changed: András
+
+###Assistant:
+András"
+Anqras,András,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Anqras
 
 ###Assistant:
 András"
 Anqrás,András,"###Human:
-Correct this hungarian first name: Anqrás
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Anqrás
+
+###Assistant:
+András"
+Ándras,András,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ándras
 
 ###Assistant:
 András"
 Ándrás,András,"###Human:
-Correct this hungarian first name: Ándrás
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ándrás
 
 ###Assistant:
 András"
+Ánqrás,András,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ánqrás
+
+###Assistant:
+András"
+Zóitán,Zoltán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zóitán
+
+###Assistant:
+Zoltán"
+Zóítán,Zoltán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zóítán
+
+###Assistant:
+Zoltán"
+Zóltan,Zoltán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zóltan
+
+###Assistant:
+Zoltán"
 Zóltán,Zoltán,"###Human:
-Correct this hungarian first name: Zóltán
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zóltán
+
+###Assistant:
+Zoltán"
+Zöitán,Zoltán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zöitán
+
+###Assistant:
+Zoltán"
+Zöítán,Zoltán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zöítán
+
+###Assistant:
+Zoltán"
+Zöltan,Zoltán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zöltan
 
 ###Assistant:
 Zoltán"
 Zöltán,Zoltán,"###Human:
-Correct this hungarian first name: Zöltán
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zöltán
 
 ###Assistant:
 Zoltán"
-Zőltán,Zoltán,"###Human:
-Correct this hungarian first name: Zőltán
+Zőitán,Zoltán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zőitán
 
 ###Assistant:
 Zoltán"
-Zoitán,Zoltán,"###Human:
-Correct this hungarian first name: Zoitán
+Zőítán,Zoltán,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zőítán
 
 ###Assistant:
 Zoltán"
-Zoítán,Zoltán,"###Human:
-Correct this hungarian first name: Zoítán
+Attíia,Attila,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Attíia
 
 ###Assistant:
-Zoltán"
-Zoltan,Zoltán,"###Human:
-Correct this hungarian first name: Zoltan
+Attila"
+Attíía,Attila,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Attíía
 
 ###Assistant:
-Zoltán"
-Zoltán,Zoltán,"###Human:
-Correct this hungarian first name: Zoltán
-
-###Assistant:
-Zoltán"
+Attila"
 Attíla,Attila,"###Human:
-Correct this hungarian first name: Attíla
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Attíla
+
+###Assistant:
+Attila"
+Attílá,Attila,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Attílá
 
 ###Assistant:
 Attila"
 Attiia,Attila,"###Human:
-Correct this hungarian first name: Attiia
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Attiia
+
+###Assistant:
+Attila"
+Attiiá,Attila,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Attiiá
 
 ###Assistant:
 Attila"
 Attiía,Attila,"###Human:
-Correct this hungarian first name: Attiía
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Attiía
+
+###Assistant:
+Attila"
+Attiíá,Attila,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Attiíá
 
 ###Assistant:
 Attila"
 Attila,Attila,"###Human:
-Correct this hungarian first name: Attila
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Attila
 
 ###Assistant:
 Attila"
 Attilá,Attila,"###Human:
-Correct this hungarian first name: Attilá
-
-###Assistant:
-Attila"
-Attlla,Attila,"###Human:
-Correct this hungarian first name: Attlla
-
-###Assistant:
-Attila"
-Attjla,Attila,"###Human:
-Correct this hungarian first name: Attjla
-
-###Assistant:
-Attila"
-Áttila,Attila,"###Human:
-Correct this hungarian first name: Áttila
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Attilá
 
 ###Assistant:
 Attila"
 Barnabas,Barnabás,"###Human:
-Correct this hungarian first name: Barnabas
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Barnabas
 
 ###Assistant:
 Barnabás"
 Barnabás,Barnabás,"###Human:
-Correct this hungarian first name: Barnabás
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Barnabás
+
+###Assistant:
+Barnabás"
+Barnaqas,Barnabás,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Barnaqas
 
 ###Assistant:
 Barnabás"
 Barnaqás,Barnabás,"###Human:
-Correct this hungarian first name: Barnaqás
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Barnaqás
+
+###Assistant:
+Barnabás"
+Barnábas,Barnabás,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Barnábas
 
 ###Assistant:
 Barnabás"
 Barnábás,Barnabás,"###Human:
-Correct this hungarian first name: Barnábás
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Barnábás
+
+###Assistant:
+Barnabás"
+Barnáqás,Barnabás,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Barnáqás
+
+###Assistant:
+Barnabás"
+Bárnabas,Barnabás,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bárnabas
 
 ###Assistant:
 Barnabás"
 Bárnabás,Barnabás,"###Human:
-Correct this hungarian first name: Bárnabás
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bárnabás
 
 ###Assistant:
 Barnabás"
-Darnabás,Barnabás,"###Human:
-Correct this hungarian first name: Darnabás
+Bárnaqás,Barnabás,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bárnaqás
 
 ###Assistant:
 Barnabás"
-Parnabás,Barnabás,"###Human:
-Correct this hungarian first name: Parnabás
+Martón,Márton,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Martón
 
 ###Assistant:
-Barnabás"
+Márton"
+Martön,Márton,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Martön
+
+###Assistant:
+Márton"
+Martőn,Márton,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Martőn
+
+###Assistant:
+Márton"
 Marton,Márton,"###Human:
-Correct this hungarian first name: Marton
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Marton
 
 ###Assistant:
 Márton"
 Mártón,Márton,"###Human:
-Correct this hungarian first name: Mártón
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mártón
 
 ###Assistant:
 Márton"
 Mártön,Márton,"###Human:
-Correct this hungarian first name: Mártön
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mártön
 
 ###Assistant:
 Márton"
 Mártőn,Márton,"###Human:
-Correct this hungarian first name: Mártőn
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mártőn
 
 ###Assistant:
 Márton"
 Márton,Márton,"###Human:
-Correct this hungarian first name: Márton
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Márton
 
 ###Assistant:
 Márton"
+Húnór,Hunor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Húnór
+
+###Assistant:
+Hunor"
+Húnör,Hunor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Húnör
+
+###Assistant:
+Hunor"
+Húnőr,Hunor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Húnőr
+
+###Assistant:
+Hunor"
 Húnor,Hunor,"###Human:
-Correct this hungarian first name: Húnor
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Húnor
+
+###Assistant:
+Hunor"
+Hünór,Hunor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Hünór
+
+###Assistant:
+Hunor"
+Hünör,Hunor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Hünör
+
+###Assistant:
+Hunor"
+Hünőr,Hunor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Hünőr
 
 ###Assistant:
 Hunor"
 Hünor,Hunor,"###Human:
-Correct this hungarian first name: Hünor
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Hünor
 
 ###Assistant:
 Hunor"
-Hűnor,Hunor,"###Human:
-Correct this hungarian first name: Hűnor
+Hűnór,Hunor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Hűnór
 
 ###Assistant:
 Hunor"
-Hunór,Hunor,"###Human:
-Correct this hungarian first name: Hunór
+Hűnör,Hunor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Hűnör
 
 ###Assistant:
 Hunor"
-Hunör,Hunor,"###Human:
-Correct this hungarian first name: Hunör
+Kórnel,Kornél,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kórnel
 
 ###Assistant:
-Hunor"
-Hunőr,Hunor,"###Human:
-Correct this hungarian first name: Hunőr
+Kornél"
+Kórnéi,Kornél,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kórnéi
 
 ###Assistant:
-Hunor"
-Hunor,Hunor,"###Human:
-Correct this hungarian first name: Hunor
+Kornél"
+Kórnéí,Kornél,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kórnéí
 
 ###Assistant:
-Hunor"
+Kornél"
 Kórnél,Kornél,"###Human:
-Correct this hungarian first name: Kórnél
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kórnél
+
+###Assistant:
+Kornél"
+Kórncl,Kornél,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kórncl
+
+###Assistant:
+Kornél"
+Körnel,Kornél,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Körnel
+
+###Assistant:
+Kornél"
+Körnéi,Kornél,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Körnéi
+
+###Assistant:
+Kornél"
+Körnéí,Kornél,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Körnéí
 
 ###Assistant:
 Kornél"
 Körnél,Kornél,"###Human:
-Correct this hungarian first name: Körnél
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Körnél
 
 ###Assistant:
 Kornél"
-Kőrnél,Kornél,"###Human:
-Correct this hungarian first name: Kőrnél
-
-###Assistant:
-Kornél"
-Kornel,Kornél,"###Human:
-Correct this hungarian first name: Kornel
-
-###Assistant:
-Kornél"
-Kornéi,Kornél,"###Human:
-Correct this hungarian first name: Kornéi
-
-###Assistant:
-Kornél"
-Kornéí,Kornél,"###Human:
-Correct this hungarian first name: Kornéí
-
-###Assistant:
-Kornél"
-Kornél,Kornél,"###Human:
-Correct this hungarian first name: Kornél
-
-###Assistant:
-Kornél"
-Korncl,Kornél,"###Human:
-Correct this hungarian first name: Korncl
+Körncl,Kornél,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Körncl
 
 ###Assistant:
 Kornél"
 Martín,Martin,"###Human:
-Correct this hungarian first name: Martín
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Martín
 
 ###Assistant:
 Martin"
 Martin,Martin,"###Human:
-Correct this hungarian first name: Martin
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Martin
 
 ###Assistant:
 Martin"
 Martln,Martin,"###Human:
-Correct this hungarian first name: Martln
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Martln
 
 ###Assistant:
 Martin"
 Martjn,Martin,"###Human:
-Correct this hungarian first name: Martjn
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Martjn
+
+###Assistant:
+Martin"
+Mártín,Martin,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mártín
 
 ###Assistant:
 Martin"
 Mártin,Martin,"###Human:
-Correct this hungarian first name: Mártin
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mártin
 
 ###Assistant:
 Martin"
+Mártln,Martin,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mártln
+
+###Assistant:
+Martin"
+Mártjn,Martin,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mártjn
+
+###Assistant:
+Martin"
+Akós,Ákos,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Akós
+
+###Assistant:
+Ákos"
+Akös,Ákos,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Akös
+
+###Assistant:
+Ákos"
+Akős,Ákos,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Akős
+
+###Assistant:
+Ákos"
 Akos,Ákos,"###Human:
-Correct this hungarian first name: Akos
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Akos
 
 ###Assistant:
 Ákos"
 Ákós,Ákos,"###Human:
-Correct this hungarian first name: Ákós
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ákós
 
 ###Assistant:
 Ákos"
 Ákös,Ákos,"###Human:
-Correct this hungarian first name: Ákös
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ákös
 
 ###Assistant:
 Ákos"
 Ákős,Ákos,"###Human:
-Correct this hungarian first name: Ákős
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ákős
 
 ###Assistant:
 Ákos"
 Ákos,Ákos,"###Human:
-Correct this hungarian first name: Ákos
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ákos
 
 ###Assistant:
 Ákos"
+Gabór,Gábor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gabór
+
+###Assistant:
+Gábor"
+Gabör,Gábor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gabör
+
+###Assistant:
+Gábor"
+Gabőr,Gábor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gabőr
+
+###Assistant:
+Gábor"
 Gabor,Gábor,"###Human:
-Correct this hungarian first name: Gabor
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gabor
+
+###Assistant:
+Gábor"
+Gaqor,Gábor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gaqor
 
 ###Assistant:
 Gábor"
 Gábór,Gábor,"###Human:
-Correct this hungarian first name: Gábór
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gábór
 
 ###Assistant:
 Gábor"
 Gábör,Gábor,"###Human:
-Correct this hungarian first name: Gábör
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gábör
 
 ###Assistant:
 Gábor"
 Gábőr,Gábor,"###Human:
-Correct this hungarian first name: Gábőr
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gábőr
 
 ###Assistant:
 Gábor"
 Gábor,Gábor,"###Human:
-Correct this hungarian first name: Gábor
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gábor
 
 ###Assistant:
 Gábor"
-Gáqor,Gábor,"###Human:
-Correct this hungarian first name: Gáqor
+Gáqór,Gábor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gáqór
 
 ###Assistant:
 Gábor"
 Aiex,Alex,"###Human:
-Correct this hungarian first name: Aiex
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aiex
+
+###Assistant:
+Alex"
+Aiéx,Alex,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aiéx
+
+###Assistant:
+Alex"
+Aicx,Alex,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aicx
 
 ###Assistant:
 Alex"
 Aíex,Alex,"###Human:
-Correct this hungarian first name: Aíex
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aíex
+
+###Assistant:
+Alex"
+Aíéx,Alex,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aíéx
+
+###Assistant:
+Alex"
+Aícx,Alex,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aícx
 
 ###Assistant:
 Alex"
 Alex,Alex,"###Human:
-Correct this hungarian first name: Alex
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Alex
 
 ###Assistant:
 Alex"
 Aléx,Alex,"###Human:
-Correct this hungarian first name: Aléx
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aléx
 
 ###Assistant:
 Alex"
 Alcx,Alex,"###Human:
-Correct this hungarian first name: Alcx
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Alcx
 
 ###Assistant:
 Alex"
-Álex,Alex,"###Human:
-Correct this hungarian first name: Álex
+Áiex,Alex,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Áiex
 
 ###Assistant:
 Alex"
+Ístvan,István,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ístvan
+
+###Assistant:
+István"
 Ístván,István,"###Human:
-Correct this hungarian first name: Ístván
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ístván
 
 ###Assistant:
 István"
 Istvan,István,"###Human:
-Correct this hungarian first name: Istvan
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Istvan
 
 ###Assistant:
 István"
 István,István,"###Human:
-Correct this hungarian first name: István
+Correct this hungarian first name, knowing that some letters in the word might have been changed: István
+
+###Assistant:
+István"
+Jstvan,István,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Jstvan
 
 ###Assistant:
 István"
 Jstván,István,"###Human:
-Correct this hungarian first name: Jstván
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Jstván
 
 ###Assistant:
 István"
 Vínce,Vince,"###Human:
-Correct this hungarian first name: Vínce
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vínce
+
+###Assistant:
+Vince"
+Víncé,Vince,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Víncé
+
+###Assistant:
+Vince"
+Víncc,Vince,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Víncc
+
+###Assistant:
+Vince"
+Vínee,Vince,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vínee
+
+###Assistant:
+Vince"
+Vínoe,Vince,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vínoe
 
 ###Assistant:
 Vince"
 Vince,Vince,"###Human:
-Correct this hungarian first name: Vince
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vince
 
 ###Assistant:
 Vince"
 Vincé,Vince,"###Human:
-Correct this hungarian first name: Vincé
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vincé
 
 ###Assistant:
 Vince"
 Vincc,Vince,"###Human:
-Correct this hungarian first name: Vincc
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vincc
 
 ###Assistant:
 Vince"
 Vinee,Vince,"###Human:
-Correct this hungarian first name: Vinee
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vinee
 
 ###Assistant:
 Vince"
-Vinoe,Vince,"###Human:
-Correct this hungarian first name: Vinoe
+Vineé,Vince,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vineé
 
 ###Assistant:
 Vince"
-Vlnce,Vince,"###Human:
-Correct this hungarian first name: Vlnce
+Abei,Ábel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Abei
 
 ###Assistant:
-Vince"
-Vjnce,Vince,"###Human:
-Correct this hungarian first name: Vjnce
+Ábel"
+Abeí,Ábel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Abeí
 
 ###Assistant:
-Vince"
-Úince,Vince,"###Human:
-Correct this hungarian first name: Úince
-
-###Assistant:
-Vince"
-Üince,Vince,"###Human:
-Correct this hungarian first name: Üince
-
-###Assistant:
-Vince"
-Űince,Vince,"###Human:
-Correct this hungarian first name: Űince
-
-###Assistant:
-Vince"
-Uince,Vince,"###Human:
-Correct this hungarian first name: Uince
-
-###Assistant:
-Vince"
+Ábel"
 Abel,Ábel,"###Human:
-Correct this hungarian first name: Abel
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Abel
+
+###Assistant:
+Ábel"
+Abél,Ábel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Abél
+
+###Assistant:
+Ábel"
+Abcl,Ábel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Abcl
+
+###Assistant:
+Ábel"
+Aqel,Ábel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aqel
 
 ###Assistant:
 Ábel"
 Ábei,Ábel,"###Human:
-Correct this hungarian first name: Ábei
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ábei
 
 ###Assistant:
 Ábel"
 Ábeí,Ábel,"###Human:
-Correct this hungarian first name: Ábeí
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ábeí
 
 ###Assistant:
 Ábel"
 Ábel,Ábel,"###Human:
-Correct this hungarian first name: Ábel
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ábel
 
 ###Assistant:
 Ábel"
-Ábél,Ábel,"###Human:
-Correct this hungarian first name: Ábél
+Ábéi,Ábel,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ábéi
 
 ###Assistant:
 Ábel"
-Ábcl,Ábel,"###Human:
-Correct this hungarian first name: Ábcl
+Krísztíán,Krisztián,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Krísztíán
 
 ###Assistant:
-Ábel"
-Áqel,Ábel,"###Human:
-Correct this hungarian first name: Áqel
+Krisztián"
+Krísztian,Krisztián,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Krísztian
 
 ###Assistant:
-Ábel"
+Krisztián"
 Krísztián,Krisztián,"###Human:
-Correct this hungarian first name: Krísztián
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Krísztián
+
+###Assistant:
+Krisztián"
+Krísztlán,Krisztián,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Krísztlán
+
+###Assistant:
+Krisztián"
+Krísztján,Krisztián,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Krísztján
+
+###Assistant:
+Krisztián"
+Krisztían,Krisztián,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Krisztían
 
 ###Assistant:
 Krisztián"
 Krisztíán,Krisztián,"###Human:
-Correct this hungarian first name: Krisztíán
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Krisztíán
 
 ###Assistant:
 Krisztián"
 Krisztian,Krisztián,"###Human:
-Correct this hungarian first name: Krisztian
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Krisztian
 
 ###Assistant:
 Krisztián"
 Krisztián,Krisztián,"###Human:
-Correct this hungarian first name: Krisztián
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Krisztián
 
 ###Assistant:
 Krisztián"
-Krisztlán,Krisztián,"###Human:
-Correct this hungarian first name: Krisztlán
+Krisztlan,Krisztián,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Krisztlan
 
 ###Assistant:
 Krisztián"
-Krisztján,Krisztián,"###Human:
-Correct this hungarian first name: Krisztján
+Zsóit,Zsolt,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsóit
 
 ###Assistant:
-Krisztián"
-Krlsztián,Krisztián,"###Human:
-Correct this hungarian first name: Krlsztián
+Zsolt"
+Zsóít,Zsolt,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsóít
 
 ###Assistant:
-Krisztián"
-Krjsztián,Krisztián,"###Human:
-Correct this hungarian first name: Krjsztián
-
-###Assistant:
-Krisztián"
+Zsolt"
 Zsólt,Zsolt,"###Human:
-Correct this hungarian first name: Zsólt
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsólt
+
+###Assistant:
+Zsolt"
+Zsöit,Zsolt,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsöit
+
+###Assistant:
+Zsolt"
+Zsöít,Zsolt,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsöít
 
 ###Assistant:
 Zsolt"
 Zsölt,Zsolt,"###Human:
-Correct this hungarian first name: Zsölt
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsölt
+
+###Assistant:
+Zsolt"
+Zsőit,Zsolt,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsőit
+
+###Assistant:
+Zsolt"
+Zsőít,Zsolt,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsőít
 
 ###Assistant:
 Zsolt"
 Zsőlt,Zsolt,"###Human:
-Correct this hungarian first name: Zsőlt
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsőlt
 
 ###Assistant:
 Zsolt"
 Zsoit,Zsolt,"###Human:
-Correct this hungarian first name: Zsoit
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsoit
 
 ###Assistant:
 Zsolt"
-Zsoít,Zsolt,"###Human:
-Correct this hungarian first name: Zsoít
+Ianos,János,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ianos
 
 ###Assistant:
-Zsolt"
-Zsolt,Zsolt,"###Human:
-Correct this hungarian first name: Zsolt
+János"
+Iánós,János,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Iánós
 
 ###Assistant:
-Zsolt"
+János"
+Iánös,János,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Iánös
+
+###Assistant:
+János"
+Iánős,János,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Iánős
+
+###Assistant:
+János"
 Iános,János,"###Human:
-Correct this hungarian first name: Iános
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Iános
+
+###Assistant:
+János"
+Íanos,János,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Íanos
+
+###Assistant:
+János"
+Íánós,János,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Íánós
+
+###Assistant:
+János"
+Íánös,János,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Íánös
+
+###Assistant:
+János"
+Íánős,János,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Íánős
 
 ###Assistant:
 János"
 Íános,János,"###Human:
-Correct this hungarian first name: Íános
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Íános
 
 ###Assistant:
 János"
-Janos,János,"###Human:
-Correct this hungarian first name: Janos
+Nóien,Nolen,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nóien
 
 ###Assistant:
-János"
-Jánós,János,"###Human:
-Correct this hungarian first name: Jánós
+Nolen"
+Nóíen,Nolen,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nóíen
 
 ###Assistant:
-János"
-Jánös,János,"###Human:
-Correct this hungarian first name: Jánös
-
-###Assistant:
-János"
-Jánős,János,"###Human:
-Correct this hungarian first name: Jánős
-
-###Assistant:
-János"
-János,János,"###Human:
-Correct this hungarian first name: János
-
-###Assistant:
-János"
+Nolen"
 Nólen,Nolen,"###Human:
-Correct this hungarian first name: Nólen
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nólen
+
+###Assistant:
+Nolen"
+Nólén,Nolen,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nólén
+
+###Assistant:
+Nolen"
+Nólcn,Nolen,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nólcn
+
+###Assistant:
+Nolen"
+Nöien,Nolen,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nöien
+
+###Assistant:
+Nolen"
+Nöíen,Nolen,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nöíen
 
 ###Assistant:
 Nolen"
 Nölen,Nolen,"###Human:
-Correct this hungarian first name: Nölen
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nölen
 
 ###Assistant:
 Nolen"
-Nőlen,Nolen,"###Human:
-Correct this hungarian first name: Nőlen
+Nölén,Nolen,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nölén
 
 ###Assistant:
 Nolen"
-Noien,Nolen,"###Human:
-Correct this hungarian first name: Noien
-
-###Assistant:
-Nolen"
-Noíen,Nolen,"###Human:
-Correct this hungarian first name: Noíen
-
-###Assistant:
-Nolen"
-Nolen,Nolen,"###Human:
-Correct this hungarian first name: Nolen
-
-###Assistant:
-Nolen"
-Nolén,Nolen,"###Human:
-Correct this hungarian first name: Nolén
-
-###Assistant:
-Nolen"
-Nolcn,Nolen,"###Human:
-Correct this hungarian first name: Nolcn
+Nölcn,Nolen,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nölcn
 
 ###Assistant:
 Nolen"
 Erík,Erik,"###Human:
-Correct this hungarian first name: Erík
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Erík
 
 ###Assistant:
 Erik"
 Erik,Erik,"###Human:
-Correct this hungarian first name: Erik
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Erik
 
 ###Assistant:
 Erik"
 Erlk,Erik,"###Human:
-Correct this hungarian first name: Erlk
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Erlk
 
 ###Assistant:
 Erik"
 Erjk,Erik,"###Human:
-Correct this hungarian first name: Erjk
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Erjk
+
+###Assistant:
+Erik"
+Érík,Erik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Érík
 
 ###Assistant:
 Erik"
 Érik,Erik,"###Human:
-Correct this hungarian first name: Érik
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Érik
+
+###Assistant:
+Erik"
+Érlk,Erik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Érlk
+
+###Assistant:
+Erik"
+Érjk,Erik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Érjk
+
+###Assistant:
+Erik"
+Frík,Erik,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Frík
 
 ###Assistant:
 Erik"
 Frik,Erik,"###Human:
-Correct this hungarian first name: Frik
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Frik
 
 ###Assistant:
 Erik"
 Bendeguz,Bendegúz,"###Human:
-Correct this hungarian first name: Bendeguz
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bendeguz
 
 ###Assistant:
 Bendegúz"
 Bendegüz,Bendegúz,"###Human:
-Correct this hungarian first name: Bendegüz
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bendegüz
 
 ###Assistant:
 Bendegúz"
 Bendegűz,Bendegúz,"###Human:
-Correct this hungarian first name: Bendegűz
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bendegűz
 
 ###Assistant:
 Bendegúz"
 Bendegúz,Bendegúz,"###Human:
-Correct this hungarian first name: Bendegúz
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bendegúz
+
+###Assistant:
+Bendegúz"
+Bendequz,Bendegúz,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bendequz
+
+###Assistant:
+Bendegúz"
+Bendeqüz,Bendegúz,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bendeqüz
+
+###Assistant:
+Bendegúz"
+Bendeqűz,Bendegúz,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bendeqűz
 
 ###Assistant:
 Bendegúz"
 Bendeqúz,Bendegúz,"###Human:
-Correct this hungarian first name: Bendeqúz
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bendeqúz
 
 ###Assistant:
 Bendegúz"
-Bendégúz,Bendegúz,"###Human:
-Correct this hungarian first name: Bendégúz
+Bendéguz,Bendegúz,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bendéguz
 
 ###Assistant:
 Bendegúz"
-Bendcgúz,Bendegúz,"###Human:
-Correct this hungarian first name: Bendcgúz
+Bendégüz,Bendegúz,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bendégüz
 
 ###Assistant:
 Bendegúz"
-Benqegúz,Bendegúz,"###Human:
-Correct this hungarian first name: Benqegúz
+Sandór,Sándor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Sandór
 
 ###Assistant:
-Bendegúz"
-Béndegúz,Bendegúz,"###Human:
-Correct this hungarian first name: Béndegúz
+Sándor"
+Sandör,Sándor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Sandör
 
 ###Assistant:
-Bendegúz"
-Bcndegúz,Bendegúz,"###Human:
-Correct this hungarian first name: Bcndegúz
+Sándor"
+Sandőr,Sándor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Sandőr
 
 ###Assistant:
-Bendegúz"
-Dendegúz,Bendegúz,"###Human:
-Correct this hungarian first name: Dendegúz
-
-###Assistant:
-Bendegúz"
-Pendegúz,Bendegúz,"###Human:
-Correct this hungarian first name: Pendegúz
-
-###Assistant:
-Bendegúz"
+Sándor"
 Sandor,Sándor,"###Human:
-Correct this hungarian first name: Sandor
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Sandor
+
+###Assistant:
+Sándor"
+Sanqor,Sándor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Sanqor
 
 ###Assistant:
 Sándor"
 Sándór,Sándor,"###Human:
-Correct this hungarian first name: Sándór
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Sándór
 
 ###Assistant:
 Sándor"
 Sándör,Sándor,"###Human:
-Correct this hungarian first name: Sándör
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Sándör
 
 ###Assistant:
 Sándor"
 Sándőr,Sándor,"###Human:
-Correct this hungarian first name: Sándőr
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Sándőr
 
 ###Assistant:
 Sándor"
 Sándor,Sándor,"###Human:
-Correct this hungarian first name: Sándor
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Sándor
 
 ###Assistant:
 Sándor"
-Sánqor,Sándor,"###Human:
-Correct this hungarian first name: Sánqor
+Sánqór,Sándor,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Sánqór
 
 ###Assistant:
 Sándor"
 Hanna,Hanna,"###Human:
-Correct this hungarian first name: Hanna
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Hanna
 
 ###Assistant:
 Hanna"
 Hanná,Hanna,"###Human:
-Correct this hungarian first name: Hanná
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Hanná
 
 ###Assistant:
 Hanna"
 Hánna,Hanna,"###Human:
-Correct this hungarian first name: Hánna
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Hánna
+
+###Assistant:
+Hanna"
+Hánná,Hanna,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Hánná
 
 ###Assistant:
 Hanna"
 Anna,Anna,"###Human:
-Correct this hungarian first name: Anna
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Anna
 
 ###Assistant:
 Anna"
 Anná,Anna,"###Human:
-Correct this hungarian first name: Anná
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Anná
 
 ###Assistant:
 Anna"
 Ánna,Anna,"###Human:
-Correct this hungarian first name: Ánna
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ánna
 
 ###Assistant:
 Anna"
+Ánná,Anna,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ánná
+
+###Assistant:
+Anna"
+Zóe,Zoé,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zóe
+
+###Assistant:
+Zoé"
 Zóé,Zoé,"###Human:
-Correct this hungarian first name: Zóé
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zóé
+
+###Assistant:
+Zoé"
+Zóc,Zoé,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zóc
+
+###Assistant:
+Zoé"
+Zöe,Zoé,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zöe
 
 ###Assistant:
 Zoé"
 Zöé,Zoé,"###Human:
-Correct this hungarian first name: Zöé
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zöé
+
+###Assistant:
+Zoé"
+Zöc,Zoé,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zöc
+
+###Assistant:
+Zoé"
+Zőe,Zoé,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zőe
 
 ###Assistant:
 Zoé"
 Zőé,Zoé,"###Human:
-Correct this hungarian first name: Zőé
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zőé
+
+###Assistant:
+Zoé"
+Zőc,Zoé,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zőc
 
 ###Assistant:
 Zoé"
 Zoe,Zoé,"###Human:
-Correct this hungarian first name: Zoe
-
-###Assistant:
-Zoé"
-Zoé,Zoé,"###Human:
-Correct this hungarian first name: Zoé
-
-###Assistant:
-Zoé"
-Zoc,Zoé,"###Human:
-Correct this hungarian first name: Zoc
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zoe
 
 ###Assistant:
 Zoé"
 Lena,Léna,"###Human:
-Correct this hungarian first name: Lena
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lena
+
+###Assistant:
+Léna"
+Lená,Léna,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lená
 
 ###Assistant:
 Léna"
 Léna,Léna,"###Human:
-Correct this hungarian first name: Léna
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Léna
 
 ###Assistant:
 Léna"
 Léná,Léna,"###Human:
-Correct this hungarian first name: Léná
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Léná
 
 ###Assistant:
 Léna"
 Lcna,Léna,"###Human:
-Correct this hungarian first name: Lcna
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lcna
+
+###Assistant:
+Léna"
+Lcná,Léna,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lcná
 
 ###Assistant:
 Léna"
 Lúca,Luca,"###Human:
-Correct this hungarian first name: Lúca
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lúca
+
+###Assistant:
+Luca"
+Lúcá,Luca,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lúcá
+
+###Assistant:
+Luca"
+Lúea,Luca,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lúea
+
+###Assistant:
+Luca"
+Lúoa,Luca,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lúoa
 
 ###Assistant:
 Luca"
 Lüca,Luca,"###Human:
-Correct this hungarian first name: Lüca
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lüca
+
+###Assistant:
+Luca"
+Lücá,Luca,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lücá
+
+###Assistant:
+Luca"
+Lüea,Luca,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lüea
+
+###Assistant:
+Luca"
+Lüoa,Luca,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lüoa
 
 ###Assistant:
 Luca"
 Lűca,Luca,"###Human:
-Correct this hungarian first name: Lűca
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lűca
 
 ###Assistant:
 Luca"
-Luca,Luca,"###Human:
-Correct this hungarian first name: Luca
-
-###Assistant:
-Luca"
-Lucá,Luca,"###Human:
-Correct this hungarian first name: Lucá
-
-###Assistant:
-Luca"
-Luea,Luca,"###Human:
-Correct this hungarian first name: Luea
-
-###Assistant:
-Luca"
-Luoa,Luca,"###Human:
-Correct this hungarian first name: Luoa
+Lűcá,Luca,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lűcá
 
 ###Assistant:
 Luca"
 Emma,Emma,"###Human:
-Correct this hungarian first name: Emma
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Emma
 
 ###Assistant:
 Emma"
 Emmá,Emma,"###Human:
-Correct this hungarian first name: Emmá
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Emmá
 
 ###Assistant:
 Emma"
 Émma,Emma,"###Human:
-Correct this hungarian first name: Émma
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Émma
+
+###Assistant:
+Emma"
+Émmá,Emma,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Émmá
 
 ###Assistant:
 Emma"
 Fmma,Emma,"###Human:
-Correct this hungarian first name: Fmma
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fmma
 
 ###Assistant:
 Emma"
+Fmmá,Emma,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fmmá
+
+###Assistant:
+Emma"
+Zsofía,Zsófia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsofía
+
+###Assistant:
+Zsófia"
 Zsofia,Zsófia,"###Human:
-Correct this hungarian first name: Zsofia
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsofia
+
+###Assistant:
+Zsófia"
+Zsofiá,Zsófia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsofiá
+
+###Assistant:
+Zsófia"
+Zsofla,Zsófia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsofla
+
+###Assistant:
+Zsófia"
+Zsofja,Zsófia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsofja
+
+###Assistant:
+Zsófia"
+Zsöfía,Zsófia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsöfía
 
 ###Assistant:
 Zsófia"
 Zsöfia,Zsófia,"###Human:
-Correct this hungarian first name: Zsöfia
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsöfia
 
 ###Assistant:
 Zsófia"
-Zsőfia,Zsófia,"###Human:
-Correct this hungarian first name: Zsőfia
+Zsöfiá,Zsófia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsöfiá
 
 ###Assistant:
 Zsófia"
-Zsófía,Zsófia,"###Human:
-Correct this hungarian first name: Zsófía
+Zsöfla,Zsófia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsöfla
 
 ###Assistant:
 Zsófia"
-Zsófia,Zsófia,"###Human:
-Correct this hungarian first name: Zsófia
+Zsöfja,Zsófia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zsöfja
 
 ###Assistant:
 Zsófia"
-Zsófiá,Zsófia,"###Human:
-Correct this hungarian first name: Zsófiá
+Bógiárka,Boglárka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bógiárka
 
 ###Assistant:
-Zsófia"
-Zsófla,Zsófia,"###Human:
-Correct this hungarian first name: Zsófla
+Boglárka"
+Bógíárka,Boglárka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bógíárka
 
 ###Assistant:
-Zsófia"
-Zsófja,Zsófia,"###Human:
-Correct this hungarian first name: Zsófja
+Boglárka"
+Bóglarka,Boglárka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bóglarka
 
 ###Assistant:
-Zsófia"
+Boglárka"
 Bóglárka,Boglárka,"###Human:
-Correct this hungarian first name: Bóglárka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bóglárka
+
+###Assistant:
+Boglárka"
+Bóglárká,Boglárka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bóglárká
+
+###Assistant:
+Boglárka"
+Bóqlárka,Boglárka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bóqlárka
+
+###Assistant:
+Boglárka"
+Bögiárka,Boglárka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bögiárka
+
+###Assistant:
+Boglárka"
+Bögíárka,Boglárka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bögíárka
+
+###Assistant:
+Boglárka"
+Böglarka,Boglárka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Böglarka
 
 ###Assistant:
 Boglárka"
 Böglárka,Boglárka,"###Human:
-Correct this hungarian first name: Böglárka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Böglárka
 
 ###Assistant:
 Boglárka"
-Bőglárka,Boglárka,"###Human:
-Correct this hungarian first name: Bőglárka
+Líii,Lili,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Líii
 
 ###Assistant:
-Boglárka"
-Bogiárka,Boglárka,"###Human:
-Correct this hungarian first name: Bogiárka
+Lili"
+Lííi,Lili,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lííi
 
 ###Assistant:
-Boglárka"
-Bogíárka,Boglárka,"###Human:
-Correct this hungarian first name: Bogíárka
+Lili"
+Lílí,Lili,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lílí
 
 ###Assistant:
-Boglárka"
-Boglarka,Boglárka,"###Human:
-Correct this hungarian first name: Boglarka
-
-###Assistant:
-Boglárka"
-Boglárka,Boglárka,"###Human:
-Correct this hungarian first name: Boglárka
-
-###Assistant:
-Boglárka"
-Boglárká,Boglárka,"###Human:
-Correct this hungarian first name: Boglárká
-
-###Assistant:
-Boglárka"
-Boqlárka,Boglárka,"###Human:
-Correct this hungarian first name: Boqlárka
-
-###Assistant:
-Boglárka"
-Doglárka,Boglárka,"###Human:
-Correct this hungarian first name: Doglárka
-
-###Assistant:
-Boglárka"
-Poglárka,Boglárka,"###Human:
-Correct this hungarian first name: Poglárka
-
-###Assistant:
-Boglárka"
+Lili"
 Líli,Lili,"###Human:
-Correct this hungarian first name: Líli
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Líli
+
+###Assistant:
+Lili"
+Líll,Lili,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Líll
+
+###Assistant:
+Lili"
+Lílj,Lili,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lílj
+
+###Assistant:
+Lili"
+Liií,Lili,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Liií
 
 ###Assistant:
 Lili"
 Liii,Lili,"###Human:
-Correct this hungarian first name: Liii
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Liii
 
 ###Assistant:
 Lili"
-Liíi,Lili,"###Human:
-Correct this hungarian first name: Liíi
+Liil,Lili,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Liil
 
 ###Assistant:
 Lili"
-Lilí,Lili,"###Human:
-Correct this hungarian first name: Lilí
-
-###Assistant:
-Lili"
-Lili,Lili,"###Human:
-Correct this hungarian first name: Lili
-
-###Assistant:
-Lili"
-Lill,Lili,"###Human:
-Correct this hungarian first name: Lill
-
-###Assistant:
-Lili"
-Lilj,Lili,"###Human:
-Correct this hungarian first name: Lilj
-
-###Assistant:
-Lili"
-Llli,Lili,"###Human:
-Correct this hungarian first name: Llli
-
-###Assistant:
-Lili"
-Ljli,Lili,"###Human:
-Correct this hungarian first name: Ljli
+Liij,Lili,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Liij
 
 ###Assistant:
 Lili"
 Míra,Mira,"###Human:
-Correct this hungarian first name: Míra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Míra
+
+###Assistant:
+Mira"
+Mírá,Mira,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mírá
 
 ###Assistant:
 Mira"
 Mira,Mira,"###Human:
-Correct this hungarian first name: Mira
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mira
 
 ###Assistant:
 Mira"
 Mirá,Mira,"###Human:
-Correct this hungarian first name: Mirá
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mirá
 
 ###Assistant:
 Mira"
 Mlra,Mira,"###Human:
-Correct this hungarian first name: Mlra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mlra
+
+###Assistant:
+Mira"
+Mlrá,Mira,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mlrá
 
 ###Assistant:
 Mira"
 Mjra,Mira,"###Human:
-Correct this hungarian first name: Mjra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mjra
 
 ###Assistant:
 Mira"
+Mjrá,Mira,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mjrá
+
+###Assistant:
+Mira"
+Líiien,Lilien,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Líiien
+
+###Assistant:
+Lilien"
+Lííien,Lilien,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lííien
+
+###Assistant:
+Lilien"
+Lílíen,Lilien,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lílíen
+
+###Assistant:
+Lilien"
 Lílien,Lilien,"###Human:
-Correct this hungarian first name: Lílien
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lílien
+
+###Assistant:
+Lilien"
+Lílién,Lilien,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lílién
+
+###Assistant:
+Lilien"
+Lílicn,Lilien,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lílicn
+
+###Assistant:
+Lilien"
+Líllen,Lilien,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Líllen
+
+###Assistant:
+Lilien"
+Líljen,Lilien,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Líljen
+
+###Assistant:
+Lilien"
+Liiíen,Lilien,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Liiíen
 
 ###Assistant:
 Lilien"
 Liiien,Lilien,"###Human:
-Correct this hungarian first name: Liiien
-
-###Assistant:
-Lilien"
-Liíien,Lilien,"###Human:
-Correct this hungarian first name: Liíien
-
-###Assistant:
-Lilien"
-Lilíen,Lilien,"###Human:
-Correct this hungarian first name: Lilíen
-
-###Assistant:
-Lilien"
-Lilien,Lilien,"###Human:
-Correct this hungarian first name: Lilien
-
-###Assistant:
-Lilien"
-Lilién,Lilien,"###Human:
-Correct this hungarian first name: Lilién
-
-###Assistant:
-Lilien"
-Lilicn,Lilien,"###Human:
-Correct this hungarian first name: Lilicn
-
-###Assistant:
-Lilien"
-Lillen,Lilien,"###Human:
-Correct this hungarian first name: Lillen
-
-###Assistant:
-Lilien"
-Liljen,Lilien,"###Human:
-Correct this hungarian first name: Liljen
-
-###Assistant:
-Lilien"
-Lllien,Lilien,"###Human:
-Correct this hungarian first name: Lllien
-
-###Assistant:
-Lilien"
-Ljlien,Lilien,"###Human:
-Correct this hungarian first name: Ljlien
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Liiien
 
 ###Assistant:
 Lilien"
 Nora,Nóra,"###Human:
-Correct this hungarian first name: Nora
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nora
+
+###Assistant:
+Nóra"
+Norá,Nóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Norá
 
 ###Assistant:
 Nóra"
 Nöra,Nóra,"###Human:
-Correct this hungarian first name: Nöra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nöra
+
+###Assistant:
+Nóra"
+Nörá,Nóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nörá
 
 ###Assistant:
 Nóra"
 Nőra,Nóra,"###Human:
-Correct this hungarian first name: Nőra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nőra
+
+###Assistant:
+Nóra"
+Nőrá,Nóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nőrá
 
 ###Assistant:
 Nóra"
 Nóra,Nóra,"###Human:
-Correct this hungarian first name: Nóra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nóra
 
 ###Assistant:
 Nóra"
 Nórá,Nóra,"###Human:
-Correct this hungarian first name: Nórá
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nórá
 
 ###Assistant:
 Nóra"
 Laúra,Laura,"###Human:
-Correct this hungarian first name: Laúra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Laúra
+
+###Assistant:
+Laura"
+Laúrá,Laura,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Laúrá
 
 ###Assistant:
 Laura"
 Laüra,Laura,"###Human:
-Correct this hungarian first name: Laüra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Laüra
+
+###Assistant:
+Laura"
+Laürá,Laura,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Laürá
 
 ###Assistant:
 Laura"
 Laűra,Laura,"###Human:
-Correct this hungarian first name: Laűra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Laűra
+
+###Assistant:
+Laura"
+Laűrá,Laura,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Laűrá
 
 ###Assistant:
 Laura"
 Laura,Laura,"###Human:
-Correct this hungarian first name: Laura
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Laura
 
 ###Assistant:
 Laura"
 Laurá,Laura,"###Human:
-Correct this hungarian first name: Laurá
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Laurá
 
 ###Assistant:
 Laura"
-Láura,Laura,"###Human:
-Correct this hungarian first name: Láura
+Láúra,Laura,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Láúra
+
+###Assistant:
+Laura"
+Láüra,Laura,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Láüra
 
 ###Assistant:
 Laura"
 Lara,Lara,"###Human:
-Correct this hungarian first name: Lara
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lara
 
 ###Assistant:
 Lara"
 Lará,Lara,"###Human:
-Correct this hungarian first name: Lará
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lará
 
 ###Assistant:
 Lara"
 Lára,Lara,"###Human:
-Correct this hungarian first name: Lára
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lára
+
+###Assistant:
+Lara"
+Lárá,Lara,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lárá
 
 ###Assistant:
 Lara"
 Maia,Maja,"###Human:
-Correct this hungarian first name: Maia
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Maia
+
+###Assistant:
+Maja"
+Maiá,Maja,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Maiá
 
 ###Assistant:
 Maja"
 Maía,Maja,"###Human:
-Correct this hungarian first name: Maía
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Maía
+
+###Assistant:
+Maja"
+Maíá,Maja,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Maíá
 
 ###Assistant:
 Maja"
 Maja,Maja,"###Human:
-Correct this hungarian first name: Maja
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Maja
 
 ###Assistant:
 Maja"
 Majá,Maja,"###Human:
-Correct this hungarian first name: Majá
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Majá
+
+###Assistant:
+Maja"
+Máia,Maja,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Máia
+
+###Assistant:
+Maja"
+Máía,Maja,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Máía
 
 ###Assistant:
 Maja"
 Mája,Maja,"###Human:
-Correct this hungarian first name: Mája
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Mája
+
+###Assistant:
+Maja"
+Májá,Maja,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Májá
 
 ###Assistant:
 Maja"
 Fanní,Fanni,"###Human:
-Correct this hungarian first name: Fanní
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fanní
 
 ###Assistant:
 Fanni"
 Fanni,Fanni,"###Human:
-Correct this hungarian first name: Fanni
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fanni
 
 ###Assistant:
 Fanni"
 Fannl,Fanni,"###Human:
-Correct this hungarian first name: Fannl
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fannl
 
 ###Assistant:
 Fanni"
 Fannj,Fanni,"###Human:
-Correct this hungarian first name: Fannj
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fannj
+
+###Assistant:
+Fanni"
+Fánní,Fanni,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fánní
 
 ###Assistant:
 Fanni"
 Fánni,Fanni,"###Human:
-Correct this hungarian first name: Fánni
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fánni
+
+###Assistant:
+Fanni"
+Fánnl,Fanni,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fánnl
+
+###Assistant:
+Fanni"
+Fánnj,Fanni,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fánnj
+
+###Assistant:
+Fanni"
+Eanní,Fanni,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Eanní
 
 ###Assistant:
 Fanni"
 Eanni,Fanni,"###Human:
-Correct this hungarian first name: Eanni
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Eanni
 
 ###Assistant:
 Fanni"
-Éanni,Fanni,"###Human:
-Correct this hungarian first name: Éanni
+Iazmin,Jázmin,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Iazmin
 
 ###Assistant:
-Fanni"
+Jázmin"
+Iázmín,Jázmin,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Iázmín
+
+###Assistant:
+Jázmin"
 Iázmin,Jázmin,"###Human:
-Correct this hungarian first name: Iázmin
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Iázmin
+
+###Assistant:
+Jázmin"
+Iázmln,Jázmin,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Iázmln
+
+###Assistant:
+Jázmin"
+Iázmjn,Jázmin,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Iázmjn
+
+###Assistant:
+Jázmin"
+Íazmin,Jázmin,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Íazmin
+
+###Assistant:
+Jázmin"
+Íázmín,Jázmin,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Íázmín
 
 ###Assistant:
 Jázmin"
 Íázmin,Jázmin,"###Human:
-Correct this hungarian first name: Íázmin
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Íázmin
 
 ###Assistant:
 Jázmin"
-Jazmin,Jázmin,"###Human:
-Correct this hungarian first name: Jazmin
+Íázmln,Jázmin,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Íázmln
 
 ###Assistant:
 Jázmin"
-Jázmín,Jázmin,"###Human:
-Correct this hungarian first name: Jázmín
+Íázmjn,Jázmin,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Íázmjn
 
 ###Assistant:
 Jázmin"
-Jázmin,Jázmin,"###Human:
-Correct this hungarian first name: Jázmin
+Ízabeila,Izabella,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ízabeila
 
 ###Assistant:
-Jázmin"
-Jázmln,Jázmin,"###Human:
-Correct this hungarian first name: Jázmln
+Izabella"
+Ízabeíla,Izabella,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ízabeíla
 
 ###Assistant:
-Jázmin"
-Jázmjn,Jázmin,"###Human:
-Correct this hungarian first name: Jázmjn
+Izabella"
+Ízabelia,Izabella,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ízabelia
 
 ###Assistant:
-Jázmin"
+Izabella"
+Ízabelía,Izabella,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ízabelía
+
+###Assistant:
+Izabella"
 Ízabella,Izabella,"###Human:
-Correct this hungarian first name: Ízabella
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ízabella
 
 ###Assistant:
 Izabella"
-Izabeila,Izabella,"###Human:
-Correct this hungarian first name: Izabeila
+Ízabellá,Izabella,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ízabellá
 
 ###Assistant:
 Izabella"
-Izabeíla,Izabella,"###Human:
-Correct this hungarian first name: Izabeíla
+Ízabélla,Izabella,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ízabélla
 
 ###Assistant:
 Izabella"
-Izabelia,Izabella,"###Human:
-Correct this hungarian first name: Izabelia
+Ízabclla,Izabella,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ízabclla
 
 ###Assistant:
 Izabella"
-Izabelía,Izabella,"###Human:
-Correct this hungarian first name: Izabelía
+Ízaqella,Izabella,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ízaqella
 
 ###Assistant:
 Izabella"
-Izabella,Izabella,"###Human:
-Correct this hungarian first name: Izabella
+Ízábella,Izabella,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ízábella
 
 ###Assistant:
 Izabella"
-Izabellá,Izabella,"###Human:
-Correct this hungarian first name: Izabellá
+Óiívia,Olívia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Óiívia
 
 ###Assistant:
-Izabella"
-Izabélla,Izabella,"###Human:
-Correct this hungarian first name: Izabélla
+Olívia"
+Óíívia,Olívia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Óíívia
 
 ###Assistant:
-Izabella"
-Izabclla,Izabella,"###Human:
-Correct this hungarian first name: Izabclla
+Olívia"
+Ólivia,Olívia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ólivia
 
 ###Assistant:
-Izabella"
-Izaqella,Izabella,"###Human:
-Correct this hungarian first name: Izaqella
+Olívia"
+Ólívía,Olívia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ólívía
 
 ###Assistant:
-Izabella"
-Izábella,Izabella,"###Human:
-Correct this hungarian first name: Izábella
-
-###Assistant:
-Izabella"
-Jzabella,Izabella,"###Human:
-Correct this hungarian first name: Jzabella
-
-###Assistant:
-Izabella"
+Olívia"
 Ólívia,Olívia,"###Human:
-Correct this hungarian first name: Ólívia
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ólívia
 
 ###Assistant:
 Olívia"
-Ölívia,Olívia,"###Human:
-Correct this hungarian first name: Ölívia
+Ólíviá,Olívia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ólíviá
 
 ###Assistant:
 Olívia"
-Őlívia,Olívia,"###Human:
-Correct this hungarian first name: Őlívia
+Ólívla,Olívia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ólívla
 
 ###Assistant:
 Olívia"
-Oiívia,Olívia,"###Human:
-Correct this hungarian first name: Oiívia
+Ólívja,Olívia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ólívja
 
 ###Assistant:
 Olívia"
-Oíívia,Olívia,"###Human:
-Correct this hungarian first name: Oíívia
+Óllvia,Olívia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Óllvia
 
 ###Assistant:
 Olívia"
-Olivia,Olívia,"###Human:
-Correct this hungarian first name: Olivia
-
-###Assistant:
-Olívia"
-Olívía,Olívia,"###Human:
-Correct this hungarian first name: Olívía
-
-###Assistant:
-Olívia"
-Olívia,Olívia,"###Human:
-Correct this hungarian first name: Olívia
-
-###Assistant:
-Olívia"
-Olíviá,Olívia,"###Human:
-Correct this hungarian first name: Olíviá
-
-###Assistant:
-Olívia"
-Olívla,Olívia,"###Human:
-Correct this hungarian first name: Olívla
-
-###Assistant:
-Olívia"
-Olívja,Olívia,"###Human:
-Correct this hungarian first name: Olívja
-
-###Assistant:
-Olívia"
-Ollvia,Olívia,"###Human:
-Correct this hungarian first name: Ollvia
-
-###Assistant:
-Olívia"
-Oljvia,Olívia,"###Human:
-Correct this hungarian first name: Oljvia
+Óljvia,Olívia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Óljvia
 
 ###Assistant:
 Olívia"
 Sara,Sára,"###Human:
-Correct this hungarian first name: Sara
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Sara
+
+###Assistant:
+Sára"
+Sará,Sára,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Sará
 
 ###Assistant:
 Sára"
 Sára,Sára,"###Human:
-Correct this hungarian first name: Sára
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Sára
 
 ###Assistant:
 Sára"
 Sárá,Sára,"###Human:
-Correct this hungarian first name: Sárá
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Sárá
 
 ###Assistant:
 Sára"
 Greta,Gréta,"###Human:
-Correct this hungarian first name: Greta
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Greta
+
+###Assistant:
+Gréta"
+Gretá,Gréta,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gretá
 
 ###Assistant:
 Gréta"
 Gréta,Gréta,"###Human:
-Correct this hungarian first name: Gréta
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Gréta
 
 ###Assistant:
 Gréta"
 Grétá,Gréta,"###Human:
-Correct this hungarian first name: Grétá
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Grétá
 
 ###Assistant:
 Gréta"
 Grcta,Gréta,"###Human:
-Correct this hungarian first name: Grcta
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Grcta
 
 ###Assistant:
 Gréta"
+Grctá,Gréta,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Grctá
+
+###Assistant:
+Gréta"
+Aiiz,Alíz,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aiiz
+
+###Assistant:
+Alíz"
 Aiíz,Alíz,"###Human:
-Correct this hungarian first name: Aiíz
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aiíz
+
+###Assistant:
+Alíz"
+Ailz,Alíz,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ailz
+
+###Assistant:
+Alíz"
+Aijz,Alíz,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aijz
+
+###Assistant:
+Alíz"
+Aíiz,Alíz,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aíiz
 
 ###Assistant:
 Alíz"
 Aííz,Alíz,"###Human:
-Correct this hungarian first name: Aííz
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aííz
+
+###Assistant:
+Alíz"
+Aílz,Alíz,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aílz
+
+###Assistant:
+Alíz"
+Aíjz,Alíz,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aíjz
 
 ###Assistant:
 Alíz"
 Aliz,Alíz,"###Human:
-Correct this hungarian first name: Aliz
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aliz
 
 ###Assistant:
 Alíz"
 Alíz,Alíz,"###Human:
-Correct this hungarian first name: Alíz
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Alíz
 
 ###Assistant:
 Alíz"
-Allz,Alíz,"###Human:
-Correct this hungarian first name: Allz
+Adei,Adél,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Adei
 
 ###Assistant:
-Alíz"
-Aljz,Alíz,"###Human:
-Correct this hungarian first name: Aljz
+Adél"
+Adeí,Adél,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Adeí
 
 ###Assistant:
-Alíz"
-Álíz,Alíz,"###Human:
-Correct this hungarian first name: Álíz
-
-###Assistant:
-Alíz"
+Adél"
 Adel,Adél,"###Human:
-Correct this hungarian first name: Adel
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Adel
 
 ###Assistant:
 Adél"
 Adéi,Adél,"###Human:
-Correct this hungarian first name: Adéi
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Adéi
 
 ###Assistant:
 Adél"
 Adéí,Adél,"###Human:
-Correct this hungarian first name: Adéí
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Adéí
 
 ###Assistant:
 Adél"
 Adél,Adél,"###Human:
-Correct this hungarian first name: Adél
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Adél
+
+###Assistant:
+Adél"
+Adci,Adél,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Adci
+
+###Assistant:
+Adél"
+Adcí,Adél,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Adcí
 
 ###Assistant:
 Adél"
 Adcl,Adél,"###Human:
-Correct this hungarian first name: Adcl
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Adcl
 
 ###Assistant:
 Adél"
-Aqél,Adél,"###Human:
-Correct this hungarian first name: Aqél
+Aqel,Adél,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Aqel
 
 ###Assistant:
 Adél"
-Ádél,Adél,"###Human:
-Correct this hungarian first name: Ádél
+Líila,Lilla,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Líila
 
 ###Assistant:
-Adél"
+Lilla"
+Lííla,Lilla,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lííla
+
+###Assistant:
+Lilla"
+Lília,Lilla,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lília
+
+###Assistant:
+Lilla"
+Lílía,Lilla,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lílía
+
+###Assistant:
+Lilla"
 Lílla,Lilla,"###Human:
-Correct this hungarian first name: Lílla
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lílla
+
+###Assistant:
+Lilla"
+Líllá,Lilla,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Líllá
+
+###Assistant:
+Lilla"
+Liiia,Lilla,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Liiia
+
+###Assistant:
+Lilla"
+Liiía,Lilla,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Liiía
 
 ###Assistant:
 Lilla"
 Liila,Lilla,"###Human:
-Correct this hungarian first name: Liila
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Liila
 
 ###Assistant:
 Lilla"
-Liíla,Lilla,"###Human:
-Correct this hungarian first name: Liíla
-
-###Assistant:
-Lilla"
-Lilia,Lilla,"###Human:
-Correct this hungarian first name: Lilia
-
-###Assistant:
-Lilla"
-Lilía,Lilla,"###Human:
-Correct this hungarian first name: Lilía
-
-###Assistant:
-Lilla"
-Lilla,Lilla,"###Human:
-Correct this hungarian first name: Lilla
-
-###Assistant:
-Lilla"
-Lillá,Lilla,"###Human:
-Correct this hungarian first name: Lillá
-
-###Assistant:
-Lilla"
-Lllla,Lilla,"###Human:
-Correct this hungarian first name: Lllla
-
-###Assistant:
-Lilla"
-Ljlla,Lilla,"###Human:
-Correct this hungarian first name: Ljlla
+Liilá,Lilla,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Liilá
 
 ###Assistant:
 Lilla"
 Líza,Liza,"###Human:
-Correct this hungarian first name: Líza
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Líza
+
+###Assistant:
+Liza"
+Lízá,Liza,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lízá
 
 ###Assistant:
 Liza"
 Liza,Liza,"###Human:
-Correct this hungarian first name: Liza
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Liza
 
 ###Assistant:
 Liza"
 Lizá,Liza,"###Human:
-Correct this hungarian first name: Lizá
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lizá
 
 ###Assistant:
 Liza"
 Llza,Liza,"###Human:
-Correct this hungarian first name: Llza
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Llza
+
+###Assistant:
+Liza"
+Llzá,Liza,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Llzá
 
 ###Assistant:
 Liza"
 Ljza,Liza,"###Human:
-Correct this hungarian first name: Ljza
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ljza
 
 ###Assistant:
 Liza"
+Ljzá,Liza,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ljzá
+
+###Assistant:
+Liza"
+Fiora,Flóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fiora
+
+###Assistant:
+Flóra"
+Fiöra,Flóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fiöra
+
+###Assistant:
+Flóra"
+Fiőra,Flóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fiőra
+
+###Assistant:
+Flóra"
 Fióra,Flóra,"###Human:
-Correct this hungarian first name: Fióra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fióra
+
+###Assistant:
+Flóra"
+Fiórá,Flóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fiórá
+
+###Assistant:
+Flóra"
+Fíora,Flóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fíora
+
+###Assistant:
+Flóra"
+Fíöra,Flóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fíöra
+
+###Assistant:
+Flóra"
+Fíőra,Flóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fíőra
 
 ###Assistant:
 Flóra"
 Fíóra,Flóra,"###Human:
-Correct this hungarian first name: Fíóra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fíóra
 
 ###Assistant:
 Flóra"
-Flora,Flóra,"###Human:
-Correct this hungarian first name: Flora
+Fíórá,Flóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fíórá
 
 ###Assistant:
 Flóra"
-Flöra,Flóra,"###Human:
-Correct this hungarian first name: Flöra
+Bórka,Dorka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bórka
 
 ###Assistant:
-Flóra"
-Flőra,Flóra,"###Human:
-Correct this hungarian first name: Flőra
+Dorka"
+Börka,Dorka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Börka
 
 ###Assistant:
-Flóra"
-Flóra,Flóra,"###Human:
-Correct this hungarian first name: Flóra
+Dorka"
+Bőrka,Dorka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bőrka
 
 ###Assistant:
-Flóra"
-Flórá,Flóra,"###Human:
-Correct this hungarian first name: Flórá
-
-###Assistant:
-Flóra"
-Elóra,Flóra,"###Human:
-Correct this hungarian first name: Elóra
-
-###Assistant:
-Flóra"
-Élóra,Flóra,"###Human:
-Correct this hungarian first name: Élóra
-
-###Assistant:
-Flóra"
+Dorka"
 Borka,Dorka,"###Human:
-Correct this hungarian first name: Borka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Borka
+
+###Assistant:
+Dorka"
+Borká,Dorka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Borká
 
 ###Assistant:
 Dorka"
 Dórka,Dorka,"###Human:
-Correct this hungarian first name: Dórka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Dórka
+
+###Assistant:
+Dorka"
+Dórká,Dorka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Dórká
 
 ###Assistant:
 Dorka"
 Dörka,Dorka,"###Human:
-Correct this hungarian first name: Dörka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Dörka
+
+###Assistant:
+Dorka"
+Dörká,Dorka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Dörká
 
 ###Assistant:
 Dorka"
 Dőrka,Dorka,"###Human:
-Correct this hungarian first name: Dőrka
-
-###Assistant:
-Dorka"
-Dorka,Dorka,"###Human:
-Correct this hungarian first name: Dorka
-
-###Assistant:
-Dorka"
-Dorká,Dorka,"###Human:
-Correct this hungarian first name: Dorká
-
-###Assistant:
-Dorka"
-Porka,Dorka,"###Human:
-Correct this hungarian first name: Porka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Dőrka
 
 ###Assistant:
 Dorka"
 Zseiyke,Zselyke,"###Human:
-Correct this hungarian first name: Zseiyke
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zseiyke
+
+###Assistant:
+Zselyke"
+Zseiyké,Zselyke,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zseiyké
+
+###Assistant:
+Zselyke"
+Zseiykc,Zselyke,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zseiykc
 
 ###Assistant:
 Zselyke"
 Zseíyke,Zselyke,"###Human:
-Correct this hungarian first name: Zseíyke
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zseíyke
+
+###Assistant:
+Zselyke"
+Zseíyké,Zselyke,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zseíyké
+
+###Assistant:
+Zselyke"
+Zseíykc,Zselyke,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zseíykc
 
 ###Assistant:
 Zselyke"
 Zselyke,Zselyke,"###Human:
-Correct this hungarian first name: Zselyke
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zselyke
 
 ###Assistant:
 Zselyke"
 Zselyké,Zselyke,"###Human:
-Correct this hungarian first name: Zselyké
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zselyké
 
 ###Assistant:
 Zselyke"
 Zselykc,Zselyke,"###Human:
-Correct this hungarian first name: Zselykc
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zselykc
 
 ###Assistant:
 Zselyke"
-Zsélyke,Zselyke,"###Human:
-Correct this hungarian first name: Zsélyke
+Zséiyke,Zselyke,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Zséiyke
 
 ###Assistant:
 Zselyke"
-Zsclyke,Zselyke,"###Human:
-Correct this hungarian first name: Zsclyke
+Bora,Dóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bora
 
 ###Assistant:
-Zselyke"
+Dóra"
+Böra,Dóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Böra
+
+###Assistant:
+Dóra"
+Bőra,Dóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bőra
+
+###Assistant:
+Dóra"
 Bóra,Dóra,"###Human:
-Correct this hungarian first name: Bóra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bóra
+
+###Assistant:
+Dóra"
+Bórá,Dóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bórá
 
 ###Assistant:
 Dóra"
 Dora,Dóra,"###Human:
-Correct this hungarian first name: Dora
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Dora
+
+###Assistant:
+Dóra"
+Dorá,Dóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Dorá
 
 ###Assistant:
 Dóra"
 Döra,Dóra,"###Human:
-Correct this hungarian first name: Döra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Döra
+
+###Assistant:
+Dóra"
+Dörá,Dóra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Dörá
 
 ###Assistant:
 Dóra"
 Dőra,Dóra,"###Human:
-Correct this hungarian first name: Dőra
-
-###Assistant:
-Dóra"
-Dóra,Dóra,"###Human:
-Correct this hungarian first name: Dóra
-
-###Assistant:
-Dóra"
-Dórá,Dóra,"###Human:
-Correct this hungarian first name: Dórá
-
-###Assistant:
-Dóra"
-Póra,Dóra,"###Human:
-Correct this hungarian first name: Póra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Dőra
 
 ###Assistant:
 Dóra"
 Csenge,Csenge,"###Human:
-Correct this hungarian first name: Csenge
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Csenge
 
 ###Assistant:
 Csenge"
 Csengé,Csenge,"###Human:
-Correct this hungarian first name: Csengé
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Csengé
 
 ###Assistant:
 Csenge"
 Csengc,Csenge,"###Human:
-Correct this hungarian first name: Csengc
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Csengc
 
 ###Assistant:
 Csenge"
 Csenqe,Csenge,"###Human:
-Correct this hungarian first name: Csenqe
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Csenqe
+
+###Assistant:
+Csenge"
+Csenqé,Csenge,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Csenqé
+
+###Assistant:
+Csenge"
+Csenqc,Csenge,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Csenqc
 
 ###Assistant:
 Csenge"
 Csénge,Csenge,"###Human:
-Correct this hungarian first name: Csénge
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Csénge
 
 ###Assistant:
 Csenge"
-Cscnge,Csenge,"###Human:
-Correct this hungarian first name: Cscnge
+Cséngé,Csenge,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Cséngé
+
+###Assistant:
+Csenge"
+Cséngc,Csenge,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Cséngc
+
+###Assistant:
+Csenge"
+Csénqe,Csenge,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Csénqe
 
 ###Assistant:
 Csenge"
 Ianka,Janka,"###Human:
-Correct this hungarian first name: Ianka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ianka
+
+###Assistant:
+Janka"
+Ianká,Janka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ianká
+
+###Assistant:
+Janka"
+Iánka,Janka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Iánka
 
 ###Assistant:
 Janka"
 Íanka,Janka,"###Human:
-Correct this hungarian first name: Íanka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Íanka
+
+###Assistant:
+Janka"
+Íanká,Janka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Íanká
+
+###Assistant:
+Janka"
+Íánka,Janka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Íánka
 
 ###Assistant:
 Janka"
 Janka,Janka,"###Human:
-Correct this hungarian first name: Janka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Janka
 
 ###Assistant:
 Janka"
 Janká,Janka,"###Human:
-Correct this hungarian first name: Janká
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Janká
 
 ###Assistant:
 Janka"
 Jánka,Janka,"###Human:
-Correct this hungarian first name: Jánka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Jánka
 
 ###Assistant:
 Janka"
+Jánká,Janka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Jánká
+
+###Assistant:
+Janka"
+Líiiána,Liliána,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Líiiána
+
+###Assistant:
+Liliána"
+Lííiána,Liliána,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lííiána
+
+###Assistant:
+Liliána"
+Lílíána,Liliána,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Lílíána
+
+###Assistant:
+Liliána"
+Líliana,Liliána,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Líliana
+
+###Assistant:
+Liliána"
 Líliána,Liliána,"###Human:
-Correct this hungarian first name: Líliána
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Líliána
 
 ###Assistant:
 Liliána"
-Liiiána,Liliána,"###Human:
-Correct this hungarian first name: Liiiána
+Líliáná,Liliána,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Líliáná
 
 ###Assistant:
 Liliána"
-Liíiána,Liliána,"###Human:
-Correct this hungarian first name: Liíiána
+Líllána,Liliána,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Líllána
 
 ###Assistant:
 Liliána"
-Lilíána,Liliána,"###Human:
-Correct this hungarian first name: Lilíána
+Líljána,Liliána,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Líljána
 
 ###Assistant:
 Liliána"
-Liliana,Liliána,"###Human:
-Correct this hungarian first name: Liliana
+Liiíána,Liliána,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Liiíána
 
 ###Assistant:
 Liliána"
-Liliána,Liliána,"###Human:
-Correct this hungarian first name: Liliána
+Liiiana,Liliána,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Liiiana
 
 ###Assistant:
 Liliána"
-Liliáná,Liliána,"###Human:
-Correct this hungarian first name: Liliáná
+Víktoria,Viktória,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Víktoria
 
 ###Assistant:
-Liliána"
-Lillána,Liliána,"###Human:
-Correct this hungarian first name: Lillána
+Viktória"
+Víktöria,Viktória,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Víktöria
 
 ###Assistant:
-Liliána"
-Liljána,Liliána,"###Human:
-Correct this hungarian first name: Liljána
+Viktória"
+Víktőria,Viktória,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Víktőria
 
 ###Assistant:
-Liliána"
-Llliána,Liliána,"###Human:
-Correct this hungarian first name: Llliána
+Viktória"
+Víktóría,Viktória,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Víktóría
 
 ###Assistant:
-Liliána"
-Ljliána,Liliána,"###Human:
-Correct this hungarian first name: Ljliána
-
-###Assistant:
-Liliána"
+Viktória"
 Víktória,Viktória,"###Human:
-Correct this hungarian first name: Víktória
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Víktória
+
+###Assistant:
+Viktória"
+Víktóriá,Viktória,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Víktóriá
+
+###Assistant:
+Viktória"
+Víktórla,Viktória,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Víktórla
+
+###Assistant:
+Viktória"
+Víktórja,Viktória,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Víktórja
+
+###Assistant:
+Viktória"
+Viktoría,Viktória,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Viktoría
 
 ###Assistant:
 Viktória"
 Viktoria,Viktória,"###Human:
-Correct this hungarian first name: Viktoria
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Viktoria
 
 ###Assistant:
 Viktória"
-Viktöria,Viktória,"###Human:
-Correct this hungarian first name: Viktöria
+Szófía,Szofia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szófía
 
 ###Assistant:
-Viktória"
-Viktőria,Viktória,"###Human:
-Correct this hungarian first name: Viktőria
-
-###Assistant:
-Viktória"
-Viktóría,Viktória,"###Human:
-Correct this hungarian first name: Viktóría
-
-###Assistant:
-Viktória"
-Viktória,Viktória,"###Human:
-Correct this hungarian first name: Viktória
-
-###Assistant:
-Viktória"
-Viktóriá,Viktória,"###Human:
-Correct this hungarian first name: Viktóriá
-
-###Assistant:
-Viktória"
-Viktórla,Viktória,"###Human:
-Correct this hungarian first name: Viktórla
-
-###Assistant:
-Viktória"
-Viktórja,Viktória,"###Human:
-Correct this hungarian first name: Viktórja
-
-###Assistant:
-Viktória"
-Vlktória,Viktória,"###Human:
-Correct this hungarian first name: Vlktória
-
-###Assistant:
-Viktória"
-Vjktória,Viktória,"###Human:
-Correct this hungarian first name: Vjktória
-
-###Assistant:
-Viktória"
-Úiktória,Viktória,"###Human:
-Correct this hungarian first name: Úiktória
-
-###Assistant:
-Viktória"
-Üiktória,Viktória,"###Human:
-Correct this hungarian first name: Üiktória
-
-###Assistant:
-Viktória"
-Űiktória,Viktória,"###Human:
-Correct this hungarian first name: Űiktória
-
-###Assistant:
-Viktória"
-Uiktória,Viktória,"###Human:
-Correct this hungarian first name: Uiktória
-
-###Assistant:
-Viktória"
+Szofia"
 Szófia,Szofia,"###Human:
-Correct this hungarian first name: Szófia
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szófia
+
+###Assistant:
+Szofia"
+Szófiá,Szofia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szófiá
+
+###Assistant:
+Szofia"
+Szófla,Szofia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szófla
+
+###Assistant:
+Szofia"
+Szófja,Szofia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szófja
+
+###Assistant:
+Szofia"
+Szöfía,Szofia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szöfía
 
 ###Assistant:
 Szofia"
 Szöfia,Szofia,"###Human:
-Correct this hungarian first name: Szöfia
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szöfia
 
 ###Assistant:
 Szofia"
-Szőfia,Szofia,"###Human:
-Correct this hungarian first name: Szőfia
+Szöfiá,Szofia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szöfiá
 
 ###Assistant:
 Szofia"
-Szofía,Szofia,"###Human:
-Correct this hungarian first name: Szofía
+Szöfla,Szofia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szöfla
 
 ###Assistant:
 Szofia"
-Szofia,Szofia,"###Human:
-Correct this hungarian first name: Szofia
-
-###Assistant:
-Szofia"
-Szofiá,Szofia,"###Human:
-Correct this hungarian first name: Szofiá
-
-###Assistant:
-Szofia"
-Szofla,Szofia,"###Human:
-Correct this hungarian first name: Szofla
-
-###Assistant:
-Szofia"
-Szofja,Szofia,"###Human:
-Correct this hungarian first name: Szofja
+Szöfja,Szofia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szöfja
 
 ###Assistant:
 Szofia"
 Reka,Réka,"###Human:
-Correct this hungarian first name: Reka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Reka
+
+###Assistant:
+Réka"
+Reká,Réka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Reká
 
 ###Assistant:
 Réka"
 Réka,Réka,"###Human:
-Correct this hungarian first name: Réka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Réka
 
 ###Assistant:
 Réka"
 Réká,Réka,"###Human:
-Correct this hungarian first name: Réká
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Réká
 
 ###Assistant:
 Réka"
 Rcka,Réka,"###Human:
-Correct this hungarian first name: Rcka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Rcka
+
+###Assistant:
+Réka"
+Rcká,Réka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Rcká
 
 ###Assistant:
 Réka"
 Banna,Panna,"###Human:
-Correct this hungarian first name: Banna
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Banna
+
+###Assistant:
+Panna"
+Banná,Panna,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Banná
+
+###Assistant:
+Panna"
+Bánna,Panna,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bánna
 
 ###Assistant:
 Panna"
 Danna,Panna,"###Human:
-Correct this hungarian first name: Danna
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Danna
+
+###Assistant:
+Panna"
+Danná,Panna,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Danná
+
+###Assistant:
+Panna"
+Dánna,Panna,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Dánna
 
 ###Assistant:
 Panna"
 Panna,Panna,"###Human:
-Correct this hungarian first name: Panna
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Panna
 
 ###Assistant:
 Panna"
 Panná,Panna,"###Human:
-Correct this hungarian first name: Panná
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Panná
 
 ###Assistant:
 Panna"
 Pánna,Panna,"###Human:
-Correct this hungarian first name: Pánna
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Pánna
+
+###Assistant:
+Panna"
+Pánná,Panna,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Pánná
 
 ###Assistant:
 Panna"
 Betra,Petra,"###Human:
-Correct this hungarian first name: Betra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Betra
+
+###Assistant:
+Petra"
+Betrá,Petra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Betrá
+
+###Assistant:
+Petra"
+Bétra,Petra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bétra
+
+###Assistant:
+Petra"
+Bctra,Petra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bctra
 
 ###Assistant:
 Petra"
 Detra,Petra,"###Human:
-Correct this hungarian first name: Detra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Detra
+
+###Assistant:
+Petra"
+Detrá,Petra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Detrá
+
+###Assistant:
+Petra"
+Détra,Petra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Détra
+
+###Assistant:
+Petra"
+Dctra,Petra,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Dctra
 
 ###Assistant:
 Petra"
 Petra,Petra,"###Human:
-Correct this hungarian first name: Petra
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Petra
 
 ###Assistant:
 Petra"
 Petrá,Petra,"###Human:
-Correct this hungarian first name: Petrá
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Petrá
 
 ###Assistant:
 Petra"
-Pétra,Petra,"###Human:
-Correct this hungarian first name: Pétra
+Bórina,Dorina,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bórina
 
 ###Assistant:
-Petra"
-Pctra,Petra,"###Human:
-Correct this hungarian first name: Pctra
+Dorina"
+Börina,Dorina,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Börina
 
 ###Assistant:
-Petra"
+Dorina"
+Bőrina,Dorina,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bőrina
+
+###Assistant:
+Dorina"
+Borína,Dorina,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Borína
+
+###Assistant:
+Dorina"
 Borina,Dorina,"###Human:
-Correct this hungarian first name: Borina
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Borina
+
+###Assistant:
+Dorina"
+Boriná,Dorina,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Boriná
+
+###Assistant:
+Dorina"
+Borlna,Dorina,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Borlna
+
+###Assistant:
+Dorina"
+Borjna,Dorina,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Borjna
+
+###Assistant:
+Dorina"
+Dórína,Dorina,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Dórína
 
 ###Assistant:
 Dorina"
 Dórina,Dorina,"###Human:
-Correct this hungarian first name: Dórina
-
-###Assistant:
-Dorina"
-Dörina,Dorina,"###Human:
-Correct this hungarian first name: Dörina
-
-###Assistant:
-Dorina"
-Dőrina,Dorina,"###Human:
-Correct this hungarian first name: Dőrina
-
-###Assistant:
-Dorina"
-Dorína,Dorina,"###Human:
-Correct this hungarian first name: Dorína
-
-###Assistant:
-Dorina"
-Dorina,Dorina,"###Human:
-Correct this hungarian first name: Dorina
-
-###Assistant:
-Dorina"
-Doriná,Dorina,"###Human:
-Correct this hungarian first name: Doriná
-
-###Assistant:
-Dorina"
-Dorlna,Dorina,"###Human:
-Correct this hungarian first name: Dorlna
-
-###Assistant:
-Dorina"
-Dorjna,Dorina,"###Human:
-Correct this hungarian first name: Dorjna
-
-###Assistant:
-Dorina"
-Porina,Dorina,"###Human:
-Correct this hungarian first name: Porina
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Dórina
 
 ###Assistant:
 Dorina"
 Natasa,Natasa,"###Human:
-Correct this hungarian first name: Natasa
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Natasa
 
 ###Assistant:
 Natasa"
 Natasá,Natasa,"###Human:
-Correct this hungarian first name: Natasá
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Natasá
 
 ###Assistant:
 Natasa"
 Natása,Natasa,"###Human:
-Correct this hungarian first name: Natása
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Natása
+
+###Assistant:
+Natasa"
+Natásá,Natasa,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Natásá
 
 ###Assistant:
 Natasa"
 Nátasa,Natasa,"###Human:
-Correct this hungarian first name: Nátasa
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nátasa
+
+###Assistant:
+Natasa"
+Nátasá,Natasa,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nátasá
+
+###Assistant:
+Natasa"
+Nátása,Natasa,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nátása
 
 ###Assistant:
 Natasa"
 Bianka,Blanka,"###Human:
-Correct this hungarian first name: Bianka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bianka
+
+###Assistant:
+Blanka"
+Bianká,Blanka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bianká
+
+###Assistant:
+Blanka"
+Biánka,Blanka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Biánka
 
 ###Assistant:
 Blanka"
 Bíanka,Blanka,"###Human:
-Correct this hungarian first name: Bíanka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bíanka
+
+###Assistant:
+Blanka"
+Bíanká,Blanka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bíanká
+
+###Assistant:
+Blanka"
+Bíánka,Blanka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bíánka
 
 ###Assistant:
 Blanka"
 Blanka,Blanka,"###Human:
-Correct this hungarian first name: Blanka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Blanka
 
 ###Assistant:
 Blanka"
 Blanká,Blanka,"###Human:
-Correct this hungarian first name: Blanká
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Blanká
 
 ###Assistant:
 Blanka"
 Blánka,Blanka,"###Human:
-Correct this hungarian first name: Blánka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Blánka
 
 ###Assistant:
 Blanka"
-Dlanka,Blanka,"###Human:
-Correct this hungarian first name: Dlanka
-
-###Assistant:
-Blanka"
-Planka,Blanka,"###Human:
-Correct this hungarian first name: Planka
+Blánká,Blanka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Blánká
 
 ###Assistant:
 Blanka"
 Eszter,Eszter,"###Human:
-Correct this hungarian first name: Eszter
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Eszter
 
 ###Assistant:
 Eszter"
 Esztér,Eszter,"###Human:
-Correct this hungarian first name: Esztér
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Esztér
 
 ###Assistant:
 Eszter"
 Esztcr,Eszter,"###Human:
-Correct this hungarian first name: Esztcr
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Esztcr
 
 ###Assistant:
 Eszter"
 Észter,Eszter,"###Human:
-Correct this hungarian first name: Észter
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Észter
+
+###Assistant:
+Eszter"
+Észtér,Eszter,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Észtér
+
+###Assistant:
+Eszter"
+Észtcr,Eszter,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Észtcr
 
 ###Assistant:
 Eszter"
 Fszter,Eszter,"###Human:
-Correct this hungarian first name: Fszter
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fszter
 
 ###Assistant:
 Eszter"
+Fsztér,Eszter,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fsztér
+
+###Assistant:
+Eszter"
+Fsztcr,Eszter,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Fsztcr
+
+###Assistant:
+Eszter"
+Nóemi,Noémi,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nóemi
+
+###Assistant:
+Noémi"
+Nóémí,Noémi,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nóémí
+
+###Assistant:
+Noémi"
 Nóémi,Noémi,"###Human:
-Correct this hungarian first name: Nóémi
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nóémi
+
+###Assistant:
+Noémi"
+Nóéml,Noémi,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nóéml
+
+###Assistant:
+Noémi"
+Nóémj,Noémi,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nóémj
+
+###Assistant:
+Noémi"
+Nócmi,Noémi,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nócmi
+
+###Assistant:
+Noémi"
+Nöemi,Noémi,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nöemi
+
+###Assistant:
+Noémi"
+Nöémí,Noémi,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nöémí
 
 ###Assistant:
 Noémi"
 Nöémi,Noémi,"###Human:
-Correct this hungarian first name: Nöémi
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nöémi
 
 ###Assistant:
 Noémi"
-Nőémi,Noémi,"###Human:
-Correct this hungarian first name: Nőémi
+Nöéml,Noémi,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Nöéml
 
 ###Assistant:
 Noémi"
-Noemi,Noémi,"###Human:
-Correct this hungarian first name: Noemi
+Emiiia,Emília,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Emiiia
 
 ###Assistant:
-Noémi"
-Noémí,Noémi,"###Human:
-Correct this hungarian first name: Noémí
+Emília"
+Emiíia,Emília,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Emiíia
 
 ###Assistant:
-Noémi"
-Noémi,Noémi,"###Human:
-Correct this hungarian first name: Noémi
+Emília"
+Emilía,Emília,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Emilía
 
 ###Assistant:
-Noémi"
-Noéml,Noémi,"###Human:
-Correct this hungarian first name: Noéml
-
-###Assistant:
-Noémi"
-Noémj,Noémi,"###Human:
-Correct this hungarian first name: Noémj
-
-###Assistant:
-Noémi"
-Nocmi,Noémi,"###Human:
-Correct this hungarian first name: Nocmi
-
-###Assistant:
-Noémi"
+Emília"
 Emilia,Emília,"###Human:
-Correct this hungarian first name: Emilia
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Emilia
+
+###Assistant:
+Emília"
+Emiliá,Emília,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Emiliá
+
+###Assistant:
+Emília"
+Emilla,Emília,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Emilla
+
+###Assistant:
+Emília"
+Emilja,Emília,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Emilja
+
+###Assistant:
+Emília"
+Emíiía,Emília,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Emíiía
 
 ###Assistant:
 Emília"
 Emíiia,Emília,"###Human:
-Correct this hungarian first name: Emíiia
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Emíiia
 
 ###Assistant:
 Emília"
-Emííia,Emília,"###Human:
-Correct this hungarian first name: Emííia
-
-###Assistant:
-Emília"
-Emílía,Emília,"###Human:
-Correct this hungarian first name: Emílía
-
-###Assistant:
-Emília"
-Emília,Emília,"###Human:
-Correct this hungarian first name: Emília
-
-###Assistant:
-Emília"
-Emíliá,Emília,"###Human:
-Correct this hungarian first name: Emíliá
-
-###Assistant:
-Emília"
-Emílla,Emília,"###Human:
-Correct this hungarian first name: Emílla
-
-###Assistant:
-Emília"
-Emílja,Emília,"###Human:
-Correct this hungarian first name: Emílja
-
-###Assistant:
-Emília"
-Emllia,Emília,"###Human:
-Correct this hungarian first name: Emllia
-
-###Assistant:
-Emília"
-Emjlia,Emília,"###Human:
-Correct this hungarian first name: Emjlia
-
-###Assistant:
-Emília"
-Émília,Emília,"###Human:
-Correct this hungarian first name: Émília
-
-###Assistant:
-Emília"
-Fmília,Emília,"###Human:
-Correct this hungarian first name: Fmília
+Emíiiá,Emília,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Emíiiá
 
 ###Assistant:
 Emília"
 Bíanka,Bianka,"###Human:
-Correct this hungarian first name: Bíanka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bíanka
+
+###Assistant:
+Bianka"
+Bíanká,Bianka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bíanká
+
+###Assistant:
+Bianka"
+Bíánka,Bianka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bíánka
 
 ###Assistant:
 Bianka"
 Bianka,Bianka,"###Human:
-Correct this hungarian first name: Bianka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bianka
 
 ###Assistant:
 Bianka"
 Bianká,Bianka,"###Human:
-Correct this hungarian first name: Bianká
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Bianká
 
 ###Assistant:
 Bianka"
 Biánka,Bianka,"###Human:
-Correct this hungarian first name: Biánka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Biánka
+
+###Assistant:
+Bianka"
+Biánká,Bianka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Biánká
 
 ###Assistant:
 Bianka"
 Blanka,Bianka,"###Human:
-Correct this hungarian first name: Blanka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Blanka
 
 ###Assistant:
 Bianka"
-Bjanka,Bianka,"###Human:
-Correct this hungarian first name: Bjanka
+Blanká,Bianka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Blanká
 
 ###Assistant:
 Bianka"
-Dianka,Bianka,"###Human:
-Correct this hungarian first name: Dianka
+Blánka,Bianka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Blánka
 
 ###Assistant:
 Bianka"
-Pianka,Bianka,"###Human:
-Correct this hungarian first name: Pianka
+Kamíila,Kamilla,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kamíila
 
 ###Assistant:
-Bianka"
+Kamilla"
+Kamííla,Kamilla,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kamííla
+
+###Assistant:
+Kamilla"
+Kamília,Kamilla,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kamília
+
+###Assistant:
+Kamilla"
+Kamílía,Kamilla,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kamílía
+
+###Assistant:
+Kamilla"
 Kamílla,Kamilla,"###Human:
-Correct this hungarian first name: Kamílla
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kamílla
+
+###Assistant:
+Kamilla"
+Kamíllá,Kamilla,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kamíllá
+
+###Assistant:
+Kamilla"
+Kamiiia,Kamilla,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kamiiia
+
+###Assistant:
+Kamilla"
+Kamiiía,Kamilla,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kamiiía
 
 ###Assistant:
 Kamilla"
 Kamiila,Kamilla,"###Human:
-Correct this hungarian first name: Kamiila
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kamiila
 
 ###Assistant:
 Kamilla"
-Kamiíla,Kamilla,"###Human:
-Correct this hungarian first name: Kamiíla
+Kamiilá,Kamilla,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Kamiilá
 
 ###Assistant:
 Kamilla"
-Kamilia,Kamilla,"###Human:
-Correct this hungarian first name: Kamilia
+Szofía,Szófia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szofía
 
 ###Assistant:
-Kamilla"
-Kamilía,Kamilla,"###Human:
-Correct this hungarian first name: Kamilía
-
-###Assistant:
-Kamilla"
-Kamilla,Kamilla,"###Human:
-Correct this hungarian first name: Kamilla
-
-###Assistant:
-Kamilla"
-Kamillá,Kamilla,"###Human:
-Correct this hungarian first name: Kamillá
-
-###Assistant:
-Kamilla"
-Kamllla,Kamilla,"###Human:
-Correct this hungarian first name: Kamllla
-
-###Assistant:
-Kamilla"
-Kamjlla,Kamilla,"###Human:
-Correct this hungarian first name: Kamjlla
-
-###Assistant:
-Kamilla"
-Kámilla,Kamilla,"###Human:
-Correct this hungarian first name: Kámilla
-
-###Assistant:
-Kamilla"
+Szófia"
 Szofia,Szófia,"###Human:
-Correct this hungarian first name: Szofia
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szofia
+
+###Assistant:
+Szófia"
+Szofiá,Szófia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szofiá
+
+###Assistant:
+Szófia"
+Szofla,Szófia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szofla
+
+###Assistant:
+Szófia"
+Szofja,Szófia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szofja
+
+###Assistant:
+Szófia"
+Szöfía,Szófia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szöfía
 
 ###Assistant:
 Szófia"
 Szöfia,Szófia,"###Human:
-Correct this hungarian first name: Szöfia
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szöfia
 
 ###Assistant:
 Szófia"
-Szőfia,Szófia,"###Human:
-Correct this hungarian first name: Szőfia
+Szöfiá,Szófia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szöfiá
 
 ###Assistant:
 Szófia"
-Szófía,Szófia,"###Human:
-Correct this hungarian first name: Szófía
+Szöfla,Szófia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szöfla
 
 ###Assistant:
 Szófia"
-Szófia,Szófia,"###Human:
-Correct this hungarian first name: Szófia
+Szöfja,Szófia,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Szöfja
 
 ###Assistant:
 Szófia"
-Szófiá,Szófia,"###Human:
-Correct this hungarian first name: Szófiá
+Vívíen,Vivien,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vívíen
 
 ###Assistant:
-Szófia"
-Szófla,Szófia,"###Human:
-Correct this hungarian first name: Szófla
-
-###Assistant:
-Szófia"
-Szófja,Szófia,"###Human:
-Correct this hungarian first name: Szófja
-
-###Assistant:
-Szófia"
+Vivien"
 Vívien,Vivien,"###Human:
-Correct this hungarian first name: Vívien
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vívien
+
+###Assistant:
+Vivien"
+Vívién,Vivien,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vívién
+
+###Assistant:
+Vivien"
+Vívicn,Vivien,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vívicn
+
+###Assistant:
+Vivien"
+Vívlen,Vivien,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vívlen
+
+###Assistant:
+Vivien"
+Vívjen,Vivien,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vívjen
 
 ###Assistant:
 Vivien"
 Vivíen,Vivien,"###Human:
-Correct this hungarian first name: Vivíen
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vivíen
+
+###Assistant:
+Vivien"
+Vivíén,Vivien,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vivíén
+
+###Assistant:
+Vivien"
+Vivícn,Vivien,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vivícn
 
 ###Assistant:
 Vivien"
 Vivien,Vivien,"###Human:
-Correct this hungarian first name: Vivien
-
-###Assistant:
-Vivien"
-Vivién,Vivien,"###Human:
-Correct this hungarian first name: Vivién
-
-###Assistant:
-Vivien"
-Vivicn,Vivien,"###Human:
-Correct this hungarian first name: Vivicn
-
-###Assistant:
-Vivien"
-Vivlen,Vivien,"###Human:
-Correct this hungarian first name: Vivlen
-
-###Assistant:
-Vivien"
-Vivjen,Vivien,"###Human:
-Correct this hungarian first name: Vivjen
-
-###Assistant:
-Vivien"
-Vlvien,Vivien,"###Human:
-Correct this hungarian first name: Vlvien
-
-###Assistant:
-Vivien"
-Vjvien,Vivien,"###Human:
-Correct this hungarian first name: Vjvien
-
-###Assistant:
-Vivien"
-Úivien,Vivien,"###Human:
-Correct this hungarian first name: Úivien
-
-###Assistant:
-Vivien"
-Üivien,Vivien,"###Human:
-Correct this hungarian first name: Üivien
-
-###Assistant:
-Vivien"
-Űivien,Vivien,"###Human:
-Correct this hungarian first name: Űivien
-
-###Assistant:
-Vivien"
-Uivien,Vivien,"###Human:
-Correct this hungarian first name: Uivien
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Vivien
 
 ###Assistant:
 Vivien"
 Rebeka,Rebeka,"###Human:
-Correct this hungarian first name: Rebeka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Rebeka
 
 ###Assistant:
 Rebeka"
 Rebeká,Rebeka,"###Human:
-Correct this hungarian first name: Rebeká
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Rebeká
 
 ###Assistant:
 Rebeka"
 Rebéka,Rebeka,"###Human:
-Correct this hungarian first name: Rebéka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Rebéka
+
+###Assistant:
+Rebeka"
+Rebéká,Rebeka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Rebéká
 
 ###Assistant:
 Rebeka"
 Rebcka,Rebeka,"###Human:
-Correct this hungarian first name: Rebcka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Rebcka
+
+###Assistant:
+Rebeka"
+Rebcká,Rebeka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Rebcká
 
 ###Assistant:
 Rebeka"
 Reqeka,Rebeka,"###Human:
-Correct this hungarian first name: Reqeka
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Reqeka
 
 ###Assistant:
 Rebeka"
-Rébeka,Rebeka,"###Human:
-Correct this hungarian first name: Rébeka
+Reqeká,Rebeka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Reqeká
 
 ###Assistant:
 Rebeka"
-Rcbeka,Rebeka,"###Human:
-Correct this hungarian first name: Rcbeka
+Reqéka,Rebeka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Reqéka
 
 ###Assistant:
 Rebeka"
+Reqcka,Rebeka,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Reqcka
+
+###Assistant:
+Rebeka"
+Eiízabet,Elizabet,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Eiízabet
+
+###Assistant:
+Elizabet"
 Eiizabet,Elizabet,"###Human:
-Correct this hungarian first name: Eiizabet
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Eiizabet
+
+###Assistant:
+Elizabet"
+Eiizabét,Elizabet,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Eiizabét
+
+###Assistant:
+Elizabet"
+Eiizabct,Elizabet,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Eiizabct
+
+###Assistant:
+Elizabet"
+Eiizaqet,Elizabet,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Eiizaqet
+
+###Assistant:
+Elizabet"
+Eiizábet,Elizabet,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Eiizábet
+
+###Assistant:
+Elizabet"
+Eilzabet,Elizabet,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Eilzabet
+
+###Assistant:
+Elizabet"
+Eijzabet,Elizabet,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Eijzabet
+
+###Assistant:
+Elizabet"
+Eíízabet,Elizabet,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Eíízabet
 
 ###Assistant:
 Elizabet"
 Eíizabet,Elizabet,"###Human:
-Correct this hungarian first name: Eíizabet
-
-###Assistant:
-Elizabet"
-Elízabet,Elizabet,"###Human:
-Correct this hungarian first name: Elízabet
-
-###Assistant:
-Elizabet"
-Elizabet,Elizabet,"###Human:
-Correct this hungarian first name: Elizabet
-
-###Assistant:
-Elizabet"
-Elizabét,Elizabet,"###Human:
-Correct this hungarian first name: Elizabét
-
-###Assistant:
-Elizabet"
-Elizabct,Elizabet,"###Human:
-Correct this hungarian first name: Elizabct
-
-###Assistant:
-Elizabet"
-Elizaqet,Elizabet,"###Human:
-Correct this hungarian first name: Elizaqet
-
-###Assistant:
-Elizabet"
-Elizábet,Elizabet,"###Human:
-Correct this hungarian first name: Elizábet
-
-###Assistant:
-Elizabet"
-Ellzabet,Elizabet,"###Human:
-Correct this hungarian first name: Ellzabet
-
-###Assistant:
-Elizabet"
-Eljzabet,Elizabet,"###Human:
-Correct this hungarian first name: Eljzabet
-
-###Assistant:
-Elizabet"
-Élizabet,Elizabet,"###Human:
-Correct this hungarian first name: Élizabet
-
-###Assistant:
-Elizabet"
-Flizabet,Elizabet,"###Human:
-Correct this hungarian first name: Flizabet
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Eíizabet
 
 ###Assistant:
 Elizabet"
 Línett,Linett,"###Human:
-Correct this hungarian first name: Línett
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Línett
+
+###Assistant:
+Linett"
+Línétt,Linett,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Línétt
+
+###Assistant:
+Linett"
+Línctt,Linett,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Línctt
 
 ###Assistant:
 Linett"
 Linett,Linett,"###Human:
-Correct this hungarian first name: Linett
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Linett
 
 ###Assistant:
 Linett"
 Linétt,Linett,"###Human:
-Correct this hungarian first name: Linétt
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Linétt
 
 ###Assistant:
 Linett"
 Linctt,Linett,"###Human:
-Correct this hungarian first name: Linctt
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Linctt
 
 ###Assistant:
 Linett"
 Llnett,Linett,"###Human:
-Correct this hungarian first name: Llnett
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Llnett
+
+###Assistant:
+Linett"
+Llnétt,Linett,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Llnétt
+
+###Assistant:
+Linett"
+Llnctt,Linett,"###Human:
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Llnctt
 
 ###Assistant:
 Linett"
 Ljnett,Linett,"###Human:
-Correct this hungarian first name: Ljnett
+Correct this hungarian first name, knowing that some letters in the word might have been changed: Ljnett
 
 ###Assistant:
 Linett"

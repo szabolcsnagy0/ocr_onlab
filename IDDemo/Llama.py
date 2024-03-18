@@ -12,18 +12,19 @@ import io
 #     words = f.read().splitlines()
 #
 # for word in words:
-#     prompt = """
-#     ###Human:
-#     Correct this hungarian first name: {word}
-#
-#     ###Assistant:
-#     """.format(word=word)
+#     prompt = "Javítsd ki ezt a keresztnevet, tudva, hogy a névben 0 vagy több betű fel lett cserélve: {word}".format(word=word)
+#     # prompt = """
+#     # ###Human:
+#     # Correct this hungarian first name: {word}
+#     #
+#     # ###Assistant:
+#     # """.format(word=word)
 #
 #     callback_manager = CallbackManager([StreamingStdOutCallbackHandler()])
 #
 #     llm = LlamaCpp(
-#         model_path="D:/top-names-13b-v1.5.gguf",
-#         temperature=0.1,
+#         model_path="D:/PULI-LlumiX-32K-Q6_K.gguf",
+#         temperature=0.7,
 #         max_tokens=2000,
 #         top_p=1,
 #         stop=["\n"],
@@ -47,19 +48,24 @@ with io.open("../names/test.txt", mode="r", encoding="utf8") as f:
 for word in words:
     prompt = """
     ###Human:
-    Correct this hungarian first name: {word}
+    Correct this hungarian first name, knowing that some letters in the word might have been changed: {word}
 
     ###Assistant:
     """.format(word=word)
+    # prompt = """
+    # ###Human:
+    # Correct this hungarian first name: {word}
+    #
+    # ###Assistant:
+    # """.format(word=word)
     output = llm(
-          prompt, # Prompt
-          max_tokens=200,
-          stop=["Q:", "\n"], # Stop generating just before the model would generate a new question
-          echo=True, # Echo the prompt back in the output
-    ) # Generate a completion, can also call create_completion
+        prompt,  # Prompt
+        max_tokens=200,
+        stop=["Q:", "\n"],  # Stop generating just before the model would generate a new question
+        echo=True,  # Echo the prompt back in the output
+    )  # Generate a completion, can also call create_completion
 
     print(output['choices'][0]['text'])
-
 
 # Trying out specific grammar
 

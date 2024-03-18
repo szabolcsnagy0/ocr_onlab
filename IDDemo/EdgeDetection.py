@@ -39,9 +39,9 @@ def order_points(pts):
     return rect.astype('int').tolist()
 
 
-STEP_BY_STEP = False
+STEP_BY_STEP = True
 
-img = cv2.imread("..\\images\\id2_back.jpeg")
+img = cv2.imread("..\\images\\test.jpg")
 # img = cv2.imread("..\\images\\id_far.jpeg")
 # img = cv2.imread("..\\images\\id2_front.jpeg")
 img = cv2.resize(img, None, fx=0.3, fy=0.3, interpolation=cv2.INTER_AREA)
@@ -105,6 +105,8 @@ for c in page:
 cv2.drawContours(con, corners, -1, (0, 255, 0), 10)
 # Sorting the corners and converting them to desired shape.
 corners = sorted(np.concatenate(corners).tolist())
+
+print(corners)
 
 corners = order_points(corners)
 

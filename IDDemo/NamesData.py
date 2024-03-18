@@ -2,7 +2,6 @@ import csv
 import io
 import itertools
 
-MAX_REPLACEMENTS = 1
 similar_letters = {
     'A': ['A', 'Á'],
     'Á': ['A', 'Á'],
@@ -150,9 +149,18 @@ similar_letters = {
 # }
 
 
+MAX_REPLACEMENTS = 2
 def replace_letters(word):
     # Create a list of all possible replacements for each letter in the word
     replacements = []
+    nr_replacements = MAX_REPLACEMENTS
+    max_includes = 10
+    # if word in top_words:
+    #     nr_replacements = MAX_REPLACEMENTS + 1
+    #     max_includes = 5
+    # else:
+    #     nr_replacements = MAX_REPLACEMENTS
+    #     max_includes = 3
     for i in range(len(word)):
         letter = word[i]
         # Get the list of similar-looking letters for this letter
@@ -161,15 +169,21 @@ def replace_letters(word):
         replacements.append(similar)
 
     # Generate all possible combinations of replacements
+    times_included = 0
     for replacement_combination in itertools.product(*replacements):
         # Create a new word by replacing each letter in the original word with the corresponding replacement
         new_word = ''.join(replacement_combination)
         # Count the number of replacements in the new word
         num_replacements = sum(1 for i in range(len(word)) if word[i] != new_word[i])
         # If the number of replacements is less than or equal to the maximum number of replacements allowed, yield the new word
-        if num_replacements <= MAX_REPLACEMENTS:
+        if num_replacements <= nr_replacements and times_included < max_includes:
+            times_included = times_included+1
             yield new_word
 
+
+# Read the words from the input file
+with io.open("../names/top50_names.txt", mode="r", encoding="utf8") as f:
+    top_words = f.read().splitlines()
 
 # Read the words from the input file
 with io.open("../names/top50_names.txt", mode="r", encoding="utf8") as f:
@@ -186,12 +200,12 @@ with io.open("../train.csv", mode='w', newline='', encoding='utf8') as f:
 
     # For each word, generate all possible replacements and write them to the output file
     for word in words:
-        # if i > 50:
-        #     break
+        # if i % 1000 == 0:
+        #     print(i)
         i = i+1
-        print(i)
         for new_word in replace_letters(word):
             # Create the text with placeholders for the scrambled and original words
-            text = f'###Human:\nCorrect this hungarian first name: {new_word}\n\n###Assistant:\n{word}'
+            text = f'###Human:\nCorrect this hungarian first name, knowing that some letters in the word might have been changed: {new_word}\n\n###Assistant:\n{word}'
+            # text = f'###Human:\nCorrect this hungarian first name: {new_word}\n\n###Assistant:\n{word}'
             # Write the row to the output file
             writer.writerow([new_word, word, text])
