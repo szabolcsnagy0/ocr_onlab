@@ -30,6 +30,14 @@ def corrigate_coordinates(points):
         corrected_points.append([x, y])
     return corrected_points
 
+def coordinates_ratio(points, img_size):
+    rations = []
+    for point in points:
+        x = point[0] / img_size[0]
+        y = point[1] / img_size[1]
+        rations.append([x, y])
+    return rations
+
 # USAGE: python corners.py image.jpg
 if len(sys.argv) != 2:
     print("ERROR: Not enough arguments!\n")
@@ -42,13 +50,13 @@ if img is None:
     exit()
 
 img = cv2.imread(img)
-RESIZE_FACTOR = 0.5
+RESIZE_FACTOR = 0.3
 img = cv2.resize(img, None, fx=RESIZE_FACTOR, fy=RESIZE_FACTOR, interpolation=cv2.INTER_AREA)
 original_image = img
 
 # Remove text
 kernel = np.ones((4, 4), np.uint8)
-img = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel, iterations=5)
+img = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel, iterations=3)
 
 # Background
 mask = np.zeros(img.shape[:2], np.uint8)
@@ -88,6 +96,7 @@ for c in page:
 corners = sorted(np.concatenate(corners).tolist())
 
 corners = order_points(corners)
-corners = corrigate_coordinates(corners)
+# corners = corrigate_coordinates(corners)
+ration = coordinates_ratio(corners, img.shape)
 
-json.dump(corners, sys.stdout)
+json.dump(ration, sys.stdout)

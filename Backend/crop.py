@@ -45,6 +45,14 @@ def corrigate_coordinates(points):
         corrected_points.append([x, y])
     return corrected_points
 
+def coordinates_ratio(ratios, img_size):
+    points = []
+    for ratio in ratios:
+        x = ratio[0] * img_size[0]
+        y = ratio[1] * img_size[1]
+        points.append([x, y])
+    return points
+
 # USAGE: python crop.py --src image.jpg --corners 5 5 3 3 2 2 1 1
 
 img_path = None
@@ -55,21 +63,24 @@ for i in range(len(sys.argv)):
         img_path = sys.argv[i + 1]
     elif sys.argv[i] == "--corners" and len(sys.argv) > i + 8:
         corners_all = sys.argv[i+1:]
-        corners.append([int(corners_all[0]), int(corners_all[1])])
-        corners.append([int(corners_all[2]), int(corners_all[3])])
-        corners.append([int(corners_all[4]), int(corners_all[5])])
-        corners.append([int(corners_all[6]), int(corners_all[7])])
+        corners.append([float(corners_all[0]), float(corners_all[1])])
+        corners.append([float(corners_all[2]), float(corners_all[3])])
+        corners.append([float(corners_all[4]), float(corners_all[5])])
+        corners.append([float(corners_all[6]), float(corners_all[7])])
 
 if img_path is None or corners is None or len(corners) != 4:
     print("ERROR: Please provide the required parameters!\n")
     exit()
 
 print(corners)
-RESIZE_FACTOR = 0.5
-corners = corrigate_coordinates(corners)
-destination_corners = find_dest(corners)
 img = cv2.imread(img_path)
+RESIZE_FACTOR = 0.3
 img = cv2.resize(img, None, fx=RESIZE_FACTOR, fy=RESIZE_FACTOR, interpolation=cv2.INTER_AREA)
+
+# corners = corrigate_coordinates(corners)
+corners = coordinates_ratio(corners, img.shape)
+print(corners)
+destination_corners = find_dest(corners)
 
 h, w = img.shape[:2]
 # Getting the homography.
