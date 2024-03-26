@@ -79,6 +79,7 @@ img = cv2.resize(img, None, fx=RESIZE_FACTOR, fy=RESIZE_FACTOR, interpolation=cv
 
 # corners = corrigate_coordinates(corners)
 corners = coordinates_ratio(corners, img.shape)
+corners = order_points(corners)
 print(corners)
 destination_corners = find_dest(corners)
 

@@ -50,7 +50,7 @@ if img is None:
     exit()
 
 img = cv2.imread(img)
-RESIZE_FACTOR = 0.3
+RESIZE_FACTOR = 0.15
 img = cv2.resize(img, None, fx=RESIZE_FACTOR, fy=RESIZE_FACTOR, interpolation=cv2.INTER_AREA)
 original_image = img
 
