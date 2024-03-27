@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">IDSelector</string>
+    <string name="name">Családi és utónév/Family name and Given name:</string>
+    <string name="sex">Nem/Sex:</string>
+    <string name="nationality">Állampolgárság/Nationality:</string>
+    <string name="dateOfBirth">Születési idő/Date of birth:</string>
+    <string name="dateOfExpiry">Érvényességi idő/Date of expiry:</string>
+    <string name="documentNr">Okmányazonosító/Doc.No.:</string>
+    <string name="can">CAN:</string>
+    <string name="placeOfBirth">Születési hely/Place of birth:</string>
+    <string name="nameAtBirth">Születési családi és utónév/Family name and Given name at birth:</string>
+    <string name="mothersName">Anyja születési neve/Mothers maiden name:</string>
+    <string name="authority">Kiállító hatóság/Issuing authority:</string>
 </resources>

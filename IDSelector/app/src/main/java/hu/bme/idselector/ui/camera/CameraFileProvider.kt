@@ -2,11 +2,14 @@ package hu.bme.idselector.ui.camera
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Environment
 import androidx.core.content.FileProvider
 import hu.bme.idselector.R
 import java.io.File
+import java.io.FileOutputStream
 import java.text.SimpleDateFormat
 import java.util.Date
 
@@ -38,11 +41,11 @@ class CameraFileProvider : FileProvider(
          * @return File Temporary image file.
          */
         @SuppressLint("SimpleDateFormat")
-        private fun createImageFile(context: Context): File {
+        private fun createImageFile(context: Context? = null): File {
             val timestamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-            val imageDirectory = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+            val imageDirectory = context?.getExternalFilesDir(Environment.DIRECTORY_PICTURES) ?: Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
             return File.createTempFile(
-                "QTYADOKI_IMAGE_${timestamp}",
+                "IDCROP_IMAGE_${timestamp}",
                 ".jpg",
                 imageDirectory
             )

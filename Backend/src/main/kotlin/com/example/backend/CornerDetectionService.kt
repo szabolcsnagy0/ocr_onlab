@@ -29,6 +29,6 @@ class CornerDetectionService {
     }
 
     companion object {
-        const val SCRIPT_PATH = "D:\\ocr_onlab\\Backend\\corners.py"
+        const val SCRIPT_PATH = "D:\\ocr_onlab\\Backend\\ocr\\corners.py"
     }
 }

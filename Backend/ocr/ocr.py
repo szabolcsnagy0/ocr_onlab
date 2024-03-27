@@ -25,7 +25,6 @@ def matching_box_by_text(string, localization_data):
     best_match = None
     for item in localization_data:
         current_percentage = similar(item["text"], string)
-        # print(item["text"], string, current_percentage)
         if current_percentage > max_percentage:
             max_percentage = current_percentage
             best_match = item
@@ -89,26 +88,43 @@ def process_result(result_data, localization_data):
         match = find_matching_box(boxes, localization_data)
         if match is None:
             continue
-        # print(match["text"])
         value = find_box_of_value(match, boxes, result_data)
         if value is not None:
-            # print(value[1][0])
             result_dict[match["text"]] = (value[1][0], boxes[1][1])
-        # print("\n")
     return result_dict
 
 
-file = io.open("../text_localization_ratio.json", encoding="utf-8")
+
+# USAGE: python ocr.py --localization local.json --front image.jpg --back image.jpg
+img_front_path = None
+img_back_path = None
+localization_path = None
+for i in range(len(sys.argv)):
+    print(sys.argv[i])
+    if sys.argv[i] == "--front" and len(sys.argv) > i + 1:
+        img_front_path = sys.argv[i + 1]
+    elif sys.argv[i] == "--back" and len(sys.argv) > i + 1:
+        img_back_path = sys.argv[i + 1]
+    elif sys.argv[i] == "--localization" and len(sys.argv) > i + 1:
+        localization_path = sys.argv[i + 1]
+
+if img_front_path is None or img_back_path is None:
+    print("ERROR: Please provide an image file!\n")
+    exit()
+
+if localization_path is None:
+    print("ERROR: Please provide a localization file!\n")
+    exit()
+
+file = io.open(localization_path, encoding="utf-8")
 localization = json.load(file)
 
 paddle_ocr = PaddleOCR(use_angle_cls=True, lang='hu')
 
 # Front
-img_front_path = "../images/id_front.jpeg"
 result_front = paddle_ocr.ocr(img_front_path, cls=True)
 
 # Back
-img_back_path = "../images/id_back.png"
 result_back = paddle_ocr.ocr(img_back_path, cls=True)
 
 # Normalize coordinates
@@ -125,11 +141,7 @@ dict_back = process_result(result_back[0], localization["back"])
 person_front = dc.Person(dict_front)
 person_back = dc.Person(dict_back)
 merged = dc.merge(person_front, person_back)
-# print(dc.merge(person_front, person_back))
 
-# print(merged.to_dict())
-json.dump(merged.to_dict(), sys.stdout, ensure_ascii=False)
-
-# json.dump(dict_front, sys.stdout, ensure_ascii=False)
-# print()
-# json.dump(dict_back, sys.stdout, ensure_ascii=False)
+json_string = json.dumps(merged.to_dict(), ensure_ascii=False).encode('utf8')
+sys.stdout.reconfigure(encoding='utf-8')
+print(json_string.decode())

@@ -31,6 +31,6 @@ class CropService {
     }
 
     companion object {
-        const val SCRIPT_PATH = "D:\\ocr_onlab\\Backend\\crop.py"
+        const val SCRIPT_PATH = "D:\\ocr_onlab\\Backend\\ocr\\crop.py"
     }
 }
