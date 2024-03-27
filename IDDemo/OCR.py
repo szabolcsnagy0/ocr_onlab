@@ -1,27 +1,16 @@
+import sys
+
 from paddleocr import (PaddleOCR, draw_ocr)
 import json
 import io
 import math
 from difflib import SequenceMatcher
 import cv2
+import DataCleansing as dc
 
 
 def similar(a, b):
     return SequenceMatcher(None, a, b).ratio()
-
-
-def show_result(result, img_path):
-    # draw result
-    from PIL import Image
-    current_result = result[0]
-    image = Image.open(img_path).convert('RGB')
-    boxes = [line[0] for line in current_result]
-    texts = [line[1][0] for line in current_result]
-    scores = [line[1][1] for line in current_result]
-    font = '../arial.ttf'
-    im_show = draw_ocr(image, boxes, texts, scores, font_path=font)
-    im_show = Image.fromarray(im_show)
-    im_show.show()
 
 
 def normalize_coordinates(ocr_data, img_shape):
@@ -31,10 +20,10 @@ def normalize_coordinates(ocr_data, img_shape):
             coords[1] = coords[1] / img_shape[0]
 
 
-def matching_box_by_text(string):
+def matching_box_by_text(string, localization_data):
     max_percentage = 0
     best_match = None
-    for item in localization["front"]:
+    for item in localization_data:
         current_percentage = similar(item["text"], string)
         # print(item["text"], string, current_percentage)
         if current_percentage > max_percentage:
@@ -46,18 +35,22 @@ def matching_box_by_text(string):
     return None
 
 
-def find_matching_box(box_coordinates):
-    difference = float("inf")
-    closest_box = None
-    for item in localization["front"]:
-        current_distance = math.dist(item["place"][0], box_coordinates[0])
-        if len(item["value"]) > 0:
-            current_distance = min(current_distance, math.dist(item["value"][0], box_coordinates[0]))
-        if current_distance < difference:
-            closest_box = item
-            difference = current_distance
-        print(item["text"], " ", current_distance)
-    return closest_box
+def matching_box_by_place(ocr_data, localization_data):
+    closest_distance = float("inf")
+    best_match = None
+    for item in localization_data:
+        current_distance = math.dist(ocr_data[0], item["place"][0])
+        if current_distance < closest_distance:
+            closest_distance = current_distance
+            best_match = item
+    return best_match
+
+
+def find_matching_box(ocr_data, localization_data):
+    best_match = matching_box_by_text(ocr_data[1][0], localization_data)
+    if best_match is not None:
+        return best_match
+    return matching_box_by_place(ocr_data[0], localization_data)
 
 
 def find_box_of_value(reference, current_box, ocr_data):
@@ -87,8 +80,22 @@ def find_box_of_value(reference, current_box, ocr_data):
         if current_distance < closest_distance:
             closest_distance = current_distance
             closest_box = item
-
     return closest_box
+
+
+def process_result(result_data, localization_data):
+    result_dict = {}
+    for boxes in result_data:
+        match = find_matching_box(boxes, localization_data)
+        if match is None:
+            continue
+        # print(match["text"])
+        value = find_box_of_value(match, boxes, result_data)
+        if value is not None:
+            # print(value[1][0])
+            result_dict[match["text"]] = (value[1][0], boxes[1][1])
+        # print("\n")
+    return result_dict
 
 
 file = io.open("../text_localization_ratio.json", encoding="utf-8")
@@ -97,24 +104,33 @@ localization = json.load(file)
 paddle_ocr = PaddleOCR(use_angle_cls=True, lang='hu')
 
 # Front
-img_front = "../images/id_front.jpeg"
-result_front = paddle_ocr.ocr(img_front, cls=True)
+img_front_path = "../images/id_front.jpeg"
+result_front = paddle_ocr.ocr(img_front_path, cls=True)
 
-print(result_front)
+# Back
+img_back_path = "../images/id_back.png"
+result_back = paddle_ocr.ocr(img_back_path, cls=True)
 
-img = cv2.imread(img_front)
-normalize_coordinates(result_front[0], img.shape)
+# Normalize coordinates
+img_front = cv2.imread(img_front_path)
+normalize_coordinates(result_front[0], img_front.shape)
+img_back = cv2.imread(img_back_path)
+normalize_coordinates(result_back[0], img_back.shape)
 
-for boxes in result_front[0]:
-    match = matching_box_by_text(boxes[1][0])
-    if match is None:
-        continue
-    print(match["text"])
-    value = find_box_of_value(match, boxes, result_front[0])
-    if value is not None:
-        print(value[1][0])
-    print("\n")
+# Process front result
+dict_front = process_result(result_front[0], localization["front"])
+# Process back result
+dict_back = process_result(result_back[0], localization["back"])
 
+person_front = dc.Person(dict_front)
+person_back = dc.Person(dict_back)
+merged = dc.merge(person_front, person_back)
+# print(dc.merge(person_front, person_back))
 
-# show_result(result_front, img_front)
-# data_front = process_front(result_front[0])
+# print(merged.to_dict())
+json.dump(merged.to_dict(), sys.stdout, ensure_ascii=False)
+
+# json.dump(dict_front, sys.stdout, ensure_ascii=False)
+# print()
+# json.dump(dict_back, sys.stdout, ensure_ascii=False)
+
