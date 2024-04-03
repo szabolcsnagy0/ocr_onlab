@@ -1,12 +1,12 @@
 html {
-    height: 500px;
-    width: 300px;
+    height: 300px;
+    width: 500px;
 }
 
 body {
     font-family: 'Trebuchet MS', sans-serif;
     color: #333;
-    background-color: #c0d5e0;
+    background-color: #F2BB3E;
     padding: 20px;
 }
 
@@ -14,6 +14,22 @@ body {
     background-color: #fff;
     border-radius: 10px;
     padding: 10px;
+}
+
+.id_border {
+    background-color: #F9F2DF;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 5px;
+    height: 250px;
+}
+
+.face {
+    height: 90%;
+}
+
+.logo_text {
+    width:50%;
 }
 
 h1 {

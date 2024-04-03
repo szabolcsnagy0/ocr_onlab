@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="fontawesome/css/all.css">
 </head>
-<body>
-  <div>
-    <div class="row align-items-center container">
-      <div class="col-6">
-        <h1 id="name">Joe Doe</h1>
-      </div>
-      <div class="col-6">
-       <button class="fa-solid fa-copy" title="Copy"></button>
-        <button class="fa-solid fa-file-import" title="Insert"></button>
-      </div>
-    </div>
 
-    <div class="row align-items-center justify-content-center">
-      <div class="col-12 dropdown">
-        <select class="dropbtn">
-          <option selected disabled hidden>Select field</option>
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
-        </select>
+<body>
+  <img src="images/text.svg" class="logo_text mx-auto d-block" alt="Identity Text">
+  <div class="id_border row align-items-center">
+    <img src="images/face.svg" class="face col-6 mx-auto d-block" alt="Face Icon">
+
+    <div class="col-6">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-12">
+          <h1 id="name">Joe Doe</h1>
+        </div>
+      </div>
+      <div class="row align-items-center justify-content-center">
+        <div class="col-12 dropdown">
+          <select class="dropbtn">
+            <option selected disabled hidden>Select field</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+          </select>
+        </div>
+      </div>
+      <div class="row align-items-center justify-content-center">
+        <div class="col-12">
+          <button class="fas fa-copy" title="Copy"></button>
+          <button class="fas fa-file-import" title="Insert"></button>
+        </div>
       </div>
     </div>
   </div>
-
-  <script src="https://kit.fontawesome.com/ec8b89622e.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
