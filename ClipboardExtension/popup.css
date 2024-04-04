@@ -5,42 +5,48 @@ html {
 
 body {
     font-family: 'Trebuchet MS', sans-serif;
+    /* color: #F9F2DF; */
     color: #333;
-    background-color: #F2BB3E;
+    background-color: #F9F2DF;
+    /* background-color: #F2BB3E; */
     padding: 20px;
 }
 
-.container {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 10px;
+h1.container, .dropdown {
+    margin-inline-end: 20px;
 }
 
-.id_border {
+h1.container {
     background-color: #F9F2DF;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px 5px;
-    height: 250px;
-}
-
-.face {
-    height: 90%;
-}
-
-.logo_text {
-    width:50%;
-}
-
-h1 {
+    border-radius: 7px;
+    padding: 8px;
+    height: 45px;
     font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0 10px 0 0;
+    font-weight: bolder;
     white-space: nowrap;
 }
 
+.id_border {
+    background-color: #F2BB3E;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 5px;
+    height: 250px;
+    outline: 10px solid #333;
+}
+
+.face {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.logo_text {
+    width:70%;
+    margin-bottom: 20px; 
+}
+
 .row {
-    margin: 0 0 5px 0;
+    margin-bottom: 5px;
 }
 
 button,
@@ -49,30 +55,28 @@ button:focus {
     border: none;
     outline: none;
     background-color: transparent;
-    font-size: 1rem;
-    color: #438BC9ff;
+    font-size: 2rem;
+    color: #F9F2DF;
 }
 
 button:hover {
-    color: #0056b3;
+    color: #F05123;
 }
 
 /* Style The Dropdown Button */
 .dropbtn {
-    background-color: white;
-    padding: 8px;
-    color: black;
-    font-size: 1.2rem;
+    background-color: #F9F2DF;
+    height: 40px;
+    color: #333;
+    font-size: 1rem;
     cursor: pointer;
     border-radius: 7px;
     border: none;
     width: 100%;
-    margin: auto;
 }
 
 /* Container style */
 .dropdown {
-    position: relative;
     display: inline-block;
     margin-top: 10px;
 }
@@ -81,9 +85,8 @@ button:hover {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: #F9F2DF;
+    box-shadow: 0px 8px 16px 0px #333;
     z-index: 1;
     border-radius: 7px;
     overflow: hidden;
@@ -92,7 +95,6 @@ button:hover {
 /* Links inside the dropdown */
 .dropdown-content option {
     color: black;
-    /* padding: 12px 16px; */
     text-decoration: none;
     display: block;
 }
@@ -109,5 +111,5 @@ button:hover {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-    background-color: white;
+    background-color: #F9F2DF;
 }
