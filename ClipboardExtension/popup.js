@@ -1,40 +1,59 @@
-url = "http://localhost:8080/text";
+import { fetchData } from "./api.js";
+import { person } from "./person.js";
+
+document.addEventListener("DOMContentLoaded", reloadData);
 
 const reloadBtn = document.querySelector("#reload");
-reloadBtn.addEventListener("click", setClipboard);
+reloadBtn.addEventListener("click", reloadData);
 
-async function getData(url) {
-    const response = await fetch(url);
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    return data;
-}
-
-async function setClipboard() {
-    getData(url)
+async function reloadData() {
+    fetchData()
         .then(data => {
-            printDataToClipboard(data.text);
+            person.setData(data);
+            actualizeData();
         })
         .catch(error => {
             console.error(error);
         });
 }
 
+function actualizeData() {
+    const name = document.getElementById("name");
+    name.textContent = person.name;
+}
+
+const copyBtn = document.querySelector("#copy");
+copyBtn.addEventListener("click", setClipboard);
+
+async function setClipboard() {
+    printDataToClipboard(person.name);
+}
+
 async function printDataToClipboard(data) {
-    // document.getElementById("title").innerHTML=data;
     await navigator.clipboard.writeText(data);
 }
 
-const pasteBtn = document.querySelector("#paste");
-pasteBtn.addEventListener("click", executePasteScript);
+const insertBtn = document.querySelector("#insert");
+insertBtn.addEventListener("click", executeInsertScript);
 
-async function executePasteScript() {
+async function insertData(data) {
+    try {
+        var input = document.activeElement;
+        if (input.tagName == "INPUT" || input.tagName == "TEXTAREA") {
+            input.value = data;
+        }
+    } catch (error) {
+        console.log("No input element found");
+    } {
+    }
+}
+
+async function executeInsertScript() {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         chrome.scripting.executeScript({
             target: { tabId: tabs[0].id },
-            files: ["paste.js"]
+            function: insertData,
+            args: [person.name]
         });
     });
 }

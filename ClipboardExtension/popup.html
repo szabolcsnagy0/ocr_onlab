@@ -11,19 +11,22 @@
 
 <body>
   <div class="id_border row align-items-center">
+    <!-- <lottie-player src="https://lottie.host/embed/baf16ac6-0651-47f3-8cf3-277bef23199c/z3PjjkvSq9.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop controls autoplay></lottie-player> -->
     <div class="col-8">
       <img src="images/text.svg" class="logo_text mx-auto d-block" alt="Identity Text">
       <div class="row align-items-center justify-content-center">
-        <h1 class="container text-center">John Doe</h1>
+        <h1 class="container text-center" id="name"></h1>
       </div>
       <div class="row align-items-center justify-content-center">
-          <select class="dropbtn dropdown text-center">
-            <option selected disabled hidden>Select field</option>
-            <option value="option1">Family name and Given name</option>
-            <option value="option2">Date of birth</option>
-            <option value="option3">Document number</option>
-          </select>
+        <select class="dropbtn dropdown text-center">
+          <option selected disabled hidden>Select field</option>
+          <option value="option1">Family name and Given name</option>
+          <option value="option2">Date of birth</option>
+          <option value="option3">Document number</option>
+        </select>
       </div>
+    <button id="reload">RELOAD</button>
+
     </div>
     <div class="col-4">
       <div class="row align-items-center justify-content-center">
@@ -31,12 +34,15 @@
       </div>
       <div class="row align-items-center justify-content-center">
         <div class="text-center">
-          <button class="fas fa-copy" title="Copy"></button>
-          <button class="fas fa-file-import" title="Insert"></button>
+          <button class="fas fa-copy" title="Copy" id="copy"></button>
+          <button class="fas fa-file-import" title="Insert" id="insert"></button>
         </div>
       </div>
     </div>
   </div>
+  <script type="module" src="popup.js"></script>
+  <script type="module" src="person.js"></script>
+  <script type="module" src="api.js"></script>
+  <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
 </body>
-
 </html>
