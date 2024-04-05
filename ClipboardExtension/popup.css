@@ -12,7 +12,8 @@ body {
     padding: 20px;
 }
 
-h1.container, .dropdown {
+h1.container,
+.dropdown {
     margin-inline-end: 20px;
 }
 
@@ -33,6 +34,10 @@ h1.container {
     margin: 10px 5px;
     height: 250px;
     outline: 10px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .face {
@@ -41,8 +46,8 @@ h1.container {
 }
 
 .logo_text {
-    width:70%;
-    margin-bottom: 20px; 
+    width: 70%;
+    margin-bottom: 20px;
 }
 
 .row {
@@ -112,4 +117,24 @@ button:hover {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
     background-color: #F9F2DF;
+}
+
+.loader {
+    border: 12px solid #333;
+    border-top: 12px solid #F05123;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

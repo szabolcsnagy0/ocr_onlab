@@ -14,11 +14,18 @@
         "48": "images/icon48.png",
         "128": "images/icon128.png"
     },
-    "permissions": ["activeTab", "scripting"],
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
     "web_accessible_resources": [
         {
-            "resources": ["fontawesome/webfonts/*"],
-            "matches": ["<all_urls>"]
+            "resources": [
+                "fontawesome/webfonts/*"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
         }
     ]
 }

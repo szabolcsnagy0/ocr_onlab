@@ -3,30 +3,32 @@ import { person } from "./person.js";
 
 document.addEventListener("DOMContentLoaded", reloadData);
 
-const reloadBtn = document.querySelector("#reload");
-reloadBtn.addEventListener("click", reloadData);
+// const reloadBtn = document.querySelector("#reload");
+// reloadBtn.addEventListener("click", reloadData);
 
 async function reloadData() {
+    hideContent();
+    showLoading();
     fetchData()
         .then(data => {
             person.setData(data);
             actualizeData();
+            hideLoading();
+            showContent();
         })
         .catch(error => {
             console.error(error);
+            window.alert("Failed to load data");
+            hideLoading();
         });
-}
-
-function actualizeData() {
-    const name = document.getElementById("name");
-    name.textContent = person.name;
 }
 
 const copyBtn = document.querySelector("#copy");
 copyBtn.addEventListener("click", setClipboard);
 
 async function setClipboard() {
-    printDataToClipboard(person.name);
+    const data = getCurrentlySelectedData();
+    printDataToClipboard(data);
 }
 
 async function printDataToClipboard(data) {
@@ -49,11 +51,53 @@ async function insertData(data) {
 }
 
 async function executeInsertScript() {
+    const data = getCurrentlySelectedData();
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         chrome.scripting.executeScript({
             target: { tabId: tabs[0].id },
             function: insertData,
-            args: [person.name]
+            args: [data]
         });
     });
+}
+
+function getCurrentlySelectedData() {
+    const select = document.getElementById("select_field")
+    const selectedValue = select.value;
+    console.log(person);
+    switch (selectedValue) {
+        case "name":
+            return person.name;
+        case "date_of_birth":
+            return person.date_of_birth;
+        case "document_nr":
+            return person.document_nr;
+        default:
+            return "";
+    }
+}
+
+function actualizeData() {
+    const name = document.getElementById("name");
+    name.textContent = person.name;
+}
+
+function hideContent() {
+    const content = document.getElementById("content");
+    content.style.display = "none";
+}
+
+function showContent() {
+    const content = document.getElementById("content");
+    content.style.display = "flex";
+}
+
+function hideLoading() {
+    const loading = document.getElementById("loading");
+    loading.style.display = "none";
+}
+
+function showLoading() {
+    const loading = document.getElementById("loading");
+    loading.style.display = "block";
 }
