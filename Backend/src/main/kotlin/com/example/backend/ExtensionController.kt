@@ -21,7 +21,7 @@ class ExtensionController {
     @CrossOrigin
     @GetMapping("data")
     fun getName(): ResponseEntity<Person?> {
-        Thread.sleep(2000)
+//        Thread.sleep(2000)
         return ResponseEntity.ok().body(person)
     }
 

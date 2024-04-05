@@ -1,4 +1,4 @@
-class Person {
+export class Person {
   constructor(data) {
     console.log(data);
     if (!data) {
@@ -21,4 +21,4 @@ class Person {
 
 const person = new Person();
 
-export { person, Person };
+export { person };

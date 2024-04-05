@@ -1,7 +1,15 @@
 import { fetchData } from "./api.js";
 import { person } from "./person.js";
+import { highlightSelected } from "./highlight.js";
+import { removeHighlight } from "./highlight.js";
 
-document.addEventListener("DOMContentLoaded", reloadData);
+
+document.addEventListener("DOMContentLoaded", function () {
+    reloadData();
+    executeScript(highlightSelected);
+});
+
+document.addEventListener("visibilitychange", function () { executeScript(removeHighlight) });
 
 // const reloadBtn = document.querySelector("#reload");
 // reloadBtn.addEventListener("click", reloadData);
@@ -36,7 +44,10 @@ async function printDataToClipboard(data) {
 }
 
 const insertBtn = document.querySelector("#insert");
-insertBtn.addEventListener("click", executeInsertScript);
+insertBtn.addEventListener("click", function () {
+    const data = getCurrentlySelectedData();
+    executeScript(insertData, data);
+});
 
 async function insertData(data) {
     try {
@@ -46,19 +57,27 @@ async function insertData(data) {
         }
     } catch (error) {
         console.log("No input element found");
-    } {
     }
 }
 
-async function executeInsertScript() {
-    const data = getCurrentlySelectedData();
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        chrome.scripting.executeScript({
-            target: { tabId: tabs[0].id },
-            function: insertData,
-            args: [data]
+async function executeScript(func, data) {
+    if (data === undefined) {
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+            chrome.scripting.executeScript({
+                target: { tabId: tabs[0].id },
+                function: func
+            });
         });
-    });
+    }
+    else {
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+            chrome.scripting.executeScript({
+                target: { tabId: tabs[0].id },
+                function: func,
+                args: [data]
+            });
+        });
+    }
 }
 
 function getCurrentlySelectedData() {

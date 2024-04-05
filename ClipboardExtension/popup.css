@@ -138,3 +138,8 @@ button:hover {
         transform: rotate(360deg);
     }
 }
+
+.highlighted {
+    transform: scale(1.5);
+    transition: transform 0.3s ease-in-out;
+}
