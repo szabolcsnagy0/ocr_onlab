@@ -1,10 +1,10 @@
-FROM eclipse-temurin:17-jre as builder
+FROM adoptopenjdk:22-jdk AS builder
 WORKDIR application
-ARG JAR_FILE=target/*.jar
+ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} application.jar
 RUN java -Djarmode=layertools -jar application.jar extract
 
-FROM eclipse-temurin:17-jre
+FROM adoptopenjdk:22-jre
 WORKDIR application
 COPY --from=builder application/dependencies/ ./
 COPY --from=builder application/spring-boot-loader/ ./
