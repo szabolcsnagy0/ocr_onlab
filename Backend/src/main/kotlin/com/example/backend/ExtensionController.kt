@@ -24,5 +24,4 @@ class ExtensionController {
 //        Thread.sleep(2000)
         return ResponseEntity.ok().body(person)
     }
-
 }

@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
     executeScript(highlightSelected);
 });
 
-document.addEventListener("visibilitychange", function () { executeScript(removeHighlight) });
+document.addEventListener("visibilitychange", function () {
+    executeScript(removeHighlight)
+});
 
 // const reloadBtn = document.querySelector("#reload");
 // reloadBtn.addEventListener("click", reloadData);
@@ -61,23 +63,24 @@ async function insertData(data) {
 }
 
 async function executeScript(func, data) {
-    if (data === undefined) {
-        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-            chrome.scripting.executeScript({
-                target: { tabId: tabs[0].id },
-                function: func
-            });
-        });
-    }
-    else {
-        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-            chrome.scripting.executeScript({
-                target: { tabId: tabs[0].id },
-                function: func,
-                args: [data]
-            });
-        });
-    }
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        var url = tabs[0].url;
+        if (url !== undefined && !url.startsWith('chrome://')) {
+            if (data === undefined) {
+                chrome.scripting.executeScript({
+                    target: { tabId: tabs[0].id },
+                    function: func
+                });
+            }
+            else {
+                chrome.scripting.executeScript({
+                    target: { tabId: tabs[0].id },
+                    function: func,
+                    args: [data]
+                });
+            }
+        }
+    });
 }
 
 function getCurrentlySelectedData() {

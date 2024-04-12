@@ -13,24 +13,26 @@ export function highlightSelected() {
             input.style.boxShadow = '0 0 10px #F2BB3E';
         }
     } catch (error) {
-        console.log("No input element found");
     }
 }
 
 export function removeHighlight() {
-    // Select all input and textarea elements
-    var inputsAndTextareas = document.querySelectorAll('input, textarea');
+    try {
+        // Select all input and textarea elements
+        var inputsAndTextareas = document.querySelectorAll('input, textarea');
 
-    // Add the event listener to each input field
-    inputsAndTextareas.forEach(element => {
-        element.style.transform = '';
-        element.style.transition = '';
-        element.style.position = '';
-        element.style.top = '';
-        element.style.left = '';
-        element.style.right = '';
-        element.style.bottom = '';
-        element.style.marginRight = '';
-        element.style.boxShadow = '';
-    });
+        // Add the event listener to each input field
+        inputsAndTextareas.forEach(element => {
+            element.style.transform = '';
+            element.style.transition = '';
+            element.style.position = '';
+            element.style.top = '';
+            element.style.left = '';
+            element.style.right = '';
+            element.style.bottom = '';
+            element.style.marginRight = '';
+            element.style.boxShadow = '';
+        });
+    } catch (error) {
+    }
 }

@@ -2,9 +2,9 @@ export class Person {
   constructor(data) {
     console.log(data);
     if (!data) {
-        this.name = null;
-        this.document_nr = null;
-        this.date_of_birth = null;
+      this.name = null;
+      this.document_nr = null;
+      this.date_of_birth = null;
       return;
     }
     this.name = data.name;
