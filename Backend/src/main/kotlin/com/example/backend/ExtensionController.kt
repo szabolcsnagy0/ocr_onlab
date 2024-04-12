@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("selected/")
+@RequestMapping("/")
 class ExtensionController {
     val person = Person(
         name = "John Doe",
@@ -24,4 +24,7 @@ class ExtensionController {
 //        Thread.sleep(2000)
         return ResponseEntity.ok().body(person)
     }
+
+    @GetMapping
+    fun default() = ResponseEntity.ok().body("OK")
 }
