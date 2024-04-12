@@ -1,10 +1,10 @@
-FROM adoptopenjdk:22-jdk AS builder
+FROM adoptopenjdk:17-jdk AS builder
 WORKDIR application
 ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} application.jar
 RUN java -Djarmode=layertools -jar application.jar extract
 
-FROM adoptopenjdk:22-jre
+FROM adoptopenjdk:17-jre
 WORKDIR application
 COPY --from=builder application/dependencies/ ./
 COPY --from=builder application/spring-boot-loader/ ./
