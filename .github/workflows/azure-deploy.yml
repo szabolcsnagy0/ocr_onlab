@@ -20,10 +20,10 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v4
 
-      - name: Set up JDK 17 with Gradle
-        uses: actions/setup-java@v3
+      - name: Set up JDK 22 with Gradle
+        uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '22'
           distribution: 'temurin'
           cache: 'gradle'
 
