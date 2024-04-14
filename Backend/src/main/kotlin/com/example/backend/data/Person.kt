@@ -1,15 +1,13 @@
 package com.example.backend.data
 
+import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
+import org.springframework.data.annotation.Id
+import java.util.Date
+
+@Entity
 data class Person(
-    val name: String? = null,
-    val sex: String? = null,
-    val nationality: String? = null,
-    val dateOfBirth: String? = null,
-    val dateOfExpiry: String? = null,
-    val documentNr: String? = null,
-    val can: String? = null,
-    val placeOfBirth: String? = null,
-    val nameAtBirth: String? = null,
-    val mothersName: String? = null,
-    val authority: String? = null,
+    @jakarta.persistence.Id @GeneratedValue @Id
+    var id: Long = 0,
+    val name: String? = null
 )
