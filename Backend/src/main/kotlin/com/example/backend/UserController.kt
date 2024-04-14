@@ -29,6 +29,6 @@ class UserController {
 
     @GetMapping
     fun default(): ResponseEntity<String> {
-        return ResponseEntity.ok("OK")
+        return ResponseEntity.ok("Hello")
     }
 }
