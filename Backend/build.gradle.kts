@@ -27,6 +27,9 @@ dependencies {
 	implementation("org.postgresql:postgresql")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+	implementation("com.microsoft.azure:azure-spring-boot-starter")
+	implementation("com.microsoft.azure:azure-spring-boot-starter-jdbc-postgresql")
 }
 
 tasks.withType<KotlinCompile> {
