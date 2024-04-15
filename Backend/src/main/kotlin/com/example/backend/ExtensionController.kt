@@ -1,8 +1,6 @@
 package com.example.backend
 
 import com.example.backend.data.Person
-import com.example.backend.repository.UserRepository
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
