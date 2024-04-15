@@ -1,9 +1,6 @@
 package com.example.backend.data
 
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Table
+import jakarta.persistence.*
 import org.springframework.data.annotation.Id
 
 @Entity
@@ -11,5 +8,7 @@ import org.springframework.data.annotation.Id
 data class User(
     @Id @jakarta.persistence.Id @GeneratedValue
     var id: Long = 0,
-    val email: String? = null
+    val email: String? = null,
+    @OneToMany(mappedBy = "userId", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
+    val profiles: List<Person> = emptyList()
 )

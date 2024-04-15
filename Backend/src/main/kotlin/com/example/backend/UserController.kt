@@ -1,5 +1,6 @@
 package com.example.backend
 
+import com.example.backend.data.Person
 import com.example.backend.data.User
 import com.example.backend.repository.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController
 
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("api")
 class UserController {
 
     @Autowired
@@ -27,8 +28,13 @@ class UserController {
             }
     }
 
-    @GetMapping
-    fun default(): ResponseEntity<String> {
-        return ResponseEntity.ok("Hello")
+    @GetMapping("/{id}/profiles")
+    fun getUserProfiles(@PathVariable id: Long): ResponseEntity<List<Person>> {
+        return userRepository.findById(id).let { user ->
+            if(user.isPresent) {
+                ResponseEntity.ok(user.get().profiles)
+            }
+            else ResponseEntity.notFound().build()
+        }
     }
 }
