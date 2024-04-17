@@ -1,8 +1,6 @@
 package com.example.backend.data
 
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.Table
+import jakarta.persistence.*
 import org.springframework.data.annotation.Id
 import java.util.*
 
@@ -21,5 +19,5 @@ data class NationalId(
     val placeOfBirth: String? = null,
     val nameAtBirth: String? = null,
     val mothersName: String? = null,
-    val authority: String? = null
+    val authority: String? = null,
 )

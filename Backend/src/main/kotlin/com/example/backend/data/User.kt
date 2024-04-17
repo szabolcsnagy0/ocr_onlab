@@ -10,5 +10,5 @@ data class User(
     var id: Long = 0,
     val email: String? = null,
     @OneToMany(mappedBy = "userId", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val profiles: List<Person> = emptyList()
+    val profiles: List<Profile> = emptyList()
 )

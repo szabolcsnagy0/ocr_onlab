@@ -1,5 +1,5 @@
 import { fetchData } from "./api.js";
-import { person } from "./person.js";
+import { Profile } from "./profile.js";
 import { highlightSelected } from "./highlight.js";
 import { removeHighlight } from "./highlight.js";
 
@@ -21,8 +21,8 @@ async function reloadData() {
     showLoading();
     fetchData()
         .then(data => {
-            person.setData(data);
-            actualizeData();
+            Profile.setProfileList(data);
+            actualizeProfileSelect();
             hideLoading();
             showContent();
         })
@@ -84,24 +84,24 @@ async function executeScript(func, data) {
 }
 
 function getCurrentlySelectedData() {
-    const select = document.getElementById("select_field")
-    const selectedValue = select.value;
-    console.log(person);
-    switch (selectedValue) {
-        case "name":
-            return person.name;
-        case "date_of_birth":
-            return person.date_of_birth;
-        case "document_nr":
-            return person.document_nr;
-        default:
-            return "";
-    }
+    const profileSelect = document.getElementById("select_profile");
+    const selectedProfileId = profileSelect.value;
+    const selectedNationalId = Profile.profileList.find(profile => profile.id == selectedProfileId).nationalId;
+
+    const fieldSelect = document.getElementById("select_field")
+    const selectedFieldValue = fieldSelect.value;
+    return selectedNationalId[selectedFieldValue];
 }
 
-function actualizeData() {
-    const name = document.getElementById("name");
-    name.textContent = person.name;
+function actualizeProfileSelect() {
+    var select = document.getElementById("select_profile");
+
+    for (var i = 0; i < Profile.profileList.length; i++) {
+        var option = document.createElement("option");
+        option.value = Profile.profileList[i].id;
+        option.text = Profile.profileList[i].name;
+        select.appendChild(option);
+    }
 }
 
 function hideContent() {
@@ -123,3 +123,43 @@ function showLoading() {
     const loading = document.getElementById("loading");
     loading.style.display = "block";
 }
+
+
+var selectProfile = document.getElementById("select_profile");
+var selectField = document.getElementById("select_field");
+
+// Add an event listener to the select_profile dropdown
+selectProfile.addEventListener('change', function () {
+    console.log("select_profile changed");
+    var selectedProfile = Profile.profileList.find(profile => profile.id == selectProfile.value).nationalId;
+
+    if (selectedProfile === undefined) {
+        return;
+    }
+
+    // Clear the select_field dropdown
+    selectField.innerHTML = '';
+
+    var options = [
+        { value: "name", text: "Family name and Given name" },
+        { value: "sex", text: "Sex" },
+        { value: "nationality", text: "Nationality" },
+        { value: "dateOfBirth", text: "Date of birth" },
+        { value: "dateOfExpiry", text: "Date of expiry" },
+        { value: "documentNr", text: "Document number" },
+        { value: "can", text: "CAN" },
+        { value: "placeOfBirth", text: "Place of birth" },
+        { value: "nameAtBirth", text: "Name at birth" },
+        { value: "mothersName", text: "Mother's name" },
+        { value: "authority", text: "Authority" }
+    ];
+
+    options.forEach(function (option) {
+        if (selectedProfile[option.value]) {
+            var opt = document.createElement("option");
+            opt.value = option.value;
+            opt.text = option.text;
+            selectField.appendChild(opt);
+        }
+    })
+});

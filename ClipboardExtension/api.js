@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/selected/data";
+const url = "http://localhost:80/users/1/profiles";
 
 export async function fetchData() {
     const response = await fetch(url);
