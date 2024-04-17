@@ -1,3 +1,4 @@
+// const url = "http://localhost:80/users/1/profiles";
 const url = "http://localhost:80/users/1/profiles";
 
 export async function fetchData() {
