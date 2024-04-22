@@ -29,11 +29,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import hu.bme.idselector.R
@@ -68,9 +71,9 @@ fun ProfileDetails(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        profile.name?.let {
-            Text(text = it, fontWeight = FontWeight.Bold, fontSize = 25.sp)
-        }
+//        profile.name?.let {
+//            Text(text = it, fontWeight = FontWeight.Bold, fontSize = 25.sp)
+//        }
         profile.nationalId?.let {
             IdComponent(id = it)
         }
@@ -83,17 +86,17 @@ fun IdComponent(id: NationalId, modifier: Modifier = Modifier) {
 
     val rotation by animateFloatAsState(
         targetValue = if (rotated) 180f else 0f,
-        animationSpec = tween(500)
+        animationSpec = tween(500), label = ""
     )
 
     val animateFront by animateFloatAsState(
         targetValue = if (!rotated) 1f else 0f,
-        animationSpec = tween(500)
+        animationSpec = tween(500), label = ""
     )
 
     val animateBack by animateFloatAsState(
         targetValue = if (rotated) 1f else 0f,
-        animationSpec = tween(500)
+        animationSpec = tween(500), label = ""
     )
     ElevatedCard(
         colors = CardDefaults.cardColors(
@@ -111,103 +114,167 @@ fun IdComponent(id: NationalId, modifier: Modifier = Modifier) {
             .padding(10.dp)
             .clickable {
                 rotated = !rotated
-            },
+            }
     ) {
         if (!rotated) {
             Column(
                 horizontalAlignment = Alignment.Start,
-                verticalArrangement = Arrangement.SpaceBetween,
-                modifier = Modifier
-                    .padding(start = 8.dp, end = 8.dp, bottom = 8.dp)
+                verticalArrangement = Arrangement.SpaceEvenly,
+                modifier = modifier
+                    .padding(vertical = 5.dp, horizontal = 10.dp)
                     .fillMaxWidth()
                     .graphicsLayer {
                         alpha = animateFront
-                        rotationY = rotation
                     },
             ) {
-                id.name?.let {
-                    Column {
-                        Text(
-                            text = "Family name and Given name:",
-                            fontWeight = FontWeight.Light,
-                            fontSize = 15.sp,
-                            modifier = Modifier
-                                .padding(bottom = 2.dp)
+                Text(
+                    text = stringResource(id = R.string.id_card),
+                    fontSize = 30.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    modifier = Modifier.padding(bottom = 10.dp)
+                )
+
+                Row {
+                    Column(
+                        modifier = Modifier.weight(1f)
+                    ) {
+                        IdField(
+                            title = stringResource(id = R.string.name),
+                            value = id.name,
+                            modifier = Modifier.padding(bottom = 5.dp)
                         )
-                        Text(
-                            text = it,
-                            modifier = Modifier,
-                            fontSize = 20.sp,
-                            fontWeight = FontWeight.Bold
-                        )
-                    }
-                }
-                id.nationality?.let {
-                    Column {
-                        Text(
-                            text = "Nationality:",
-                            fontWeight = FontWeight.Light,
-                            fontSize = 15.sp,
-                            modifier = Modifier
-                                .padding(end = 2.dp)
-                        )
-                        Text(
-                            text = it,
-                            modifier = Modifier,
-                            fontSize = 20.sp,
-                            fontWeight = FontWeight.Bold
+                        IdField(
+                            title = stringResource(id = R.string.documentNr),
+                            value = id.documentNr
                         )
                     }
-                }
-                id.documentNr?.let {
-                    Column {
-                        Text(
-                            text = "Document Number:",
-                            fontWeight = FontWeight.Light,
-                            fontSize = 15.sp,
-                            modifier = Modifier
-                                .padding(end = 2.dp)
+
+                    Column (
+                        modifier = Modifier.weight(1f)
+                    ){
+                        IdField(
+                            title = stringResource(id = R.string.dateOfBirth),
+                            value = id.dateOfBirth?.toGMTString()?.take(10),
+                            modifier = Modifier.padding(bottom = 5.dp)
                         )
-                        Text(
-                            text = it,
-                            modifier = Modifier,
-                            fontSize = 20.sp,
-                            fontWeight = FontWeight.Bold
+                        IdField(
+                            title = stringResource(id = R.string.dateOfExpiry),
+                            value = id.dateOfExpiry?.toGMTString()?.take(10)
                         )
                     }
                 }
             }
         } else {
-            Column(
-                horizontalAlignment = Alignment.Start,
-                verticalArrangement = Arrangement.SpaceBetween,
+            Row(
+                verticalAlignment = Alignment.Top,
+                horizontalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier
-                    .padding(start = 8.dp, end = 8.dp, bottom = 8.dp)
-                    .fillMaxWidth()
-                    .graphicsLayer {
-                        alpha = animateBack
-                        rotationY = rotation
-                    },
+                    .padding(10.dp)
+                    .fillMaxWidth(),
             ) {
-                id.placeOfBirth?.let {
-                    Column {
-                        Text(
-                            text = "Place of birth:",
-                            fontWeight = FontWeight.Light,
-                            fontSize = 15.sp,
-                            modifier = Modifier
-                                .padding(end = 2.dp)
+                val rotationModifier: Modifier = Modifier.graphicsLayer {
+                    alpha = animateBack
+                    rotationY = rotation
+                }
+                Column(
+                    horizontalAlignment = Alignment.End,
+                    modifier = Modifier.weight(0.5f)
+                ) {
+                    IdField(
+                        title = stringResource(id = R.string.can),
+                        value = id.can,
+                        fontSize = 13.sp,
+                        textModifier = rotationModifier,
+                        horizontalAlignment = Alignment.End,
+                        modifier = Modifier.padding(bottom = 10.dp)
+                    )
+                    IdField(
+                        title = stringResource(id = R.string.authority),
+                        value = id.authority,
+                        fontSize = 13.sp,
+                        textModifier = rotationModifier,
+                        horizontalAlignment = Alignment.End,
+                        modifier = Modifier.padding(bottom = 10.dp)
+                    )
+                    Row {
+                        IdField(
+                            title = stringResource(id = R.string.nationality),
+                            value = id.nationality,
+                            fontSize = 13.sp,
+                            textModifier = rotationModifier,
+                            horizontalAlignment = Alignment.End,
+                            modifier = Modifier.weight(1f)
                         )
-                        Text(
-                            text = it,
-                            modifier = Modifier,
-                            fontSize = 20.sp,
-                            fontWeight = FontWeight.Bold
+                        IdField(
+                            title = stringResource(id = R.string.sex),
+                            value = id.sex.toString(),
+                            fontSize = 13.sp,
+                            textModifier = rotationModifier,
+                            horizontalAlignment = Alignment.End,
+                            modifier = Modifier.weight(1f)
                         )
                     }
-
+                }
+                Column(
+                    horizontalAlignment = Alignment.End,
+                    modifier = Modifier.weight(0.5f)
+                ) {
+                    IdField(
+                        title = stringResource(id = R.string.placeOfBirth),
+                        value = id.placeOfBirth,
+                        fontSize = 13.sp,
+                        textModifier = rotationModifier,
+                        horizontalAlignment = Alignment.End,
+                        modifier = Modifier.padding(bottom = 10.dp)
+                    )
+                    IdField(
+                        title = stringResource(id = R.string.nameAtBirth),
+                        value = id.nameAtBirth,
+                        fontSize = 13.sp,
+                        textModifier = rotationModifier,
+                        horizontalAlignment = Alignment.End,
+                        modifier = Modifier.padding(bottom = 10.dp)
+                    )
+                    IdField(
+                        title = stringResource(id = R.string.mothersName),
+                        value = id.mothersName,
+                        fontSize = 13.sp,
+                        textModifier = rotationModifier,
+                        horizontalAlignment = Alignment.End
+                    )
                 }
             }
+        }
+    }
+}
+
+@Composable
+fun IdField(
+    title: String,
+    value: String?,
+    modifier: Modifier = Modifier,
+    textModifier: Modifier = Modifier,
+    horizontalAlignment: Alignment.Horizontal = Alignment.Start,
+    fontSize: TextUnit = 15.sp
+) {
+    Column(
+        horizontalAlignment = horizontalAlignment,
+        modifier = modifier
+    ) {
+        Text(
+            text = "$title:",
+            fontWeight = FontWeight.Light,
+            fontSize = fontSize,
+            lineHeight = fontSize.times(1.1f),
+            modifier = textModifier,
+        )
+        value?.let {
+            Text(
+                text = it,
+                modifier = textModifier,
+                fontSize = fontSize * 1.33,
+                fontWeight = FontWeight.Bold
+            )
         }
     }
 }
