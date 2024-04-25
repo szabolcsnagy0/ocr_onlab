@@ -2,6 +2,7 @@ package hu.bme.idselector.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -31,7 +32,8 @@ fun ProfileElement(
         id = 1,
         name = "John Doe",
         nationalId = null
-    )
+    ),
+    onItemSelected: () -> Unit = {}
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -40,6 +42,7 @@ fun ProfileElement(
             .fillMaxWidth()
             .padding(horizontal = 10.dp, vertical = 10.dp)
             .height(100.dp)
+            .clickable { onItemSelected() }
     ) {
         ElevatedCard(
             colors = CardDefaults.cardColors(

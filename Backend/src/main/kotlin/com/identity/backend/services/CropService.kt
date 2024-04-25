@@ -1,4 +1,4 @@
-package com.example.backend
+package com.identity.backend.services
 
 import org.springframework.stereotype.Service
 import java.io.BufferedReader

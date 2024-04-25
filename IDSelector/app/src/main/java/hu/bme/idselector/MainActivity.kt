@@ -58,8 +58,10 @@ import coil.compose.rememberAsyncImagePainter
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import hu.bme.idselector.data.Person
+import hu.bme.idselector.navigation.Navigation
 import hu.bme.idselector.ui.ProfileDetails
 import hu.bme.idselector.ui.ProfileElement
+import hu.bme.idselector.ui.ProfileList
 import hu.bme.idselector.ui.camera.ChooseImage
 import hu.bme.idselector.ui.theme.IDSelectorTheme
 import kotlin.math.roundToInt
@@ -75,8 +77,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = colorResource(R.color.orange)
                 ) {
-//                    ProfileElement()
-                    ProfileDetails()
+                    Navigation()
 
 //                    val appState by remember { viewModel.appState }
 //                    when (appState) {

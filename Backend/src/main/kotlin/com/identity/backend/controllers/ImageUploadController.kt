@@ -1,13 +1,13 @@
-package com.example.backend
+package com.identity.backend.controllers
 
-import jakarta.servlet.ServletContext
-import org.apache.tomcat.util.http.fileupload.IOUtils
+import com.identity.backend.services.CornerDetectionService
+import com.identity.backend.services.CropService
+import com.identity.backend.services.TextDetectionService
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.multipart.MultipartFile
 import java.io.File
-import java.io.InputStream
 import kotlin.random.Random
 
 
