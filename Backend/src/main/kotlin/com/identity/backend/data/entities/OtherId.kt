@@ -17,7 +17,7 @@ data class OtherId (
         generator = "other_id_id_seq"
     )
     val id: Int = 0,
-    val front: ByteArray? = null,
+    var front: ByteArray? = null,
     val back: ByteArray? = null,
     val profileId: Int = 0
 ) {

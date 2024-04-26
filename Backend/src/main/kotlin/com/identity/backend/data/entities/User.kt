@@ -20,5 +20,5 @@ data class User(
     val email: String? = null,
     val password: String? = null,
     @OneToMany(mappedBy = "userId", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val profiles: List<Profile> = emptyList()
+    val profiles: MutableList<Profile> = mutableListOf()
 )

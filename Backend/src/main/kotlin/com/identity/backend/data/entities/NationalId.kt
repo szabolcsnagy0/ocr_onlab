@@ -29,8 +29,8 @@ data class NationalId(
     val nameAtBirth: String? = null,
     val mothersName: String? = null,
     val authority: String? = null,
-    val front: ByteArray? = null,
-    val back: ByteArray? = null,
+    var front: ByteArray? = null,
+    var back: ByteArray? = null,
     val profileId: Int = 0
 ) {
     override fun equals(other: Any?): Boolean {

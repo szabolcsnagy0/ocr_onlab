@@ -1,82 +1,85 @@
 package com.identity.backend.controllers
 
-import com.identity.backend.services.CornerDetectionService
-import com.identity.backend.services.CropService
-import com.identity.backend.services.TextDetectionService
+import com.identity.backend.repository.UserRepository
+import com.identity.backend.services.*
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.multipart.MultipartFile
-import java.io.File
-import kotlin.random.Random
 
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("image")
 class ImageUploadController(
     val textDetectionService: TextDetectionService,
     val cornerDetectionService: CornerDetectionService,
-    val cropService: CropService
+    val cropService: CropService,
+    val imageUploadService: ImageUploadService,
+    val authenticationService: AuthenticationService
 ) {
 
-    @GetMapping("upload/text")
-    fun upload(
+    @Autowired
+    private lateinit var userRepository: UserRepository
+
+    @GetMapping("detection")
+    fun detection(
         @RequestParam("front") front: String?,
         @RequestParam("back") back: String?
     ): ResponseEntity<String?> {
         try {
             if (front == null || back == null) throw RuntimeException("Missing parameters!")
+
+            val userId = findUserId()
             // Front image
-            val frontFileNameAndPath: String? = File(UPLOAD_DIRECTORY + front).let {
-                if (!it.exists()) throw RuntimeException("Front image not found!")
-                it.path
-            }
+            val frontFile = imageUploadService.findImageFile(front, userId)
             // Back image
-            val backFileNameAndPath: String? = File(UPLOAD_DIRECTORY + back).let {
-                if (!it.exists()) throw RuntimeException("Back image not found!")
-                it.path
-            }
-            return ResponseEntity.ok(textDetectionService.runDetection(
-                frontImagePath = frontFileNameAndPath,
-                backImagePath = backFileNameAndPath
-            ))
-        }
-        catch (ex: Exception) {
+            val backFile = imageUploadService.findImageFile(back, userId)
+
+            // Detection
+            val result = textDetectionService.runDetection(
+                frontImagePath = frontFile.path,
+                backImagePath = backFile.path
+            )
+
+            return ResponseEntity.ok(result)
+        } catch (ex: Exception) {
             print(ex.message)
             return ResponseEntity.badRequest().body(ex.message)
         }
     }
 
-    @PostMapping("upload/corners")
+    @PostMapping("corners")
     fun detectCorners(
         @RequestParam("image") image: MultipartFile?,
     ): String? {
         if (image == null) throw RuntimeException("Image not found!")
-        if (!File(UPLOAD_DIRECTORY).exists()) {
-            File(UPLOAD_DIRECTORY).mkdir()
-        }
-        // Front image
-        val imageFileNameAndPath: String?
-        imageFileNameAndPath = UPLOAD_DIRECTORY + Random.nextInt(Int.MAX_VALUE) + "." + image.originalFilename?.substringAfterLast('.')
-        image.transferTo(File(imageFileNameAndPath).also { it.deleteOnExit() })
-        return cornerDetectionService.runDetection(imagePath = imageFileNameAndPath)
+
+        val imageFile =
+            imageUploadService.saveToFile(image = image, userId = findUserId())
+                ?: throw RuntimeException("File could not be created!")
+
+        return cornerDetectionService.runDetection(imagePath = imageFile.path).also { imageFile.delete() }
     }
 
-    @PostMapping("upload/crop")
+    @PostMapping("crop")
     fun cropImage(
         @RequestParam("image") image: MultipartFile?,
         @RequestParam("corners") corners: String?
-    ): ResponseEntity<String?> {
+    ): ResponseEntity<Any> {
         if (image == null) throw RuntimeException("Image not found!")
         if (corners == null) throw RuntimeException("Corner coordinates not found!")
 
-        val imageID: String = "" + Random.nextInt(Int.MAX_VALUE) + "." + image.originalFilename?.substringAfterLast('.')
-        val imageFileNameAndPath = UPLOAD_DIRECTORY + imageID
-        image.transferTo(File(imageFileNameAndPath).also { it.deleteOnExit() })
-        return if (cropService.runCropAlgorithm(imagePath = imageFileNameAndPath, corners = corners)) {
-            ResponseEntity.ok(imageID)
+        val imageFile = imageUploadService.saveToFile(image = image, userId = findUserId())
+            ?: throw RuntimeException("File could not be created!")
+
+        // Cropping the image
+        return if (cropService.runCropAlgorithm(imagePath = imageFile.path, corners = corners)) {
+            val imagePath = imageFile.name
+            ResponseEntity.ok().body(imagePath)
         } else {
-            ResponseEntity.internalServerError().body(null)
+            imageFile.delete()
+            ResponseEntity.internalServerError().build()
         }
     }
 
@@ -84,16 +87,15 @@ class ImageUploadController(
     fun downloadCroppedImage(
         @PathVariable id: String
     ): ResponseEntity<ByteArray> {
-        val image = File(UPLOAD_DIRECTORY + id)
+        val image = imageUploadService.findImageFile(id, findUserId())
         return if (image.exists()) {
             ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(image.readBytes())
         } else {
             ResponseEntity.notFound().build()
         }
-
     }
 
-    companion object {
-        val UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/images/"
-    }
+    private fun findUserId() = authenticationService.getEmail()?.let { email ->
+        userRepository.findByEmail(email)?.id
+    } ?: throw RuntimeException("User not found!")
 }

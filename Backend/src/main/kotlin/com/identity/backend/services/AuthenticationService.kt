@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service
 import java.util.*
 
 @Service
-class AuthenticationService (
+class AuthenticationService(
     private val authenticationManager: AuthenticationManager,
     private val customUserDetailsService: CustomUserDetailsService,
     private val tokenService: TokenService,
@@ -56,10 +56,21 @@ class AuthenticationService (
 
     fun getEmail(): String? {
         return try {
-//            println((SecurityContextHolder.getContext().authentication.principal as UserDetails).username)
             (SecurityContextHolder.getContext().authentication.principal as UserDetails).username
-        } catch(_: Exception) {
+        } catch (_: Exception) {
             null
         }
     }
+
+    fun getUser() =
+        getEmail()?.let { email ->
+            userRepository.findByEmail(email)
+        }
+
+    fun getProfileById(profileId: Int) =
+        getEmail()?.let { email ->
+            userRepository.findByEmail(email)?.profiles?.find {
+                it.id == profileId
+            }
+        }
 }

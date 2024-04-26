@@ -20,7 +20,7 @@ data class Profile(
     var name: String? = null,
     val userId: Int = 0,
     @OneToMany(mappedBy = "profileId", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val nationalIdList: List<NationalId> = emptyList(),
+    val nationalIdList: MutableList<NationalId> = mutableListOf(),
     @OneToMany(mappedBy = "profileId", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val otherIdList: List<OtherId> = emptyList()
+    val otherIdList: MutableList<OtherId> = mutableListOf()
 )

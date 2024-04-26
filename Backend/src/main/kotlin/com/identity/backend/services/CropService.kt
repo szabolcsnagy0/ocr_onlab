@@ -1,8 +1,6 @@
 package com.identity.backend.services
 
 import org.springframework.stereotype.Service
-import java.io.BufferedReader
-import java.io.InputStreamReader
 
 @Service
 class CropService {
@@ -20,7 +18,7 @@ class CropService {
         // Start the process
         val process = ProcessBuilder(command).start()
         // Read results
-        val reader = BufferedReader(InputStreamReader(process.inputStream))
+        val reader = process.inputReader()
         var line: String?
         while (reader.readLine().also { line = it } != null) {
             println(line)
