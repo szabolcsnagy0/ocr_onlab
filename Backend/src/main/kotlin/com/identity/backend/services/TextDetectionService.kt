@@ -9,15 +9,15 @@ class TextDetectionService {
     fun runDetection(frontImagePath: String? = null, backImagePath: String? = null): String? {
         // Configure the command according to provided parameters
         val command = mutableListOf("python", SCRIPT_PATH).apply {
-            addLast("--localization")
-            addLast(LOCALIZATION_PATH)
+            add("--localization")
+            add(LOCALIZATION_PATH)
             frontImagePath?.let {
-                addLast("--front")
-                addLast(frontImagePath)
+                add("--front")
+                add(frontImagePath)
             }
             backImagePath?.let {
-                addLast("--back")
-                addLast(backImagePath)
+                add("--back")
+                add(backImagePath)
             }
         }
         // Start the process

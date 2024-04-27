@@ -9,7 +9,7 @@ class CornerDetectionService {
     fun runDetection(imagePath: String): String? {
         // Configure the command according to provided parameters
         val command = mutableListOf("python", SCRIPT_PATH)
-        command.addLast(imagePath)
+        command.add(imagePath)
         // Start the process
         val process = ProcessBuilder(command).start()
         // Read results

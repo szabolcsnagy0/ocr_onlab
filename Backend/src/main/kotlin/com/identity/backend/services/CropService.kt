@@ -8,12 +8,12 @@ class CropService {
         // Configure the command according to provided parameters
         val command = mutableListOf("python", SCRIPT_PATH)
         // Add required parameters
-        command.addLast("--src")
-        command.addLast(imagePath)
+        command.add("--src")
+        command.add(imagePath)
 
-        command.addLast("--corners")
+        command.add("--corners")
         for (coord in corners.split(" ")) {
-            command.addLast(coord)
+            command.add(coord)
         }
         // Start the process
         val process = ProcessBuilder(command).start()
