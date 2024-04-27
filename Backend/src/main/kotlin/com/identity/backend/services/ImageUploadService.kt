@@ -8,16 +8,26 @@ import kotlin.random.Random
 @Service
 class ImageUploadService {
     fun saveToFile(image: MultipartFile?, userId: Int): File? = image?.let { img ->
+        println("SAVING FILE: userId:${userId}")
         if (!File(UPLOAD_DIRECTORY).exists()) {
+            println("MAKING DIRECTORY: $UPLOAD_DIRECTORY")
             File(UPLOAD_DIRECTORY).mkdir()
         }
+        println("MAKING USER DIRECTORY")
         if (!File(userId.generateDirectoryFromId()).exists()) {
+            println("CREATING DIRECTORY: ${userId.generateDirectoryFromId()}")
             File(userId.generateDirectoryFromId()).mkdir()
         }
         File(img.generateFilePath(userId)).let {
             img.transferTo(it)
-            if (!it.exists()) null
-            else it
+            if (!it.exists()) {
+                println("ERROR: FILE NOT EXISTING: ${it.name}")
+                null
+            }
+            else {
+                println("FILE CREATED: ${it.name}")
+                it
+            }
         }
     }
 

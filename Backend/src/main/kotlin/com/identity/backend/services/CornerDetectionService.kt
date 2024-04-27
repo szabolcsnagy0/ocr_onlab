@@ -1,34 +1,36 @@
 package com.identity.backend.services
 
 import org.springframework.stereotype.Service
-import java.io.BufferedReader
-import java.io.InputStreamReader
 
 @Service
 class CornerDetectionService {
     fun runDetection(imagePath: String): String? {
+        println("CORNER DETECTION: imagePath: $imagePath")
         // Configure the command according to provided parameters
-        val command = mutableListOf("python", SCRIPT_PATH)
-        command.addLast(imagePath)
+        val command = mutableListOf("python3", SCRIPT_PATH)
+        command.add(imagePath)
+        println("COMMAND: $command")
         // Start the process
         val process = ProcessBuilder(command).start()
         // Read results
-        val reader = BufferedReader(InputStreamReader(process.inputStream))
+        val reader = process.inputReader()
         var line: String?
         var result: String? = null
         while (reader.readLine().also { line = it } != null) {
             println(line)
-            // If the line starts and ends with curly braces, we got the result
             if (line?.contains("""\[[^\[\]]*?]""".toRegex()) == true) {
                 result = line
             }
         }
+        val errorReader = process.errorReader()
+        var error: String?
+        while (errorReader.readLine().also { error = it } != null) println(error)
         val exitCode = process.waitFor()
         println("Python script exited with code $exitCode")
         return result
     }
 
     companion object {
-        const val SCRIPT_PATH = "D:\\ocr_onlab\\Backend\\ocr\\corners.py"
+        val SCRIPT_PATH = System.getProperty("user.dir") + "/ocr/corners.py"
     }
 }

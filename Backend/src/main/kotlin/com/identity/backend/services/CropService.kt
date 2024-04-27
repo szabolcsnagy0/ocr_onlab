@@ -6,14 +6,14 @@ import org.springframework.stereotype.Service
 class CropService {
     fun runCropAlgorithm(imagePath: String, corners: String): Boolean {
         // Configure the command according to provided parameters
-        val command = mutableListOf("python", SCRIPT_PATH)
+        val command = mutableListOf("python3", SCRIPT_PATH)
         // Add required parameters
-        command.addLast("--src")
-        command.addLast(imagePath)
+        command.add("--src")
+        command.add(imagePath)
 
-        command.addLast("--corners")
+        command.add("--corners")
         for (coord in corners.split(" ")) {
-            command.addLast(coord)
+            command.add(coord)
         }
         // Start the process
         val process = ProcessBuilder(command).start()
@@ -23,12 +23,15 @@ class CropService {
         while (reader.readLine().also { line = it } != null) {
             println(line)
         }
+        val errorReader = process.errorReader()
+        var error: String?
+        while (errorReader.readLine().also { error = it } != null) println(error)
         val exitCode = process.waitFor()
         println("Python script exited with code $exitCode")
         return exitCode == 0
     }
 
     companion object {
-        const val SCRIPT_PATH = "D:\\ocr_onlab\\Backend\\ocr\\crop.py"
+        val SCRIPT_PATH = System.getProperty("user.dir") + "/ocr/crop.py"
     }
 }
