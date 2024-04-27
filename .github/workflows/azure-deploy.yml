@@ -26,10 +26,10 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v4
 
-      - name: Set up JDK 22 with Gradle
+      - name: Set up JDK 21 with Gradle
         uses: actions/setup-java@v4
         with:
-          java-version: '22'
+          java-version: '21'
           distribution: 'temurin'
           cache: 'gradle'
 
