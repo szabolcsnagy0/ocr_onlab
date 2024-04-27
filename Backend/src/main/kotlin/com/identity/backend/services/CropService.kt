@@ -23,6 +23,9 @@ class CropService {
         while (reader.readLine().also { line = it } != null) {
             println(line)
         }
+        val errorReader = process.errorReader()
+        var error: String?
+        while (errorReader.readLine().also { error = it } != null) println(error)
         val exitCode = process.waitFor()
         println("Python script exited with code $exitCode")
         return exitCode == 0
