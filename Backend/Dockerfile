@@ -9,13 +9,10 @@ ENV AZURE_POSTGRESQL_PASSWORD=${AZURE_POSTGRESQL_PASSWORD}
 ENV JWT_KEY=${JWT_KEY}
 # Install Python and pip
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip libgl1-mesa-glx
+    apt-get install -y python3 python3-pip libgl1-mesa-glx libglib2.0-0 libsm6 libxrender1 libxext6
 
-# Install OpenCV and NumPy
-RUN pip3 install opencv-python-headless numpy
-
-# Install PaddleOCR
-RUN pip3 install paddlepaddle paddleocr
+    # Install OpenCV, Numpy, PaddlePaddle and PaddleOCR
+RUN pip3 install opencv-python-headless numpy paddlepaddle paddleocr
 
 ENV PATH="$PATH:/usr/bin/python3"
 ENV PYTHONPATH="$PYTHONPATH:/usr/lib/python3/dist-packages"
