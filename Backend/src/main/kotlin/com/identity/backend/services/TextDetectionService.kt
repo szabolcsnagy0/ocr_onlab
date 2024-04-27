@@ -29,7 +29,7 @@ class TextDetectionService {
         while (reader.readLine().also { line = it } != null) {
             println(line)
             // If the line starts and ends with curly braces, we got the result
-            if(line?.contains("""\{.*?}""".toRegex()) == true) {
+            if (line?.contains("""\{.*?}""".toRegex()) == true) {
                 result = line
             }
         }
@@ -42,7 +42,7 @@ class TextDetectionService {
     }
 
     companion object {
-        const val SCRIPT_PATH = "D:\\ocr_onlab\\Backend\\ocr\\ocr.py"
-        const val LOCALIZATION_PATH = "D:\\ocr_onlab\\Backend\\ocr\\text_localization.json"
+        val SCRIPT_PATH = System.getProperty("user.dir") + "/ocr/ocr.py"
+        val LOCALIZATION_PATH = System.getProperty("user.dir") + "/ocr/text_localization.json"
     }
 }

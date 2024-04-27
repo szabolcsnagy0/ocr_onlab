@@ -29,6 +29,6 @@ class CropService {
     }
 
     companion object {
-        const val SCRIPT_PATH = "D:\\ocr_onlab\\Backend\\ocr\\crop.py"
+        val SCRIPT_PATH = System.getProperty("user.dir") + "/ocr/crop.py"
     }
 }
