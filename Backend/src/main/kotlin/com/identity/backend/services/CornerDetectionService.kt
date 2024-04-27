@@ -7,9 +7,11 @@ import java.io.InputStreamReader
 @Service
 class CornerDetectionService {
     fun runDetection(imagePath: String): String? {
+        println("CORNER DETECTION: imagePath: $imagePath")
         // Configure the command according to provided parameters
         val command = mutableListOf("python3", SCRIPT_PATH)
         command.add(imagePath)
+        println("COMMAND: $command")
         // Start the process
         val process = ProcessBuilder(command).start()
         // Read results
