@@ -44,6 +44,7 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -57,6 +58,10 @@ import coil.compose.rememberAsyncImagePainter
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import hu.bme.idselector.data.Person
+import hu.bme.idselector.navigation.Navigation
+import hu.bme.idselector.ui.ProfileDetails
+import hu.bme.idselector.ui.ProfileElement
+import hu.bme.idselector.ui.ProfileList
 import hu.bme.idselector.ui.camera.ChooseImage
 import hu.bme.idselector.ui.theme.IDSelectorTheme
 import kotlin.math.roundToInt
@@ -70,76 +75,78 @@ class MainActivity : ComponentActivity() {
             IDSelectorTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = colorResource(R.color.orange)
                 ) {
-                    val appState by remember { viewModel.appState }
-                    when (appState) {
-                        AppState.START -> {
-                            Column(
-                                modifier = Modifier.fillMaxSize(),
-                                verticalArrangement = Arrangement.SpaceEvenly,
-                                horizontalAlignment = Alignment.CenterHorizontally
-                            ) {
-                                ChooseImage(content = { onClick ->
-                                    ImagePreview(
-                                        text = "FRONT",
-                                        onClick = onClick,
-                                        glideUrl = viewModel.getFrontImageUrl()
-                                    )
-                                }) { uri: Uri?, path: String? ->
-                                    viewModel.selectedImage.value = ImageState.FRONT
-                                    viewModel.selectedImageUri.value = uri
-                                    viewModel.selectedImagePath.value = path
-                                    viewModel.detectCorners()
-                                }
-                                ChooseImage(content = { onClick ->
-                                    ImagePreview(
-                                        text = "BACK",
-                                        onClick = onClick,
-                                        glideUrl = viewModel.getBackImageUrl()
-                                    )
-                                }) { uri: Uri?, path: String? ->
-                                    viewModel.selectedImage.value = ImageState.BACK
-                                    viewModel.selectedImageUri.value = uri
-                                    viewModel.selectedImagePath.value = path
-                                    viewModel.detectCorners()
-                                }
-                                Button(onClick = {
-                                    viewModel.detectText()
-                                }, modifier = Modifier.size(150.dp, 70.dp)) {
-                                    Text(text = "OK")
-                                }
-                            }
-                        }
+                    Navigation()
 
-                        AppState.LOADING -> {
-                            Box(
-                                modifier = Modifier
-                                    .fillMaxSize()
-                                    .padding(20.dp)
-                            ) {
-                                CircularProgressIndicator(
-                                    modifier = Modifier
-                                        .size(30.dp)
-                                        .align(Alignment.Center),
-                                    color = MaterialTheme.colorScheme.secondary,
-                                    trackColor = MaterialTheme.colorScheme.surfaceVariant,
-                                )
-                            }
-                        }
-
-                        AppState.CROP -> {
-                            CropID(viewModel = viewModel) {
-                                viewModel.cropPicture()
-                            }
-                        }
-
-                        AppState.RESULT -> {
-                            val person = viewModel.person.value
-                            if (person != null)
-                                PersonData(person = person)
-                        }
-                    }
+//                    val appState by remember { viewModel.appState }
+//                    when (appState) {
+//                        AppState.START -> {
+//                            Column(
+//                                modifier = Modifier.fillMaxSize(),
+//                                verticalArrangement = Arrangement.SpaceEvenly,
+//                                horizontalAlignment = Alignment.CenterHorizontally
+//                            ) {
+//                                ChooseImage(content = { onClick ->
+//                                    ImagePreview(
+//                                        text = "FRONT",
+//                                        onClick = onClick,
+//                                        glideUrl = viewModel.getFrontImageUrl()
+//                                    )
+//                                }) { uri: Uri?, path: String? ->
+//                                    viewModel.selectedImage.value = ImageState.FRONT
+//                                    viewModel.selectedImageUri.value = uri
+//                                    viewModel.selectedImagePath.value = path
+//                                    viewModel.detectCorners()
+//                                }
+//                                ChooseImage(content = { onClick ->
+//                                    ImagePreview(
+//                                        text = "BACK",
+//                                        onClick = onClick,
+//                                        glideUrl = viewModel.getBackImageUrl()
+//                                    )
+//                                }) { uri: Uri?, path: String? ->
+//                                    viewModel.selectedImage.value = ImageState.BACK
+//                                    viewModel.selectedImageUri.value = uri
+//                                    viewModel.selectedImagePath.value = path
+//                                    viewModel.detectCorners()
+//                                }
+//                                Button(onClick = {
+//                                    viewModel.detectText()
+//                                }, modifier = Modifier.size(150.dp, 70.dp)) {
+//                                    Text(text = "OK")
+//                                }
+//                            }
+//                        }
+//
+//                        AppState.LOADING -> {
+//                            Box(
+//                                modifier = Modifier
+//                                    .fillMaxSize()
+//                                    .padding(20.dp)
+//                            ) {
+//                                CircularProgressIndicator(
+//                                    modifier = Modifier
+//                                        .size(30.dp)
+//                                        .align(Alignment.Center),
+//                                    color = MaterialTheme.colorScheme.secondary,
+//                                    trackColor = MaterialTheme.colorScheme.surfaceVariant,
+//                                )
+//                            }
+//                        }
+//
+//                        AppState.CROP -> {
+//                            CropID(viewModel = viewModel) {
+//                                viewModel.cropPicture()
+//                            }
+//                        }
+//
+//                        AppState.RESULT -> {
+//                            val person = viewModel.person.value
+//                            if (person != null)
+//                                PersonData(person = person)
+//                        }
+//                    }
                 }
             }
         }
@@ -163,7 +170,9 @@ fun PersonData(
         "test"
     )
 ) {
-    Column(modifier = Modifier.verticalScroll(rememberScrollState()).padding(10.dp)) {
+    Column(modifier = Modifier
+        .verticalScroll(rememberScrollState())
+        .padding(10.dp)) {
         DataFieldWithTitle(resourceId = R.string.name, text = person.name)
         DataFieldWithTitle(resourceId = R.string.sex, text = person.sex)
         DataFieldWithTitle(resourceId = R.string.nationality, text = person.nationality)

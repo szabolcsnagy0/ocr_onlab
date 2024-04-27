@@ -1,14 +1,19 @@
 <resources>
     <string name="app_name">IDSelector</string>
-    <string name="name">Családi és utónév/Family name and Given name:</string>
-    <string name="sex">Nem/Sex:</string>
-    <string name="nationality">Állampolgárság/Nationality:</string>
-    <string name="dateOfBirth">Születési idő/Date of birth:</string>
-    <string name="dateOfExpiry">Érvényességi idő/Date of expiry:</string>
-    <string name="documentNr">Okmányazonosító/Doc.No.:</string>
-    <string name="can">CAN:</string>
-    <string name="placeOfBirth">Születési hely/Place of birth:</string>
-    <string name="nameAtBirth">Születési családi és utónév/Family name and Given name at birth:</string>
-    <string name="mothersName">Anyja születési neve/Mothers maiden name:</string>
-    <string name="authority">Kiállító hatóság/Issuing authority:</string>
+    <string name="name">Name</string>
+    <string name="sex">Sex</string>
+    <string name="nationality">Nationality</string>
+    <string name="dateOfBirth">Date of birth</string>
+    <string name="dateOfExpiry">Date of expiry</string>
+    <string name="documentNr">Document number</string>
+    <string name="can">CAN</string>
+    <string name="placeOfBirth">Place of birth</string>
+    <string name="nameAtBirth">Name at birth</string>
+    <string name="mothersName">Mothers maiden name</string>
+    <string name="authority">Issuing authority</string>
+    <string name="id_card">Identity Card</string>
+    <string name="back">Back Arrow</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="add_card">Add card</string>
+    <string name="delete_profile">Delete profile</string>
 </resources>

@@ -69,7 +69,7 @@ for i in range(len(sys.argv)):
         corners.append([float(corners_all[6]), float(corners_all[7])])
 
 if img_path is None or corners is None or len(corners) != 4:
-    print("ERROR: Please provide the required parameters!\n")
+    print("Please provide the required parameters!\n")
     exit()
 
 print(corners)

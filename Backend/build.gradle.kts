@@ -27,6 +27,14 @@ dependencies {
 	implementation("org.postgresql:postgresql")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation("org.springframework.security:spring-security-crypto")
+	implementation("org.springframework.boot:spring-boot-starter-security")
+
+	implementation("io.jsonwebtoken:jjwt-api:0.12.5")
+	implementation("io.jsonwebtoken:jjwt-jackson:0.12.5")
+	implementation("io.jsonwebtoken:jjwt-impl:0.12.5")
+
+	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 }
 
 tasks.withType<KotlinCompile> {
