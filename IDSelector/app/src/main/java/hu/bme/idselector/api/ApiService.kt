@@ -1,8 +1,14 @@
 package hu.android.qtyadoki.api
 
 import android.media.Image
+import com.bumptech.glide.load.model.GlideUrl
+import com.bumptech.glide.load.model.LazyHeaders
 import com.google.gson.GsonBuilder
+import hu.bme.idselector.api.ServiceInterceptor
+import hu.bme.idselector.api.TokenManager
+import hu.bme.idselector.data.LoginData
 import hu.bme.idselector.data.Person
+import hu.bme.idselector.data.UserRegistration
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.RequestBody
@@ -14,6 +20,7 @@ import retrofit2.http.Body
 import retrofit2.http.FieldMap
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.Part
@@ -46,9 +53,21 @@ interface ApiService {
         @Part corners: MultipartBody.Part
     ): Call<String>?
 
+    @POST("/auth/login")
+    @Headers("No-Authentication: true")
+    fun loginUser(@Body loginData: LoginData): Call<String?>
+
+    @POST("/auth/register")
+    @Headers("No-Authentication: true")
+    fun registerUser(@Body registrationData: UserRegistration): Call<ResponseBody?>
+
+    @GET("/auth/token")
+    fun testToken(): Call<ResponseBody?>
+
     companion object {
         var api: ApiService? = null
-        private const val BASE_URL = "http://192.168.0.101:8080/"
+        var tokenManager: TokenManager? = null
+        private const val BASE_URL = "http://192.168.0.25:80/"
 
         /**
          * Get the singleton instance of the ApiService
@@ -59,6 +78,7 @@ interface ApiService {
                     .callTimeout(5, TimeUnit.MINUTES)
                     .readTimeout(5, TimeUnit.MINUTES)
                     .writeTimeout(5, TimeUnit.MINUTES)
+                    .addInterceptor(ServiceInterceptor(tokenManager))
                     .build()
                 val gson = GsonBuilder()
                     .setLenient()
@@ -72,8 +92,24 @@ interface ApiService {
             return api!!
         }
 
-        fun getImageUrl(imageId: String): String {
-            return BASE_URL + "download/$imageId"
+        fun getImageUrl(imageId: String): GlideUrl? {
+            return getGlideURL("download/$imageId")
+        }
+
+        /**
+         * Get the GlideUrl for the given endpoint
+         */
+        private fun getGlideURL(endPoint: String): GlideUrl? {
+            if (tokenManager == null) return null
+            val token = tokenManager!!.fetchAuthToken() ?: return null
+            val url = "$BASE_URL$endPoint"
+
+            return GlideUrl(
+                url,
+                LazyHeaders.Builder()
+                    .addHeader("Authorization", "Bearer $token")
+                    .build()
+            )
         }
     }
 }

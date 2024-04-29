@@ -207,7 +207,8 @@ class MainViewModel : ViewModel() {
         return if (imageId.value == null) {
             null
         } else {
-            ApiService.getImageUrl(imageId.value!!)
+            null
+//            ApiService.getImageUrl(imageId.value!!)
         }
     }
 

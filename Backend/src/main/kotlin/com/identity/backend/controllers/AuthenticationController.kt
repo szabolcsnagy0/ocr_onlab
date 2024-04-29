@@ -11,7 +11,7 @@ class AuthenticationController(
     private val authenticationService: AuthenticationService,
 ) {
     @CrossOrigin
-    @GetMapping("login")
+    @PostMapping("login")
     fun authenticate(@RequestBody authRequest: AuthenticationRequest): String =
         authenticationService.authentication(authRequest)
 

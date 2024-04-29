@@ -1,4 +1,4 @@
-package hu.bme.idselector.ui.camera
+package hu.bme.idselector.ui.shared.camera
 
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult

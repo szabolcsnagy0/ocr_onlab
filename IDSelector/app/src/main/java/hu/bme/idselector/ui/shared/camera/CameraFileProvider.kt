@@ -1,4 +1,4 @@
-package hu.bme.idselector.ui.camera
+package hu.bme.idselector.ui.shared.camera
 
 import android.annotation.SuppressLint
 import android.content.Context

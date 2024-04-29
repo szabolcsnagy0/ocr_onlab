@@ -57,12 +57,14 @@ import androidx.compose.ui.zIndex
 import coil.compose.rememberAsyncImagePainter
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
+import hu.android.qtyadoki.api.ApiService
+import hu.bme.idselector.api.TokenManager
 import hu.bme.idselector.data.Person
 import hu.bme.idselector.navigation.Navigation
 import hu.bme.idselector.ui.ProfileDetails
 import hu.bme.idselector.ui.ProfileElement
 import hu.bme.idselector.ui.ProfileList
-import hu.bme.idselector.ui.camera.ChooseImage
+import hu.bme.idselector.ui.shared.camera.ChooseImage
 import hu.bme.idselector.ui.theme.IDSelectorTheme
 import kotlin.math.roundToInt
 
@@ -71,13 +73,15 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val tokenManager = TokenManager(applicationContext)
+        ApiService.tokenManager = tokenManager
         setContent {
             IDSelectorTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = colorResource(R.color.orange)
                 ) {
-                    Navigation()
+                    Navigation(tokenManager)
 
 //                    val appState by remember { viewModel.appState }
 //                    when (appState) {

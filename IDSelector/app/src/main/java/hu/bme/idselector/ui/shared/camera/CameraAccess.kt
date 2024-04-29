@@ -1,4 +1,4 @@
-package hu.bme.idselector.ui.camera
+package hu.bme.idselector.ui.shared.camera
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect

@@ -19,7 +19,7 @@
         android:theme="@style/Theme.IDSelector"
         tools:targetApi="31">
         <provider
-            android:name=".ui.camera.CameraFileProvider"
+            android:name=".ui.shared.camera.CameraFileProvider"
             android:grantUriPermissions="true"
             android:exported="false"
             android:authorities="hu.bme.idselector.fileprovider">

@@ -16,4 +16,15 @@
     <string name="edit_profile">Edit profile</string>
     <string name="add_card">Add card</string>
     <string name="delete_profile">Delete profile</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="repeat_pass">Repeat password</string>
+    <string name="not_matching_passwords">Provided passwords are not matching!</string>
+    <string name="login_text">Sign in</string>
+    <string name="no_account">No account?</string>
+    <string name="registration">Registration</string>
+    <string name="login_successful">Sign in successful</string>
+    <string name="login_failed">Signing in failed</string>
+    <string name="has_account">Do you have an account?</string>
+    <string name="identity_text">Identity text</string>
 </resources>
