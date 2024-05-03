@@ -1,4 +1,4 @@
-package hu.bme.idselector
+package hu.bme.idselector.viewmodels
 
 import android.graphics.BitmapFactory
 import android.net.Uri
@@ -6,16 +6,16 @@ import android.util.Log
 import android.util.Size
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
+import com.bumptech.glide.load.model.GlideUrl
 import hu.android.qtyadoki.api.ApiService
-import hu.bme.idselector.data.Person
+import hu.bme.idselector.data.IdentityData
+import hu.bme.idselector.data.NationalId
+import hu.bme.idselector.data.Profile
+import hu.bme.idselector.ui.createid.states.DetectionState
+import hu.bme.idselector.ui.createid.states.ImageState
 import okhttp3.MultipartBody
-import okhttp3.Request
 import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,17 +23,19 @@ import retrofit2.Response
 import java.io.File
 import kotlin.math.roundToInt
 
-
-class MainViewModel : ViewModel() {
-
-    val person: MutableState<Person?> = mutableStateOf(null)
+class NewIdViewModel : ViewModel() {
+    val identity: MutableState<IdentityData?> = mutableStateOf(null)
 
     private val offsets = mutableListOf<Pair<Float, Float>>()
     val intOffsets = mutableListOf<MutableState<IntOffset>>()
 
-    val appState = mutableStateOf(AppState.START)
+    val detectionState = mutableStateOf(DetectionState.START)
 
     val selectedImage: MutableState<ImageState> = mutableStateOf(ImageState.FRONT)
+
+    init {
+        Log.i("init", "asd")
+    }
 
     val selectedImagePath: MutableState<String?>
         get() = when (selectedImage.value) {
@@ -61,12 +63,13 @@ class MainViewModel : ViewModel() {
 
     private val frontImageUri = mutableStateOf<Uri?>(null)
     private val backImageUri = mutableStateOf<Uri?>(null)
+
     private val frontImagePath = mutableStateOf<String?>(null)
     private val backImagePath = mutableStateOf<String?>(null)
-    private val frontImageId = mutableStateOf<String?>("front.jpg")
-//    private val frontImageId = mutableStateOf<String?>(null)
-    private val backImageId = mutableStateOf<String?>("back.jpg")
-//    private val backImageId = mutableStateOf<String?>(null)
+
+    private val frontImageId = mutableStateOf<String?>(null)
+    private val backImageId = mutableStateOf<String?>(null)
+
     private val frontImageSize: Size = getImageSize(frontImagePath.value?.let { File(it) })
     private val backImageSize: Size = getImageSize(backImagePath.value?.let { File(it) })
 
@@ -78,28 +81,23 @@ class MainViewModel : ViewModel() {
         return Size(options.outWidth, options.outHeight)
     }
 
-    fun detectCorners(
-        onResult: (Boolean, String) -> Unit = { _, _ -> }
-    ) {
-        val image = selectedImagePath.value?.let { File(it) }
-        if (image == null) {
-            onResult(false, "Hiba! Kép nem található!")
+    fun detectCorners() {
+        if (detectionState.value == DetectionState.LOADING) {
             return
-        }
-        if (appState.value == AppState.LOADING) {
-            return
-        } else appState.value = AppState.LOADING
+        } else detectionState.value = DetectionState.LOADING
+
+        val image = selectedImagePath.value?.let { File(it) } ?: return
 
         val requestMultipartBody =
             MultipartBody.Part.createFormData("image", image.name, image.asRequestBody())
         val call = ApiService.getInstance().detectCorners(requestMultipartBody)
-        call!!.enqueue(object : Callback<List<List<Float>>> {
+        call?.enqueue(object : Callback<List<List<Float>>> {
 
             override fun onResponse(
                 call: Call<List<List<Float>>>,
                 response: Response<List<List<Float>>>
             ) {
-                appState.value = if (response.isSuccessful) {
+                detectionState.value = if (response.isSuccessful) {
                     Log.i("corners", response.body().toString())
                     val list = response.body() ?: return
                     intOffsets.clear()
@@ -107,18 +105,16 @@ class MainViewModel : ViewModel() {
                     for (value in list) {
                         offsets.add(Pair(value[0], value[1]))
                     }
-                    onResult(true, "Siker!")
-                    AppState.CROP
+                    DetectionState.CROP
                 } else {
-                    onResult(false, "Hiba! Hibakód: ${response.code()} ${response.message()}")
-                    AppState.START
+                    Log.i("corners", response.body().toString())
+                    DetectionState.ERROR
                 }
             }
 
             override fun onFailure(call: Call<List<List<Float>>>, t: Throwable) {
                 Log.e("corners", t.message.toString())
-                appState.value = AppState.START
-                onResult(false, "Hiba! ${t.message.toString()}!")
+                detectionState.value = DetectionState.ERROR
             }
         })
     }
@@ -126,14 +122,15 @@ class MainViewModel : ViewModel() {
     fun cropPicture(
         onResult: (Boolean, String) -> Unit = { _, _ -> }
     ) {
+        if (detectionState.value == DetectionState.LOADING) {
+            return
+        } else detectionState.value = DetectionState.LOADING
+
         val image = selectedImagePath.value?.let { File(it) }
         if (image == null) {
             onResult(false, "Hiba! Kép nem található!")
             return
         }
-        if (appState.value == AppState.LOADING) {
-            return
-        } else appState.value = AppState.LOADING
 
         val imageData =
             MultipartBody.Part.createFormData("image", image.name, image.asRequestBody())
@@ -148,10 +145,10 @@ class MainViewModel : ViewModel() {
 
         val cornersData = MultipartBody.Part.createFormData("corners", corners)
         val call = ApiService.getInstance().cropPicture(imageData, cornersData)
-        call!!.enqueue(object : Callback<String> {
+        call?.enqueue(object : Callback<String> {
 
             override fun onResponse(call: Call<String>, response: Response<String>) {
-                appState.value = AppState.START
+                detectionState.value = DetectionState.START
                 if (response.isSuccessful) {
                     if (response.body() != null) {
                         selectedImageId.value = response.body()
@@ -162,53 +159,52 @@ class MainViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<String>, t: Throwable) {
-                appState.value = AppState.START
+                detectionState.value = DetectionState.START
                 onResult(false, "Hiba! ${t.message.toString()}!")
             }
         })
     }
 
-    fun detectText(
-        onResult: (Boolean, String) -> Unit = { _, _ -> }
-    ) {
-        val call = ApiService.getInstance().detectText(frontImageId.value, backImageId.value)
-
-        if (appState.value == AppState.LOADING) {
-            return
-        } else appState.value = AppState.LOADING
-
-        call.enqueue(object : Callback<Person?> {
-
-            override fun onResponse(call: Call<Person?>, response: Response<Person?>) {
-                appState.value = if (response.isSuccessful) {
-                    Log.i("detect", response.body().toString())
-                    person.value = response.body()
-                    onResult(true, "Siker!")
-                    AppState.RESULT
-                } else {
-                    Log.i("detect", "Hiba!")
-                    onResult(false, "Hiba! Hibakód: ${response.code()} ${response.message()}")
-                    AppState.START
-                }
-            }
-
-            override fun onFailure(call: Call<Person?>, t: Throwable) {
-                appState.value = AppState.START
-                Log.i("detect", t.message.toString())
-                onResult(false, "Hiba! ${t.message.toString()}!")
-            }
-        })
-    }
+//    fun detectText(
+//        onResult: (Boolean, String) -> Unit = { _, _ -> }
+//    ) {
+//        val call = ApiService.getInstance().detectNationalIdText(frontImageId.value, backImageId.value)
+//
+//        if (detectionState.value == DetectionState.LOADING) {
+//            return
+//        } else detectionState.value = DetectionState.LOADING
+//
+//        call?.enqueue(object : Callback<NationalId?> {
+//
+//            override fun onResponse(call: Call<NationalId?>, response: Response<NationalId?>) {
+//                detectionState.value = if (response.isSuccessful) {
+//                    Log.i("detect", response.body().toString())
+//                    identity.value = response.body()
+//                    onResult(true, "Siker!")
+//                    DetectionState.RESULT
+//                } else {
+//                    Log.i("detect", "Hiba!")
+//                    onResult(false, "Hiba! Hibakód: ${response.code()} ${response.message()}")
+//                    DetectionState.START
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<NationalId?>, t: Throwable) {
+//                detectionState.value = DetectionState.START
+//                Log.i("detect", t.message.toString())
+//                onResult(false, "Hiba! ${t.message.toString()}!")
+//            }
+//        })
+//    }
 
     fun getFrontImageUrl() = getImageUrl(frontImageId)
     fun getBackImageUrl() = getImageUrl(backImageId)
 
-    private fun getImageUrl(imageId: MutableState<String?>): String? {
+    private fun getImageUrl(imageId: MutableState<String?>): GlideUrl? {
         return if (imageId.value == null) {
             null
         } else {
-            null
-//            ApiService.getImageUrl(imageId.value!!)
+            ApiService.getImageUrl(imageId.value!!)
         }
     }
 

@@ -7,9 +7,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.Logout
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Edit
-import androidx.compose.material.icons.filled.KeyboardArrowLeft
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
@@ -20,6 +19,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
@@ -27,30 +28,20 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import hu.bme.idselector.R
-import hu.bme.idselector.data.Profile
+import hu.bme.idselector.ui.shared.CustomAlertDialog
+import hu.bme.idselector.viewmodels.ProfilesViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileList(
-    profiles: List<Profile> = listOf(
-        Profile(
-            id = 1,
-            name = "John Doe",
-            nationalId = null
-        ),
-        Profile(
-            id = 2,
-            name = "Maria Doe",
-            nationalId = null
-        ),
-        Profile(
-            id = 3,
-            name = "Peter Doe",
-            nationalId = null
-        ),
-    ),
-    onProfileSelected: () -> Unit = {}
+    viewModel: ProfilesViewModel,
+    onProfileSelected: (Int) -> Unit = {_ -> },
+    logoutRequested: () -> Unit = {}
 ) {
+    val profiles = remember { viewModel.profiles }
+
+    val logoutRequest = remember { mutableStateOf(false) }
+
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
@@ -68,6 +59,18 @@ fun ProfileList(
                     titleContentColor = colorResource(id = R.color.white),
                     containerColor = colorResource(id = R.color.grey)
                 ),
+                navigationIcon = {
+                    IconButton(onClick = { logoutRequest.value = true }) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.Logout,
+                            contentDescription = stringResource(
+                                id = R.string.logout
+                            ),
+                            tint = colorResource(id = R.color.white),
+                            modifier = Modifier.size(35.dp)
+                        )
+                    }
+                },
             )
         },
         floatingActionButton = {
@@ -82,13 +85,31 @@ fun ProfileList(
         },
         containerColor = colorResource(id = R.color.orange),
         modifier = Modifier.fillMaxHeight()
-    ) {
-        LazyColumn(Modifier.padding(it).fillMaxSize()) {
-            items(profiles) {
-                ProfileElement(it) {
-                    onProfileSelected()
+    ) { paddingValues ->
+        LazyColumn(
+            Modifier
+                .padding(paddingValues)
+                .fillMaxSize()
+        ) {
+            items(profiles) { profile ->
+                ProfileElement(profile) {
+                    onProfileSelected(profile.id)
                 }
             }
         }
+    }
+
+    if (logoutRequest.value) {
+        CustomAlertDialog(
+            dialogText = stringResource(R.string.logout_confirmation),
+            confirmText = stringResource(R.string.yes),
+            dismissText = stringResource(
+                id = R.string.cancel
+            ),
+            onConfirmation = logoutRequested,
+            onDismissRequest = {
+                logoutRequest.value = false
+            }
+        )
     }
 }

@@ -23,6 +23,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
@@ -66,6 +67,7 @@ import com.bumptech.glide.integration.compose.GlideImage
 import hu.bme.idselector.R
 import hu.bme.idselector.data.NationalId
 import hu.bme.idselector.data.Profile
+import hu.bme.idselector.viewmodels.ProfilesViewModel
 import java.text.DateFormat
 import java.time.LocalDate
 import java.util.Date
@@ -73,31 +75,16 @@ import java.util.Date
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileDetails(
-    profile: Profile = Profile(
-        id = 1,
-        name = "John Doe",
-        nationalId = NationalId(
-            id = 1,
-            name = "John Doe",
-            authority = "UK",
-            can = "3125233",
-            dateOfBirth = Date("1/5/1977"),
-            dateOfExpiry = Date("5/5/2005"),
-            documentNr = "312312DS",
-            mothersName = "Maria Doe",
-            nameAtBirth = "John Doe",
-            nationality = "UK",
-            placeOfBirth = "London",
-            sex = 'M'
-        )
-    ),
+    viewModel: ProfilesViewModel,
+    addNewDocument: () -> Unit = {},
     onBackPressed: () -> Unit = {}
 ) {
+    val profile = remember { viewModel.selectedProfile.value }
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
-                    profile.name?.let {
+                    profile?.name?.let {
                         Text(
                             text = it,
                             fontWeight = FontWeight.ExtraBold,
@@ -110,7 +97,7 @@ fun ProfileDetails(
                 },
                 navigationIcon = {
                     Icon(
-                        imageVector = Icons.Filled.KeyboardArrowLeft,
+                        imageVector = Icons.AutoMirrored.Filled.KeyboardArrowLeft,
                         contentDescription = stringResource(
                             id = R.string.back
                         ),
@@ -135,7 +122,7 @@ fun ProfileDetails(
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /* TODO */ },
+                onClick = addNewDocument,
                 containerColor = colorResource(id = R.color.grey),
                 contentColor = colorResource(id = R.color.white),
                 elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation()
@@ -153,9 +140,9 @@ fun ProfileDetails(
                 .padding(top = 20.dp)
                 .fillMaxSize()
         ) {
-            profile.nationalId?.let {
-                IdComponent(id = it)
-            }
+//            profile.nationalId?.let {
+//                IdComponent(id = it)
+//            }
         }
     }
 }

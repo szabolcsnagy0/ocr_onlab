@@ -76,7 +76,12 @@ fun ChooseImage(
         cameraLauncher.launch(uri)
     }
 
-    if (hasImage && imageUri != null) {
+    var confirmed by remember {
+        mutableStateOf(false)
+    }
+
+    if (hasImage && imageUri != null && !confirmed) {
+        confirmed = true
         onConfirmation(imageUri, imagePath)
     }
 }

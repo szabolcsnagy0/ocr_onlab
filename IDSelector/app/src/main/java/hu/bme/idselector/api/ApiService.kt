@@ -7,7 +7,9 @@ import com.google.gson.GsonBuilder
 import hu.bme.idselector.api.ServiceInterceptor
 import hu.bme.idselector.api.TokenManager
 import hu.bme.idselector.data.LoginData
+import hu.bme.idselector.data.NationalId
 import hu.bme.idselector.data.Person
+import hu.bme.idselector.data.Profile
 import hu.bme.idselector.data.UserRegistration
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
@@ -34,20 +36,20 @@ import java.util.concurrent.TimeUnit
  */
 interface ApiService {
 
-    @GET("/upload/text")
-    fun detectText(
+    @GET("/image/detection")
+    fun detectNationalIdText(
         @Query("front") front: String?,
         @Query("back") back: String?
-    ): Call<Person?>
+    ): Call<NationalId?>?
 
     @Multipart
-    @POST("/upload/corners")
+    @POST("/image/corners")
     fun detectCorners(
         @Part image: MultipartBody.Part
     ): Call<List<List<Float>>>?
 
     @Multipart
-    @POST("/upload/crop")
+    @POST("/image/crop")
     fun cropPicture(
         @Part image: MultipartBody.Part,
         @Part corners: MultipartBody.Part
@@ -63,6 +65,12 @@ interface ApiService {
 
     @GET("/auth/token")
     fun testToken(): Call<ResponseBody?>
+
+    @GET("/user/profiles/list")
+    fun getProfiles(): Call<List<Profile>?>?
+
+    @GET("/user/profiles/{id}/national/list")
+    fun getNationalIds(@Path("{id}") profileId: Int): Call<List<NationalId>?>
 
     companion object {
         var api: ApiService? = null
@@ -92,8 +100,21 @@ interface ApiService {
             return api!!
         }
 
+
+        fun getNationalIdFront(userId: Int, nationalId: Int) =
+            getNationalIdImage(userId, nationalId, "front")
+
+        fun getNationalIdBack(userId: Int, nationalId: Int) =
+            getNationalIdImage(userId, nationalId, "back")
+
+        private fun getNationalIdImage(
+            userId: Int,
+            nationalId: Int,
+            part: String
+        ): GlideUrl? = getGlideURL("/user/profiles/$userId/national/$nationalId/$part")
+
         fun getImageUrl(imageId: String): GlideUrl? {
-            return getGlideURL("download/$imageId")
+            return getGlideURL("image/download/$imageId")
         }
 
         /**

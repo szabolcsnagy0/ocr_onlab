@@ -31,7 +31,7 @@ fun ProfileElement(
     profile: Profile = Profile(
         id = 1,
         name = "John Doe",
-        nationalId = null
+//        nationalId = null
     ),
     onItemSelected: () -> Unit = {}
 ) {

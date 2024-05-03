@@ -27,4 +27,9 @@
     <string name="login_failed">Signing in failed</string>
     <string name="has_account">Do you have an account?</string>
     <string name="identity_text">Identity text</string>
+    <string name="logout">Log out</string>
+    <string name="logout_confirmation">Would you like to sign out?</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_a_new_document">Add a new document</string>
 </resources>

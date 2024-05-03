@@ -3,7 +3,7 @@ package hu.bme.idselector.data
 import java.util.Date
 
 data class NationalId(
-    var id: Long = 0,
+    var id: Int = 0,
     val name: String? = null,
     val sex: Char? = null,
     val nationality: String? = null,

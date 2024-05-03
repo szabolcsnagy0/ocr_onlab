@@ -1,4 +1,4 @@
-package hu.bme.idselector
+package hu.bme.idselector.ui.createid.states
 
 enum class ImageState {
     FRONT,

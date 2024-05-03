@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service
 class CropService {
     fun runCropAlgorithm(imagePath: String, corners: String): Boolean {
         // Configure the command according to provided parameters
-        val command = mutableListOf("python3", SCRIPT_PATH)
+        val command = mutableListOf("python", SCRIPT_PATH)
         // Add required parameters
         command.add("--src")
         command.add(imagePath)
