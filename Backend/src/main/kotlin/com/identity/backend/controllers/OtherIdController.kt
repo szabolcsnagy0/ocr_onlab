@@ -38,7 +38,7 @@ class OtherIdController(
 
         //Add back image to the id
         otherIdRequest.back?.let {
-            newOtherId.front = imageUploadService.findImageFile(it, profile.userId).readBytes()
+            newOtherId.back = imageUploadService.findImageFile(it, profile.userId).readBytes()
         }
 
         otherIdRepository.save(newOtherId)

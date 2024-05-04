@@ -6,6 +6,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -13,39 +14,27 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import hu.bme.idselector.R
-import hu.bme.idselector.data.Person
+import hu.bme.idselector.data.NationalId
 
-@Preview(showBackground = true)
 @Composable
 fun DetectionResult(
-    person: Person = Person(
-        "Test",
-        "Test",
-        "Test",
-        "Test",
-        "Test",
-        "Test",
-        "Test",
-        "test",
-        "test",
-        "Test",
-        "test"
-    )
+    nationalId: MutableState<NationalId?>,
+    onResult: () -> Unit
 ) {
     Column(modifier = Modifier
         .verticalScroll(rememberScrollState())
         .padding(10.dp)) {
-        DataFieldWithTitle(resourceId = R.string.name, text = person.name)
-        DataFieldWithTitle(resourceId = R.string.sex, text = person.sex)
-        DataFieldWithTitle(resourceId = R.string.nationality, text = person.nationality)
-        DataFieldWithTitle(resourceId = R.string.dateOfBirth, text = person.dateOfBirth)
-        DataFieldWithTitle(resourceId = R.string.dateOfExpiry, text = person.dateOfExpiry)
-        DataFieldWithTitle(resourceId = R.string.documentNr, text = person.documentNr)
-        DataFieldWithTitle(resourceId = R.string.can, text = person.can)
-        DataFieldWithTitle(resourceId = R.string.placeOfBirth, text = person.placeOfBirth)
-        DataFieldWithTitle(resourceId = R.string.mothersName, text = person.mothersName)
-        DataFieldWithTitle(resourceId = R.string.nameAtBirth, text = person.nameAtBirth)
-        DataFieldWithTitle(resourceId = R.string.authority, text = person.authority)
+        DataFieldWithTitle(resourceId = R.string.name, text = nationalId.value?.name)
+        DataFieldWithTitle(resourceId = R.string.sex, text = nationalId.value?.sex.toString())
+        DataFieldWithTitle(resourceId = R.string.nationality, text = nationalId.value?.nationality)
+        DataFieldWithTitle(resourceId = R.string.dateOfBirth, text = nationalId.value?.dateOfBirth.toString())
+        DataFieldWithTitle(resourceId = R.string.dateOfExpiry, text = nationalId.value?.dateOfExpiry.toString())
+        DataFieldWithTitle(resourceId = R.string.documentNr, text = nationalId.value?.documentNr)
+        DataFieldWithTitle(resourceId = R.string.can, text = nationalId.value?.can)
+        DataFieldWithTitle(resourceId = R.string.placeOfBirth, text = nationalId.value?.placeOfBirth)
+        DataFieldWithTitle(resourceId = R.string.mothersName, text = nationalId.value?.mothersName)
+        DataFieldWithTitle(resourceId = R.string.nameAtBirth, text = nationalId.value?.nameAtBirth)
+        DataFieldWithTitle(resourceId = R.string.authority, text = nationalId.value?.authority)
     }
 }
 

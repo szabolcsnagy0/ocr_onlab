@@ -18,9 +18,6 @@ import com.bumptech.glide.load.model.GlideUrl
 @Composable
 fun ShowImage(modifier: Modifier = Modifier, uri: Uri? = null, glideUrl: GlideUrl? = null) {
     if (glideUrl != null) {
-        Log.i("img", glideUrl.toStringUrl())
-        Log.i("img", glideUrl.toURL().toString())
-        Log.i("img", glideUrl.headers.toString())
         GlideImage(
             model = glideUrl,
             contentDescription = null,

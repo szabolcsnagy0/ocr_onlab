@@ -1,6 +1,5 @@
 package hu.bme.idselector.navigation
 
-import android.util.Log
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
@@ -14,9 +13,13 @@ import hu.bme.idselector.api.TokenManager
 import hu.bme.idselector.ui.ProfileDetails
 import hu.bme.idselector.ui.ProfileList
 import hu.bme.idselector.ui.authentication.LoginScreen
+import hu.bme.idselector.ui.createid.DetectionResult
 import hu.bme.idselector.ui.createid.NewDocumentScreen
+import hu.bme.idselector.ui.createid.NewNationalIdScreen
 import hu.bme.idselector.viewmodels.AuthenticationViewModel
-import hu.bme.idselector.viewmodels.NewIdViewModel
+import hu.bme.idselector.viewmodels.NewDocumentViewModel
+import hu.bme.idselector.viewmodels.NewNationalViewModel
+import hu.bme.idselector.viewmodels.NewOtherIdViewModel
 import hu.bme.idselector.viewmodels.ProfilesViewModel
 
 @Composable
@@ -171,25 +174,63 @@ fun Navigation(tokenManager: TokenManager) {
                         }
                     }
                 },
-                addNewDocument = {
-                    navController.navigate(Routes.NewDocument.route)
+                addNewNationalIdDocument = {
+                    navController.navigate(Routes.NewNationalIdDocument.route)
+                },
+                addNewOtherIdDocument = {
+                    navController.navigate(Routes.NewOtherIdDocument.route)
                 }
             )
         }
 
-        composable(route = Routes.NewDocument.route) {
-            val newIdViewModel = remember {
-                NewIdViewModel()
+        composable(route = Routes.NewNationalIdDocument.route) {
+            val newNationalViewModel = remember {
+                NewNationalViewModel(profilesViewModel.selectedProfile.value!!.id)
             }
-            NewDocumentScreen(
-                viewModel = newIdViewModel
-            ) {
-                navController.navigate(Routes.ProfileDetails.route) {
-                    popUpTo(Routes.ProfileDetails.route) {
-                        inclusive = true
+            NewNationalIdScreen(
+                viewModel = newNationalViewModel,
+                onCancelled = {
+                    newNationalViewModel.cancelUpload()
+                    navController.navigate(Routes.ProfileDetails.route) {
+                        popUpTo(Routes.ProfileDetails.route) {
+                            inclusive = true
+                        }
+                    }
+                },
+                onResult = {
+                    newNationalViewModel.createId()
+                    navController.navigate(Routes.ProfileDetails.route) {
+                        popUpTo(Routes.ProfileDetails.route) {
+                            inclusive = true
+                        }
                     }
                 }
+            )
+        }
+
+        composable(route = Routes.NewOtherIdDocument.route) {
+            val newDocumentViewModel = remember {
+                NewOtherIdViewModel(profilesViewModel.selectedProfile.value!!.id)
             }
+            NewDocumentScreen(
+                viewModel = newDocumentViewModel,
+                onCancelled = {
+                    newDocumentViewModel.cancelUpload()
+                    navController.navigate(Routes.ProfileDetails.route) {
+                        popUpTo(Routes.ProfileDetails.route) {
+                            inclusive = true
+                        }
+                    }
+                },
+                onResult = {
+                    newDocumentViewModel.onResult()
+                    navController.navigate(Routes.ProfileDetails.route) {
+                        popUpTo(Routes.ProfileDetails.route) {
+                            inclusive = true
+                        }
+                    }
+                }
+            )
         }
     }
 }

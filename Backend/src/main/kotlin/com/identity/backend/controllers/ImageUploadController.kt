@@ -95,6 +95,11 @@ class ImageUploadController(
         }
     }
 
+    @GetMapping("clear")
+    fun clearImages() {
+        imageUploadService.deleteUserFolder(findUserId())
+    }
+
     private fun findUserId() = authenticationService.getEmail()?.let { email ->
         userRepository.findByEmail(email)?.id
     } ?: throw RuntimeException("User not found!")

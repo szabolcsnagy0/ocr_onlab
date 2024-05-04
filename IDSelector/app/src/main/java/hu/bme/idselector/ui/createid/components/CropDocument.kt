@@ -13,10 +13,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import hu.bme.idselector.ui.shared.ShowImage
-import hu.bme.idselector.viewmodels.NewIdViewModel
+import hu.bme.idselector.viewmodels.NewDocumentViewModel
 
 @Composable
-fun CropDocument(viewModel: NewIdViewModel, onCropClick: () -> Unit) {
+fun CropDocument(viewModel: NewDocumentViewModel, onCropClick: () -> Unit) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Box(modifier = Modifier.size(320.dp), contentAlignment = Alignment.TopStart) {
             ShowImage(uri = viewModel.selectedImageUri.value)

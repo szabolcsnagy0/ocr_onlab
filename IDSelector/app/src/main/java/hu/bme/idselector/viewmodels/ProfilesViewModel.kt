@@ -5,7 +5,7 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import hu.android.qtyadoki.api.ApiService
+import hu.bme.idselector.api.ApiService
 import hu.bme.idselector.data.Profile
 import retrofit2.Call
 import retrofit2.Callback

@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import hu.android.qtyadoki.api.ApiService
+import hu.bme.idselector.api.ApiService
 import hu.bme.idselector.api.TokenManager
 import hu.bme.idselector.data.LoginData
 import okhttp3.ResponseBody

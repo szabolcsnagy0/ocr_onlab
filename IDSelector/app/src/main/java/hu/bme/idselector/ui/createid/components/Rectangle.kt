@@ -11,14 +11,15 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toOffset
 import androidx.compose.ui.zIndex
-import hu.bme.idselector.ui.createid.toPx
-import hu.bme.idselector.viewmodels.NewIdViewModel
+import hu.bme.idselector.viewmodels.NewDocumentViewModel
 
 @Composable
-fun Rectangle(viewModel: NewIdViewModel) {
+fun Rectangle(viewModel: NewDocumentViewModel) {
     var currentHeight by remember { mutableStateOf(0.dp) }
     var currentWidth by remember { mutableStateOf(0.dp) }
 
@@ -56,3 +57,6 @@ fun Rectangle(viewModel: NewIdViewModel) {
         }
     }
 }
+
+@Composable
+fun Dp.toPx() = with(LocalDensity.current) { this@toPx.toPx() }

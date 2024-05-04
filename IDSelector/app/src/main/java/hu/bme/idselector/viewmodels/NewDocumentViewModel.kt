@@ -9,10 +9,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.unit.IntOffset
 import androidx.lifecycle.ViewModel
 import com.bumptech.glide.load.model.GlideUrl
-import hu.android.qtyadoki.api.ApiService
-import hu.bme.idselector.data.IdentityData
-import hu.bme.idselector.data.NationalId
-import hu.bme.idselector.data.Profile
+import hu.bme.idselector.api.ApiService
 import hu.bme.idselector.ui.createid.states.DetectionState
 import hu.bme.idselector.ui.createid.states.ImageState
 import okhttp3.MultipartBody
@@ -23,8 +20,9 @@ import retrofit2.Response
 import java.io.File
 import kotlin.math.roundToInt
 
-class NewIdViewModel : ViewModel() {
-    val identity: MutableState<IdentityData?> = mutableStateOf(null)
+abstract class NewDocumentViewModel(
+    val profileId: Int
+) : ViewModel() {
 
     private val offsets = mutableListOf<Pair<Float, Float>>()
     val intOffsets = mutableListOf<MutableState<IntOffset>>()
@@ -32,10 +30,6 @@ class NewIdViewModel : ViewModel() {
     val detectionState = mutableStateOf(DetectionState.START)
 
     val selectedImage: MutableState<ImageState> = mutableStateOf(ImageState.FRONT)
-
-    init {
-        Log.i("init", "asd")
-    }
 
     val selectedImagePath: MutableState<String?>
         get() = when (selectedImage.value) {
@@ -55,31 +49,17 @@ class NewIdViewModel : ViewModel() {
             ImageState.BACK -> backImageId
         }
 
-    val selectedImageSize: Size
-        get() = when (selectedImage.value) {
-            ImageState.FRONT -> frontImageSize
-            ImageState.BACK -> backImageSize
-        }
-
     private val frontImageUri = mutableStateOf<Uri?>(null)
     private val backImageUri = mutableStateOf<Uri?>(null)
 
     private val frontImagePath = mutableStateOf<String?>(null)
     private val backImagePath = mutableStateOf<String?>(null)
 
-    private val frontImageId = mutableStateOf<String?>(null)
-    private val backImageId = mutableStateOf<String?>(null)
+    protected val frontImageId = mutableStateOf<String?>(null)
+    protected val backImageId = mutableStateOf<String?>(null)
 
-    private val frontImageSize: Size = getImageSize(frontImagePath.value?.let { File(it) })
-    private val backImageSize: Size = getImageSize(backImagePath.value?.let { File(it) })
 
-    private fun getImageSize(image: File?): Size {
-        if (image == null || !image.exists()) return Size(0, 0)
-        val options = BitmapFactory.Options()
-        options.inJustDecodeBounds = true
-        BitmapFactory.decodeFile(image.absolutePath, options)
-        return Size(options.outWidth, options.outHeight)
-    }
+    abstract fun onResult()
 
     fun detectCorners() {
         if (detectionState.value == DetectionState.LOADING) {
@@ -165,37 +145,16 @@ class NewIdViewModel : ViewModel() {
         })
     }
 
-//    fun detectText(
-//        onResult: (Boolean, String) -> Unit = { _, _ -> }
-//    ) {
-//        val call = ApiService.getInstance().detectNationalIdText(frontImageId.value, backImageId.value)
-//
-//        if (detectionState.value == DetectionState.LOADING) {
-//            return
-//        } else detectionState.value = DetectionState.LOADING
-//
-//        call?.enqueue(object : Callback<NationalId?> {
-//
-//            override fun onResponse(call: Call<NationalId?>, response: Response<NationalId?>) {
-//                detectionState.value = if (response.isSuccessful) {
-//                    Log.i("detect", response.body().toString())
-//                    identity.value = response.body()
-//                    onResult(true, "Siker!")
-//                    DetectionState.RESULT
-//                } else {
-//                    Log.i("detect", "Hiba!")
-//                    onResult(false, "Hiba! Hibakód: ${response.code()} ${response.message()}")
-//                    DetectionState.START
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<NationalId?>, t: Throwable) {
-//                detectionState.value = DetectionState.START
-//                Log.i("detect", t.message.toString())
-//                onResult(false, "Hiba! ${t.message.toString()}!")
-//            }
-//        })
-//    }
+    fun cancelUpload() {
+        val call = ApiService.getInstance().clearFolder()
+        call?.enqueue(object : Callback<Any> {
+            override fun onFailure(call: Call<Any>, t: Throwable) {
+                Log.e("clear", t.message.toString())
+            }
+            override fun onResponse(call: Call<Any>, response: Response<Any>) {
+            }
+        })
+    }
 
     fun getFrontImageUrl() = getImageUrl(frontImageId)
     fun getBackImageUrl() = getImageUrl(backImageId)
@@ -223,10 +182,6 @@ class NewIdViewModel : ViewModel() {
     }
 
     private fun getConvertedOffsets(): List<Pair<Float, Float>> {
-        Log.i("crop", currentSize.toString())
-        for (o in intOffsets) {
-            Log.i("crop", o.value.toString())
-        }
         val offsets = mutableListOf<Pair<Float, Float>>()
         intOffsets.forEach { intOffset ->
             val x = (intOffset.value.x.toFloat() / currentSize.first)
@@ -234,5 +189,13 @@ class NewIdViewModel : ViewModel() {
             offsets += Pair(x, y)
         }
         return offsets
+    }
+
+    private fun getImageSize(image: File?): Size {
+        if (image == null || !image.exists()) return Size(0, 0)
+        val options = BitmapFactory.Options()
+        options.inJustDecodeBounds = true
+        BitmapFactory.decodeFile(image.absolutePath, options)
+        return Size(options.outWidth, options.outHeight)
     }
 }

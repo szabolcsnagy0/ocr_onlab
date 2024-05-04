@@ -1,26 +1,20 @@
-package hu.android.qtyadoki.api
+package hu.bme.idselector.api
 
-import android.media.Image
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.load.model.LazyHeaders
 import com.google.gson.GsonBuilder
-import hu.bme.idselector.api.ServiceInterceptor
-import hu.bme.idselector.api.TokenManager
 import hu.bme.idselector.data.LoginData
 import hu.bme.idselector.data.NationalId
-import hu.bme.idselector.data.Person
 import hu.bme.idselector.data.Profile
 import hu.bme.idselector.data.UserRegistration
+import hu.bme.idselector.data.OtherId
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
-import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
-import retrofit2.http.FieldMap
-import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Multipart
@@ -28,7 +22,6 @@ import retrofit2.http.POST
 import retrofit2.http.Part
 import retrofit2.http.Path
 import retrofit2.http.Query
-import java.io.File
 import java.util.concurrent.TimeUnit
 
 /**
@@ -55,6 +48,9 @@ interface ApiService {
         @Part corners: MultipartBody.Part
     ): Call<String>?
 
+    @GET("/image/clear")
+    fun clearFolder(): Call<Any>?
+
     @POST("/auth/login")
     @Headers("No-Authentication: true")
     fun loginUser(@Body loginData: LoginData): Call<String?>
@@ -70,7 +66,19 @@ interface ApiService {
     fun getProfiles(): Call<List<Profile>?>?
 
     @GET("/user/profiles/{id}/national/list")
-    fun getNationalIds(@Path("{id}") profileId: Int): Call<List<NationalId>?>
+    fun getNationalIds(@Path("id") profileId: Int): Call<List<NationalId>?>
+
+    @POST("/user/profiles/{id}/national/new")
+    fun createNewNationalId(
+        @Path("id") profileId: Int,
+        @Body nationalId: NationalId
+    ): Call<ResponseBody>?
+
+    @POST("/user/profiles/{id}/other/new")
+    fun createNewOtherId(
+        @Path("id") profileId: Int,
+        @Body otherId: OtherId
+    ): Call<ResponseBody>?
 
     companion object {
         var api: ApiService? = null

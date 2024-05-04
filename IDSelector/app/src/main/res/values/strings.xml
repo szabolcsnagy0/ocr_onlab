@@ -31,5 +31,5 @@
     <string name="logout_confirmation">Would you like to sign out?</string>
     <string name="yes">Yes</string>
     <string name="cancel">Cancel</string>
-    <string name="add_a_new_document">Add a new document</string>
+    <string name="add_a_new_document">New document</string>
 </resources>

@@ -18,7 +18,7 @@ data class OtherId (
     )
     val id: Int = 0,
     var front: ByteArray? = null,
-    val back: ByteArray? = null,
+    var back: ByteArray? = null,
     val profileId: Int = 0
 ) {
     override fun equals(other: Any?): Boolean {

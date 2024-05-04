@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
-import hu.android.qtyadoki.api.ApiService
+import hu.bme.idselector.api.ApiService
 import hu.bme.idselector.api.TokenManager
 import hu.bme.idselector.navigation.Navigation
 import hu.bme.idselector.ui.theme.IDSelectorTheme

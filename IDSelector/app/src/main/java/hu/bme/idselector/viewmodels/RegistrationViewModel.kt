@@ -2,7 +2,7 @@ package hu.bme.idselector.viewmodels
 
 import androidx.compose.runtime.MutableState
 import androidx.lifecycle.ViewModel
-import hu.android.qtyadoki.api.ApiService
+import hu.bme.idselector.api.ApiService
 import hu.bme.idselector.data.UserRegistration
 import okhttp3.ResponseBody
 import retrofit2.Call

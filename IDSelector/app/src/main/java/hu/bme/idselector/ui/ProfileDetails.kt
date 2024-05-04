@@ -76,7 +76,8 @@ import java.util.Date
 @Composable
 fun ProfileDetails(
     viewModel: ProfilesViewModel,
-    addNewDocument: () -> Unit = {},
+    addNewNationalIdDocument: () -> Unit = {},
+    addNewOtherIdDocument: () -> Unit = {},
     onBackPressed: () -> Unit = {}
 ) {
     val profile = remember { viewModel.selectedProfile.value }
@@ -122,7 +123,7 @@ fun ProfileDetails(
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = addNewDocument,
+                onClick = addNewOtherIdDocument,
                 containerColor = colorResource(id = R.color.grey),
                 contentColor = colorResource(id = R.color.white),
                 elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation()

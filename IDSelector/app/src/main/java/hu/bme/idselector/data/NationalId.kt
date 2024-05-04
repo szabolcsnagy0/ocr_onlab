@@ -15,4 +15,6 @@ data class NationalId(
     val nameAtBirth: String? = null,
     val mothersName: String? = null,
     val authority: String? = null,
+    var front: String? = null,
+    var back: String? = null
 )

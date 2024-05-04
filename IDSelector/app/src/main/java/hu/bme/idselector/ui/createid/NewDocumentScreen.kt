@@ -1,7 +1,6 @@
 package hu.bme.idselector.ui.createid
 
 import android.net.Uri
-import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -25,11 +24,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import hu.bme.idselector.R
@@ -38,13 +35,14 @@ import hu.bme.idselector.ui.createid.components.ImagePreview
 import hu.bme.idselector.ui.createid.states.DetectionState
 import hu.bme.idselector.ui.createid.states.ImageState
 import hu.bme.idselector.ui.shared.camera.ChooseImage
-import hu.bme.idselector.viewmodels.NewIdViewModel
+import hu.bme.idselector.viewmodels.NewDocumentViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NewDocumentScreen(
-    viewModel: NewIdViewModel,
-    onCancelled: () -> Unit
+    viewModel: NewDocumentViewModel,
+    onCancelled: () -> Unit,
+    onResult: () -> Unit = {}
 ) {
     val appState by remember { viewModel.detectionState }
     Scaffold(
@@ -114,10 +112,7 @@ fun NewDocumentScreen(
                             viewModel.selectedImagePath.value = path
                             viewModel.detectCorners()
                         }
-                        Button(onClick = {
-                            TODO()
-//                            viewModel.detectText()
-                        }, modifier = Modifier.size(150.dp, 70.dp)) {
+                        Button(onClick = onResult, modifier = Modifier.size(150.dp, 70.dp)) {
                             Text(text = "OK")
                         }
                     }
@@ -145,10 +140,6 @@ fun NewDocumentScreen(
                     }
                 }
 
-                DetectionState.RESULT -> {
-//                    DetectionResult(person = person)
-                }
-
                 DetectionState.ERROR -> {
                     Text(text = "ERROR", fontSize = 30.sp)
                 }
@@ -156,6 +147,3 @@ fun NewDocumentScreen(
         }
     }
 }
-
-@Composable
-fun Dp.toPx() = with(LocalDensity.current) { this@toPx.toPx() }
