@@ -32,4 +32,6 @@
     <string name="yes">Yes</string>
     <string name="cancel">Cancel</string>
     <string name="add_a_new_document">New document</string>
+    <string name="show_images">Show images</string>
+    <string name="show_scan">Show scanned values</string>
 </resources>

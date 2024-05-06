@@ -1,5 +1,6 @@
 package hu.bme.idselector.ui
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -87,7 +88,10 @@ fun ProfileList(
         modifier = Modifier.fillMaxHeight()
     ) { paddingValues ->
         LazyColumn(
-            Modifier
+            contentPadding = PaddingValues(
+                bottom = 30.dp
+            ),
+            modifier = Modifier
                 .padding(paddingValues)
                 .fillMaxSize()
         ) {

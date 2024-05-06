@@ -18,6 +18,7 @@ data class NationalId(
         generator = "national_id_id_seq"
     )
     var id: Int = 0,
+    var documentName: String? = null,
     val name: String? = null,
     val sex: Char? = null,
     val nationality: String? = null,

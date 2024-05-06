@@ -66,7 +66,10 @@ interface ApiService {
     fun getProfiles(): Call<List<Profile>?>?
 
     @GET("/user/profiles/{id}/national/list")
-    fun getNationalIds(@Path("id") profileId: Int): Call<List<NationalId>?>
+    fun getNationalIds(@Path("id") profileId: Int): Call<List<NationalId>?>?
+
+    @GET("/user/profiles/{id}/other/list")
+    fun getOtherIds(@Path("id") profileId: Int): Call<List<OtherId>?>?
 
     @POST("/user/profiles/{id}/national/new")
     fun createNewNationalId(
@@ -109,17 +112,29 @@ interface ApiService {
         }
 
 
-        fun getNationalIdFront(userId: Int, nationalId: Int) =
-            getNationalIdImage(userId, nationalId, "front")
+        fun getNationalIdFront(profileId: Int, nationalId: Int) =
+            getNationalIdImage(profileId, nationalId, "front")
 
-        fun getNationalIdBack(userId: Int, nationalId: Int) =
-            getNationalIdImage(userId, nationalId, "back")
+        fun getNationalIdBack(profileId: Int, nationalId: Int) =
+            getNationalIdImage(profileId, nationalId, "back")
 
         private fun getNationalIdImage(
-            userId: Int,
+            profileId: Int,
             nationalId: Int,
             part: String
-        ): GlideUrl? = getGlideURL("/user/profiles/$userId/national/$nationalId/$part")
+        ): GlideUrl? = getGlideURL("user/profiles/$profileId/national/$nationalId/$part")
+
+        fun getOtherIdFront(profileId: Int, otherId: Int) =
+            getOtherIdImage(profileId, otherId, "front")
+
+        fun getOtherIdBack(profileId: Int, otherId: Int) =
+            getOtherIdImage(profileId, otherId, "back")
+
+        private fun getOtherIdImage(
+            profileId: Int,
+            otherId: Int,
+            part: String
+        ): GlideUrl? = getGlideURL("user/profiles/$profileId/other/$otherId/$part")
 
         fun getImageUrl(imageId: String): GlideUrl? {
             return getGlideURL("image/download/$imageId")

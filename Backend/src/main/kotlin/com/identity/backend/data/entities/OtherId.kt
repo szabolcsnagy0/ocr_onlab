@@ -17,6 +17,7 @@ data class OtherId (
         generator = "other_id_id_seq"
     )
     val id: Int = 0,
+    var documentName: String? = null,
     var front: ByteArray? = null,
     var back: ByteArray? = null,
     val profileId: Int = 0

@@ -17,6 +17,7 @@ import hu.bme.idselector.ui.createid.DetectionResult
 import hu.bme.idselector.ui.createid.NewDocumentScreen
 import hu.bme.idselector.ui.createid.NewNationalIdScreen
 import hu.bme.idselector.viewmodels.AuthenticationViewModel
+import hu.bme.idselector.viewmodels.DocumentListViewModel
 import hu.bme.idselector.viewmodels.NewDocumentViewModel
 import hu.bme.idselector.viewmodels.NewNationalViewModel
 import hu.bme.idselector.viewmodels.NewOtherIdViewModel
@@ -165,22 +166,25 @@ fun Navigation(tokenManager: TokenManager) {
                     animationSpec = tween(700)
                 )
             }) {
-            ProfileDetails(
-                viewModel = profilesViewModel,
-                onBackPressed = {
-                    navController.navigate(Routes.ProfileList.route) {
-                        popUpTo(Routes.ProfileList.route) {
-                            inclusive = true
+            profilesViewModel.selectedProfile.value?.let {
+                val viewModel = remember { DocumentListViewModel(it) }
+                ProfileDetails(
+                    viewModel = viewModel,
+                    onBackPressed = {
+                        navController.navigate(Routes.ProfileList.route) {
+                            popUpTo(Routes.ProfileList.route) {
+                                inclusive = true
+                            }
                         }
+                    },
+                    addNewNationalIdDocument = {
+                        navController.navigate(Routes.NewNationalIdDocument.route)
+                    },
+                    addNewOtherIdDocument = {
+                        navController.navigate(Routes.NewOtherIdDocument.route)
                     }
-                },
-                addNewNationalIdDocument = {
-                    navController.navigate(Routes.NewNationalIdDocument.route)
-                },
-                addNewOtherIdDocument = {
-                    navController.navigate(Routes.NewOtherIdDocument.route)
-                }
-            )
+                )
+            }
         }
 
         composable(route = Routes.NewNationalIdDocument.route) {

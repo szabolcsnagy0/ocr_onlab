@@ -41,6 +41,10 @@ class OtherIdController(
             newOtherId.back = imageUploadService.findImageFile(it, profile.userId).readBytes()
         }
 
+        otherIdRequest.documentName?.let {
+            newOtherId.documentName = it
+        }
+
         otherIdRepository.save(newOtherId)
 
         // Delete user folder and files
@@ -107,6 +111,7 @@ class OtherIdController(
 
     private fun OtherId.toOtherIdResponse() = OtherIdResponse(
         id = this.id,
-        profileId = this.profileId
+        profileId = this.profileId,
+        documentName = this.documentName
     )
 }

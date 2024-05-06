@@ -3,6 +3,7 @@ package com.identity.backend.data.request
 import java.util.*
 
 data class NationalIdRequest(
+    val documentName: String? = null,
     val name: String? = null,
     val sex: Char? = null,
     val nationality: String? = null,

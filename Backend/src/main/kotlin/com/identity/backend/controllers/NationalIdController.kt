@@ -52,6 +52,10 @@ class NationalIdController(
             newNationalId.back = imageUploadService.findImageFile(it, profile.userId).readBytes()
         }
 
+        nationalIdRequest.documentName?.let {
+            newNationalId.documentName = it
+        }
+
         nationalIdRepository.save(newNationalId)
 
         // Delete user folder and files
@@ -119,6 +123,7 @@ class NationalIdController(
 
     private fun NationalId.toNationalIdResponse() = NationalIdResponse(
         id = this.id,
+        documentName = this.documentName,
         name = this.name,
         documentNr = this.documentNr,
         dateOfBirth = this.dateOfBirth,

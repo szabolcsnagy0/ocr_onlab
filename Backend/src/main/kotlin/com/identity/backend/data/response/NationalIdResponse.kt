@@ -4,6 +4,7 @@ import java.util.*
 
 data class NationalIdResponse(
     var id: Int = 0,
+    val documentName: String? = null,
     val name: String? = null,
     val sex: Char? = null,
     val nationality: String? = null,

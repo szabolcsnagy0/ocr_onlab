@@ -4,6 +4,7 @@ import java.util.Date
 
 data class NationalId(
     var id: Int = 0,
+    val documentName: String? = null,
     val name: String? = null,
     val sex: Char? = null,
     val nationality: String? = null,
