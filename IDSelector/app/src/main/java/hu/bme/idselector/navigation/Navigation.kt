@@ -13,14 +13,12 @@ import hu.bme.idselector.api.TokenManager
 import hu.bme.idselector.ui.ProfileDetails
 import hu.bme.idselector.ui.ProfileList
 import hu.bme.idselector.ui.authentication.LoginScreen
-import hu.bme.idselector.ui.createid.DetectionResult
 import hu.bme.idselector.ui.createid.NewDocumentScreen
 import hu.bme.idselector.ui.createid.NewNationalIdScreen
 import hu.bme.idselector.viewmodels.AuthenticationViewModel
 import hu.bme.idselector.viewmodels.DocumentListViewModel
-import hu.bme.idselector.viewmodels.NewDocumentViewModel
-import hu.bme.idselector.viewmodels.NewNationalViewModel
-import hu.bme.idselector.viewmodels.NewOtherIdViewModel
+import hu.bme.idselector.viewmodels.createid.NewNationalViewModel
+import hu.bme.idselector.viewmodels.createid.NewOtherIdViewModel
 import hu.bme.idselector.viewmodels.ProfilesViewModel
 
 @Composable
@@ -203,6 +201,7 @@ fun Navigation(tokenManager: TokenManager) {
                 },
                 onResult = {
                     newNationalViewModel.createId()
+                    profilesViewModel.refreshProfilesList()
                     navController.navigate(Routes.ProfileDetails.route) {
                         popUpTo(Routes.ProfileDetails.route) {
                             inclusive = true
@@ -228,6 +227,7 @@ fun Navigation(tokenManager: TokenManager) {
                 },
                 onResult = {
                     newDocumentViewModel.onResult()
+                    profilesViewModel.refreshProfilesList()
                     navController.navigate(Routes.ProfileDetails.route) {
                         popUpTo(Routes.ProfileDetails.route) {
                             inclusive = true

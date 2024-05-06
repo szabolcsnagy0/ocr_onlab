@@ -2,7 +2,7 @@ package com.identity.backend.data.entities
 
 import jakarta.persistence.*
 import org.springframework.data.annotation.Id
-import java.util.*
+import java.util.Date
 
 @Entity
 @Table(name = "national_id")
@@ -23,7 +23,9 @@ data class NationalId(
     val sex: Char? = null,
     val nationality: String? = null,
     val dateOfBirth: Date? = null,
+//    val dateOfBirth: String? = null,
     val dateOfExpiry: Date? = null,
+//    val dateOfExpiry: String? = null,
     val documentNr: String? = null,
     val can: String? = null,
     val placeOfBirth: String? = null,

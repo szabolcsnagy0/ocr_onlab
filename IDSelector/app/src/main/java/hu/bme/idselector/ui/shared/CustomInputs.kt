@@ -129,6 +129,7 @@ fun TextWithInput(
 fun EditTextWithTitle(
     titleText: String,
     prevText: String,
+    keyboardType: KeyboardType = KeyboardType.Text,
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -155,6 +156,7 @@ fun EditTextWithTitle(
                 .padding(vertical = 10.dp)
                 .fillMaxWidth(),
             singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             shape = CircleShape
         )
     }

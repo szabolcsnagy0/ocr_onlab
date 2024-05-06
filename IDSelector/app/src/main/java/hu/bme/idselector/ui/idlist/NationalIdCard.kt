@@ -107,12 +107,12 @@ fun NationalIdCard(id: NationalId, modifier: Modifier = Modifier) {
                     ) {
                         IdField(
                             title = stringResource(id = R.string.dateOfBirth),
-                            value = id.dateOfBirth?.toGMTString()?.take(10),
+                            value = id.dateOfBirth,
                             modifier = Modifier.padding(bottom = 5.dp)
                         )
                         IdField(
                             title = stringResource(id = R.string.dateOfExpiry),
-                            value = id.dateOfExpiry?.toGMTString()?.take(10)
+                            value = id.dateOfExpiry
                         )
                     }
                 }

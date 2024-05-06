@@ -2,6 +2,7 @@ package hu.bme.idselector.ui
 
 import android.os.Build
 import android.util.Log
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -77,6 +78,8 @@ import hu.bme.idselector.data.OtherId
 import hu.bme.idselector.data.Profile
 import hu.bme.idselector.ui.idlist.ImageIdCard
 import hu.bme.idselector.ui.idlist.NationalIdCard
+import hu.bme.idselector.ui.shared.FabItem
+import hu.bme.idselector.ui.shared.MultiFloatingActionButton
 import hu.bme.idselector.ui.shared.ShowImage
 import hu.bme.idselector.viewmodels.DocumentListViewModel
 import hu.bme.idselector.viewmodels.ProfilesViewModel
@@ -151,14 +154,21 @@ fun ProfileDetails(
             )
         },
         floatingActionButton = {
-            FloatingActionButton(
-                onClick = addNewOtherIdDocument,
-                containerColor = colorResource(id = R.color.grey),
-                contentColor = colorResource(id = R.color.white),
-                elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation()
-            ) {
-                Icon(Icons.Filled.Add, stringResource(R.string.add_card))
-            }
+            MultiFloatingActionButton(
+                fabIcon = Icons.Filled.Add,
+                items = arrayListOf(
+                    FabItem(
+                        icon = Icons.Filled.DocumentScanner,
+                        label = stringResource(R.string.new_national_document),
+                        onFabItemClicked = addNewNationalIdDocument
+                    ),
+                    FabItem(
+                        icon = Icons.Filled.Image,
+                        label = "Other document",
+                        onFabItemClicked = addNewOtherIdDocument
+                    )
+                )
+            )
         },
         containerColor = colorResource(id = R.color.orange)
     ) {
@@ -188,6 +198,7 @@ fun ProfileDetails(
                 } else {
                     NationalIdCard(id = nationalId)
                 }
+                Spacer(modifier = Modifier.padding(vertical = 10.dp))
             }
 
             items(otherIds) { otherId ->
@@ -206,6 +217,7 @@ fun ProfileDetails(
                     }
                     if (frontUrl != null && backUrl != null) {
                         ImageIdCard(frontUrl = frontUrl, backUrl = backUrl)
+                        Spacer(modifier = Modifier.padding(vertical = 10.dp))
                     }
                 }
             }

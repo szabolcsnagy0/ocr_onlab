@@ -1,4 +1,4 @@
-package hu.bme.idselector.viewmodels
+package hu.bme.idselector.viewmodels.createid
 
 import android.util.Log
 import hu.bme.idselector.api.ApiService

@@ -4,5 +4,6 @@ enum class DetectionState {
     LOADING,
     CROP,
     START,
+    RESULT,
     ERROR
 }

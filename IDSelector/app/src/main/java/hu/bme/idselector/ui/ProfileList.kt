@@ -10,6 +10,8 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Logout
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.DocumentScanner
+import androidx.compose.material.icons.filled.Image
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
@@ -30,6 +32,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import hu.bme.idselector.R
 import hu.bme.idselector.ui.shared.CustomAlertDialog
+import hu.bme.idselector.ui.shared.FabItem
+import hu.bme.idselector.ui.shared.MultiFloatingActionButton
 import hu.bme.idselector.viewmodels.ProfilesViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -76,7 +80,7 @@ fun ProfileList(
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /* TODO */ },
+                onClick = { TODO() },
                 containerColor = colorResource(id = R.color.grey),
                 contentColor = colorResource(id = R.color.white),
                 elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation()

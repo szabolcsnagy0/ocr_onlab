@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 @RestController
 @RequestMapping("user/profiles/{id}/national")
@@ -30,12 +32,12 @@ class NationalIdController(
         val newNationalId = NationalId(
             name = nationalIdRequest.name,
             documentNr = nationalIdRequest.documentNr,
-            dateOfBirth = nationalIdRequest.dateOfBirth,
+            dateOfBirth = nationalIdRequest.dateOfBirth?.convertDate(),
             sex = nationalIdRequest.sex,
             can = nationalIdRequest.can,
             authority = nationalIdRequest.authority,
             profileId = profileId,
-            dateOfExpiry = nationalIdRequest.dateOfExpiry,
+            dateOfExpiry = nationalIdRequest.dateOfExpiry?.convertDate(),
             placeOfBirth = nationalIdRequest.placeOfBirth,
             nationality = nationalIdRequest.nationality,
             mothersName = nationalIdRequest.mothersName,
@@ -126,15 +128,18 @@ class NationalIdController(
         documentName = this.documentName,
         name = this.name,
         documentNr = this.documentNr,
-        dateOfBirth = this.dateOfBirth,
+        dateOfBirth = this.dateOfBirth?.formatDate(),
         sex = this.sex,
         can = this.can,
         authority = this.authority,
         profileId = this.profileId,
-        dateOfExpiry = this.dateOfExpiry,
+        dateOfExpiry = this.dateOfExpiry?.formatDate(),
         placeOfBirth = this.placeOfBirth,
         nationality = this.nationality,
         mothersName = this.mothersName,
         nameAtBirth = this.nameAtBirth
     )
+
+    private fun Date.formatDate(): String = SimpleDateFormat("yyyy-MM-dd").format(this)
+    private fun String.convertDate(): Date? = SimpleDateFormat("yyyy-MM-dd").parse(this)
 }

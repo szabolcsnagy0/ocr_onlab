@@ -5,13 +5,17 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Cancel
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -35,7 +39,7 @@ import hu.bme.idselector.ui.createid.components.ImagePreview
 import hu.bme.idselector.ui.createid.states.DetectionState
 import hu.bme.idselector.ui.createid.states.ImageState
 import hu.bme.idselector.ui.shared.camera.ChooseImage
-import hu.bme.idselector.viewmodels.NewDocumentViewModel
+import hu.bme.idselector.viewmodels.createid.NewDocumentViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -90,7 +94,7 @@ fun NewDocumentScreen(
                     ) {
                         ChooseImage(content = { onClick ->
                             ImagePreview(
-                                text = "FRONT",
+                                text = stringResource(R.string.front),
                                 onClick = onClick,
                                 glideUrl = viewModel.getFrontImageUrl()
                             )
@@ -102,7 +106,7 @@ fun NewDocumentScreen(
                         }
                         ChooseImage(content = { onClick ->
                             ImagePreview(
-                                text = "BACK",
+                                text = stringResource(R.string.back_image),
                                 onClick = onClick,
                                 glideUrl = viewModel.getBackImageUrl()
                             )
@@ -112,8 +116,30 @@ fun NewDocumentScreen(
                             viewModel.selectedImagePath.value = path
                             viewModel.detectCorners()
                         }
-                        Button(onClick = onResult, modifier = Modifier.size(150.dp, 70.dp)) {
-                            Text(text = "OK")
+                        ElevatedButton(
+                            onClick = onResult,
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = colorResource(id = R.color.black),
+                                contentColor = colorResource(id = R.color.white),
+                                disabledContainerColor = colorResource(id = R.color.grey)
+                            ),
+                            elevation = ButtonDefaults.buttonElevation(
+                                defaultElevation = 5.dp,
+                                pressedElevation = 5.dp,
+                                focusedElevation = 5.dp,
+                                hoveredElevation = 5.dp,
+                                disabledElevation = 0.dp
+                            ),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(horizontal = 10.dp, vertical = 20.dp)
+                                .heightIn(70.dp)
+                        ) {
+                            Text(
+                                text = stringResource(id = R.string.done),
+                                fontWeight = FontWeight.SemiBold,
+                                fontSize = 15.sp
+                            )
                         }
                     }
                 }
@@ -142,6 +168,9 @@ fun NewDocumentScreen(
 
                 DetectionState.ERROR -> {
                     Text(text = "ERROR", fontSize = 30.sp)
+                }
+
+                DetectionState.RESULT -> {
                 }
             }
         }

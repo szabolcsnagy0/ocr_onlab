@@ -34,4 +34,12 @@
     <string name="add_a_new_document">New document</string>
     <string name="show_images">Show images</string>
     <string name="show_scan">Show scanned values</string>
+    <string name="save">Save</string>
+    <string name="male">M</string>
+    <string name="female">F</string>
+    <string name="select_date">Select date</string>
+    <string name="new_national_document">National identity</string>
+    <string name="done">Done</string>
+    <string name="front">Front image</string>
+    <string name="back_image">Back image</string>
 </resources>

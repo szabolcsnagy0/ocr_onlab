@@ -1,4 +1,4 @@
-package hu.bme.idselector.viewmodels
+package hu.bme.idselector.viewmodels.createid
 
 import android.util.Log
 import androidx.compose.runtime.MutableState
@@ -27,12 +27,13 @@ class NewNationalViewModel(
         call?.enqueue(object : Callback<NationalId?> {
 
             override fun onResponse(call: Call<NationalId?>, response: Response<NationalId?>) {
-                if (response.isSuccessful) {
+                detectionState.value = if (response.isSuccessful) {
                     Log.i("detect", response.body().toString())
                     identity.value = response.body()
+                    DetectionState.RESULT
                 } else {
                     Log.i("detect", "Hiba!")
-                    detectionState.value = DetectionState.ERROR
+                    DetectionState.ERROR
                 }
             }
 
@@ -64,6 +65,7 @@ class NewNationalViewModel(
 
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                 Log.e("nationalid", t.message.toString())
+                detectionState.value = DetectionState.ERROR
             }
         })
     }

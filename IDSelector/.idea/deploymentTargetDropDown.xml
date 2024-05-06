@@ -2,6 +2,12 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="DetectionResult">
+        <State />
+      </entry>
+      <entry key="ImagePreview">
+        <State />
+      </entry>
       <entry key="app">
         <State />
       </entry>

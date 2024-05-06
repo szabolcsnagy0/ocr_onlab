@@ -1,4 +1,5 @@
 import re
+from datetime import datetime
 
 
 class Person:
@@ -146,8 +147,8 @@ class Person:
         return {"name": self.name,
                 "sex": self.sex,
                 "nationality": self.nationality,
-                "dateOfBirth": self.birth,
-                "dateOfExpiry": self.expiry,
+                "dateOfBirth": convert_date(self.birth),
+                "dateOfExpiry": convert_date(self.expiry),
                 "documentNr": self.doc_nr,
                 "can": self.can,
                 "placeOfBirth": self.place_of_birth,
@@ -158,6 +159,12 @@ class Person:
 
 def transform_date(text):
     return text[-2:] + text[2:4] + text[:2]
+
+
+def convert_date(date_str):
+    date_obj = datetime.strptime(date_str, "%y%m%d")
+    formatted_date = date_obj.strftime("%Y-%m-%d")
+    return formatted_date
 
 
 def check_sum(string, check):

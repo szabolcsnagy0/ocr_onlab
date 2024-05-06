@@ -1,4 +1,4 @@
-package hu.bme.idselector.viewmodels
+package hu.bme.idselector.viewmodels.createid
 
 import android.graphics.BitmapFactory
 import android.net.Uri

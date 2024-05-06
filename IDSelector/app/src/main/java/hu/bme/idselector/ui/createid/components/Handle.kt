@@ -17,7 +17,7 @@ import kotlin.math.roundToInt
 
 @Composable
 fun Handle(modifier: Modifier = Modifier, offset: MutableState<IntOffset>) {
-    val inputSize = 150.dp
+    val inputSize = 50.dp
     val circleSize = 15.dp
     val offsetToCenter = IntOffset(circleSize.value.roundToInt(), circleSize.value.roundToInt())
     Box(
@@ -32,16 +32,12 @@ fun Handle(modifier: Modifier = Modifier, offset: MutableState<IntOffset>) {
                     offset.value = offset.value.plus(offsetChange)
                 }
             }
-//            .background(
-//                    color = Color(Color.Red.red, Color.Red.green, Color.Red.blue, 0.1f),
-//                    shape = CircleShape
-//                )
     ) {
         Box(
             modifier = modifier
                 .size(circleSize)
                 .background(
-                    color = Color(Color.Red.red, Color.Red.green, Color.Red.blue, 1f),
+                    color = Color(0xFFF2BB3E),
                     shape = CircleShape
                 )
         )
