@@ -42,4 +42,5 @@
     <string name="done">Done</string>
     <string name="front">Front image</string>
     <string name="back_image">Back image</string>
+    <string name="profile_name">Profile name</string>
 </resources>

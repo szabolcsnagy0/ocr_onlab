@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -123,6 +124,7 @@ fun NationalIdCard(id: NationalId, modifier: Modifier = Modifier) {
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier
                     .padding(10.dp)
+                    .fillMaxHeight()
                     .fillMaxWidth(),
             ) {
                 val rotationModifier: Modifier = Modifier.graphicsLayer {
@@ -130,13 +132,15 @@ fun NationalIdCard(id: NationalId, modifier: Modifier = Modifier) {
                     rotationY = rotation
                 }
                 Column(
+                    verticalArrangement = Arrangement.SpaceEvenly,
                     horizontalAlignment = Alignment.End,
                     modifier = Modifier.weight(0.5f)
+                        .padding(end = 7.dp)
                 ) {
                     IdField(
                         title = stringResource(id = R.string.can),
                         value = id.can,
-                        fontSize = 13.sp,
+                        fontSize = 10.sp,
                         textModifier = rotationModifier,
                         horizontalAlignment = Alignment.End,
                         modifier = Modifier.padding(bottom = 10.dp)
@@ -144,7 +148,7 @@ fun NationalIdCard(id: NationalId, modifier: Modifier = Modifier) {
                     IdField(
                         title = stringResource(id = R.string.authority),
                         value = id.authority,
-                        fontSize = 13.sp,
+                        fontSize = 10.sp,
                         textModifier = rotationModifier,
                         horizontalAlignment = Alignment.End,
                         modifier = Modifier.padding(bottom = 10.dp)
@@ -153,7 +157,7 @@ fun NationalIdCard(id: NationalId, modifier: Modifier = Modifier) {
                         IdField(
                             title = stringResource(id = R.string.nationality),
                             value = id.nationality,
-                            fontSize = 13.sp,
+                            fontSize = 10.sp,
                             textModifier = rotationModifier,
                             horizontalAlignment = Alignment.End,
                             modifier = Modifier.weight(1f)
@@ -161,7 +165,7 @@ fun NationalIdCard(id: NationalId, modifier: Modifier = Modifier) {
                         IdField(
                             title = stringResource(id = R.string.sex),
                             value = id.sex.toString(),
-                            fontSize = 13.sp,
+                            fontSize = 10.sp,
                             textModifier = rotationModifier,
                             horizontalAlignment = Alignment.End,
                             modifier = Modifier.weight(1f)
@@ -169,13 +173,14 @@ fun NationalIdCard(id: NationalId, modifier: Modifier = Modifier) {
                     }
                 }
                 Column(
+                    verticalArrangement = Arrangement.SpaceEvenly,
                     horizontalAlignment = Alignment.End,
                     modifier = Modifier.weight(0.5f)
                 ) {
                     IdField(
                         title = stringResource(id = R.string.placeOfBirth),
                         value = id.placeOfBirth,
-                        fontSize = 13.sp,
+                        fontSize = 10.sp,
                         textModifier = rotationModifier,
                         horizontalAlignment = Alignment.End,
                         modifier = Modifier.padding(bottom = 10.dp)
@@ -183,7 +188,7 @@ fun NationalIdCard(id: NationalId, modifier: Modifier = Modifier) {
                     IdField(
                         title = stringResource(id = R.string.nameAtBirth),
                         value = id.nameAtBirth,
-                        fontSize = 13.sp,
+                        fontSize = 10.sp,
                         textModifier = rotationModifier,
                         horizontalAlignment = Alignment.End,
                         modifier = Modifier.padding(bottom = 10.dp)
@@ -191,7 +196,7 @@ fun NationalIdCard(id: NationalId, modifier: Modifier = Modifier) {
                     IdField(
                         title = stringResource(id = R.string.mothersName),
                         value = id.mothersName,
-                        fontSize = 13.sp,
+                        fontSize = 10.sp,
                         textModifier = rotationModifier,
                         horizontalAlignment = Alignment.End
                     )

@@ -7,11 +7,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Logout
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.DocumentScanner
-import androidx.compose.material.icons.filled.Image
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
@@ -22,8 +21,10 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
@@ -32,19 +33,20 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import hu.bme.idselector.R
 import hu.bme.idselector.ui.shared.CustomAlertDialog
-import hu.bme.idselector.ui.shared.FabItem
-import hu.bme.idselector.ui.shared.MultiFloatingActionButton
+import hu.bme.idselector.ui.shared.NewProfileDialog
 import hu.bme.idselector.viewmodels.ProfilesViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileList(
     viewModel: ProfilesViewModel,
-    onProfileSelected: (Int) -> Unit = {_ -> },
+    onProfileSelected: (Int) -> Unit = { _ -> },
     logoutRequested: () -> Unit = {}
 ) {
     val profiles = remember { viewModel.profiles }
-
+    var showProfileDialog by remember {
+        mutableStateOf(false)
+    }
     val logoutRequest = remember { mutableStateOf(false) }
 
     Scaffold(
@@ -80,9 +82,10 @@ fun ProfileList(
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { TODO() },
+                onClick = { showProfileDialog = true },
                 containerColor = colorResource(id = R.color.grey),
                 contentColor = colorResource(id = R.color.white),
+                shape = RoundedCornerShape(30),
                 elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation()
             ) {
                 Icon(Icons.Filled.Add, stringResource(R.string.add_card))
@@ -105,6 +108,18 @@ fun ProfileList(
                 }
             }
         }
+    }
+
+    if(showProfileDialog) {
+        NewProfileDialog(
+            onDismiss = {
+                showProfileDialog = false
+            },
+            onSuccess = {name ->
+                viewModel.createProfile(name)
+                showProfileDialog = false
+            }
+        )
     }
 
     if (logoutRequest.value) {

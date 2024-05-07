@@ -5,8 +5,10 @@ import android.net.Uri
 import android.util.Log
 import android.util.Size
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.unit.IntOffset
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bumptech.glide.load.model.GlideUrl
 import hu.bme.idselector.api.ApiService
@@ -25,7 +27,7 @@ abstract class NewDocumentViewModel(
 ) : ViewModel() {
 
     private val offsets = mutableListOf<Pair<Float, Float>>()
-    val intOffsets = mutableListOf<MutableState<IntOffset>>()
+    var intOffsets = mutableStateListOf<MutableState<IntOffset>>()
 
     val detectionState = mutableStateOf(DetectionState.START)
 
@@ -80,7 +82,6 @@ abstract class NewDocumentViewModel(
                 detectionState.value = if (response.isSuccessful) {
                     Log.i("corners", response.body().toString())
                     val list = response.body() ?: return
-                    intOffsets.clear()
                     offsets.clear()
                     for (value in list) {
                         offsets.add(Pair(value[0], value[1]))
@@ -151,6 +152,7 @@ abstract class NewDocumentViewModel(
             override fun onFailure(call: Call<Any>, t: Throwable) {
                 Log.e("clear", t.message.toString())
             }
+
             override fun onResponse(call: Call<Any>, response: Response<Any>) {
             }
         })
@@ -167,27 +169,47 @@ abstract class NewDocumentViewModel(
         }
     }
 
-    private var currentSize: Pair<Float, Float> = Pair(1f, 1f)
+    private var currentSizeInPx: Pair<Int, Int> = Pair(1, 1)
 
-    fun initIntOffsets(width: Float, height: Float) {
-        currentSize = Pair(width, height)
-        offsets.forEach { offset ->
-            intOffsets += mutableStateOf(
+    fun refreshIntOffsets(width: Int, height: Int) {
+        Log.i("eq", currentSizeInPx.toString())
+        Log.i("eq", "$width $height")
+        if (currentSizeInPx.first == width && currentSizeInPx.second == height) {
+            Log.i("eq", "return")
+            return
+        }
+        currentSizeInPx = Pair(width, height)
+        if (intOffsets.isEmpty()) {
+            offsets.forEach { offset ->
+                intOffsets.add(
+                    mutableStateOf(
+                        IntOffset(
+                            (width * offset.first).roundToInt(),
+                            (height * offset.second).roundToInt()
+                        )
+                    )
+                )
+            }
+        } else offsets.forEachIndexed { index, offset ->
+            intOffsets[index].value =
                 IntOffset(
                     (width * offset.first).roundToInt(),
                     (height * offset.second).roundToInt()
                 )
-            )
         }
+        Log.i("rec", intOffsets.toList().toString())
     }
 
     private fun getConvertedOffsets(): List<Pair<Float, Float>> {
         val offsets = mutableListOf<Pair<Float, Float>>()
+        Log.i("offs", currentSizeInPx.toString())
+        Log.i("offs", intOffsets.toString())
         intOffsets.forEach { intOffset ->
-            val x = (intOffset.value.x.toFloat() / currentSize.first)
-            val y = (intOffset.value.y.toFloat() / currentSize.second)
+            val x = (intOffset.value.x.toFloat() / currentSizeInPx.first)
+            val y = (intOffset.value.y.toFloat() / currentSizeInPx.second)
             offsets += Pair(x, y)
         }
+        Log.i("offs", offsets.toString())
         return offsets
     }
 

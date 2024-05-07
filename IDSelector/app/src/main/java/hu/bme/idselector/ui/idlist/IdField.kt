@@ -16,7 +16,7 @@ fun IdField(
     modifier: Modifier = Modifier,
     textModifier: Modifier = Modifier,
     horizontalAlignment: Alignment.Horizontal = Alignment.Start,
-    fontSize: TextUnit = 15.sp
+    fontSize: TextUnit = 13.sp
 ) {
     Column(
         horizontalAlignment = horizontalAlignment,
@@ -26,7 +26,7 @@ fun IdField(
             text = "$title:",
             fontWeight = FontWeight.Light,
             fontSize = fontSize,
-            lineHeight = fontSize.times(1.1f),
+            lineHeight = fontSize * 1.1f,
             modifier = textModifier,
         )
         value?.let {
@@ -34,6 +34,7 @@ fun IdField(
                 text = it,
                 modifier = textModifier,
                 fontSize = fontSize * 1.33,
+                lineHeight = fontSize * 1.5,
                 fontWeight = FontWeight.Bold
             )
         }

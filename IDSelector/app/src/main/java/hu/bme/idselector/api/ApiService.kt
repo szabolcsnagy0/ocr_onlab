@@ -77,6 +77,11 @@ interface ApiService {
         @Body nationalId: NationalId
     ): Call<ResponseBody>?
 
+    @POST("/user/profiles/new")
+    fun createNewProfile(
+        @Body profile: Profile
+    ): Call<Profile?>?
+
     @POST("/user/profiles/{id}/other/new")
     fun createNewOtherId(
         @Path("id") profileId: Int,

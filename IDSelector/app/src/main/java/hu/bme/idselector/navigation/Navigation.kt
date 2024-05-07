@@ -3,6 +3,7 @@ package hu.bme.idselector.navigation
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.remember
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -26,6 +27,7 @@ fun Navigation(tokenManager: TokenManager) {
     val navController = rememberNavController()
     val authenticationViewModel = remember { AuthenticationViewModel(tokenManager) }
     val profilesViewModel = remember { ProfilesViewModel() }
+    var documentListViewModel: DocumentListViewModel? = null
 
     authenticationViewModel.testToken()
 
@@ -95,14 +97,24 @@ fun Navigation(tokenManager: TokenManager) {
 
         composable(route = Routes.ProfileList.route,
             enterTransition = {
-                slideIntoContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                if (this.initialState.destination.route == Routes.ProfileDetails.route) {
+                    slideIntoContainer(
+                        towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                        animationSpec = tween(700)
+                    )
+                } else slideIntoContainer(
+                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
                     animationSpec = tween(700)
                 )
             },
             exitTransition = {
-                slideOutOfContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                if (this.targetState.destination.route == Routes.ProfileDetails.route) {
+                    slideOutOfContainer(
+                        towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                        animationSpec = tween(700)
+                    )
+                } else slideOutOfContainer(
+                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
                     animationSpec = tween(700)
                 )
             },
@@ -141,6 +153,62 @@ fun Navigation(tokenManager: TokenManager) {
         }
         composable(route = Routes.ProfileDetails.route,
             enterTransition = {
+                if (this.initialState.destination.route == Routes.ProfileList.route) {
+                    slideIntoContainer(
+                        towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                        animationSpec = tween(700)
+                    )
+                } else slideIntoContainer(
+                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                    animationSpec = tween(700)
+                )
+            },
+            exitTransition = {
+                if (this.targetState.destination.route == Routes.ProfileList.route) {
+                    slideOutOfContainer(
+                        towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                        animationSpec = tween(700)
+                    )
+                } else slideOutOfContainer(
+                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                    animationSpec = tween(700)
+                )
+            },
+            popEnterTransition = {
+                slideIntoContainer(
+                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                    animationSpec = tween(700)
+                )
+            },
+            popExitTransition = {
+                slideOutOfContainer(
+                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                    animationSpec = tween(700)
+                )
+            }) {
+            profilesViewModel.selectedProfile.value?.let {
+                documentListViewModel = remember { DocumentListViewModel(it) }
+                ProfileDetails(
+                    viewModel = documentListViewModel!!,
+                    onBackPressed = {
+                        navController.navigate(Routes.ProfileList.route) {
+                            popUpTo(Routes.ProfileList.route) {
+                                inclusive = true
+                            }
+                        }
+                    },
+                    addNewNationalIdDocument = {
+                        navController.navigate(Routes.NewNationalIdDocument.route)
+                    },
+                    addNewOtherIdDocument = {
+                        navController.navigate(Routes.NewOtherIdDocument.route)
+                    }
+                )
+            }
+        }
+
+        composable(route = Routes.NewNationalIdDocument.route,
+            enterTransition = {
                 slideIntoContainer(
                     towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
                     animationSpec = tween(700)
@@ -164,28 +232,6 @@ fun Navigation(tokenManager: TokenManager) {
                     animationSpec = tween(700)
                 )
             }) {
-            profilesViewModel.selectedProfile.value?.let {
-                val viewModel = remember { DocumentListViewModel(it) }
-                ProfileDetails(
-                    viewModel = viewModel,
-                    onBackPressed = {
-                        navController.navigate(Routes.ProfileList.route) {
-                            popUpTo(Routes.ProfileList.route) {
-                                inclusive = true
-                            }
-                        }
-                    },
-                    addNewNationalIdDocument = {
-                        navController.navigate(Routes.NewNationalIdDocument.route)
-                    },
-                    addNewOtherIdDocument = {
-                        navController.navigate(Routes.NewOtherIdDocument.route)
-                    }
-                )
-            }
-        }
-
-        composable(route = Routes.NewNationalIdDocument.route) {
             val newNationalViewModel = remember {
                 NewNationalViewModel(profilesViewModel.selectedProfile.value!!.id)
             }
@@ -201,7 +247,7 @@ fun Navigation(tokenManager: TokenManager) {
                 },
                 onResult = {
                     newNationalViewModel.createId()
-                    profilesViewModel.refreshProfilesList()
+                    documentListViewModel?.refreshDocumentsList()
                     navController.navigate(Routes.ProfileDetails.route) {
                         popUpTo(Routes.ProfileDetails.route) {
                             inclusive = true
@@ -211,7 +257,31 @@ fun Navigation(tokenManager: TokenManager) {
             )
         }
 
-        composable(route = Routes.NewOtherIdDocument.route) {
+        composable(route = Routes.NewOtherIdDocument.route,
+            enterTransition = {
+                slideIntoContainer(
+                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                    animationSpec = tween(700)
+                )
+            },
+            exitTransition = {
+                slideOutOfContainer(
+                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                    animationSpec = tween(700)
+                )
+            },
+            popEnterTransition = {
+                slideIntoContainer(
+                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                    animationSpec = tween(700)
+                )
+            },
+            popExitTransition = {
+                slideOutOfContainer(
+                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                    animationSpec = tween(700)
+                )
+            }) {
             val newDocumentViewModel = remember {
                 NewOtherIdViewModel(profilesViewModel.selectedProfile.value!!.id)
             }
@@ -227,7 +297,7 @@ fun Navigation(tokenManager: TokenManager) {
                 },
                 onResult = {
                     newDocumentViewModel.onResult()
-                    profilesViewModel.refreshProfilesList()
+                    documentListViewModel?.refreshDocumentsList()
                     navController.navigate(Routes.ProfileDetails.route) {
                         popUpTo(Routes.ProfileDetails.route) {
                             inclusive = true

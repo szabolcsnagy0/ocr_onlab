@@ -161,35 +161,3 @@ fun EditTextWithTitle(
         )
     }
 }
-
-/**
- * Custom composable for displaying a text with a title
- * @param titleText: Title of the text
- * @param subText: Subtext of the text
- * @param modifier: Modifier of the text
- */
-@Composable
-fun TextWithTitle(
-    titleText: String,
-    subText: String,
-    modifier: Modifier = Modifier
-) {
-    Column(modifier = modifier) {
-        Text(
-            text = titleText,
-            fontWeight = FontWeight.SemiBold,
-            color = colorResource(id = R.color.black),
-            fontSize = 22.sp,
-            modifier = Modifier.fillMaxWidth()
-        )
-        Text(
-            text = subText,
-            fontWeight = FontWeight.Normal,
-            color = colorResource(id = R.color.black),
-            fontSize = 18.sp,
-            modifier = Modifier
-                .padding(top = 3.dp)
-                .fillMaxWidth()
-        )
-    }
-}

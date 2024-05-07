@@ -11,12 +11,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Cancel
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -79,6 +82,18 @@ fun NewDocumentScreen(
                     containerColor = colorResource(id = R.color.grey)
                 ),
             )
+        },
+        floatingActionButton = {
+            if (appState == DetectionState.CROP) {
+                FloatingActionButton(
+                    onClick = { viewModel.cropPicture() },
+                    containerColor = colorResource(id = R.color.grey),
+                    contentColor = colorResource(id = R.color.white),
+                    elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation(),
+                ) {
+                    Icon(imageVector = Icons.Filled.Check, contentDescription = null)
+                }
+            }
         },
         containerColor = colorResource(id = R.color.orange)
     ) { paddingValues ->
@@ -161,9 +176,7 @@ fun NewDocumentScreen(
                 }
 
                 DetectionState.CROP -> {
-                    CropDocument(viewModel = viewModel) {
-                        viewModel.cropPicture()
-                    }
+                    CropDocument(viewModel = viewModel)
                 }
 
                 DetectionState.ERROR -> {

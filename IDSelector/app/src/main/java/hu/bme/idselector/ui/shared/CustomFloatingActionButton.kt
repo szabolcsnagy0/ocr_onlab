@@ -63,8 +63,8 @@ import hu.bme.idselector.R
 @Preview
 fun FloatingButton(){
     FloatingActionButton(onClick = {},
-        shape = CircleShape,
-        containerColor = colorResource(id = R.color.black),
+        shape = RoundedCornerShape(30),
+        containerColor = colorResource(id = R.color.grey),
         elevation = FloatingActionButtonDefaults.elevation(
             defaultElevation = 8.dp
         )
@@ -72,7 +72,7 @@ fun FloatingButton(){
         Icon(
             Icons.Filled.Add,
             contentDescription = null,
-            tint = Color.White
+            tint = colorResource(id = R.color.white)
         )
     }
 }
@@ -94,6 +94,7 @@ fun MultiFloatingActionButton(
     showLabels: Boolean = true,
     onStateChanged: ((state: MultiFabState) -> Unit)? = null
 ) {
+    val greyColor = colorResource(id = R.color.grey)
     var currentState by remember { mutableStateOf(MultiFabState.COLLAPSED) }
     val stateTransition: Transition<MultiFabState> =
         updateTransition(targetState = currentState, label = "")
@@ -145,7 +146,7 @@ fun MultiFloatingActionButton(
                     }) {
                     translate(150f, top = 300f) {
                         scale(5f) {}
-                        drawCircle(Color.Black, radius = 200.dp.toPx())
+                        drawCircle(greyColor, radius = 200.dp.toPx())
 
                     }
                 }
@@ -163,15 +164,15 @@ fun MultiFloatingActionButton(
                     Spacer(modifier = Modifier.height(20.dp))
                 }
                 FloatingActionButton(
-                    shape = CircleShape,
-                    containerColor = colorResource(id = R.color.black),
+                    shape = RoundedCornerShape(30),
+                    containerColor = greyColor,
                     onClick = {
                         stateChange()
                     }) {
                     Icon(
                         fabIcon,
                         contentDescription = null,
-                        tint = Color.White,
+                        tint = colorResource(id = R.color.white),
                         modifier = Modifier.rotate(rotation)
                     )
                 }
@@ -220,8 +221,8 @@ fun SmallFloatingActionButtonRow(
             modifier = Modifier
                 .padding(4.dp),
             onClick = { item.onFabItemClicked() },
-            containerColor = colorResource(R.color.black),
-            contentColor = Color.White
+            containerColor = colorResource(R.color.grey),
+            contentColor = colorResource(id = R.color.white)
         ) {
             Icon(
                 item.icon,

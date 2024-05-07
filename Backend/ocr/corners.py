@@ -33,8 +33,8 @@ def corrigate_coordinates(points):
 def coordinates_ratio(points, img_size):
     rations = []
     for point in points:
-        x = point[0] / img_size[0]
-        y = point[1] / img_size[1]
+        x = point[0] / img_size[1]
+        y = point[1] / img_size[0]
         rations.append([x, y])
     return rations
 

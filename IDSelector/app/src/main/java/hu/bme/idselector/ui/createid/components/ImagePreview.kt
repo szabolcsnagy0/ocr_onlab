@@ -25,14 +25,23 @@ import hu.bme.idselector.ui.shared.ShowImage
 
 @Preview()
 @Composable
-fun ImagePreview(text: String = "Front image", glideUrl: GlideUrl? = null, onClick: () -> Unit = {}) {
+fun ImagePreview(
+    text: String = "Front image",
+    glideUrl: GlideUrl? = null,
+    onClick: () -> Unit = {}
+) {
     Box(
         modifier = Modifier
             .padding(horizontal = 10.dp),
         contentAlignment = Alignment.Center
     ) {
         if (glideUrl != null) {
-            ShowImage(glideUrl = glideUrl, modifier = Modifier.clickable { onClick() })
+            ShowImage(
+                glideUrl = glideUrl, modifier = Modifier
+                    .clickable { onClick() }
+                    .fillMaxWidth(0.9f)
+                    .heightIn(max = 200.dp)
+            )
         } else {
             ElevatedButton(
                 onClick = onClick,
