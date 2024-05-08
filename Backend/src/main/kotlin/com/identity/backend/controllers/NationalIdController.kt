@@ -3,6 +3,8 @@ package com.identity.backend.controllers
 import com.identity.backend.data.entities.NationalId
 import com.identity.backend.data.request.NationalIdRequest
 import com.identity.backend.data.response.NationalIdResponse
+import com.identity.backend.data.response.convertDate
+import com.identity.backend.data.response.toNationalIdResponse
 import com.identity.backend.repository.NationalIdRepository
 import com.identity.backend.services.AuthenticationService
 import com.identity.backend.services.ImageUploadService
@@ -10,8 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import java.text.SimpleDateFormat
-import java.util.*
 
 @RestController
 @RequestMapping("user/profiles/{id}/national")
@@ -122,24 +122,4 @@ class NationalIdController(
             ResponseEntity.ok().build()
         } else null
     } ?: ResponseEntity.notFound().build()
-
-    private fun NationalId.toNationalIdResponse() = NationalIdResponse(
-        id = this.id,
-        documentName = this.documentName,
-        name = this.name,
-        documentNr = this.documentNr,
-        dateOfBirth = this.dateOfBirth?.formatDate(),
-        sex = this.sex,
-        can = this.can,
-        authority = this.authority,
-        profileId = this.profileId,
-        dateOfExpiry = this.dateOfExpiry?.formatDate(),
-        placeOfBirth = this.placeOfBirth,
-        nationality = this.nationality,
-        mothersName = this.mothersName,
-        nameAtBirth = this.nameAtBirth
-    )
-
-    private fun Date.formatDate(): String = SimpleDateFormat("yyyy-MM-dd").format(this)
-    private fun String.convertDate(): Date? = SimpleDateFormat("yyyy-MM-dd").parse(this)
 }

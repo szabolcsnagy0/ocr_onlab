@@ -12,6 +12,10 @@ body {
     padding: 20px;
 }
 
+#content {
+    display: none;
+}
+
 h1.container,
 .dropdown {
     margin-inline-end: 20px;
@@ -47,7 +51,8 @@ h1.container {
 
 .logo_text {
     width: 70%;
-    margin-bottom: 20px;
+    margin-bottom: 1vh;
+    margin-top: 2vh;
 }
 
 .row {
@@ -66,6 +71,8 @@ button:focus {
 
 button:hover {
     color: #F05123;
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Style The Dropdown Button */

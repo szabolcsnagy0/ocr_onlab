@@ -1,12 +1,12 @@
 {
     "name": "IDentity",
-    "version": "1.0.3",
+    "version": "1.0.0",
     "description": "copy data to clipboard",
     "manifest_version": 3,
     "author": "Me",
     "action": {
         "default_title": "IDentity",
-        "default_popup": "popup.html"
+        "default_popup": "login/login.html"
     },
     "icons": {
         "16": "images/icon16.png",

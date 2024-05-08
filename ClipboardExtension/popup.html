@@ -14,11 +14,17 @@
     <div class="loader" id="loading"></div>
     <div class="row align-items-center" id="content">
       <div class="col-8">
-        <img src="images/text.svg" class="logo_text mx-auto d-block" alt="Identity Text">
         <div class="row align-items-center justify-content-center">
-          <!-- <h1 class="container text-center" id="name"></h1> -->
+          <img src="images/text.svg" class="logo_text mx-auto d-block" alt="Identity">
+        </div>
+        <div class="row align-items-center justify-content-center">
           <select class="dropbtn dropdown text-center" id="select_profile">
             <option selected disabled hidden>Select profile</option>
+          </select>
+        </div>
+        <div class="row align-items-center justify-content-center">
+          <select class="dropbtn dropdown text-center" id="select_document">
+            <option selected disabled hidden>Select document</option>
           </select>
         </div>
         <div class="row align-items-center justify-content-center">
@@ -35,13 +41,13 @@
           <div class="text-center">
             <button class="fas fa-copy" title="Copy" id="copy"></button>
             <button class="fas fa-file-import" title="Insert" id="insert"></button>
+            <button class="fas fa-sign-out-alt" title="Logout" id="logout"></button>
           </div>
         </div>
       </div>
     </div>
   </div>
   <script type="module" src="popup.js"></script>
-  <script type="module" src="person.js"></script>
   <script type="module" src="api.js"></script>
   <script type="module" src="highlight.js"></script>
 </body>

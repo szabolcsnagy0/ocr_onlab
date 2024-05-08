@@ -27,6 +27,7 @@ class AuthenticationController(
         }
     }
 
+    @CrossOrigin
     @GetMapping("token")
     fun checkToken(): ResponseEntity<*> {
         return ResponseEntity.ok(null)

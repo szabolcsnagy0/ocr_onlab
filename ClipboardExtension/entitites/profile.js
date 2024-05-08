@@ -6,12 +6,12 @@ export class Profile {
     if (!data) {
       this.id = null;
       this.name = null;
-      this.nationalId = null;
+      this.nationalIds = [];
       return;
     }
     this.id = data.id;
     this.name = data.name;
-    this.nationalId = new NationalId(data.nationalId);
+    this.nationalIds = data.nationalIds.map(id => new NationalId(id));
   }
 
   static profileList = [];

@@ -2,6 +2,7 @@ package com.identity.backend.controllers
 
 import com.identity.backend.data.entities.Profile
 import com.identity.backend.data.response.ProfileResponse
+import com.identity.backend.data.response.toProfileResponse
 import com.identity.backend.repository.ProfilesRepository
 import com.identity.backend.services.AuthenticationService
 import org.springframework.beans.factory.annotation.Autowired
@@ -69,9 +70,4 @@ class UserController(
             ResponseEntity.ok().build()
         } else null
     } ?: ResponseEntity.notFound().build()
-
-    private fun Profile.toProfileResponse() = ProfileResponse(
-        id = this.id,
-        name = this.name
-    )
 }

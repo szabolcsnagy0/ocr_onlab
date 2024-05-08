@@ -1,5 +1,5 @@
-import { fetchData } from "./api.js";
-import { Profile } from "./profile.js";
+import { fetchProfiles, logout } from "./api.js";
+import { Profile } from "./entitites/profile.js";
 import { highlightSelected } from "./highlight.js";
 import { removeHighlight } from "./highlight.js";
 
@@ -19,7 +19,7 @@ document.addEventListener("visibilitychange", function () {
 async function reloadData() {
     hideContent();
     showLoading();
-    fetchData()
+    fetchProfiles()
         .then(data => {
             Profile.setProfileList(data);
             actualizeProfileSelect();
@@ -49,6 +49,11 @@ const insertBtn = document.querySelector("#insert");
 insertBtn.addEventListener("click", function () {
     const data = getCurrentlySelectedData();
     executeScript(insertData, data);
+});
+
+document.getElementById("logout").addEventListener("click", function () {
+    logout();
+    window.location.href = '../login/login.html';
 });
 
 async function insertData(data) {
@@ -83,27 +88,6 @@ async function executeScript(func, data) {
     });
 }
 
-function getCurrentlySelectedData() {
-    const profileSelect = document.getElementById("select_profile");
-    const selectedProfileId = profileSelect.value;
-    const selectedNationalId = Profile.profileList.find(profile => profile.id == selectedProfileId).nationalId;
-
-    const fieldSelect = document.getElementById("select_field")
-    const selectedFieldValue = fieldSelect.value;
-    return selectedNationalId[selectedFieldValue];
-}
-
-function actualizeProfileSelect() {
-    var select = document.getElementById("select_profile");
-
-    for (var i = 0; i < Profile.profileList.length; i++) {
-        var option = document.createElement("option");
-        option.value = Profile.profileList[i].id;
-        option.text = Profile.profileList[i].name;
-        select.appendChild(option);
-    }
-}
-
 function hideContent() {
     const content = document.getElementById("content");
     content.style.display = "none";
@@ -126,14 +110,56 @@ function showLoading() {
 
 
 var selectProfile = document.getElementById("select_profile");
+var selectDocument = document.getElementById("select_document");
 var selectField = document.getElementById("select_field");
+
+function getCurrentlySelectedData() {
+    const selectedProfile = Profile.profileList.find(profile => profile.id == selectProfile.value);
+    const selectedNationalId = selectedProfile.nationalIds.find(nationalId => nationalId.documentNr == selectDocument.value);
+    const selectedFieldValue = selectField.value;
+    return selectedNationalId[selectedFieldValue];
+}
+
+function actualizeProfileSelect() {
+    for (var i = 0; i < Profile.profileList.length; i++) {
+        var option = document.createElement("option");
+        option.value = Profile.profileList[i].id;
+        option.text = Profile.profileList[i].name;
+        selectProfile.appendChild(option);
+    }
+}
+
+function actualizeDocumentSelect(selectedProfile) {
+    console.log(selectedProfile);
+    if(selectedProfile === undefined || selectedProfile.nationalIds === undefined) {
+        return;
+    }
+    selectDocument.innerHTML = '';
+    for (var i = 0; i < selectedProfile.nationalIds.length; i++) {
+        var option = document.createElement("option");
+        option.value = selectedProfile.nationalIds[i].documentNr;
+        option.text = selectedProfile.nationalIds[i].documentNr;
+        selectDocument.appendChild(option);
+    }
+}
+
 
 // Add an event listener to the select_profile dropdown
 selectProfile.addEventListener('change', function () {
-    console.log("select_profile changed");
-    var selectedProfile = Profile.profileList.find(profile => profile.id == selectProfile.value).nationalId;
+    var selectedProfile = Profile.profileList.find(profile => profile.id == selectProfile.value);
 
     if (selectedProfile === undefined) {
+        return;
+    }
+
+    actualizeDocumentSelect(selectedProfile);
+});
+
+selectDocument.addEventListener('change', function () {
+    var selectedProfile = Profile.profileList.find(profile => profile.id == selectProfile.value);
+    var selectedDocument = selectedProfile.nationalIds.find(nationalId => nationalId.documentNr == selectDocument.value);
+
+    if (selectedDocument === undefined) {
         return;
     }
 
@@ -155,11 +181,12 @@ selectProfile.addEventListener('change', function () {
     ];
 
     options.forEach(function (option) {
-        if (selectedProfile[option.value]) {
+        if (selectedDocument[option.value]) {
             var opt = document.createElement("option");
             opt.value = option.value;
             opt.text = option.text;
             selectField.appendChild(opt);
         }
     })
+
 });

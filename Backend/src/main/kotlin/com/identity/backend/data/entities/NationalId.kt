@@ -1,5 +1,6 @@
 package com.identity.backend.data.entities
 
+import com.identity.backend.data.response.NationalIdResponse
 import jakarta.persistence.*
 import org.springframework.data.annotation.Id
 import java.util.Date
