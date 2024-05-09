@@ -12,7 +12,7 @@ typealias ApplicationUser = com.identity.backend.data.entities.User
 @Service
 class CustomUserDetailsService(
     private val userRepository: UserRepository
-): UserDetailsService {
+) : UserDetailsService {
     override fun loadUserByUsername(username: String): UserDetails {
         return userRepository.findByEmail(username)
             ?.mapToUserDetails()
