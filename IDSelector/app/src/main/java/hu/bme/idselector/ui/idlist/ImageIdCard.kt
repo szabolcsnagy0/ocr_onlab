@@ -2,6 +2,7 @@ package hu.bme.idselector.ui.idlist
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
@@ -22,22 +23,24 @@ import hu.bme.idselector.ui.shared.ShowImage
 fun ImageIdCard(frontUrl: GlideUrl, backUrl: GlideUrl, modifier: Modifier = Modifier) {
     var rotated by remember { mutableStateOf(false) }
 
-    ElevatedCard(
-        colors = CardDefaults.cardColors(
-            containerColor = Color.Transparent
-        ),
-        elevation = CardDefaults.elevatedCardElevation(10.dp),
-        shape = RoundedCornerShape(10),
-        modifier = modifier
-            .clickable {
-                rotated = !rotated
-            }
-    ) {
-        val url = if (!rotated) {
-            frontUrl
-        } else {
-            backUrl
-        }
-        ShowImage(glideUrl = url, modifier = Modifier.fillMaxWidth(0.9f))
+    if (!rotated) {
+        ShowImage(glideUrl = frontUrl,
+            modifier = modifier
+                .fillMaxWidth(0.9f)
+                .heightIn(max = 200.dp)
+                .clickable {
+                    rotated = !rotated
+                }
+        )
+    } else {
+        ShowImage(
+            glideUrl = backUrl,
+            modifier = modifier
+                .fillMaxWidth(0.9f)
+                .heightIn(max = 200.dp)
+                .clickable {
+                    rotated = !rotated
+                }
+        )
     }
 }

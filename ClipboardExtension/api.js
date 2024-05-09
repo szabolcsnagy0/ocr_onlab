@@ -1,5 +1,5 @@
-const base_url = "http://localhost:80";
-// const url = "https://identity-application.azurewebsites.net/";
+// const base_url = "http://localhost:80";
+const base_url = "https://identity-application.azurewebsites.net";
 
 export async function login(email, password) {
     const response = await fetch(`${base_url}/auth/login`, {
@@ -9,6 +9,8 @@ export async function login(email, password) {
         },
         body: JSON.stringify({ email, password })
     });
+
+    console.log(response);
 
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

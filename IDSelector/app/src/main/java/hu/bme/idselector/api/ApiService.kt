@@ -91,7 +91,7 @@ interface ApiService {
     companion object {
         var api: ApiService? = null
         var tokenManager: TokenManager? = null
-        private const val BASE_URL = "http://192.168.0.25:80/"
+        private const val BASE_URL = "https://identity-application.azurewebsites.net/"
 
         /**
          * Get the singleton instance of the ApiService
