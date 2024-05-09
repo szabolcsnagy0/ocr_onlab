@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service
 class TextDetectionService {
     fun runDetection(frontImagePath: String? = null, backImagePath: String? = null): String? {
         // Configure the command according to provided parameters
-        val command = mutableListOf("python", SCRIPT_PATH).apply {
+        val command = mutableListOf("python3", SCRIPT_PATH).apply {
             add("--localization")
             add(LOCALIZATION_PATH)
             frontImagePath?.let {

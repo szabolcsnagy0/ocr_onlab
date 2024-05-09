@@ -1,12 +1,16 @@
 import { login, testToken } from '../api.js';
 
 document.addEventListener("DOMContentLoaded", function () {
+  hideContent();
+  showLoading();
   testToken()
     .then(result => {
       console.log(result);
       if (result) {
         window.location.href = '../popup.html';
       }
+      hideLoading();
+      showContent();
     });
 });
 

@@ -101,16 +101,6 @@ class NationalIdController(
                 }
             } ?: ResponseEntity.notFound().build()
 
-    @GetMapping("{national_id}")
-    fun details(
-        @PathVariable("id") profileId: Int,
-        @PathVariable("national_id") nationalIdId: Int
-    ): ResponseEntity<NationalIdResponse> = authenticationService.getProfileById(profileId)?.let {
-        nationalIdRepository.findById(nationalIdId).get().let {
-            ResponseEntity.ok(it.toNationalIdResponse())
-        }
-    } ?: ResponseEntity.notFound().build()
-
     @DeleteMapping("{national_id}")
     fun delete(
         @PathVariable("id") profileId: Int,

@@ -87,16 +87,6 @@ class OtherIdController(
             }
         } ?: ResponseEntity.notFound().build()
 
-    @GetMapping("{other_id}")
-    fun details(
-        @PathVariable("id") profileId: Int,
-        @PathVariable("other_id") otherIdId: Int
-    ): ResponseEntity<OtherIdResponse> = authenticationService.getProfileById(profileId)?.let {
-        otherIdRepository.findById(otherIdId).get().let {
-            ResponseEntity.ok(it.toOtherIdResponse())
-        }
-    } ?: ResponseEntity.notFound().build()
-
     @DeleteMapping("{other_id}")
     fun delete(
         @PathVariable("id") profileId: Int,
