@@ -1,8 +1,10 @@
 package hu.bme.idselector.ui
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
@@ -27,6 +29,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -53,13 +56,12 @@ fun ProfileList(
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
-                    Text(
-                        text = stringResource(id = R.string.app_name),
-                        fontWeight = FontWeight.ExtraBold,
-                        fontSize = 30.sp,
-                        color = colorResource(
-                            id = R.color.white
-                        )
+                    Image(
+                        painter = painterResource(id = R.drawable.identity_text),
+                        contentDescription = stringResource(R.string.identity_text),
+                        modifier = Modifier
+                            .height(40.dp)
+                            .padding(horizontal = 50.dp)
                     )
                 },
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(

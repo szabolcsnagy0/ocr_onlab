@@ -2,7 +2,6 @@ import { NationalId } from "./national-id.js";
 
 export class Profile {
   constructor(data) {
-    console.log(data);
     if (!data) {
       this.id = null;
       this.name = null;

@@ -130,7 +130,6 @@ function actualizeProfileSelect() {
 }
 
 function actualizeDocumentSelect(selectedProfile) {
-    console.log(selectedProfile);
     if(selectedProfile === undefined || selectedProfile.nationalIds === undefined) {
         return;
     }
@@ -141,6 +140,7 @@ function actualizeDocumentSelect(selectedProfile) {
         option.text = selectedProfile.nationalIds[i].documentNr;
         selectDocument.appendChild(option);
     }
+    actualizeFieldSelect();
 }
 
 
@@ -153,18 +153,20 @@ selectProfile.addEventListener('change', function () {
     }
 
     actualizeDocumentSelect(selectedProfile);
+    actualizeFieldSelect();
 });
 
-selectDocument.addEventListener('change', function () {
+selectDocument.addEventListener('change', actualizeFieldSelect);
+
+function actualizeFieldSelect() {
     var selectedProfile = Profile.profileList.find(profile => profile.id == selectProfile.value);
     var selectedDocument = selectedProfile.nationalIds.find(nationalId => nationalId.documentNr == selectDocument.value);
+
+    selectField.innerHTML = '';
 
     if (selectedDocument === undefined) {
         return;
     }
-
-    // Clear the select_field dropdown
-    selectField.innerHTML = '';
 
     var options = [
         { value: "name", text: "Family name and Given name" },
@@ -188,5 +190,4 @@ selectDocument.addEventListener('change', function () {
             selectField.appendChild(opt);
         }
     })
-
-});
+}

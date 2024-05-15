@@ -10,8 +10,6 @@ export async function login(email, password) {
         body: JSON.stringify({ email, password })
     });
 
-    console.log(response);
-
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }

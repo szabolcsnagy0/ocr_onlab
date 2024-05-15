@@ -176,6 +176,7 @@ fun ProfileDetails(
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally,
             contentPadding = PaddingValues(
+                top = 20.dp,
                 bottom = 100.dp
             ),
             modifier = Modifier

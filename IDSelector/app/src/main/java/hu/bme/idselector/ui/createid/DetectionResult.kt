@@ -146,7 +146,7 @@ fun DetectionResult(
         )
 
         DateField(
-            titleText = stringResource(id = R.string.dateOfBirth),
+            titleText = stringResource(id = R.string.dateOfExpiry),
             date = dateOfExpiry,
             onValueChange = {
                 dateOfExpiry = it
