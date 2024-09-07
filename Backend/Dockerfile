@@ -12,7 +12,7 @@ RUN apt-get update && \
     apt-get install -y python3 python3-pip libgl1 libglx-mesa0 libglib2.0-0 libsm6 libxrender1 libxext6
 
     # Install OpenCV, Numpy, PaddlePaddle and PaddleOCR
-RUN pip3 install opencv-python-headless numpy paddlepaddle paddleocr
+RUN pip3 install --break-system-packages opencv-python-headless numpy paddlepaddle paddleocr
 
 ENV PATH="$PATH:/usr/bin/python3"
 ENV PYTHONPATH="$PYTHONPATH:/usr/lib/python3/dist-packages"
