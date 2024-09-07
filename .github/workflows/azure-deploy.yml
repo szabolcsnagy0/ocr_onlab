@@ -4,9 +4,7 @@ env:
   AZURE_WEBAPP_NAME: identity-application
 
 on:
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 permissions:
   contents: 'read'
