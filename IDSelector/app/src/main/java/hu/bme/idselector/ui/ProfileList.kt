@@ -20,7 +20,6 @@ import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -31,9 +30,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import hu.bme.idselector.R
 import hu.bme.idselector.ui.shared.CustomAlertDialog
 import hu.bme.idselector.ui.shared.NewProfileDialog
@@ -112,12 +109,12 @@ fun ProfileList(
         }
     }
 
-    if(showProfileDialog) {
+    if (showProfileDialog) {
         NewProfileDialog(
             onDismiss = {
                 showProfileDialog = false
             },
-            onSuccess = {name ->
+            onSuccess = { name ->
                 viewModel.createProfile(name)
                 showProfileDialog = false
             }

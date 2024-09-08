@@ -2,7 +2,6 @@ package hu.bme.idselector.ui.createid.components
 
 import android.util.Log
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.offset
@@ -18,7 +17,11 @@ import androidx.compose.ui.unit.dp
 import kotlin.math.roundToInt
 
 @Composable
-fun Handle(modifier: Modifier = Modifier, offset: MutableState<IntOffset>) {
+fun Handle(
+    modifier: Modifier = Modifier,
+    offset: MutableState<IntOffset>,
+    color: Color
+) {
     val inputSize = 50.dp
     val circleSize = 15.dp
     val offsetToCenter = IntOffset(circleSize.value.roundToInt(), circleSize.value.roundToInt())
@@ -42,7 +45,7 @@ fun Handle(modifier: Modifier = Modifier, offset: MutableState<IntOffset>) {
             modifier = modifier
                 .size(circleSize)
                 .background(
-                    color = Color(0xFFF2BB3E),
+                    color = color,
                     shape = CircleShape
                 )
         )

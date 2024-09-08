@@ -6,10 +6,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedButton
-import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -17,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bumptech.glide.load.model.GlideUrl
@@ -28,6 +27,7 @@ import hu.bme.idselector.ui.shared.ShowImage
 fun ImagePreview(
     text: String = "Front image",
     glideUrl: GlideUrl? = null,
+    imageMaxHeight: Dp = 200.dp,
     onClick: () -> Unit = {}
 ) {
     Box(
@@ -40,7 +40,7 @@ fun ImagePreview(
                 glideUrl = glideUrl, modifier = Modifier
                     .clickable { onClick() }
                     .fillMaxWidth(0.9f)
-                    .heightIn(max = 200.dp)
+                    .heightIn(max = imageMaxHeight)
             )
         } else {
             ElevatedButton(

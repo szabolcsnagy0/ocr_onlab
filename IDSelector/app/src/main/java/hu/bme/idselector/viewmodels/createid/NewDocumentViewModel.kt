@@ -8,7 +8,6 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.unit.IntOffset
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bumptech.glide.load.model.GlideUrl
 import hu.bme.idselector.api.ApiService
@@ -59,7 +58,6 @@ abstract class NewDocumentViewModel(
 
     protected val frontImageId = mutableStateOf<String?>(null)
     protected val backImageId = mutableStateOf<String?>(null)
-
 
     abstract fun onResult()
 
