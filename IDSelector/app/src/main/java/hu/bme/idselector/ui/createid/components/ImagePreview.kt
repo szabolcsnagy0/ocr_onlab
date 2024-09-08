@@ -37,7 +37,8 @@ fun ImagePreview(
     ) {
         if (glideUrl != null) {
             ShowImage(
-                glideUrl = glideUrl, modifier = Modifier
+                glideUrl = glideUrl,
+                modifier = Modifier
                     .clickable { onClick() }
                     .fillMaxWidth(0.9f)
                     .heightIn(max = imageMaxHeight)

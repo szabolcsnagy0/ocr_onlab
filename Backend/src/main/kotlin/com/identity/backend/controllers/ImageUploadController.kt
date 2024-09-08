@@ -1,5 +1,6 @@
 package com.identity.backend.controllers
 
+import com.identity.backend.data.entities.DocumentTemplate
 import com.identity.backend.repository.UserRepository
 import com.identity.backend.services.*
 import org.springframework.beans.factory.annotation.Autowired
@@ -25,21 +26,29 @@ class ImageUploadController(
     @GetMapping("detection")
     fun detection(
         @RequestParam("front") front: String?,
-        @RequestParam("back") back: String?
+        @RequestParam("back") back: String?,
+        @RequestParam("templateId") templateId: Int,
+        @RequestParam("isNationalId") isNationalId: Boolean = false
     ): ResponseEntity<String?> {
         try {
-            if (front == null || back == null) throw RuntimeException("Missing parameters!")
+            if (front == null && back == null) throw RuntimeException("Missing parameters!")
 
             val userId = findUserId()
             // Front image
-            val frontFile = imageUploadService.findImageFile(front, userId)
+            val frontFile = front?.let { imageUploadService.findImageFile(it, userId) }
             // Back image
-            val backFile = imageUploadService.findImageFile(back, userId)
+            val backFile = back?.let { imageUploadService.findImageFile(it, userId) }
+
+            // Export template
+            findDocumentTemplate(userId, templateId).jsonTemplate?.let {
+                textDetectionService.exportTemplateToFile(it)
+            }
 
             // Detection
             val result = textDetectionService.runDetection(
-                frontImagePath = frontFile.path,
-                backImagePath = backFile.path
+                frontImagePath = frontFile?.path,
+                backImagePath = backFile?.path,
+                isNationalId = isNationalId
             )
 
             return ResponseEntity.ok(result)
@@ -103,4 +112,8 @@ class ImageUploadController(
     private fun findUserId() = authenticationService.getEmail()?.let { email ->
         userRepository.findByEmail(email)?.id
     } ?: throw RuntimeException("User not found!")
+
+    private fun findDocumentTemplate(userId: Int, templateId: Int): DocumentTemplate =
+        userRepository.findById(userId).get().documentTemplates.find { it.id == templateId }
+            ?: throw RuntimeException("Document template not found!")
 }

@@ -2,7 +2,7 @@ import re
 from datetime import datetime
 
 
-class Person:
+class NationalId:
     def __init__(self, data=None):
         self.name = None
         self.name_confidence = 0
@@ -183,83 +183,83 @@ def check_sum(string, check):
     return calculated_sum == (ord(check) - ord('0'))
 
 
-def merge(person1: Person, person2: Person):
-    merged_person = Person()
-    if person1.name_confidence < person2.name_confidence:
-        merged_person.name = person2.name
-        merged_person.name_confidence = person2.name_confidence
+def merge(id1: NationalId, id2: NationalId):
+    merged_id = NationalId()
+    if id1.name_confidence < id2.name_confidence:
+        merged_id.name = id2.name
+        merged_id.name_confidence = id2.name_confidence
     else:
-        merged_person.name = person1.name
-        merged_person.name_confidence = person1.name_confidence
+        merged_id.name = id1.name
+        merged_id.name_confidence = id1.name_confidence
 
-    if person1.sex_confidence < person2.sex_confidence:
-        merged_person.sex = person2.sex
-        merged_person.sex_confidence = person2.sex_confidence
+    if id1.sex_confidence < id2.sex_confidence:
+        merged_id.sex = id2.sex
+        merged_id.sex_confidence = id2.sex_confidence
     else:
-        merged_person.sex = person1.sex
-        merged_person.sex_confidence = person1.sex_confidence
+        merged_id.sex = id1.sex
+        merged_id.sex_confidence = id1.sex_confidence
 
-    if person1.nationality_confidence < person2.nationality_confidence:
-        merged_person.nationality = person2.nationality
-        merged_person.nationality_confidence = person2.nationality_confidence
+    if id1.nationality_confidence < id2.nationality_confidence:
+        merged_id.nationality = id2.nationality
+        merged_id.nationality_confidence = id2.nationality_confidence
     else:
-        merged_person.nationality = person1.nationality
-        merged_person.nationality_confidence = person1.nationality_confidence
+        merged_id.nationality = id1.nationality
+        merged_id.nationality_confidence = id1.nationality_confidence
 
-    if person1.mother_confidence < person2.mother_confidence:
-        merged_person.mother = person2.mother
-        merged_person.mother_confidence = person2.mother_confidence
+    if id1.mother_confidence < id2.mother_confidence:
+        merged_id.mother = id2.mother
+        merged_id.mother_confidence = id2.mother_confidence
     else:
-        merged_person.mother = person1.mother
-        merged_person.mother_confidence = person1.mother_confidence
+        merged_id.mother = id1.mother
+        merged_id.mother_confidence = id1.mother_confidence
 
-    if person1.expiry_confidence < person2.expiry_confidence:
-        merged_person.expiry = person2.expiry
-        merged_person.expiry_confidence = person2.expiry_confidence
+    if id1.expiry_confidence < id2.expiry_confidence:
+        merged_id.expiry = id2.expiry
+        merged_id.expiry_confidence = id2.expiry_confidence
     else:
-        merged_person.expiry = person1.expiry
-        merged_person.expiry_confidence = person1.expiry_confidence
+        merged_id.expiry = id1.expiry
+        merged_id.expiry_confidence = id1.expiry_confidence
 
-    if person1.authority_confidence < person2.authority_confidence:
-        merged_person.authority = person2.authority
-        merged_person.authority_confidence = person2.authority_confidence
+    if id1.authority_confidence < id2.authority_confidence:
+        merged_id.authority = id2.authority
+        merged_id.authority_confidence = id2.authority_confidence
     else:
-        merged_person.authority = person1.authority
-        merged_person.authority_confidence = person1.authority_confidence
+        merged_id.authority = id1.authority
+        merged_id.authority_confidence = id1.authority_confidence
 
-    if person1.doc_nr_confidence < person2.doc_nr_confidence:
-        merged_person.doc_nr = person2.doc_nr
-        merged_person.doc_nr_confidence = person2.doc_nr_confidence
+    if id1.doc_nr_confidence < id2.doc_nr_confidence:
+        merged_id.doc_nr = id2.doc_nr
+        merged_id.doc_nr_confidence = id2.doc_nr_confidence
     else:
-        merged_person.doc_nr = person1.doc_nr
-        merged_person.doc_nr_confidence = person1.doc_nr_confidence
+        merged_id.doc_nr = id1.doc_nr
+        merged_id.doc_nr_confidence = id1.doc_nr_confidence
 
-    if person1.can_confidence < person2.can_confidence:
-        merged_person.can = person2.can
-        merged_person.can_confidence = person2.can_confidence
+    if id1.can_confidence < id2.can_confidence:
+        merged_id.can = id2.can
+        merged_id.can_confidence = id2.can_confidence
     else:
-        merged_person.can = person1.can
-        merged_person.can_confidence = person1.can_confidence
+        merged_id.can = id1.can
+        merged_id.can_confidence = id1.can_confidence
 
-    if person1.place_of_birth_confidence < person2.place_of_birth_confidence:
-        merged_person.place_of_birth = person2.place_of_birth
-        merged_person.place_of_birth_confidence = person2.place_of_birth_confidence
+    if id1.place_of_birth_confidence < id2.place_of_birth_confidence:
+        merged_id.place_of_birth = id2.place_of_birth
+        merged_id.place_of_birth_confidence = id2.place_of_birth_confidence
     else:
-        merged_person.place_of_birth = person1.place_of_birth
-        merged_person.place_of_birth_confidence = person1.place_of_birth_confidence
+        merged_id.place_of_birth = id1.place_of_birth
+        merged_id.place_of_birth_confidence = id1.place_of_birth_confidence
 
-    if person1.birth_confidence < person2.birth_confidence:
-        merged_person.birth = person2.birth
-        merged_person.birth_confidence = person2.birth_confidence
+    if id1.birth_confidence < id2.birth_confidence:
+        merged_id.birth = id2.birth
+        merged_id.birth_confidence = id2.birth_confidence
     else:
-        merged_person.birth = person1.birth
-        merged_person.birth_confidence = person1.birth_confidence
+        merged_id.birth = id1.birth
+        merged_id.birth_confidence = id1.birth_confidence
 
-    if person1.birth_name_confidence < person2.birth_name_confidence:
-        merged_person.birth = person2.birth
-        merged_person.birth_name_confidence = person2.birth_name_confidence
+    if id1.birth_name_confidence < id2.birth_name_confidence:
+        merged_id.birth = id2.birth
+        merged_id.birth_name_confidence = id2.birth_name_confidence
     else:
-        merged_person.birth = person1.birth
-        merged_person.birth_name_confidence = person1.birth_name_confidence
+        merged_id.birth = id1.birth
+        merged_id.birth_name_confidence = id1.birth_name_confidence
 
-    return merged_person
+    return merged_id

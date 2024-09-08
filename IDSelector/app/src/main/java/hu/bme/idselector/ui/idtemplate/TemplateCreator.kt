@@ -3,17 +3,24 @@ package hu.bme.idselector.ui.idtemplate
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Cancel
 import androidx.compose.material.icons.filled.Done
+import androidx.compose.material.icons.filled.Save
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
@@ -37,7 +44,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import hu.bme.idselector.R
-import hu.bme.idselector.ui.createid.components.ImagePreview
 import hu.bme.idselector.ui.createid.components.Rectangle
 import hu.bme.idselector.ui.idtemplate.states.TemplateCreationState
 import hu.bme.idselector.ui.shared.ShowImage
@@ -76,6 +82,18 @@ fun TemplateCreator(
                         )
                     }
                 },
+                actions = {
+                    if (appState == TemplateCreationState.START) {
+                        IconButton(onClick = viewModel::onSaveTemplate) {
+                            Icon(
+                                imageVector = Icons.Filled.Save,
+                                contentDescription = null,
+                                tint = colorResource(id = R.color.white),
+                                modifier = Modifier.size(35.dp)
+                            )
+                        }
+                    }
+                },
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
                     titleContentColor = colorResource(id = R.color.white),
                     containerColor = colorResource(id = R.color.grey)
@@ -86,7 +104,7 @@ fun TemplateCreator(
             when (appState) {
                 TemplateCreationState.START -> {
                     FloatingActionButton(
-                        onClick = viewModel::onAddFieldKey,
+                        onClick = viewModel::onAddFieldStarted,
                         containerColor = colorResource(id = R.color.grey),
                         contentColor = colorResource(id = R.color.white),
                         elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation(),
@@ -108,7 +126,7 @@ fun TemplateCreator(
 
                 TemplateCreationState.ADD_FIELD_VALUE -> {
                     FloatingActionButton(
-                        onClick = {},
+                        onClick = viewModel::onAddFieldFinished,
                         containerColor = colorResource(id = R.color.grey),
                         contentColor = colorResource(id = R.color.white),
                         elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation(),
@@ -132,27 +150,53 @@ fun TemplateCreator(
         ) {
             when (appState) {
                 TemplateCreationState.START -> {
-                    ImagePreview(
-                        text = stringResource(R.string.front),
+                    val templateFieldNames by viewModel.templateFieldNames.collectAsStateWithLifecycle(null)
+                    ShowImage(
                         glideUrl = viewModel.imageUrl,
-                        imageMaxHeight = 300.dp
+                        modifier = Modifier
+                            .padding(vertical = 10.dp)
+                            .heightIn(max = 200.dp)
                     )
+                    templateFieldNames?.let { namesList ->
+                        Text(
+                            text = "Added fields:",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.ExtraBold,
+                            color = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.padding(top = 10.dp)
+                        )
+                        LazyColumn(
+                            verticalArrangement = Arrangement.spacedBy(10.dp),
+                            contentPadding = PaddingValues(vertical = 5.dp)
+                        ) {
+                            items(namesList) { field ->
+                                ElevatedCard(
+                                    modifier = Modifier.fillMaxWidth()
+                                ) {
+                                    Text(
+                                        text = field,
+                                        modifier = Modifier.padding(10.dp)
+                                    )
+                                }
+                            }
+                        }
+                    }
                 }
 
                 TemplateCreationState.ADD_FIELD_VALUE -> {
-                    val intOffsets = remember { viewModel.intOffsets }
+                    val intOffsets = remember { viewModel.valueIntOffsets }
                     Box(
                         contentAlignment = Alignment.Center,
                         modifier = Modifier
                             .onGloballyPositioned {
-                                viewModel.initializeIntOffsets(it.size.width, it.size.height)
+                                viewModel.initializeIntOffsets(intOffsets, it.size.width, it.size.height)
                             }
                     ) {
                         ShowImage(
                             glideUrl = viewModel.imageUrl,
                             modifier = Modifier
-                                .fillMaxWidth(0.8f)
-                                .wrapContentHeight()
+                                .padding(vertical = 10.dp)
+                                .heightIn(max = 200.dp)
                         )
                         Rectangle(
                             offsets = intOffsets,
@@ -164,23 +208,24 @@ fun TemplateCreator(
                 }
 
                 TemplateCreationState.ADD_FIELD_KEY -> {
-                    val intOffsets = remember { viewModel.intOffsets }
+                    val intOffsets = remember { viewModel.keyIntOffsets }
                     TextWithInput(
                         text = "Please type the text of the key",
-                        textChanged = viewModel::onKeyTextChanged
+                        textChanged = viewModel::onKeyTextChanged,
+                        modifier = Modifier.padding(bottom = 30.dp)
                     )
                     Box(
                         contentAlignment = Alignment.Center,
                         modifier = Modifier
                             .onGloballyPositioned {
-                                viewModel.initializeIntOffsets(it.size.width, it.size.height)
+                                viewModel.initializeIntOffsets(intOffsets, it.size.width, it.size.height)
                             }
                     ) {
                         ShowImage(
                             glideUrl = viewModel.imageUrl,
                             modifier = Modifier
-                                .fillMaxWidth()
-                                .wrapContentHeight()
+                                .padding(vertical = 10.dp)
+                                .heightIn(max = 200.dp)
                         )
                         Rectangle(
                             offsets = intOffsets,
@@ -205,6 +250,15 @@ fun TemplateCreator(
                             trackColor = MaterialTheme.colorScheme.surfaceVariant,
                         )
                     }
+                }
+
+                TemplateCreationState.RESULT -> {
+                    val template by viewModel.templateString.collectAsStateWithLifecycle()
+                    Text(
+                        template, color = MaterialTheme.colorScheme.primary, modifier = Modifier.verticalScroll(
+                            rememberScrollState()
+                        )
+                    )
                 }
             }
         }

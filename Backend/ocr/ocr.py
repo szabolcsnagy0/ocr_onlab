@@ -94,11 +94,17 @@ def process_result(result_data, localization_data):
     return result_dict
 
 
+def map_dict_values(d):
+    return {key: value[0] for key, value in d.items()}
+
+
 
 # USAGE: python ocr.py --localization local.json --front image.jpg --back image.jpg
+# optional argument for national id data validation: --national
 img_front_path = None
 img_back_path = None
 localization_path = None
+validate_data = False
 for i in range(len(sys.argv)):
     print(sys.argv[i])
     if sys.argv[i] == "--front" and len(sys.argv) > i + 1:
@@ -107,9 +113,11 @@ for i in range(len(sys.argv)):
         img_back_path = sys.argv[i + 1]
     elif sys.argv[i] == "--localization" and len(sys.argv) > i + 1:
         localization_path = sys.argv[i + 1]
+    elif sys.argv[i] == "--national":
+        validate_data = True
 
-if img_front_path is None or img_back_path is None:
-    print("ERROR: Please provide an image file!\n")
+if img_front_path is None and img_back_path is None:
+    print("ERROR: Please provide at least one image file!\n")
     exit()
 
 if localization_path is None:
@@ -122,26 +130,44 @@ localization = json.load(file)
 paddle_ocr = PaddleOCR(use_angle_cls=True, lang='hu')
 
 # Front
-result_front = paddle_ocr.ocr(img_front_path, cls=True)
+result_front = None
+if img_front_path is not None:
+    result_front = paddle_ocr.ocr(img_front_path, cls=True)
+    # Normalize coordinates
+    img_front = cv2.imread(img_front_path)
+    normalize_coordinates(result_front[0], img_front.shape)
 
 # Back
-result_back = paddle_ocr.ocr(img_back_path, cls=True)
-
-# Normalize coordinates
-img_front = cv2.imread(img_front_path)
-normalize_coordinates(result_front[0], img_front.shape)
-img_back = cv2.imread(img_back_path)
-normalize_coordinates(result_back[0], img_back.shape)
+result_back = None
+if img_back_path is not None:
+    result_back = paddle_ocr.ocr(img_back_path, cls=True)
+    # Normalize coordinates
+    img_back = cv2.imread(img_back_path)
+    normalize_coordinates(result_back[0], img_back.shape)
 
 # Process front result
-dict_front = process_result(result_front[0], localization["front"])
+dict_front = None
+if result_front is not None:
+    dict_front = process_result(result_front[0], localization["front"])
+
 # Process back result
-dict_back = process_result(result_back[0], localization["back"])
+dict_back = None
+if result_back is not None:
+    dict_back = process_result(result_back[0], localization["back"])
 
-person_front = dc.Person(dict_front)
-person_back = dc.Person(dict_back)
-merged = dc.merge(person_front, person_back)
+result = None
+if dict_front is not None and dict_back is not None:
+    if validate_data:
+        id_front = dc.NationalId(dict_front)
+        id_back = dc.NationalId(dict_back)
+        result = dc.merge(id_front, id_back).to_dict()
+    else:
+        result = {**(map_dict_values(dict_front)), **(map_dict_values(dict_back))}
+elif dict_front is not None:
+    result = map_dict_values(dict_front)
+elif dict_back is not None:
+    result = map_dict_values(dict_back)
 
-json_string = json.dumps(merged.to_dict(), ensure_ascii=False).encode('utf8')
+json_string = json.dumps(result, ensure_ascii=False).encode('utf8')
 sys.stdout.reconfigure(encoding='utf-8')
 print(json_string.decode())
