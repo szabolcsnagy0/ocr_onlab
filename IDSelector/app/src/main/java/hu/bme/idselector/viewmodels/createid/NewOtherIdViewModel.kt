@@ -9,8 +9,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class NewOtherIdViewModel(
-    profileId: Int
-) : NewDocumentViewModel(profileId) {
+    private val profileId: Int
+) : NewDocumentViewModel() {
 
     override fun onResult() {
         if (frontImageId.value == null || backImageId.value == null) return

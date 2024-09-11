@@ -12,8 +12,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class NewNationalViewModel(
-    profileId: Int
-) : NewDocumentViewModel(profileId) {
+    private val profileId: Int
+) : NewDocumentViewModel() {
     val identity: MutableState<NationalId?> = mutableStateOf(null)
 
     override fun onResult() {
@@ -21,8 +21,13 @@ class NewNationalViewModel(
             return
         } else detectionState.value = DetectionState.LOADING
 
+        // TODO: set templateID
         val call =
-            ApiService.getInstance().detectNationalIdText(frontImageId.value, backImageId.value)
+            ApiService.getInstance().detectNationalIdText(
+                frontImageId.value, backImageId.value,
+                templateId = 1,
+                isNationalId = true
+            )
 
         call?.enqueue(object : Callback<NationalId?> {
 

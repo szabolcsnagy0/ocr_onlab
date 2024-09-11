@@ -40,7 +40,7 @@ class ImageUploadController(
             val backFile = back?.let { imageUploadService.findImageFile(it, userId) }
 
             // Export template
-            findDocumentTemplate(userId, templateId).jsonTemplate?.let {
+            findDocumentTemplate(userId, templateId).jsonTemplate.let {
                 textDetectionService.exportTemplateToFile(it)
             }
 

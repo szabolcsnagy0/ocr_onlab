@@ -1,7 +1,9 @@
 package com.identity.backend.controllers
 
 import com.identity.backend.data.entities.DocumentTemplate
+import com.identity.backend.data.request.DocumentTemplateRequest
 import com.identity.backend.data.response.DocumentTemplateResponse
+import com.identity.backend.data.response.toResponse
 import com.identity.backend.repository.DocumentTemplateRepository
 import com.identity.backend.services.AuthenticationService
 import org.springframework.beans.factory.annotation.Autowired
@@ -18,14 +20,15 @@ class DocumentTemplateController(
 
     @CrossOrigin
     @GetMapping("list")
-    fun getDocumentTemplates(): ResponseEntity<List<DocumentTemplate>> = authenticationService.getUser()?.let { user ->
-        user.documentTemplates.let {
-            ResponseEntity.ok(it)
-        }
-    } ?: ResponseEntity.notFound().build()
+    fun getDocumentTemplates(): ResponseEntity<List<DocumentTemplateResponse>> =
+        authenticationService.getUser()?.let { user ->
+            user.documentTemplates.map { it.toResponse() }.let {
+                ResponseEntity.ok(it)
+            }
+        } ?: ResponseEntity.notFound().build()
 
     @PostMapping("new")
-    fun createNewDocumentTemplate(@RequestBody documentTemplate: DocumentTemplateResponse): ResponseEntity<DocumentTemplate> {
+    fun createNewDocumentTemplate(@RequestBody documentTemplate: DocumentTemplateRequest): ResponseEntity<DocumentTemplateResponse> {
         val user = authenticationService.getUser() ?: return ResponseEntity.notFound().build()
         val newDocumentTemplate = DocumentTemplate(
             name = documentTemplate.name,
@@ -33,6 +36,6 @@ class DocumentTemplateController(
             jsonTemplate = documentTemplate.jsonTemplate
         )
         documentTemplateRepository.save(newDocumentTemplate)
-        return ResponseEntity.ok(newDocumentTemplate)
+        return ResponseEntity.ok(newDocumentTemplate.toResponse())
     }
 }

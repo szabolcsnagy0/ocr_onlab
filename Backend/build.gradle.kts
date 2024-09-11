@@ -35,6 +35,7 @@ dependencies {
 	implementation("io.jsonwebtoken:jjwt-impl:0.12.5")
 
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
 }
 
 tasks.withType<KotlinCompile> {

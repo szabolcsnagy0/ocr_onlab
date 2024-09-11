@@ -15,7 +15,7 @@ import hu.bme.idselector.ui.authentication.LoginScreen
 import hu.bme.idselector.ui.authentication.RegistrationScreen
 import hu.bme.idselector.ui.createid.NewDocumentScreen
 import hu.bme.idselector.ui.createid.NewNationalIdScreen
-import hu.bme.idselector.ui.idtemplate.TemplateCreator
+import hu.bme.idselector.ui.idtemplate.NewTemplateScreen
 import hu.bme.idselector.viewmodels.AuthenticationViewModel
 import hu.bme.idselector.viewmodels.DocumentListViewModel
 import hu.bme.idselector.viewmodels.DocumentTemplateViewModel
@@ -32,8 +32,7 @@ fun Navigation(tokenManager: TokenManager) {
 
     authenticationViewModel.testToken()
 
-    NavHost(navController = navController, startDestination = Routes.NewDocumentTemplate.route) {
-//    NavHost(navController = navController, startDestination = Routes.Authentication.route) {
+    NavHost(navController = navController, startDestination = Routes.Authentication.route) {
         navigation(
             startDestination = Routes.Login.route,
             route = Routes.Authentication.route
@@ -41,25 +40,25 @@ fun Navigation(tokenManager: TokenManager) {
             composable(route = Routes.Login.route,
                 enterTransition = {
                     slideIntoContainer(
-                        towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                        towards = AnimatedContentTransitionScope.SlideDirection.Right,
                         animationSpec = tween(700)
                     )
                 },
                 exitTransition = {
                     slideOutOfContainer(
-                        towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                        towards = AnimatedContentTransitionScope.SlideDirection.Left,
                         animationSpec = tween(700)
                     )
                 },
                 popEnterTransition = {
                     slideIntoContainer(
-                        towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                        towards = AnimatedContentTransitionScope.SlideDirection.Right,
                         animationSpec = tween(700)
                     )
                 },
                 popExitTransition = {
                     slideOutOfContainer(
-                        towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                        towards = AnimatedContentTransitionScope.SlideDirection.Left,
                         animationSpec = tween(700)
                     )
                 }) {
@@ -71,25 +70,25 @@ fun Navigation(tokenManager: TokenManager) {
             composable(route = Routes.Registration.route,
                 enterTransition = {
                     slideIntoContainer(
-                        towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                        towards = AnimatedContentTransitionScope.SlideDirection.Left,
                         animationSpec = tween(700)
                     )
                 },
                 exitTransition = {
                     slideOutOfContainer(
-                        towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                        towards = AnimatedContentTransitionScope.SlideDirection.Right,
                         animationSpec = tween(700)
                     )
                 },
                 popEnterTransition = {
                     slideIntoContainer(
-                        towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                        towards = AnimatedContentTransitionScope.SlideDirection.Left,
                         animationSpec = tween(700)
                     )
                 },
                 popExitTransition = {
                     slideOutOfContainer(
-                        towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                        towards = AnimatedContentTransitionScope.SlideDirection.Right,
                         animationSpec = tween(700)
                     )
                 }) {
@@ -101,34 +100,34 @@ fun Navigation(tokenManager: TokenManager) {
             enterTransition = {
                 if (this.initialState.destination.route == Routes.ProfileDetails.route) {
                     slideIntoContainer(
-                        towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                        towards = AnimatedContentTransitionScope.SlideDirection.Right,
                         animationSpec = tween(700)
                     )
                 } else slideIntoContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Left,
                     animationSpec = tween(700)
                 )
             },
             exitTransition = {
                 if (this.targetState.destination.route == Routes.ProfileDetails.route) {
                     slideOutOfContainer(
-                        towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                        towards = AnimatedContentTransitionScope.SlideDirection.Left,
                         animationSpec = tween(700)
                     )
                 } else slideOutOfContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Right,
                     animationSpec = tween(700)
                 )
             },
             popEnterTransition = {
                 slideIntoContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Right,
                     animationSpec = tween(700)
                 )
             },
             popExitTransition = {
                 slideOutOfContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Left,
                     animationSpec = tween(700)
                 )
             }
@@ -150,6 +149,13 @@ fun Navigation(tokenManager: TokenManager) {
                             inclusive = true
                         }
                     }
+                },
+                onCreateTemplate = {
+                    navController.navigate(Routes.NewDocumentTemplate.route) {
+                        popUpTo(Routes.NewDocumentTemplate.route) {
+                            inclusive = true
+                        }
+                    }
                 }
             )
         }
@@ -157,34 +163,34 @@ fun Navigation(tokenManager: TokenManager) {
             enterTransition = {
                 if (this.initialState.destination.route == Routes.ProfileList.route) {
                     slideIntoContainer(
-                        towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                        towards = AnimatedContentTransitionScope.SlideDirection.Left,
                         animationSpec = tween(700)
                     )
                 } else slideIntoContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Right,
                     animationSpec = tween(700)
                 )
             },
             exitTransition = {
                 if (this.targetState.destination.route == Routes.ProfileList.route) {
                     slideOutOfContainer(
-                        towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                        towards = AnimatedContentTransitionScope.SlideDirection.Right,
                         animationSpec = tween(700)
                     )
                 } else slideOutOfContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Left,
                     animationSpec = tween(700)
                 )
             },
             popEnterTransition = {
                 slideIntoContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Left,
                     animationSpec = tween(700)
                 )
             },
             popExitTransition = {
                 slideOutOfContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Right,
                     animationSpec = tween(700)
                 )
             }) {
@@ -212,25 +218,25 @@ fun Navigation(tokenManager: TokenManager) {
         composable(route = Routes.NewNationalIdDocument.route,
             enterTransition = {
                 slideIntoContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Left,
                     animationSpec = tween(700)
                 )
             },
             exitTransition = {
                 slideOutOfContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Right,
                     animationSpec = tween(700)
                 )
             },
             popEnterTransition = {
                 slideIntoContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Left,
                     animationSpec = tween(700)
                 )
             },
             popExitTransition = {
                 slideOutOfContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Right,
                     animationSpec = tween(700)
                 )
             }) {
@@ -262,25 +268,25 @@ fun Navigation(tokenManager: TokenManager) {
         composable(route = Routes.NewOtherIdDocument.route,
             enterTransition = {
                 slideIntoContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Left,
                     animationSpec = tween(700)
                 )
             },
             exitTransition = {
                 slideOutOfContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Right,
                     animationSpec = tween(700)
                 )
             },
             popEnterTransition = {
                 slideIntoContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Left,
                     animationSpec = tween(700)
                 )
             },
             popExitTransition = {
                 slideOutOfContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Right,
                     animationSpec = tween(700)
                 )
             }) {
@@ -311,33 +317,42 @@ fun Navigation(tokenManager: TokenManager) {
         composable(route = Routes.NewDocumentTemplate.route,
             enterTransition = {
                 slideIntoContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Left,
                     animationSpec = tween(700)
                 )
             },
             exitTransition = {
                 slideOutOfContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Right,
                     animationSpec = tween(700)
                 )
             },
             popEnterTransition = {
                 slideIntoContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Left,
                     animationSpec = tween(700)
                 )
             },
             popExitTransition = {
                 slideOutOfContainer(
-                    towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                    towards = AnimatedContentTransitionScope.SlideDirection.Right,
                     animationSpec = tween(700)
                 )
             }) {
             val documentTemplateViewModel = remember {
                 DocumentTemplateViewModel()
             }
-            TemplateCreator(
-                viewModel = documentTemplateViewModel
+            NewTemplateScreen(
+                viewModel = documentTemplateViewModel,
+                onCancelled = {
+                    documentTemplateViewModel.cancelUpload()
+                    navController.navigate(Routes.ProfileList.route) {
+                        popUpTo(Routes.ProfileList.route) {
+                            inclusive = true
+                        }
+                    }
+                },
+                onResult = {}
             )
         }
     }

@@ -4,12 +4,10 @@ import com.identity.backend.data.entities.DocumentTemplate
 
 data class DocumentTemplateResponse(
     val id: Int,
-    val name: String,
-    val jsonTemplate: String
+    val name: String
 )
 
 fun DocumentTemplate.toResponse() = DocumentTemplateResponse(
     id = this.id,
-    name = this.name,
-    jsonTemplate = this.jsonTemplate
+    name = this.name
 )

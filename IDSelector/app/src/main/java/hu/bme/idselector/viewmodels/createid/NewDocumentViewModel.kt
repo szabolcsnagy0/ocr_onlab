@@ -21,9 +21,7 @@ import retrofit2.Response
 import java.io.File
 import kotlin.math.roundToInt
 
-abstract class NewDocumentViewModel(
-    val profileId: Int
-) : ViewModel() {
+abstract class NewDocumentViewModel : ViewModel() {
 
     private val offsets = mutableListOf<Pair<Float, Float>>()
     var intOffsets = mutableStateListOf<MutableState<IntOffset>>()

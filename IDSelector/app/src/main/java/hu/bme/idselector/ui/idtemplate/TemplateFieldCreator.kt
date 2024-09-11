@@ -52,7 +52,7 @@ import hu.bme.idselector.viewmodels.DocumentTemplateViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TemplateCreator(
+fun TemplateFieldCreator(
     viewModel: DocumentTemplateViewModel,
     onCancelled: () -> Unit = {}
 ) {
@@ -152,7 +152,7 @@ fun TemplateCreator(
                 TemplateCreationState.START -> {
                     val templateFieldNames by viewModel.templateFieldNames.collectAsStateWithLifecycle(null)
                     ShowImage(
-                        glideUrl = viewModel.imageUrl,
+                        glideUrl = viewModel.getFrontImageUrl(),
                         modifier = Modifier
                             .padding(vertical = 10.dp)
                             .heightIn(max = 200.dp)
@@ -193,7 +193,7 @@ fun TemplateCreator(
                             }
                     ) {
                         ShowImage(
-                            glideUrl = viewModel.imageUrl,
+                            glideUrl = viewModel.getFrontImageUrl(),
                             modifier = Modifier
                                 .padding(vertical = 10.dp)
                                 .heightIn(max = 200.dp)
@@ -222,7 +222,7 @@ fun TemplateCreator(
                             }
                     ) {
                         ShowImage(
-                            glideUrl = viewModel.imageUrl,
+                            glideUrl = viewModel.getFrontImageUrl(),
                             modifier = Modifier
                                 .padding(vertical = 10.dp)
                                 .heightIn(max = 200.dp)

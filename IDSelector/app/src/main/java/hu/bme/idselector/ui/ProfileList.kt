@@ -13,6 +13,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Logout
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.PostAdd
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
@@ -41,7 +42,8 @@ import hu.bme.idselector.viewmodels.ProfilesViewModel
 fun ProfileList(
     viewModel: ProfilesViewModel,
     onProfileSelected: (Int) -> Unit = { _ -> },
-    logoutRequested: () -> Unit = {}
+    logoutRequested: () -> Unit = {},
+    onCreateTemplate: () -> Unit
 ) {
     val profiles = remember { viewModel.profiles }
     var showProfileDialog by remember {
@@ -77,6 +79,16 @@ fun ProfileList(
                         )
                     }
                 },
+                actions = {
+                    IconButton(onClick = onCreateTemplate) {
+                        Icon(
+                            imageVector = Icons.Filled.PostAdd,
+                            contentDescription = null,
+                            tint = colorResource(id = R.color.white),
+                            modifier = Modifier.size(35.dp)
+                        )
+                    }
+                }
             )
         },
         floatingActionButton = {

@@ -3,11 +3,12 @@ package hu.bme.idselector.api
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.load.model.LazyHeaders
 import com.google.gson.GsonBuilder
+import hu.bme.idselector.data.DocumentTemplate
 import hu.bme.idselector.data.LoginData
 import hu.bme.idselector.data.NationalId
+import hu.bme.idselector.data.OtherId
 import hu.bme.idselector.data.Profile
 import hu.bme.idselector.data.UserRegistration
-import hu.bme.idselector.data.OtherId
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
@@ -32,7 +33,9 @@ interface ApiService {
     @GET("/image/detection")
     fun detectNationalIdText(
         @Query("front") front: String?,
-        @Query("back") back: String?
+        @Query("back") back: String?,
+        @Query("templateId") templateId: Int,
+        @Query("isNationalId") isNationalId: Boolean = false
     ): Call<NationalId?>?
 
     @Multipart
@@ -88,10 +91,20 @@ interface ApiService {
         @Body otherId: OtherId
     ): Call<ResponseBody>?
 
+    @GET("/user/templates/list")
+    fun getDocumentTemplates(): Call<List<DocumentTemplate>>?
+
+    @POST("/user/templates/new")
+    fun createNewDocumentTemplate(
+        @Body documentTemplate: DocumentTemplate
+    ): Call<ResponseBody>?
+
     companion object {
         var api: ApiService? = null
         var tokenManager: TokenManager? = null
-        private const val BASE_URL = "https://identity-application.azurewebsites.net/"
+
+        //        private const val BASE_URL = "https://identity-application.azurewebsites.net/"
+        private const val BASE_URL = "http://192.168.0.157/"
 
         /**
          * Get the singleton instance of the ApiService
