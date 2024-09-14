@@ -4,7 +4,7 @@ import jakarta.persistence.*
 import org.springframework.data.annotation.Id
 
 @Entity
-@Table(name="profiles")
+@Table(name = "profiles")
 data class Profile(
     @jakarta.persistence.Id @Id
     @SequenceGenerator(
@@ -21,6 +21,8 @@ data class Profile(
     val userId: Int = 0,
     @OneToMany(mappedBy = "profileId", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     val nationalIdList: MutableList<NationalId> = mutableListOf(),
+    @OneToMany(mappedBy = "profileId", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
+    val documentList: MutableList<Document> = mutableListOf(),
     @OneToMany(mappedBy = "profileId", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     val otherIdList: MutableList<OtherId> = mutableListOf()
 )

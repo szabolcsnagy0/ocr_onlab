@@ -1,5 +1,6 @@
 package hu.bme.idselector.ui.idtemplate
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -11,8 +12,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Cancel
@@ -31,21 +30,27 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import hu.bme.idselector.R
 import hu.bme.idselector.ui.createid.components.Rectangle
 import hu.bme.idselector.ui.idtemplate.states.TemplateCreationState
+import hu.bme.idselector.ui.shared.EditTextWithTitle
+import hu.bme.idselector.ui.shared.FabItem
+import hu.bme.idselector.ui.shared.MultiFloatingActionButton
 import hu.bme.idselector.ui.shared.ShowImage
 import hu.bme.idselector.ui.shared.TextWithInput
 import hu.bme.idselector.viewmodels.DocumentTemplateViewModel
@@ -54,7 +59,8 @@ import hu.bme.idselector.viewmodels.DocumentTemplateViewModel
 @Composable
 fun TemplateFieldCreator(
     viewModel: DocumentTemplateViewModel,
-    onCancelled: () -> Unit = {}
+    onCancelled: () -> Unit,
+    onResult: () -> Unit
 ) {
     val appState by viewModel.creationState.collectAsStateWithLifecycle()
     Scaffold(
@@ -103,14 +109,29 @@ fun TemplateFieldCreator(
         floatingActionButton = {
             when (appState) {
                 TemplateCreationState.START -> {
-                    FloatingActionButton(
-                        onClick = viewModel::onAddFieldStarted,
-                        containerColor = colorResource(id = R.color.grey),
-                        contentColor = colorResource(id = R.color.white),
-                        elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation(),
-                    ) {
-                        Icon(imageVector = Icons.Filled.Add, contentDescription = null)
+                    val fabItems = mutableListOf<FabItem>()
+                    if (viewModel.getFrontImageUrl() != null) {
+                        fabItems.add(
+                            FabItem(
+                                icon = Icons.Filled.Add,
+                                label = "Add field to front",
+                                onFabItemClicked = viewModel::onAddFrontFieldStarted
+                            )
+                        )
                     }
+                    if (viewModel.getBackImageUrl() != null) {
+                        fabItems.add(
+                            FabItem(
+                                icon = Icons.Filled.Add,
+                                label = "Add field to back",
+                                onFabItemClicked = viewModel::onAddBackFieldStarted
+                            )
+                        )
+                    }
+                    MultiFloatingActionButton(
+                        fabIcon = Icons.Filled.Add,
+                        items = fabItems
+                    )
                 }
 
                 TemplateCreationState.ADD_FIELD_KEY -> {
@@ -141,34 +162,48 @@ fun TemplateFieldCreator(
         containerColor = colorResource(id = R.color.orange)
     ) { paddingValues ->
         Column(
-            verticalArrangement = Arrangement.Center,
+            verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
                 .padding(paddingValues)
-                .padding(horizontal = 5.dp)
+                .padding(horizontal = 10.dp)
+                .padding(top = 20.dp)
                 .fillMaxSize()
         ) {
             when (appState) {
                 TemplateCreationState.START -> {
                     val templateFieldNames by viewModel.templateFieldNames.collectAsStateWithLifecycle(null)
-                    ShowImage(
-                        glideUrl = viewModel.getFrontImageUrl(),
-                        modifier = Modifier
-                            .padding(vertical = 10.dp)
-                            .heightIn(max = 200.dp)
+                    val templateName by viewModel.templateName.collectAsStateWithLifecycle()
+                    EditTextWithTitle(
+                        titleText = "What should be the name of the document?",
+                        prevText = templateName,
+                        onValueChange = viewModel::onTemplateNameChanged,
+                        modifier = Modifier.padding(bottom = 30.dp)
                     )
                     templateFieldNames?.let { namesList ->
                         Text(
                             text = "Added fields:",
-                            style = MaterialTheme.typography.titleMedium,
+                            style = MaterialTheme.typography.titleLarge,
                             fontWeight = FontWeight.ExtraBold,
                             color = MaterialTheme.colorScheme.primary,
                             modifier = Modifier.padding(top = 10.dp)
                         )
                         LazyColumn(
+                            horizontalAlignment = Alignment.CenterHorizontally,
                             verticalArrangement = Arrangement.spacedBy(10.dp),
                             contentPadding = PaddingValues(vertical = 5.dp)
                         ) {
+                            item {
+                                if (namesList.isEmpty()) {
+                                    Text(
+                                        text = "The fields you add are going to appear here!",
+                                        style = MaterialTheme.typography.titleMedium,
+                                        color = MaterialTheme.colorScheme.primary,
+                                        textAlign = TextAlign.Center,
+                                        modifier = Modifier.padding(10.dp)
+                                    )
+                                }
+                            }
                             items(namesList) { field ->
                                 ElevatedCard(
                                     modifier = Modifier.fillMaxWidth()
@@ -185,6 +220,14 @@ fun TemplateFieldCreator(
 
                 TemplateCreationState.ADD_FIELD_VALUE -> {
                     val intOffsets = remember { viewModel.valueIntOffsets }
+                    val imageUrl by viewModel.imageUrl.collectAsStateWithLifecycle()
+                    Text(
+                        text = "Select the position of the value!",
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.ExtraBold,
+                        color = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.padding(top = 10.dp)
+                    )
                     Box(
                         contentAlignment = Alignment.Center,
                         modifier = Modifier
@@ -193,7 +236,7 @@ fun TemplateFieldCreator(
                             }
                     ) {
                         ShowImage(
-                            glideUrl = viewModel.getFrontImageUrl(),
+                            glideUrl = imageUrl,
                             modifier = Modifier
                                 .padding(vertical = 10.dp)
                                 .heightIn(max = 200.dp)
@@ -209,6 +252,14 @@ fun TemplateFieldCreator(
 
                 TemplateCreationState.ADD_FIELD_KEY -> {
                     val intOffsets = remember { viewModel.keyIntOffsets }
+                    val imageUrl by viewModel.imageUrl.collectAsStateWithLifecycle()
+                    Text(
+                        text = "Select the position of the title field and copy the text from the card!",
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.ExtraBold,
+                        color = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.padding(top = 10.dp)
+                    )
                     TextWithInput(
                         text = "Please type the text of the key",
                         textChanged = viewModel::onKeyTextChanged,
@@ -222,7 +273,7 @@ fun TemplateFieldCreator(
                             }
                     ) {
                         ShowImage(
-                            glideUrl = viewModel.getFrontImageUrl(),
+                            glideUrl = imageUrl,
                             modifier = Modifier
                                 .padding(vertical = 10.dp)
                                 .heightIn(max = 200.dp)
@@ -253,12 +304,14 @@ fun TemplateFieldCreator(
                 }
 
                 TemplateCreationState.RESULT -> {
-                    val template by viewModel.templateString.collectAsStateWithLifecycle()
-                    Text(
-                        template, color = MaterialTheme.colorScheme.primary, modifier = Modifier.verticalScroll(
-                            rememberScrollState()
-                        )
-                    )
+                    val creationResult by viewModel.creationResult.collectAsStateWithLifecycle()
+                    val localContext = LocalContext.current
+                    LaunchedEffect(creationResult) {
+                        creationResult?.let {
+                            Toast.makeText(localContext, it, Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    onResult()
                 }
             }
         }

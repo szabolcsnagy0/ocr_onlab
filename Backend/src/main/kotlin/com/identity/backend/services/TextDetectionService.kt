@@ -5,11 +5,21 @@ import java.io.File
 
 @Service
 class TextDetectionService {
-    fun runDetection(frontImagePath: String? = null, backImagePath: String? = null, isNationalId: Boolean = false): String? {
+    fun runDetection(
+        frontImagePath: String? = null,
+        backImagePath: String? = null,
+        documentName: String? = null,
+        isNationalId: Boolean = false
+    ): String? {
         // Configure the command according to provided parameters
         val command = mutableListOf("python3", SCRIPT_PATH).apply {
             add("--localization")
-            add(TEMPLATE_PATH)
+            if (isNationalId) {
+                add(NATIONAL_TEMPLATE_PATH)
+                add("--national")
+            } else {
+                add(TEMPLATE_PATH)
+            }
             frontImagePath?.let {
                 add("--front")
                 add(frontImagePath)
@@ -18,8 +28,9 @@ class TextDetectionService {
                 add("--back")
                 add(backImagePath)
             }
-            if (isNationalId) {
-                add("--national")
+            documentName?.let {
+                add("--document-name")
+                add(documentName)
             }
         }
         // Start the process
@@ -47,7 +58,7 @@ class TextDetectionService {
         try {
             val file = File(TEMPLATE_PATH)
             file.writeText(json)
-        } catch (e: Exception){
+        } catch (e: Exception) {
             e.printStackTrace()
         }
     }
@@ -55,5 +66,6 @@ class TextDetectionService {
     companion object {
         val SCRIPT_PATH = System.getProperty("user.dir") + "/ocr/ocr.py"
         val TEMPLATE_PATH = System.getProperty("user.dir") + "/ocr/template.json"
+        val NATIONAL_TEMPLATE_PATH = System.getProperty("user.dir") + "/ocr/national_id_template.json"
     }
 }

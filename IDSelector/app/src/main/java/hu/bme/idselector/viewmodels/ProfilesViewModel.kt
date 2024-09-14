@@ -7,6 +7,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import hu.bme.idselector.api.ApiService
 import hu.bme.idselector.data.Profile
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback

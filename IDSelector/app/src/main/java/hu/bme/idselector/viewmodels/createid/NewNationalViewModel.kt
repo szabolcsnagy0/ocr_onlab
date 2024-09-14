@@ -21,12 +21,9 @@ class NewNationalViewModel(
             return
         } else detectionState.value = DetectionState.LOADING
 
-        // TODO: set templateID
         val call =
             ApiService.getInstance().detectNationalIdText(
-                frontImageId.value, backImageId.value,
-                templateId = 1,
-                isNationalId = true
+                frontImageId.value, backImageId.value
             )
 
         call?.enqueue(object : Callback<NationalId?> {

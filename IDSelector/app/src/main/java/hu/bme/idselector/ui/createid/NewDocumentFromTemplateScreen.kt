@@ -4,11 +4,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import hu.bme.idselector.ui.createid.states.DetectionState
-import hu.bme.idselector.viewmodels.createid.NewNationalViewModel
+import hu.bme.idselector.viewmodels.createid.NewDocumentFromTemplateViewModel
 
 @Composable
-fun NewNationalIdScreen(
-    viewModel: NewNationalViewModel,
+fun NewDocumentFromTemplateScreen(
+    viewModel: NewDocumentFromTemplateViewModel,
     onCancelled: () -> Unit,
     onResult: () -> Unit,
 ) {
@@ -22,6 +22,6 @@ fun NewNationalIdScreen(
             }
         )
     } else {
-        DetectionResultNationalId(nationalId = viewModel.identity, onResult = onResult)
+        DetectionResult(viewModel = viewModel, onResult = onResult)
     }
 }

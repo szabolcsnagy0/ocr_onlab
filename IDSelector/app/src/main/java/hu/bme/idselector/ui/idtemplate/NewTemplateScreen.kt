@@ -18,12 +18,14 @@ fun NewTemplateScreen(
         NewDocumentScreen(
             viewModel = viewModel,
             onCancelled = onCancelled,
+            title = "New template",
             onResult = viewModel::onResult
         )
     } else {
         TemplateFieldCreator(
             viewModel = viewModel,
-            onCancelled = {}
+            onCancelled = onCancelled,
+            onResult = onResult
         )
     }
 }

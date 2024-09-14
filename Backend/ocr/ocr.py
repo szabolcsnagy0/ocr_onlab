@@ -1,11 +1,11 @@
-import sys
-
-from paddleocr import (PaddleOCR)
-import json
-import io
-import math
-from difflib import SequenceMatcher
 import cv2
+import io
+import json
+import math
+import sys
+from difflib import SequenceMatcher
+from paddleocr import (PaddleOCR)
+
 import DataCleansing as dc
 
 
@@ -94,17 +94,18 @@ def process_result(result_data, localization_data):
     return result_dict
 
 
-def map_dict_values(d):
-    return {key: value[0] for key, value in d.items()}
-
+def map_dict_values(name, d):
+    return {"documentName": name, "fieldsList": [{"title": key, "value": value[0]} for key, value in d.items()]}
 
 
 # USAGE: python ocr.py --localization local.json --front image.jpg --back image.jpg
 # optional argument for national id data validation: --national
+# optional argument for document-name: --document-name samplename
 img_front_path = None
 img_back_path = None
 localization_path = None
 validate_data = False
+document_name = None
 for i in range(len(sys.argv)):
     print(sys.argv[i])
     if sys.argv[i] == "--front" and len(sys.argv) > i + 1:
@@ -113,6 +114,8 @@ for i in range(len(sys.argv)):
         img_back_path = sys.argv[i + 1]
     elif sys.argv[i] == "--localization" and len(sys.argv) > i + 1:
         localization_path = sys.argv[i + 1]
+    elif sys.argv[i] == "--document-name" and len(sys.argv) > i + 1:
+        document_name = sys.argv[i + 1]
     elif sys.argv[i] == "--national":
         validate_data = True
 
@@ -160,13 +163,13 @@ if dict_front is not None and dict_back is not None:
     if validate_data:
         id_front = dc.NationalId(dict_front)
         id_back = dc.NationalId(dict_back)
-        result = dc.merge(id_front, id_back).to_dict()
+        result = (dc.merge(id_front, id_back)).to_dict()
     else:
-        result = {**(map_dict_values(dict_front)), **(map_dict_values(dict_back))}
+        result = {**(map_dict_values(document_name, dict_front)), **(map_dict_values(document_name, dict_back))}
 elif dict_front is not None:
-    result = map_dict_values(dict_front)
+    result = map_dict_values(document_name, dict_front)
 elif dict_back is not None:
-    result = map_dict_values(dict_back)
+    result = map_dict_values(document_name, dict_back)
 
 json_string = json.dumps(result, ensure_ascii=False).encode('utf8')
 sys.stdout.reconfigure(encoding='utf-8')

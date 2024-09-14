@@ -8,5 +8,6 @@ sealed class Routes(val route: String) {
     data object Authentication : Routes("authentication")
     data object NewNationalIdDocument : Routes("new_national_document")
     data object NewOtherIdDocument : Routes("new_other_document")
+    data object NewDocumentFromTemplate : Routes("new_document_from_template/{template_id}")
     data object NewDocumentTemplate : Routes("new_document_template")
 }

@@ -1,19 +1,27 @@
 package hu.bme.idselector.ui
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.DocumentScanner
 import androidx.compose.material.icons.filled.Image
 import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.Divider
+import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -21,6 +29,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -30,8 +39,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import hu.bme.idselector.R
 import hu.bme.idselector.api.ApiService
+import hu.bme.idselector.ui.idlist.DocumentCard
 import hu.bme.idselector.ui.idlist.ImageIdCard
 import hu.bme.idselector.ui.idlist.NationalIdCard
 import hu.bme.idselector.ui.shared.FabItem
@@ -42,15 +54,15 @@ import hu.bme.idselector.viewmodels.DocumentListViewModel
 @Composable
 fun ProfileDetails(
     viewModel: DocumentListViewModel,
-    addNewNationalIdDocument: () -> Unit = {},
-    addNewOtherIdDocument: () -> Unit = {},
     onBackPressed: () -> Unit = {}
 ) {
     val profile = remember { viewModel.profile }
     val nationalIds = remember { viewModel.nationalIds }
     val otherIds = remember { viewModel.otherIds }
+    val documents = remember { viewModel.documents }
 
     val showImages = remember { mutableStateOf(false) }
+    val selectTemplate = remember { mutableStateOf(false) }
 
     Scaffold(
         topBar = {
@@ -110,13 +122,20 @@ fun ProfileDetails(
                 items = arrayListOf(
                     FabItem(
                         icon = Icons.Filled.DocumentScanner,
-                        label = stringResource(R.string.new_national_document),
-                        onFabItemClicked = addNewNationalIdDocument
+                        label = "Select template",
+                        onFabItemClicked = {
+                            selectTemplate.value = true
+                        }
+                    ),
+                    FabItem(
+                        icon = Icons.Filled.DocumentScanner,
+                        label = "Hungarian national ID",
+                        onFabItemClicked = viewModel::onAddNewNationalId
                     ),
                     FabItem(
                         icon = Icons.Filled.Image,
                         label = "Other document",
-                        onFabItemClicked = addNewOtherIdDocument
+                        onFabItemClicked = viewModel::onAddNewOtherId
                     )
                 )
             )
@@ -144,11 +163,26 @@ fun ProfileDetails(
                         profileId = profile.id,
                         nationalId = nationalId.id
                     )
-                    if (frontUrl != null && backUrl != null) {
-                        ImageIdCard(frontUrl = frontUrl, backUrl = backUrl)
-                    }
+                    ImageIdCard(frontUrl = frontUrl, backUrl = backUrl)
                 } else {
                     NationalIdCard(id = nationalId)
+                }
+                Spacer(modifier = Modifier.padding(vertical = 10.dp))
+            }
+
+            items(documents) { document ->
+                if (showImages.value) {
+                    val frontUrl = ApiService.getDocumentFront(
+                        profileId = profile.id,
+                        documentId = document.id
+                    )
+                    val backUrl = ApiService.getDocumentBack(
+                        profileId = profile.id,
+                        documentId = document.id
+                    )
+                    ImageIdCard(frontUrl = frontUrl, backUrl = backUrl)
+                } else {
+                    DocumentCard(document = document)
                 }
                 Spacer(modifier = Modifier.padding(vertical = 10.dp))
             }
@@ -167,9 +201,60 @@ fun ProfileDetails(
                             otherId = it1
                         )
                     }
-                    if (frontUrl != null && backUrl != null) {
-                        ImageIdCard(frontUrl = frontUrl, backUrl = backUrl)
-                        Spacer(modifier = Modifier.padding(vertical = 10.dp))
+                    ImageIdCard(frontUrl = frontUrl, backUrl = backUrl)
+                    Spacer(modifier = Modifier.padding(vertical = 10.dp))
+                }
+            }
+        }
+    }
+    if (selectTemplate.value) {
+        val documentTemplates by viewModel.documentTemplates.collectAsStateWithLifecycle(emptyList())
+        Dialog(
+            onDismissRequest = {
+                selectTemplate.value = false
+            }
+        ) {
+            ElevatedCard(
+                modifier = Modifier
+                    .padding(10.dp)
+                    .heightIn(max = 300.dp)
+            ) {
+                LazyColumn(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(20.dp),
+                    contentPadding = PaddingValues(bottom = 5.dp),
+                    modifier = Modifier.padding(10.dp)
+                ) {
+                    item {
+                        if (documentTemplates.isEmpty()) {
+                            Text("No templates were found!")
+                        }
+                    }
+                    itemsIndexed(documentTemplates) { index, template ->
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.Center,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .wrapContentHeight()
+                                .clickable {
+                                    viewModel.onSelectDocumentTemplate(template)
+                                    selectTemplate.value = false
+                                }
+                        ) {
+                            if (index != 0) {
+                                Divider(
+                                    thickness = 2.dp,
+                                    color = colorResource(R.color.grey),
+                                    modifier = Modifier.padding(bottom = 5.dp)
+                                )
+                            }
+                            Text(
+                                text = template.name,
+                                fontWeight = FontWeight.Bold,
+                                modifier = Modifier.padding()
+                            )
+                        }
                     }
                 }
             }

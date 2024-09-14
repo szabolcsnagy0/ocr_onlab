@@ -3,6 +3,7 @@ package hu.bme.idselector.api
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.load.model.LazyHeaders
 import com.google.gson.GsonBuilder
+import hu.bme.idselector.data.Document
 import hu.bme.idselector.data.DocumentTemplate
 import hu.bme.idselector.data.LoginData
 import hu.bme.idselector.data.NationalId
@@ -34,9 +35,16 @@ interface ApiService {
     fun detectNationalIdText(
         @Query("front") front: String?,
         @Query("back") back: String?,
+        @Query("isNationalId") isNationalId: Boolean = true
+    ): Call<NationalId?>?
+
+    @GET("/image/detection")
+    fun detectDocumentText(
+        @Query("front") front: String?,
+        @Query("back") back: String?,
         @Query("templateId") templateId: Int,
         @Query("isNationalId") isNationalId: Boolean = false
-    ): Call<NationalId?>?
+    ): Call<Document?>?
 
     @Multipart
     @POST("/image/corners")
@@ -71,6 +79,9 @@ interface ApiService {
     @GET("/user/profiles/{id}/national/list")
     fun getNationalIds(@Path("id") profileId: Int): Call<List<NationalId>?>?
 
+    @GET("/user/profiles/{id}/document/list")
+    fun getDocuments(@Path("id") documentId: Int): Call<List<Document>?>?
+
     @GET("/user/profiles/{id}/other/list")
     fun getOtherIds(@Path("id") profileId: Int): Call<List<OtherId>?>?
 
@@ -78,6 +89,12 @@ interface ApiService {
     fun createNewNationalId(
         @Path("id") profileId: Int,
         @Body nationalId: NationalId
+    ): Call<ResponseBody>?
+
+    @POST("/user/profiles/{id}/document/new")
+    fun createNewDocument(
+        @Path("id") profileId: Int,
+        @Body document: Document
     ): Call<ResponseBody>?
 
     @POST("/user/profiles/new")
@@ -131,28 +148,29 @@ interface ApiService {
 
 
         fun getNationalIdFront(profileId: Int, nationalId: Int) =
-            getNationalIdImage(profileId, nationalId, "front")
+            getImageOfProfile(profileId, "national", nationalId, "front")
 
         fun getNationalIdBack(profileId: Int, nationalId: Int) =
-            getNationalIdImage(profileId, nationalId, "back")
+            getImageOfProfile(profileId, "national", nationalId, "back")
 
-        private fun getNationalIdImage(
-            profileId: Int,
-            nationalId: Int,
-            part: String
-        ): GlideUrl? = getGlideURL("user/profiles/$profileId/national/$nationalId/$part")
+        fun getDocumentFront(profileId: Int, documentId: Int) =
+            getImageOfProfile(profileId, "document", documentId, "front")
+
+        fun getDocumentBack(profileId: Int, documentId: Int) =
+            getImageOfProfile(profileId, "document", documentId, "back")
 
         fun getOtherIdFront(profileId: Int, otherId: Int) =
-            getOtherIdImage(profileId, otherId, "front")
+            getImageOfProfile(profileId, "other", otherId, "front")
 
         fun getOtherIdBack(profileId: Int, otherId: Int) =
-            getOtherIdImage(profileId, otherId, "back")
+            getImageOfProfile(profileId, "other", otherId, "back")
 
-        private fun getOtherIdImage(
+        private fun getImageOfProfile(
             profileId: Int,
-            otherId: Int,
-            part: String
-        ): GlideUrl? = getGlideURL("user/profiles/$profileId/other/$otherId/$part")
+            docType: String,
+            docId: Int,
+            face: String
+        ) = getGlideURL("user/profiles/$profileId/$docType/$docId/$face")
 
         fun getImageUrl(imageId: String): GlideUrl? {
             return getGlideURL("image/download/$imageId")

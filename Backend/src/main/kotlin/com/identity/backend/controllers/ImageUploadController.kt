@@ -27,7 +27,7 @@ class ImageUploadController(
     fun detection(
         @RequestParam("front") front: String?,
         @RequestParam("back") back: String?,
-        @RequestParam("templateId") templateId: Int,
+        @RequestParam("templateId") templateId: Int = 0,
         @RequestParam("isNationalId") isNationalId: Boolean = false
     ): ResponseEntity<String?> {
         try {
@@ -40,14 +40,20 @@ class ImageUploadController(
             val backFile = back?.let { imageUploadService.findImageFile(it, userId) }
 
             // Export template
-            findDocumentTemplate(userId, templateId).jsonTemplate.let {
-                textDetectionService.exportTemplateToFile(it)
-            }
+            val documentName = if (!isNationalId) {
+                findDocumentTemplate(userId, templateId).let { template ->
+                    template.jsonTemplate.let {
+                        textDetectionService.exportTemplateToFile(it)
+                    }
+                    template.name
+                }
+            } else null
 
             // Detection
             val result = textDetectionService.runDetection(
                 frontImagePath = frontFile?.path,
                 backImagePath = backFile?.path,
+                documentName = documentName,
                 isNationalId = isNationalId
             )
 
