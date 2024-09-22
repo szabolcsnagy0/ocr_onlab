@@ -2,6 +2,7 @@ package hu.bme.idselector.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -20,11 +21,13 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.DocumentScanner
 import androidx.compose.material.icons.filled.Image
 import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
@@ -57,9 +60,10 @@ fun ProfileDetails(
     onBackPressed: () -> Unit = {}
 ) {
     val profile = remember { viewModel.profile }
-    val nationalIds = remember { viewModel.nationalIds }
-    val otherIds = remember { viewModel.otherIds }
-    val documents = remember { viewModel.documents }
+    val nationalIds by viewModel.nationalIds.collectAsStateWithLifecycle()
+    val otherIds by viewModel.otherIds.collectAsStateWithLifecycle()
+    val documents by viewModel.documents.collectAsStateWithLifecycle()
+    val isLoading by viewModel.isRefreshing.collectAsStateWithLifecycle(true)
 
     val showImages = remember { mutableStateOf(false) }
     val selectTemplate = remember { mutableStateOf(false) }
@@ -142,67 +146,83 @@ fun ProfileDetails(
         },
         containerColor = colorResource(id = R.color.orange)
     ) {
-        LazyColumn(
-            verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally,
-            contentPadding = PaddingValues(
-                top = 20.dp,
-                bottom = 100.dp
-            ),
-            modifier = Modifier
-                .padding(it)
-                .fillMaxSize()
-        ) {
-            items(nationalIds) { nationalId ->
-                if (showImages.value) {
-                    val frontUrl = ApiService.getNationalIdFront(
-                        profileId = profile.id,
-                        nationalId = nationalId.id
-                    )
-                    val backUrl = ApiService.getNationalIdBack(
-                        profileId = profile.id,
-                        nationalId = nationalId.id
-                    )
-                    ImageIdCard(frontUrl = frontUrl, backUrl = backUrl)
-                } else {
-                    NationalIdCard(id = nationalId)
-                }
-                Spacer(modifier = Modifier.padding(vertical = 10.dp))
+        if (isLoading) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(20.dp)
+            ) {
+                CircularProgressIndicator(
+                    modifier = Modifier
+                        .size(30.dp)
+                        .align(Alignment.Center),
+                    color = MaterialTheme.colorScheme.secondary,
+                    trackColor = MaterialTheme.colorScheme.surfaceVariant,
+                )
             }
-
-            items(documents) { document ->
-                if (showImages.value) {
-                    val frontUrl = ApiService.getDocumentFront(
-                        profileId = profile.id,
-                        documentId = document.id
-                    )
-                    val backUrl = ApiService.getDocumentBack(
-                        profileId = profile.id,
-                        documentId = document.id
-                    )
-                    ImageIdCard(frontUrl = frontUrl, backUrl = backUrl)
-                } else {
-                    DocumentCard(document = document)
-                }
-                Spacer(modifier = Modifier.padding(vertical = 10.dp))
-            }
-
-            items(otherIds) { otherId ->
-                if (showImages.value) {
-                    val frontUrl = otherId.id?.let { it1 ->
-                        ApiService.getOtherIdFront(
+        } else {
+            LazyColumn(
+                verticalArrangement = Arrangement.Top,
+                horizontalAlignment = Alignment.CenterHorizontally,
+                contentPadding = PaddingValues(
+                    top = 20.dp,
+                    bottom = 100.dp
+                ),
+                modifier = Modifier
+                    .padding(it)
+                    .fillMaxSize()
+            ) {
+                items(nationalIds) { nationalId ->
+                    if (showImages.value) {
+                        val frontUrl = ApiService.getNationalIdFront(
                             profileId = profile.id,
-                            otherId = it1
+                            nationalId = nationalId.id
                         )
-                    }
-                    val backUrl = otherId.id?.let { it1 ->
-                        ApiService.getOtherIdBack(
+                        val backUrl = ApiService.getNationalIdBack(
                             profileId = profile.id,
-                            otherId = it1
+                            nationalId = nationalId.id
                         )
+                        ImageIdCard(frontUrl = frontUrl, backUrl = backUrl)
+                    } else {
+                        NationalIdCard(id = nationalId)
                     }
-                    ImageIdCard(frontUrl = frontUrl, backUrl = backUrl)
                     Spacer(modifier = Modifier.padding(vertical = 10.dp))
+                }
+
+                items(documents) { document ->
+                    if (showImages.value) {
+                        val frontUrl = ApiService.getDocumentFront(
+                            profileId = profile.id,
+                            documentId = document.id
+                        )
+                        val backUrl = ApiService.getDocumentBack(
+                            profileId = profile.id,
+                            documentId = document.id
+                        )
+                        ImageIdCard(frontUrl = frontUrl, backUrl = backUrl)
+                    } else {
+                        DocumentCard(document = document)
+                    }
+                    Spacer(modifier = Modifier.padding(vertical = 10.dp))
+                }
+
+                items(otherIds) { otherId ->
+                    if (showImages.value) {
+                        val frontUrl = otherId.id?.let { it1 ->
+                            ApiService.getOtherIdFront(
+                                profileId = profile.id,
+                                otherId = it1
+                            )
+                        }
+                        val backUrl = otherId.id?.let { it1 ->
+                            ApiService.getOtherIdBack(
+                                profileId = profile.id,
+                                otherId = it1
+                            )
+                        }
+                        ImageIdCard(frontUrl = frontUrl, backUrl = backUrl)
+                        Spacer(modifier = Modifier.padding(vertical = 10.dp))
+                    }
                 }
             }
         }
@@ -221,7 +241,7 @@ fun ProfileDetails(
             ) {
                 LazyColumn(
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(20.dp),
+                    verticalArrangement = Arrangement.Center,
                     contentPadding = PaddingValues(bottom = 5.dp),
                     modifier = Modifier.padding(10.dp)
                 ) {
@@ -244,15 +264,14 @@ fun ProfileDetails(
                         ) {
                             if (index != 0) {
                                 Divider(
-                                    thickness = 2.dp,
+                                    thickness = 1.dp,
                                     color = colorResource(R.color.grey),
-                                    modifier = Modifier.padding(bottom = 5.dp)
+                                    modifier = Modifier.padding(vertical = 10.dp)
                                 )
                             }
                             Text(
                                 text = template.name,
                                 fontWeight = FontWeight.Bold,
-                                modifier = Modifier.padding()
                             )
                         }
                     }

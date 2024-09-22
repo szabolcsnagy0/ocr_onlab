@@ -83,7 +83,9 @@ fun Navigation(tokenManager: TokenManager) {
         }
 
         composable(route = Routes.ProfileList.route, enterTransition = {
-            if (this.initialState.destination.route == Routes.ProfileDetails.route) {
+            if (this.initialState.destination.route == Routes.ProfileDetails.route
+                || this.initialState.destination.route == Routes.NewDocumentTemplate.route
+            ) {
                 slideIntoContainer(
                     towards = AnimatedContentTransitionScope.SlideDirection.Right, animationSpec = tween(700)
                 )
@@ -91,7 +93,9 @@ fun Navigation(tokenManager: TokenManager) {
                 towards = AnimatedContentTransitionScope.SlideDirection.Left, animationSpec = tween(700)
             )
         }, exitTransition = {
-            if (this.targetState.destination.route == Routes.ProfileDetails.route) {
+            if (this.targetState.destination.route == Routes.ProfileDetails.route
+                || this.targetState.destination.route == Routes.NewDocumentTemplate.route
+            ) {
                 slideOutOfContainer(
                     towards = AnimatedContentTransitionScope.SlideDirection.Left, animationSpec = tween(700)
                 )
@@ -158,6 +162,7 @@ fun Navigation(tokenManager: TokenManager) {
             profilesViewModel.selectedProfile.value?.let { profile ->
                 documentListViewModel = remember { DocumentListViewModel(profile, navController) }
                 documentListViewModel?.let { viewModel ->
+                    viewModel.refreshDocumentsList()
                     ProfileDetails(viewModel = viewModel, onBackPressed = {
                         navController.navigate(Routes.ProfileList.route) {
                             popUpTo(Routes.ProfileList.route) {
@@ -199,7 +204,6 @@ fun Navigation(tokenManager: TokenManager) {
                     }
                 }, onResult = {
                     newNationalViewModel.createId()
-                    documentListViewModel?.refreshDocumentsList()
                     navController.navigate(Routes.ProfileDetails.route) {
                         popUpTo(Routes.ProfileDetails.route) {
                             inclusive = true

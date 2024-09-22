@@ -40,7 +40,7 @@ fun ImagePreview(
                 glideUrl = glideUrl,
                 modifier = Modifier
                     .clickable { onClick() }
-                    .fillMaxWidth(0.9f)
+                    .align(Alignment.Center)
                     .heightIn(max = imageMaxHeight)
             )
         } else {

@@ -63,6 +63,8 @@ fun TemplateFieldCreator(
     onResult: () -> Unit
 ) {
     val appState by viewModel.creationState.collectAsStateWithLifecycle()
+    val templateFieldNames by viewModel.templateFieldNames.collectAsStateWithLifecycle(null)
+    val templateName by viewModel.templateName.collectAsStateWithLifecycle()
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
@@ -89,8 +91,11 @@ fun TemplateFieldCreator(
                     }
                 },
                 actions = {
-                    if (appState == TemplateCreationState.START) {
-                        IconButton(onClick = viewModel::onSaveTemplate) {
+                    val isSaveEnabled = templateFieldNames?.isEmpty() == false && templateName.isNotBlank()
+                    if (appState == TemplateCreationState.START && isSaveEnabled) {
+                        IconButton(
+                            onClick = viewModel::onSaveTemplate
+                        ) {
                             Icon(
                                 imageVector = Icons.Filled.Save,
                                 contentDescription = null,
@@ -103,7 +108,7 @@ fun TemplateFieldCreator(
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
                     titleContentColor = colorResource(id = R.color.white),
                     containerColor = colorResource(id = R.color.grey)
-                ),
+                )
             )
         },
         floatingActionButton = {
@@ -139,7 +144,7 @@ fun TemplateFieldCreator(
                         onClick = viewModel::onAddFieldValue,
                         containerColor = colorResource(id = R.color.grey),
                         contentColor = colorResource(id = R.color.white),
-                        elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation(),
+                        elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation()
                     ) {
                         Icon(imageVector = Icons.Filled.Done, contentDescription = null)
                     }
@@ -150,7 +155,7 @@ fun TemplateFieldCreator(
                         onClick = viewModel::onAddFieldFinished,
                         containerColor = colorResource(id = R.color.grey),
                         contentColor = colorResource(id = R.color.white),
-                        elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation(),
+                        elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation()
                     ) {
                         Icon(imageVector = Icons.Filled.Done, contentDescription = null)
                     }
@@ -172,8 +177,6 @@ fun TemplateFieldCreator(
         ) {
             when (appState) {
                 TemplateCreationState.START -> {
-                    val templateFieldNames by viewModel.templateFieldNames.collectAsStateWithLifecycle(null)
-                    val templateName by viewModel.templateName.collectAsStateWithLifecycle()
                     EditTextWithTitle(
                         titleText = "What should be the name of the document?",
                         prevText = templateName,

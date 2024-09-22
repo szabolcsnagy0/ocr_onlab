@@ -3,6 +3,7 @@ package hu.bme.idselector.ui.idlist
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -22,9 +23,10 @@ fun ImageIdCard(frontUrl: GlideUrl?, backUrl: GlideUrl?, modifier: Modifier = Mo
     }
 
     if (!rotated) {
-        ShowImage(glideUrl = frontUrl,
+        ShowImage(
+            glideUrl = frontUrl,
             modifier = modifier
-                .fillMaxWidth(0.9f)
+                .padding(horizontal = 10.dp)
                 .heightIn(max = 200.dp)
                 .clickable {
                     if (backUrl != null) {
@@ -36,7 +38,8 @@ fun ImageIdCard(frontUrl: GlideUrl?, backUrl: GlideUrl?, modifier: Modifier = Mo
         ShowImage(
             glideUrl = backUrl,
             modifier = modifier
-                .fillMaxWidth(0.9f)
+                .padding(horizontal = 10.dp)
+                .fillMaxWidth()
                 .heightIn(max = 200.dp)
                 .clickable {
                     if (frontUrl != null) {

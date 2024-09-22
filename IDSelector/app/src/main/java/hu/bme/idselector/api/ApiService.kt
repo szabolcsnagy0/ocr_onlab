@@ -121,7 +121,7 @@ interface ApiService {
         var tokenManager: TokenManager? = null
 
         //        private const val BASE_URL = "https://identity-application.azurewebsites.net/"
-        private const val BASE_URL = "http://192.168.0.157/"
+        private const val BASE_URL = "http://192.168.0.102/"
 
         /**
          * Get the singleton instance of the ApiService

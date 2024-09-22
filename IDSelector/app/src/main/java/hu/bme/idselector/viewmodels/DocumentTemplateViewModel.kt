@@ -73,7 +73,9 @@ class DocumentTemplateViewModel : NewDocumentViewModel() {
     }
 
     fun onAddFieldValue() {
-        _creationState.tryEmit(TemplateCreationState.ADD_FIELD_VALUE)
+        if (keyText.value.isNotBlank()) {
+            _creationState.tryEmit(TemplateCreationState.ADD_FIELD_VALUE)
+        }
     }
 
     fun onAddFieldFinished() {

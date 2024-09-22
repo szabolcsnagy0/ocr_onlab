@@ -1,9 +1,8 @@
 package hu.bme.idselector.viewmodels
 
 import android.util.Log
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import hu.bme.idselector.api.ApiService
 import hu.bme.idselector.data.Document
@@ -14,28 +13,38 @@ import hu.bme.idselector.data.Profile
 import hu.bme.idselector.navigation.Routes
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class DocumentListViewModel(
     val profile: Profile,
-    val navController: NavController
+    private val navController: NavController
 ) : ViewModel() {
-    val nationalIds = mutableStateListOf<NationalId>()
-    val documents = mutableStateListOf<Document>()
-    val otherIds = mutableStateListOf<OtherId>()
+    private val _nationalIds = MutableStateFlow<List<NationalId>>(emptyList())
+    val nationalIds = _nationalIds.asStateFlow()
 
-    private val isRefreshingNational = mutableStateOf(false)
-    private val isRefreshingDocument = mutableStateOf(false)
-    private val isRefreshingOther = mutableStateOf(false)
-    private val isRefreshing = isRefreshingNational.value && isRefreshingOther.value && isRefreshingDocument.value
+    private val _documents = MutableStateFlow<List<Document>>(emptyList())
+    val documents = _documents.asStateFlow()
+
+    private val _otherIds = MutableStateFlow<List<OtherId>>(emptyList())
+    val otherIds = _otherIds.asStateFlow()
+
+    private val isRefreshingNational = MutableStateFlow(false)
+    private val isRefreshingDocument = MutableStateFlow(false)
+    private val isRefreshingOther = MutableStateFlow(false)
+    val isRefreshing =
+        combine(isRefreshingNational, isRefreshingOther, isRefreshingDocument) { national, other, document ->
+            national || other || document
+        }
 
     private val _documentTemplates = MutableStateFlow<List<DocumentTemplate>>(emptyList())
     val documentTemplates = _documentTemplates.asStateFlow()
 
     init {
-        if (nationalIds.isEmpty() && otherIds.isEmpty()) {
+        if (_nationalIds.value.isEmpty() && _otherIds.value.isEmpty()) {
             refreshDocumentsList()
         }
         if (documentTemplates.value.isEmpty()) {
@@ -51,10 +60,11 @@ class DocumentListViewModel(
     fun onAddNewNationalId() = navController.navigate(Routes.NewNationalIdDocument.route)
 
     fun refreshDocumentsList() {
-        if (isRefreshing) return
-        getNationalIdList()
-        getDocumentList()
-        getOtherIdList()
+        viewModelScope.launch {
+            getNationalIdList()
+            getDocumentList()
+            getOtherIdList()
+        }
     }
 
     private fun getNationalIdList() {
@@ -70,10 +80,9 @@ class DocumentListViewModel(
             ) {
                 if (response.isSuccessful) {
                     val responseData = response.body()
-                    if (nationalIds != responseData) {
-                        nationalIds.clear()
+                    if (nationalIds.value != responseData) {
                         responseData?.let {
-                            nationalIds.addAll(it)
+                            _nationalIds.tryEmit(it)
                         }
                         Log.i("ListViewModel", nationalIds.toString())
                     }
@@ -101,10 +110,9 @@ class DocumentListViewModel(
             ) {
                 if (response.isSuccessful) {
                     val responseData = response.body()
-                    if (documents != responseData) {
-                        documents.clear()
+                    if (documents.value != responseData) {
                         responseData?.let {
-                            documents.addAll(it)
+                            _documents.tryEmit(it)
                         }
                         Log.i("ListViewModel", documents.toString())
                     }
@@ -132,12 +140,11 @@ class DocumentListViewModel(
             ) {
                 if (response.isSuccessful) {
                     val responseData = response.body()
-                    if (otherIds != responseData) {
-                        otherIds.clear()
+                    if (otherIds.value != responseData) {
                         responseData?.let {
-                            otherIds.addAll(it)
+                            _otherIds.tryEmit(it)
                         }
-                        Log.i("ListViewModel", otherIds.toList().toString())
+                        Log.i("ListViewModel", otherIds.value.toList().toString())
                     }
                 }
                 isRefreshingOther.value = false
