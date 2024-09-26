@@ -1,7 +1,9 @@
 import { fetchProfiles, logout } from "./api.js";
+import { NationalId } from "./entitites/national-id.js";
 import { Profile } from "./entitites/profile.js";
 import { highlightSelected } from "./highlight.js";
 import { removeHighlight } from "./highlight.js";
+import { Document } from "./entitites/document.js";
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -116,8 +118,11 @@ var selectField = document.getElementById("select_field");
 function getCurrentlySelectedData() {
     const selectedProfile = Profile.profileList.find(profile => profile.id == selectProfile.value);
     const selectedNationalId = selectedProfile.nationalIds.find(nationalId => nationalId.documentNr == selectDocument.value);
-    const selectedFieldValue = selectField.value;
-    return selectedNationalId[selectedFieldValue];
+    if(selectedNationalId !== undefined) {
+        return selectedNationalId[selectField.value];
+    }
+    const selectedDocument = selectedProfile.documents.find(doc => doc.id == selectDocument.value);
+    return selectedDocument.fieldsList.find(field => field.title == selectField.value).value;
 }
 
 function actualizeProfileSelect() {
@@ -130,14 +135,20 @@ function actualizeProfileSelect() {
 }
 
 function actualizeDocumentSelect(selectedProfile) {
-    if(selectedProfile === undefined || selectedProfile.nationalIds === undefined) {
+    if(selectedProfile === undefined || (selectedProfile.nationalIds === undefined && selectedProfile.documents == undefined)) {
         return;
     }
     selectDocument.innerHTML = '';
     for (var i = 0; i < selectedProfile.nationalIds.length; i++) {
         var option = document.createElement("option");
         option.value = selectedProfile.nationalIds[i].documentNr;
-        option.text = selectedProfile.nationalIds[i].documentNr;
+        option.text = "HU National Id - " + selectedProfile.nationalIds[i].documentNr;
+        selectDocument.appendChild(option);
+    }
+    for (var i = 0; i < selectedProfile.documents.length; i++) {
+        var option = document.createElement("option");
+        option.value = selectedProfile.documents[i].id;
+        option.text = selectedProfile.documents[i].name;
         selectDocument.appendChild(option);
     }
     actualizeFieldSelect();
@@ -162,32 +173,44 @@ function actualizeFieldSelect() {
     var selectedProfile = Profile.profileList.find(profile => profile.id == selectProfile.value);
     var selectedDocument = selectedProfile.nationalIds.find(nationalId => nationalId.documentNr == selectDocument.value);
 
+    if(selectedDocument === undefined) {
+        selectedDocument = selectedProfile.documents.find(document => document.id = selectDocument.value);
+    }
+
     selectField.innerHTML = '';
 
     if (selectedDocument === undefined) {
         return;
     }
 
-    var options = [
-        { value: "name", text: "Family name and Given name" },
-        { value: "sex", text: "Sex" },
-        { value: "nationality", text: "Nationality" },
-        { value: "dateOfBirth", text: "Date of birth" },
-        { value: "dateOfExpiry", text: "Date of expiry" },
-        { value: "documentNr", text: "Document number" },
-        { value: "can", text: "CAN" },
-        { value: "placeOfBirth", text: "Place of birth" },
-        { value: "nameAtBirth", text: "Name at birth" },
-        { value: "mothersName", text: "Mother's name" },
-        { value: "authority", text: "Authority" }
-    ];
-
-    options.forEach(function (option) {
-        if (selectedDocument[option.value]) {
+    if (selectedDocument instanceof NationalId) {
+        var options = [
+            { value: "name", text: "Family name and Given name" },
+            { value: "sex", text: "Sex" },
+            { value: "nationality", text: "Nationality" },
+            { value: "dateOfBirth", text: "Date of birth" },
+            { value: "dateOfExpiry", text: "Date of expiry" },
+            { value: "documentNr", text: "Document number" },
+            { value: "can", text: "CAN" },
+            { value: "placeOfBirth", text: "Place of birth" },
+            { value: "nameAtBirth", text: "Name at birth" },
+            { value: "mothersName", text: "Mother's name" },
+            { value: "authority", text: "Authority" }
+        ];
+        options.forEach(function (option) {
+            if (selectedDocument[option.value]) {
+                var opt = document.createElement("option");
+                opt.value = option.value;
+                opt.text = option.text;
+                selectField.appendChild(opt);
+            }
+        })
+    } else {
+        selectedDocument.fieldsList.forEach(function (field) {
             var opt = document.createElement("option");
-            opt.value = option.value;
-            opt.text = option.text;
-            selectField.appendChild(opt);
-        }
-    })
+            opt.value = field.title;
+            opt.text = field.title.replace(/:/g, '');            ;
+            selectField.append(opt); 
+        })
+    }
 }
