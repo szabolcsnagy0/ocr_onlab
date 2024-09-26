@@ -174,7 +174,7 @@ function actualizeFieldSelect() {
     var selectedDocument = selectedProfile.nationalIds.find(nationalId => nationalId.documentNr == selectDocument.value);
 
     if(selectedDocument === undefined) {
-        selectedDocument = selectedProfile.documents.find(document => document.id = selectDocument.value);
+        selectedDocument = selectedProfile.documents.find(document => document.id == selectDocument.value);
     }
 
     selectField.innerHTML = '';

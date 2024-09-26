@@ -39,6 +39,17 @@ fun DetectionResult(
         verticalArrangement = Arrangement.spacedBy(20.dp),
         modifier = Modifier.padding(10.dp)
     ) {
+        item {
+            val documentName by viewModel.documentName.collectAsStateWithLifecycle("")
+            EditTextWithTitle(
+                titleText = "Please provide a name for the document!",
+                prevText = documentName,
+                onValueChange = {
+                    viewModel.changeDocumentName(it)
+                }
+            )
+        }
+
         itemsIndexed(fieldList) { index, field ->
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,

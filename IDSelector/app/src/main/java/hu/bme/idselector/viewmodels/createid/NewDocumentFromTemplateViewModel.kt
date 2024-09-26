@@ -20,7 +20,19 @@ class NewDocumentFromTemplateViewModel(
     private val templateId: Int
 ) : NewDocumentViewModel() {
     private val document = MutableStateFlow<Document?>(null)
+    val documentName = document.map { it?.documentName ?: "" }
     val fieldList = document.map { it?.fieldsList ?: emptyList() }
+
+    fun changeDocumentName(newValue: String) = viewModelScope.launch {
+        val currentDocument = document.value
+        if (currentDocument != null) {
+            document.tryEmit(
+                currentDocument.copy(
+                    documentName = newValue
+                )
+            )
+        }
+    }
 
     fun changeFieldValue(index: Int, field: DocumentField) = viewModelScope.launch {
         val currentList = fieldList.firstOrNull()?.toMutableList()
