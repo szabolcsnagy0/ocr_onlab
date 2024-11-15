@@ -15,19 +15,21 @@ import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.DocumentScanner
 import androidx.compose.material.icons.filled.Image
+import androidx.compose.material.pullrefresh.PullRefreshIndicator
+import androidx.compose.material.pullrefresh.pullRefresh
+import androidx.compose.material.pullrefresh.rememberPullRefreshState
 import androidx.compose.material3.CenterAlignedTopAppBar
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
@@ -43,6 +45,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.zIndex
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import hu.bme.idselector.R
 import hu.bme.idselector.api.ApiService
@@ -53,7 +56,7 @@ import hu.bme.idselector.ui.shared.FabItem
 import hu.bme.idselector.ui.shared.MultiFloatingActionButton
 import hu.bme.idselector.viewmodels.DocumentListViewModel
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterialApi::class)
 @Composable
 fun ProfileDetails(
     viewModel: DocumentListViewModel,
@@ -67,6 +70,11 @@ fun ProfileDetails(
 
     val showImages = remember { mutableStateOf(false) }
     val selectTemplate = remember { mutableStateOf(false) }
+
+    val pullRefreshState = rememberPullRefreshState(
+        refreshing = isLoading || showImages.value,
+        onRefresh = viewModel::refreshDocumentsList
+    )
 
     Scaffold(
         topBar = {
@@ -117,7 +125,7 @@ fun ProfileDetails(
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
                     titleContentColor = colorResource(id = R.color.white),
                     containerColor = colorResource(id = R.color.grey)
-                ),
+                )
             )
         },
         floatingActionButton = {
@@ -145,22 +153,22 @@ fun ProfileDetails(
             )
         },
         containerColor = colorResource(id = R.color.orange)
-    ) {
-        if (isLoading) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(20.dp)
-            ) {
-                CircularProgressIndicator(
+    ) { scaffoldPadding ->
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(scaffoldPadding)
+                .pullRefresh(pullRefreshState)
+        ) {
+            if (!showImages.value) {
+                PullRefreshIndicator(
+                    refreshing = isLoading,
+                    state = pullRefreshState,
                     modifier = Modifier
-                        .size(30.dp)
-                        .align(Alignment.Center),
-                    color = MaterialTheme.colorScheme.secondary,
-                    trackColor = MaterialTheme.colorScheme.surfaceVariant,
+                        .align(Alignment.TopCenter)
+                        .zIndex(2f)
                 )
             }
-        } else {
             LazyColumn(
                 verticalArrangement = Arrangement.Top,
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -169,8 +177,8 @@ fun ProfileDetails(
                     bottom = 100.dp
                 ),
                 modifier = Modifier
-                    .padding(it)
                     .fillMaxSize()
+                    .zIndex(1f)
             ) {
                 items(nationalIds) { nationalId ->
                     if (showImages.value) {

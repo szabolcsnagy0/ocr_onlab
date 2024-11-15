@@ -5,16 +5,20 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import hu.bme.idselector.api.ApiService
 import hu.bme.idselector.data.Profile
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import okhttp3.ResponseBody
+import hu.bme.idselector.error.MessageEvent
+import hu.bme.idselector.error.MessageHandler
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class ProfilesViewModel : ViewModel() {
+@HiltViewModel
+class ProfilesViewModel @Inject constructor(
+    private val messageHandler: MessageHandler
+) : ViewModel() {
 
     val profiles = mutableStateListOf<Profile>()
     val selectedProfile: MutableState<Profile?> = mutableStateOf(null)
@@ -49,6 +53,7 @@ class ProfilesViewModel : ViewModel() {
 
             override fun onFailure(call: Call<List<Profile>?>, t: Throwable) {
                 Log.e("ListViewModel", "Error while getting profiles list: ${t.message}")
+                messageHandler.handleMessage(MessageEvent.Error(t))
             }
         })
     }
@@ -72,6 +77,7 @@ class ProfilesViewModel : ViewModel() {
 
             override fun onFailure(call: Call<Profile?>, t: Throwable) {
                 Log.e("ProfilesViewModel", "Error while creating new profile: ${t.message}")
+                messageHandler.handleMessage(MessageEvent.Error(t))
             }
         })
     }

@@ -11,7 +11,8 @@ import hu.bme.idselector.viewmodels.DocumentTemplateViewModel
 fun NewTemplateScreen(
     viewModel: DocumentTemplateViewModel,
     onCancelled: () -> Unit,
-    onResult: () -> Unit
+    onResult: () -> Unit,
+    onError: () -> Unit
 ) {
     val appState by remember { viewModel.detectionState }
     if (appState != DetectionState.RESULT) {
@@ -19,7 +20,8 @@ fun NewTemplateScreen(
             viewModel = viewModel,
             onCancelled = onCancelled,
             title = "New template",
-            onResult = viewModel::onResult
+            onResult = viewModel::onResult,
+            onError = onError
         )
     } else {
         TemplateFieldCreator(

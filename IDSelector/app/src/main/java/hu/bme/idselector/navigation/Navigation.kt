@@ -4,13 +4,15 @@ import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import hu.bme.idselector.api.TokenManager
+import hu.bme.idselector.error.MessageEvent
+import hu.bme.idselector.error.MessageHandler
 import hu.bme.idselector.ui.ProfileDetails
 import hu.bme.idselector.ui.ProfileList
 import hu.bme.idselector.ui.authentication.LoginScreen
@@ -28,10 +30,10 @@ import hu.bme.idselector.viewmodels.createid.NewNationalViewModel
 import hu.bme.idselector.viewmodels.createid.NewOtherIdViewModel
 
 @Composable
-fun Navigation(tokenManager: TokenManager) {
+fun Navigation(messageHandler: MessageHandler) {
     val navController = rememberNavController()
-    val authenticationViewModel = remember { AuthenticationViewModel(tokenManager) }
-    val profilesViewModel = remember { ProfilesViewModel() }
+    val authenticationViewModel = viewModel<AuthenticationViewModel>()
+    val profilesViewModel = viewModel<ProfilesViewModel>()
     var documentListViewModel: DocumentListViewModel? = null
 
     authenticationViewModel.testToken()
@@ -209,6 +211,8 @@ fun Navigation(tokenManager: TokenManager) {
                             inclusive = true
                         }
                     }
+                }, onError = {
+                    messageHandler.handleMessage(MessageEvent.Message("Something went wrong, please try again!"))
                 })
             }
         }
@@ -250,6 +254,8 @@ fun Navigation(tokenManager: TokenManager) {
                             inclusive = true
                         }
                     }
+                }, onError = {
+                    messageHandler.handleMessage(MessageEvent.Message("Something went wrong, please try again!"))
                 })
             }
         }
@@ -283,12 +289,13 @@ fun Navigation(tokenManager: TokenManager) {
                 }
             }, onResult = {
                 newDocumentViewModel.onResult()
-                documentListViewModel?.refreshDocumentsList()
                 navController.navigate(Routes.ProfileDetails.route) {
                     popUpTo(Routes.ProfileDetails.route) {
                         inclusive = true
                     }
                 }
+            }, onError = {
+                messageHandler.handleMessage(MessageEvent.Message("Something went wrong, please try again!"))
             })
         }
         composable(route = Routes.NewDocumentTemplate.route, enterTransition = {
@@ -324,6 +331,8 @@ fun Navigation(tokenManager: TokenManager) {
                         inclusive = true
                     }
                 }
+            }, onError = {
+                messageHandler.handleMessage(MessageEvent.Message("Something went wrong, please try again!"))
             })
         }
     }

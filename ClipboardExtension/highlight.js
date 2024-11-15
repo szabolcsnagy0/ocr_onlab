@@ -11,6 +11,9 @@ export function highlightSelected() {
             input.style.marginRight = '-50%';
             input.style.transform = 'translate(-50%, -50%) scale(1.5)';
             input.style.boxShadow = '0 0 10px #F2BB3E';
+            input.style.width = 'auto'; // Keep natural width
+            input.style.maxWidth = '80%'; // Prevent it from being too wide
+            input.style.minWidth = '200px'; // Ensure it's not too small
         }
     } catch (error) {
     }

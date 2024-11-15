@@ -4,26 +4,30 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import hu.bme.idselector.api.ApiService
 import hu.bme.idselector.api.TokenManager
 import hu.bme.idselector.data.LoginData
+import hu.bme.idselector.error.MessageEvent
+import hu.bme.idselector.error.MessageHandler
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
 /**
  * ViewModel for the authentication process.
  * @param sessionManager: TokenManager
  */
-class AuthenticationViewModel(private val sessionManager: TokenManager) : ViewModel() {
+@HiltViewModel
+class AuthenticationViewModel @Inject constructor(
+    private val messageHandler: MessageHandler,
+    private val sessionManager: TokenManager
+) : ViewModel() {
 
     private val _isLoggedIn = MutableLiveData(false)
     val isLoggedIn: LiveData<Boolean> = _isLoggedIn
-
-    val loginText: MutableLiveData<String?> = MutableLiveData(null)
-
-    val loginError: MutableLiveData<Boolean> = MutableLiveData(false)
 
     /**
      * Login user with the given email and password.
@@ -38,14 +42,16 @@ class AuthenticationViewModel(private val sessionManager: TokenManager) : ViewMo
             override fun onResponse(call: Call<String?>, response: Response<String?>) {
                 if (response.isSuccessful) {
                     _isLoggedIn.value = true
-                    loginText.value = null
+                    messageHandler.handleMessage(MessageEvent.Message("Successful login!"))
                     saveToken(response.body())
-                } else loginError.value = true
+                } else {
+                    messageHandler.handleMessage(MessageEvent.Message("Login failed. Try again!"))
+                }
             }
 
             override fun onFailure(call: Call<String?>, t: Throwable) {
                 Log.e("Login", "Error: ${t.message}")
-                loginError.value = true
+                messageHandler.handleMessage(MessageEvent.Message("Login failed. Try again!"))
             }
         })
     }
@@ -61,8 +67,8 @@ class AuthenticationViewModel(private val sessionManager: TokenManager) : ViewMo
             override fun onResponse(call: Call<ResponseBody?>, response: Response<ResponseBody?>) {
                 if (response.isSuccessful) {
                     _isLoggedIn.value = true
-//                    loginText.value = response.body()?.string()
-                } else loginText.value = null
+                    messageHandler.handleMessage(MessageEvent.Message(response.body().toString()))
+                }
             }
 
             override fun onFailure(call: Call<ResponseBody?>, t: Throwable) {
@@ -86,6 +92,5 @@ class AuthenticationViewModel(private val sessionManager: TokenManager) : ViewMo
     fun logOut() {
         sessionManager.deleteAuthToken()
         _isLoggedIn.value = false
-        loginText.value = ""
     }
 }

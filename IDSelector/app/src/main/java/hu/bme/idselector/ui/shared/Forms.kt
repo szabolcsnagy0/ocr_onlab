@@ -16,7 +16,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
@@ -37,8 +36,7 @@ import hu.bme.idselector.R
 fun LoginForm(
     modifier: Modifier = Modifier,
     buttonText: String = "",
-    onButtonClicked: (String, String) -> Unit = { _, _ -> },
-    errorText: String = ""
+    onButtonClicked: (String, String) -> Unit = { _, _ -> }
 ) {
     var email by remember {
         mutableStateOf("")
@@ -55,14 +53,6 @@ fun LoginForm(
                 fontWeight = FontWeight.Bold,
             )
             Spacer(Modifier.size(16.dp))
-            if (errorText.isNotBlank()) {
-                Text(
-                    text = errorText,
-                    fontWeight = FontWeight.SemiBold,
-                    fontSize = 16.sp,
-                    color = Color.Red
-                )
-            }
             TextWithInput(
                 text = stringResource(R.string.email), textChanged = {
                     email = it
@@ -193,6 +183,3 @@ fun RegistrationForm(
         }
     }
 }
-
-
-

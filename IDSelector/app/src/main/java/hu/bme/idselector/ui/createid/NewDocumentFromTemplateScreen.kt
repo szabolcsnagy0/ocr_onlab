@@ -11,6 +11,7 @@ fun NewDocumentFromTemplateScreen(
     viewModel: NewDocumentFromTemplateViewModel,
     onCancelled: () -> Unit,
     onResult: () -> Unit,
+    onError: () -> Unit
 ) {
     val appState by remember { viewModel.detectionState }
     if (appState != DetectionState.RESULT) {
@@ -19,7 +20,8 @@ fun NewDocumentFromTemplateScreen(
             onCancelled = onCancelled,
             onResult = {
                 viewModel.onResult()
-            }
+            },
+            onError = onError
         )
     } else {
         DetectionResult(viewModel = viewModel, onResult = onResult)

@@ -13,7 +13,7 @@ class NewOtherIdViewModel(
 ) : NewDocumentViewModel() {
 
     override fun onResult() {
-        if (frontImageId.value == null || backImageId.value == null) return
+        if (frontImageId.value == null && backImageId.value == null) return
         val otherId = OtherId(front = frontImageId.value, back = backImageId.value)
 
         val call = ApiService.getInstance().createNewOtherId(

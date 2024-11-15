@@ -44,9 +44,6 @@ class DocumentListViewModel(
     val documentTemplates = _documentTemplates.asStateFlow()
 
     init {
-        if (_nationalIds.value.isEmpty() && _otherIds.value.isEmpty()) {
-            refreshDocumentsList()
-        }
         if (documentTemplates.value.isEmpty()) {
             getDocumentTemplates()
         }

@@ -11,6 +11,7 @@ fun NewNationalIdScreen(
     viewModel: NewNationalViewModel,
     onCancelled: () -> Unit,
     onResult: () -> Unit,
+    onError: () -> Unit
 ) {
     val appState by remember { viewModel.detectionState }
     if (appState != DetectionState.RESULT) {
@@ -19,7 +20,8 @@ fun NewNationalIdScreen(
             onCancelled = onCancelled,
             onResult = {
                 viewModel.onResult()
-            }
+            },
+            onError = onError
         )
     } else {
         DetectionResultNationalId(nationalId = viewModel.identity, onResult = onResult)

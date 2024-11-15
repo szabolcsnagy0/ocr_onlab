@@ -48,6 +48,7 @@ import hu.bme.idselector.viewmodels.createid.NewDocumentViewModel
 fun NewDocumentScreen(
     viewModel: NewDocumentViewModel,
     onCancelled: () -> Unit,
+    onError: () -> Unit,
     title: String = stringResource(R.string.add_a_new_document),
     onResult: () -> Unit = {}
 ) {
@@ -180,7 +181,7 @@ fun NewDocumentScreen(
                 }
 
                 DetectionState.ERROR -> {
-                    Text(text = "ERROR", fontSize = 30.sp)
+                    onError()
                 }
 
                 DetectionState.RESULT -> {
